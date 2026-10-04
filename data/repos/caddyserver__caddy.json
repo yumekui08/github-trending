@@ -1,0 +1,42 @@
+{
+  "repo": "caddyserver/caddy",
+  "summarized_at": "2026-10-05",
+  "short": "デフォルトで HTTPS（証明書の自動取得・更新）を有効にする Web サーバー / reverse proxy。HTTP/1・2・3 に対応し、Go 製の1バイナリで動く。モジュールで拡張できる。",
+  "what": "HTTPS を自動化する Go 製の Web サーバー",
+  "can_do": [
+    "Let's Encrypt / ZeroSSL などから TLS 証明書を自動で取得・更新して HTTPS で配信する",
+    "HTTP/1.1、HTTP/2、HTTP/3 に対応する",
+    "reverse proxy として使い、負荷分散やヘルスチェックを設定する",
+    "静的ファイルの配信と、設定ファイル `Caddyfile` または JSON での設定",
+    "モジュール（プラグイン）で機能を追加する。追加は `xcaddy` などでビルドして行う",
+    "設定を API 経由で動的に更新する"
+  ],
+  "how_to_use": "GitHub Releases からバイナリを取得して PATH に置く（パッケージマネージャ向けの手順は公式ドキュメントにある）。最小の設定は `Caddyfile` にサイト名と `reverse_proxy` などを書き、`caddy run` で起動する。",
+  "use_cases": [
+    "社内・個人のサービスの前段に置いて、証明書管理を任せる reverse proxy として使えそう",
+    "検証環境の静的サイトや簡易な API ゲートウェイに使えそう",
+    "nginx + certbot の構成の置き換えを検討するときの候補になりそう"
+  ],
+  "for_whom": "reverse proxy や Web サーバーの証明書運用を減らしたいインフラ担当者",
+  "similar": [
+    "nginx：用途は近い。こちらは証明書の自動管理が標準で、設定が短い",
+    "Traefik：reverse proxy / 自動 HTTPS が近い。こちらは Caddyfile による静的な設定が中心",
+    "HAProxy：負荷分散が主用途。こちらは Web サーバーと証明書管理も含む"
+  ],
+  "tech": "Go（1.26 以上でビルド）。証明書管理に CertMagic を使う。Linux / macOS / Windows などに対応。Apache-2.0。",
+  "caveats": "2015年からあるプロジェクトで、今回 Trending に上がったのは新規ではなく v2.11.7 のリリース周辺と思われる。v2.11.6 には HTTP/2 の proxy で落ちる不具合などがあり、v2.11.7 で修正された（リリースノート）。追加モジュールは自分でビルドが要る。",
+  "tags": [
+    "ネットワーク",
+    "インフラ・運用",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:go.mod",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

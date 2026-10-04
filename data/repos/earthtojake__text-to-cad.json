@@ -1,0 +1,39 @@
+{
+  "repo": "earthtojake/text-to-cad",
+  "summarized_at": "2026-10-05",
+  "short": "AI エージェントに CAD 作業をさせる skill 集。自然言語や画像の依頼から STEP の CAD モデルを作り、図面、ロボット記述ファイル、G-code の生成までローカルのファイルで扱う。",
+  "what": "エージェントに CAD・製造向け作業をさせる skill 集",
+  "can_do": [
+    "自然言語や画像の依頼から CAD モデルを作成・編集し、STEP を主出力に STL / 3MF / GLB へ書き出す",
+    "市販部品（ネジ、ベアリング、モーターなど）の STEP を探す（step.parts）",
+    "部品から寸法入りの工学図面 PDF や、2D の DXF を作る",
+    "URDF / SRDF / SDF でロボットやシミュレータ用のモデルを書く",
+    "DfAM / DFM チェック（肉厚、オーバーハング、抜き勾配など）と SendCutSend への入稿前チェック",
+    "OrcaSlicer で G-code にスライスし、Bambu Lab プリンタへ送る"
+  ],
+  "how_to_use": "`npx skills add earthtojake/text-to-cad` で skill を入れる（更新も同じコマンド）。Codex / Claude Code / Cursor / Grok Build 向けのプラグイン導入も用意されている。Python 3.11+ と Node.js 20+ が要る。",
+  "use_cases": [
+    "筐体や治具の試作で、寸法を伝えて STEP を作らせる用途に使えそう",
+    "3D プリント前の printability チェックを自動化するのに使えそう",
+    "ロボットの URDF を書く下書きをエージェントに任せるのに使えそう"
+  ],
+  "for_whom": "エージェントを使って機械設計・3D プリント・ロボットの試作をしたい人",
+  "similar": [
+    "build123d / CadQuery：コードで CAD を書くライブラリ。こちらはそれを使う側の skill で、書くのはエージェント"
+  ],
+  "tech": "Python（CAD 生成は `cadgen`、build123d 0.11 と Open CASCADE 7.9 が土台）と Node.js（ビューア・MCP・docs の workspace）。MIT ライセンス。",
+  "caveats": "作成は2026年4月で新しく、バージョンは 0.7 系。生成物の品質は使うエージェントとモデルに左右されると思われる。リポジトリが大きい（約 290MB、サンプルモデルを含む）が、利用には `models/` は不要と README にある。",
+  "tags": [
+    "AI エージェント",
+    "その他"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

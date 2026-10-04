@@ -1,0 +1,38 @@
+{
+  "repo": "antirez/ds4",
+  "summarized_at": "2026-10-05",
+  "short": "DeepSeek V4 Flash などの LLM を手元の PC で動かす、C 製の推論エンジン（DwarfStar）。Metal、CUDA、ROCm に対応する。専用の GGUF を使い、CLI、HTTP server、coding agent を同梱する。",
+  "what": "DeepSeek V4 などを手元で動かす C 製の LLM 推論エンジン",
+  "can_do": [
+    "Apple Silicon（Metal）、NVIDIA CUDA（DGX Spark、Ada 世代の複数 GPU など）、ROCm（Strix Halo）で LLM を動かす",
+    "`./ds4`（対話・`-p` で単発）、`./ds4-server`（HTTP server）、`./ds4-agent`（coding agent）を使う",
+    "RAM が足りないマシンでも SSD streaming で動かす",
+    "複数 CUDA カードでマルチユーザー server にする（README では8枚の L40S・16セッションで合計約 126 tokens/s）",
+    "2台の Mac を RDMA でつなぐ tensor parallel や、pipeline parallel で複数台の RAM を合わせる",
+    "対応モデルは DeepSeek V4 / V4.1 Flash・PRO、GLM 5.x、Qwen3.8 Flash Next など"
+  ],
+  "how_to_use": "`git clone https://github.com/antirez/ds4.git` して、環境に合わせて `make`（Metal）、`make cuda-spark`、`make strix-halo`、`make cuda-generic` のいずれかでビルドする。`./download_model.sh ds4f-q2` でモデルを `gguf/` に取得し、`./ds4 -p \"…\"` や `./ds4-server --ctx 32768` で動かす。",
+  "use_cases": [
+    "社内の GPU サーバー（L40S など）で、オープンな LLM を自前の API server として動かす用途に使えそう",
+    "機密データを外に出さずに LLM を試す検証環境に使えそう",
+    "128GB 級の Mac / DGX Spark での推論速度の比較・検証に使えそう"
+  ],
+  "for_whom": "大きなメモリや GPU を持つ手元の機器で、特定のオープンウェイト LLM を動かしたい人",
+  "similar": [
+    "llama.cpp：汎用の GGUF 推論エンジン。こちらは少数のモデルに絞り、専用の GGUF を使う（実装は llama.cpp の成果を参考にしている）",
+    "vLLM：GPU server 向けの推論 server。こちらは C 製で Mac や SSD streaming も対象"
+  ],
+  "tech": "C（ds4.c、CUDA / Metal / ROCm 向けのカーネル）。Makefile でビルド。macOS は 96GB 以上が主な対象。MIT ライセンス（GGML 作者の著作権表示を含む）。",
+  "caveats": "README で beta 品質、変更が速く、不安定さや退行がありうると明記されている。汎用の GGUF runner ではなく、プロジェクトが作る GGUF しか使えない。対応モデルは入れ替わる方針。開発には AI コーディングエージェントの強い支援を使っていると明記されている。大きなメモリ（96GB 以上など）が要る。作成は2026年5月。",
+  "tags": [
+    "LLM",
+    "機械学習"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,39 @@
+{
+  "repo": "NationalSecurityAgency/ghidra",
+  "summarized_at": "2026-10-05",
+  "short": "NSA が開発・公開しているリバースエンジニアリング用の framework。コンパイル済みバイナリを逆アセンブル・decompile して解析できる。Windows / macOS / Linux で動き、Java か Python で拡張できる。",
+  "what": "バイナリを解析するリバースエンジニアリング framework",
+  "can_do": [
+    "実行ファイルの逆アセンブル、アセンブル、decompile（C 風のコードへの復元）",
+    "呼び出し関係などのグラフ表示",
+    "多くのプロセッサ命令セットと実行ファイル形式に対応",
+    "GUI での対話的な解析と、headless での自動解析",
+    "Java または Python（PyGhidra）でスクリプトや拡張を書く",
+    "チームで解析結果を共有して作業する（README に、大規模な解析のチーム作業を想定したと記載）"
+  ],
+  "how_to_use": "JDK 25 を入れ、Releases の `ghidra_<version>_<release>_<date>.zip`（「Source Code」ではない）を展開して `./ghidraRun` で起動する。Python 経由なら `./support/pyghidraRun`。ソースからは `gradle -I gradle/support/fetchDependencies.gradle` のあと `gradle buildGhidra`。",
+  "use_cases": [
+    "不審な実行ファイルやファームウェアの挙動を調べるマルウェア解析・脆弱性調査に使えそう",
+    "ソースのないバイナリや古い製品の挙動調査に使えそう",
+    "headless モードと scripting で、バイナリの一括解析を自動化できそう"
+  ],
+  "for_whom": "セキュリティ調査やバイナリ解析をする人",
+  "similar": [
+    "IDA Pro：商用の逆アセンブラ・decompiler。こちらは無料の OSS",
+    "Binary Ninja：商用の解析ツール。こちらは OSS で拡張は Java / Python",
+    "radare2 / Cutter：OSS のリバースエンジニアリング用ツール"
+  ],
+  "tech": "Java（JDK 25 が必要）。ビルドは Gradle と Python 3、Linux / macOS では GCC か Clang も要る。Windows / macOS / Linux に対応。Apache-2.0。",
+  "caveats": "2019年に公開された古くからあるプロジェクトで、今回の Trending は新規公開ではないと思われる。README に、特定バージョンに既知の脆弱性があるため Security Advisories を読むよう警告がある。解析対象が悪意のあるコードの場合は、隔離した環境で扱う必要がある。最新リリースは 12.1.4。",
+  "tags": [
+    "セキュリティ",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

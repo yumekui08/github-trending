@@ -1,0 +1,39 @@
+{
+  "repo": "tester-army/e2e",
+  "summarized_at": "2026-10-05",
+  "short": "Web / モバイルアプリ向けの E2E テストフレームワーク。目的を自然言語で書くと agent が操作し、結果は通常のロケータとアサーションで検証できる。agent の操作は記録され、アプリが変わるまでモデル呼び出しなしで再生される。",
+  "what": "agent が操作する Web・モバイル向け E2E テストの framework",
+  "can_do": [
+    "テスト内で `agent.act('Pro プランにアップグレードする')` のように自然言語で操作を指示する",
+    "`agent.assert(...)` の自然言語アサーションと、`expect` / ロケータの通常のアサーションを同じテストに混在させる",
+    "agent の操作を記録し、次回以降はアプリが変わるまでモデルを呼ばずに再生する",
+    "agent 手順を使わないテストはモデルなしで動く",
+    "Web は Playwright 経由で Chromium / Firefox / WebKit、モバイルは iOS・Android のシミュレータ / エミュレータに対応",
+    "pull request へ結果をコメントする GitHub reporter、hosted browser / simulator 用パッケージがある"
+  ],
+  "how_to_use": "`npx e2e init` で engine（web / mobile）とモデル提供元を選ぶと、設定と例のテストが生成される。テストは `tests/*.e2e.ts` に `import { test, expect } from 'e2e'` で書く。モデルは自前のサブスクリプション、API key、ローカルモデルを使う。",
+  "use_cases": [
+    "UI 変更で壊れやすい Playwright テストの一部を、自然言語の手順に置き換える用途に使えそう",
+    "再生機能があるので、CI で毎回モデルを呼ばずに回帰テストを回せそう",
+    "社内ツールの Web UI のスモークテストに使えそう"
+  ],
+  "for_whom": "Web / モバイルアプリの E2E テストを保守していて、壊れにくい書き方を試したい人",
+  "similar": [
+    "Playwright：Web 側の実行基盤として内部で利用。こちらは agent による自然言語操作を足したもの"
+  ],
+  "tech": "TypeScript の pnpm monorepo（SDK・runner・CLI、web / mobile / github / kernel / eas / decision の各パッケージ）。Node.js 上で動く。Apache-2.0。",
+  "caveats": "1.0 前の開発中で、API や設定が minor リリース間で変わりうる（最新リリースにも破壊的変更がある）。agent 手順には LLM が要る。CLI は匿名の利用データを送る（`E2E_TELEMETRY_DISABLED=1` で無効化）。2026年7月作成で新しい。開発元の有料 SaaS（TesterArmy）への導線が README にある。",
+  "tags": [
+    "開発ツール",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

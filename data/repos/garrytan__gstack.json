@@ -1,0 +1,36 @@
+{
+  "repo": "garrytan/gstack",
+  "summarized_at": "2026-10-05",
+  "short": "Claude Code 用の slash command / skill 集。CEO、設計、レビュー、QA、セキュリティ監査、リリースなどの役割ごとに手順を分け、開発の流れを構造化する。headless browser も同梱。",
+  "what": "Claude Code に役割別の工程を与える skill 集",
+  "can_do": [
+    "`/office-hours`、`/plan-ceo-review`、`/plan-eng-review` など、企画・設計の段階ごとのレビュー用 skill",
+    "`/review`（ブランチの差分レビュー）、`/qa`（実ブラウザや API での動作確認）、`/cso`（OWASP / STRIDE のセキュリティ監査）",
+    "`/ship`、`/land-and-deploy`、`/canary` でリリース作業を進める",
+    "同梱の headless browser（`browse`）でブラウザ操作・スクレイピングをする",
+    "`/make-pdf`、`/diagram` などの補助ツール",
+    "チームのリポジトリに必須の依存として入れ、自動更新するモード"
+  ],
+  "how_to_use": "Bun 1.0+、Git、Claude Code が要る。`git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup` を実行し、CLAUDE.md に利用する skill 一覧を書く。そのあと `/office-hours` や `/review` を使う。",
+  "use_cases": [
+    "個人開発で、レビュー・QA・リリース確認を決まった手順で回すのに使えそう",
+    "チームで Claude Code の使い方（レビュー観点など）を揃える土台に使えそう",
+    "IaC やスクリプトの変更差分を `/review` や `/cso` で点検する用途に使えそう"
+  ],
+  "for_whom": "Claude Code で開発していて、レビューや QA の工程を skill で標準化したい人",
+  "similar": [],
+  "tech": "TypeScript（Bun でビルド、同梱の browse / make-pdf はコンパイルした binary）。Claude Code の skill として `~/.claude/skills/` に置く。macOS・Linux・Windows に対応する旨が README にある。MIT ライセンス。",
+  "caveats": "作者本人の運用方法の紹介が中心で、README の生産性の数値（「2013年の約810倍」など）は作者自身の測定であり、一般化はできないと思われる。skill は Markdown のプロンプトで、結果は Claude の挙動に左右される。`./setup` でバイナリのビルドと Chromium のダウンロードが走る。作成は2026年3月で新しい。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

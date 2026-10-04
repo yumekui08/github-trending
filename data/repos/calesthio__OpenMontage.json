@@ -1,0 +1,39 @@
+{
+  "repo": "calesthio/OpenMontage",
+  "summarized_at": "2026-10-05",
+  "short": "AI コーディングアシスタントに動画制作をさせるための仕組み。調査、台本、素材生成、編集、合成までを pipeline と skill ファイルで段階的に進める。無料のストック映像だけで作る構成もある。",
+  "what": "AI アシスタントで動画を作る制作システム",
+  "can_do": [
+    "research → proposal → script → scene_plan → assets → edit → compose の段階を、各段階用の skill に沿ってエージェントが進める",
+    "11種類の pipeline を用意（explainer、アニメーション、アバター、cinematic、長尺からのクリップ抽出、ドキュメンタリー風 montage、字幕・吹き替え、podcast の動画化、画面録画デモ、talking head など）",
+    "無料のストック映像・アーカイブ（Pexels、Archive.org、NASA、Wikimedia、Unsplash）から実際の動画クリップを検索して編集する",
+    "画像・動画・音声の生成に外部 API（Veo、Kling、ElevenLabs、Google TTS など）を使う",
+    "Remotion、HyperFrames、Blender、FFmpeg で合成・レンダリングする",
+    "作業状況を確認するローカルの board server（Backlot）を持つ"
+  ],
+  "how_to_use": "Python 3.10+、FFmpeg、Node.js 18+ と、Claude Code / Cursor / Copilot / Windsurf / Codex のいずれかが要る。`git clone https://github.com/calesthio/OpenMontage.git` してリポジトリ内でエージェントを開き、作りたい動画を日本語・英語の文章で依頼する。API key は `.env.example` を元に設定する。",
+  "use_cases": [
+    "技術解説や社内向けの短い explainer 動画の下書きを作るのに使えそう",
+    "画面録画のデモ動画を整える用途に使えそう",
+    "既存の長い録画からショート動画を切り出す用途に使えそう"
+  ],
+  "for_whom": "AI エージェントを使って動画制作を自動化したい人。API 費用と調整の手間を許容できる人",
+  "similar": [
+    "Remotion：動画をコードで書くフレームワーク。こちらはそれを使ってエージェントが工程全体を進める"
+  ],
+  "tech": "Python（pydantic、FastAPI、Pillow、google-genai、openai など）と Node.js。FFmpeg が必要。ライセンスは AGPL-3.0。",
+  "caveats": "ライセンスが AGPL-3.0 で、組み込みや社内サービス化では条件に注意が要る。高品質な動画生成には外部の有料 API（例：Veo、Kling）が要り、README の例では1本約 $1〜4。2026年3月作成で新しい。README に「世界初」などの宣伝調の記述とスポンサー欄が多い。品質は使うモデルに左右されると思われる。",
+  "tags": [
+    "AI エージェント",
+    "音声・画像・動画"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:setup.py",
+    "manifest:requirements.txt"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
