@@ -11,7 +11,8 @@
       "2026-10-01",
       "2026-10-02",
       "2026-10-03",
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ]
   },
   "Effect-TS/effect": {
@@ -58,14 +59,16 @@
   "OpenCut-app/OpenCut": {
     "first_seen": "2026-10-04",
     "seen": [
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ]
   },
   "Panniantong/Agent-Reach": {
     "first_seen": "2026-10-03",
     "seen": [
       "2026-10-03",
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ]
   },
   "VectifyAI/PageIndex": {
@@ -78,7 +81,8 @@
   "addyosmani/agent-skills": {
     "first_seen": "2026-10-04",
     "seen": [
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ]
   },
   "affaan-m/ECC": {
@@ -93,6 +97,12 @@
       "2026-10-04"
     ]
   },
+  "antirez/ds4": {
+    "first_seen": "2026-10-05",
+    "seen": [
+      "2026-10-05"
+    ]
+  },
   "averygan/reclip": {
     "first_seen": "2026-09-30",
     "seen": [
@@ -103,6 +113,18 @@
     "first_seen": "2026-10-01",
     "seen": [
       "2026-10-01"
+    ]
+  },
+  "caddyserver/caddy": {
+    "first_seen": "2026-10-05",
+    "seen": [
+      "2026-10-05"
+    ]
+  },
+  "calesthio/OpenMontage": {
+    "first_seen": "2026-10-05",
+    "seen": [
+      "2026-10-05"
     ]
   },
   "cloudflare/cloudflare-os": {
@@ -121,7 +143,8 @@
   "coreyhaines31/marketingskills": {
     "first_seen": "2026-10-03",
     "seen": [
-      "2026-10-03"
+      "2026-10-03",
+      "2026-10-05"
     ]
   },
   "cs341-illinois/coursebook": {
@@ -157,6 +180,12 @@
       "2026-10-04"
     ]
   },
+  "earthtojake/text-to-cad": {
+    "first_seen": "2026-10-05",
+    "seen": [
+      "2026-10-05"
+    ]
+  },
   "firebase/firebase-ios-sdk": {
     "first_seen": "2026-10-01",
     "seen": [
@@ -164,11 +193,18 @@
       "2026-10-02"
     ]
   },
+  "garrytan/gstack": {
+    "first_seen": "2026-10-05",
+    "seen": [
+      "2026-10-05"
+    ]
+  },
   "getsentry/sentry": {
     "first_seen": "2026-10-03",
     "seen": [
       "2026-10-03",
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ]
   },
   "google/skills": {
@@ -274,13 +310,15 @@
     "seen": [
       "2026-10-02",
       "2026-10-03",
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ]
   },
   "pingdotgg/t3code": {
     "first_seen": "2026-10-04",
     "seen": [
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ]
   },
   "rakyll/hey": {
@@ -302,10 +340,17 @@
       "2026-10-01"
     ]
   },
+  "tester-army/e2e": {
+    "first_seen": "2026-10-05",
+    "seen": [
+      "2026-10-05"
+    ]
+  },
   "thedotmack/claude-mem": {
     "first_seen": "2026-10-04",
     "seen": [
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-05"
     ]
   },
   "tile-ai/tilelang": {
