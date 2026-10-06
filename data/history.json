@@ -15,6 +15,12 @@
       "2026-10-05"
     ]
   },
+  "DuarteSantos8/openGym": {
+    "first_seen": "2026-10-06",
+    "seen": [
+      "2026-10-06"
+    ]
+  },
   "Effect-TS/effect": {
     "first_seen": "2026-10-03",
     "seen": [
@@ -39,6 +45,12 @@
     "seen": [
       "2026-10-03",
       "2026-10-04"
+    ]
+  },
+  "M-Abozaid/esp32-c3-adblock": {
+    "first_seen": "2026-10-06",
+    "seen": [
+      "2026-10-06"
     ]
   },
   "NVIDIA/OpenShell": {
@@ -68,7 +80,14 @@
     "seen": [
       "2026-10-03",
       "2026-10-04",
-      "2026-10-05"
+      "2026-10-05",
+      "2026-10-06"
+    ]
+  },
+  "Stremio/stremio-web": {
+    "first_seen": "2026-10-06",
+    "seen": [
+      "2026-10-06"
     ]
   },
   "VectifyAI/PageIndex": {
@@ -109,6 +128,12 @@
       "2026-09-30"
     ]
   },
+  "boykopovar/AnyPS5": {
+    "first_seen": "2026-10-06",
+    "seen": [
+      "2026-10-06"
+    ]
+  },
   "byoungd/up": {
     "first_seen": "2026-10-01",
     "seen": [
@@ -118,19 +143,22 @@
   "caddyserver/caddy": {
     "first_seen": "2026-10-05",
     "seen": [
-      "2026-10-05"
+      "2026-10-05",
+      "2026-10-06"
     ]
   },
   "calesthio/OpenMontage": {
     "first_seen": "2026-10-05",
     "seen": [
-      "2026-10-05"
+      "2026-10-05",
+      "2026-10-06"
     ]
   },
   "cloudflare/cloudflare-os": {
     "first_seen": "2026-10-04",
     "seen": [
-      "2026-10-04"
+      "2026-10-04",
+      "2026-10-06"
     ]
   },
   "colbymchenry/codegraph": {
@@ -183,7 +211,8 @@
   "earthtojake/text-to-cad": {
     "first_seen": "2026-10-05",
     "seen": [
-      "2026-10-05"
+      "2026-10-05",
+      "2026-10-06"
     ]
   },
   "firebase/firebase-ios-sdk": {
@@ -263,6 +292,12 @@
       "2026-10-01"
     ]
   },
+  "msitarzewski/agency-agents": {
+    "first_seen": "2026-10-06",
+    "seen": [
+      "2026-10-06"
+    ]
+  },
   "mvschwarz/openrig": {
     "first_seen": "2026-09-30",
     "seen": [
@@ -318,7 +353,8 @@
     "first_seen": "2026-10-04",
     "seen": [
       "2026-10-04",
-      "2026-10-05"
+      "2026-10-05",
+      "2026-10-06"
     ]
   },
   "rakyll/hey": {
@@ -343,14 +379,16 @@
   "tester-army/e2e": {
     "first_seen": "2026-10-05",
     "seen": [
-      "2026-10-05"
+      "2026-10-05",
+      "2026-10-06"
     ]
   },
   "thedotmack/claude-mem": {
     "first_seen": "2026-10-04",
     "seen": [
       "2026-10-04",
-      "2026-10-05"
+      "2026-10-05",
+      "2026-10-06"
     ]
   },
   "tile-ai/tilelang": {
