@@ -4,11 +4,11 @@ GitHub Trending に上がったリポジトリを毎朝日本語で要約し、�
 
 英語の README を読まなくても、「結局これは何ができるのか」「どう使えそうか」が分かるようにしています。要約には README のほか、ファイル構成・依存の定義・リリースも読み、足りなければ examples やコードまで調べて書いています。
 
-- **サイト**：https://trending-digest.pages.dev/
+- **サイト**：https://github-trending.yumekui.org/
   - 日次・週次・月次の順位を、1件ずつ短い要約つきで並べます。
   - リポジトリごとに詳しいページがあります（何ができるか、使い方、活用できそうな場面、似ているもの、注意点）。
 - **Discord**：毎朝、新しく上がったものの短い要約と、詳しいページへのリンクが届きます。
-- **RSS**：https://trending-digest.pages.dev/feed.xml （Atom）。RSS リーダーで購読できます。
+- **RSS**：https://github-trending.yumekui.org/feed.xml （Atom）。RSS リーダーで購読できます。
 
 要約は Claude Code が書いたもので、誤りを含むことがあります。分からないことは書かず、推測は推測と書くようにしています。
 

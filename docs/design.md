@@ -164,7 +164,7 @@ routine が従う手順は `docs/routine.md` に書く。routine のプロンプ
 
 ## 6. サイト（Cloudflare Pages）
 
-公開先：https://trending-digest.pages.dev/ （0008。GitHub Pages への公開は 0027 でやめた）
+公開先：https://github-trending.yumekui.org/ （独自ドメイン。0036。Cloudflare Pages のプロジェクトは trending-digest のままで、https://trending-digest.pages.dev/ でも同じものが見える。0008。GitHub Pages への公開は 0027 でやめた）
 
 ```
 /                          最新の日の日次（「本日」）
@@ -228,7 +228,7 @@ routine が従う手順は `docs/routine.md` に書く。routine のプロンプ
 | `new_window_days` | 10 | 何日以内に上がっていなければ new とみなすか |
 | `max_summaries_per_day` | 15 | 1日に要約する件数の上限 |
 | `resummarize_after_days` | 90 | 要約してからこの日数がたったものが再び Trending に上がったら、書き直す（0027） |
-| `site_base_url` | https://trending-digest.pages.dev/ | 通知のリンク、canonical・OGP・sitemap・フィードの絶対 URL の元 |
+| `site_base_url` | https://github-trending.yumekui.org/ | 通知のリンク、canonical・OGP・sitemap・フィードの絶対 URL の元 |
 | `timezone` | Asia/Tokyo | 「今日」を決めるタイムゾーン |
 
 ### GitHub（リポジトリ yumekui08/github-trending、公開）

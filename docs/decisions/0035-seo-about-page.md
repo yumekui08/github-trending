@@ -23,4 +23,4 @@
 
 ## 本人がやること
 - GitHub の Variables に `GOOGLE_SITE_VERIFICATION` を登録する（登録してから次にサイトを作り直したときに、タグが出る）
-- Search Console で所有を確認したら、`https://trending-digest.pages.dev/sitemap.xml` を「サイトマップ」に登録する
+- Search Console で所有を確認したら、`https://github-trending.yumekui.org/sitemap.xml`（0036 で独自ドメインに） を「サイトマップ」に登録する
