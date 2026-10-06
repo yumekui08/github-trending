@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import re
 import shutil
 from pathlib import Path
@@ -153,6 +154,61 @@ def _write(path: Path, html: str) -> None:
 
 PERIODS = ("daily", "weekly", "monthly")
 FEED_ENTRIES = 50  # フィードに載せる要約の数（新しい順）
+RELATED_ENTRIES = 5  # 詳しいページの「同じ分野の記事」の数（0035）
+ABOUT_RECENT = 6  # 「github新聞について」のページに出す、最近の解説の数（0035）
+SITE_NAME = "github新聞"
+SITE_DESCRIPTION = "GitHub Trending（日次・週次・月次）に上がったリポジトリを、毎朝日本語で要約して届ける新聞です。"
+
+
+def newest_first(summaries: list[dict]) -> list[dict]:
+    """要約した日の新しい順。同じ日はリポジトリ名の順。"""
+    return sorted(sorted(summaries, key=lambda x: x["repo"]), key=lambda x: x["summarized_at"], reverse=True)
+
+
+def related_summaries(summary: dict, ordered: list[dict], limit: int = RELATED_ENTRIES) -> list[dict]:
+    """同じ分野（先頭のタグ）の、ほかのリポジトリの要約を新しい順に（0035）。判断は入らない。"""
+    tags = summary.get("tags") or []
+    if not tags:
+        return []
+    return [x for x in ordered if x["repo"] != summary["repo"] and (x.get("tags") or [None])[0] == tags[0]][:limit]
+
+
+def repo_jsonld(summary: dict, item: dict | None, base_url: str) -> list[dict]:
+    """詳しいページの構造化データ（schema.org。0035）：記事と、パンくず。絶対 URL が要るので base_url があるときだけ。"""
+    url = f"{base_url}r/{summary['repo']}/"
+    publisher = {"@type": "Organization", "name": SITE_NAME, "url": base_url}
+    code = {
+        "@type": "SoftwareSourceCode",
+        "name": summary["repo"].split("/", 1)[1],
+        "codeRepository": f"https://github.com/{summary['repo']}",
+    }
+    if item and item.get("language"):
+        code["programmingLanguage"] = item["language"]
+    article = {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": f"{summary['repo']}：{headline(summary['what'])}",
+        "description": summary["short"].replace("`", ""),
+        "inLanguage": "ja",
+        "datePublished": summary["summarized_at"],
+        "dateModified": summary["summarized_at"],
+        "author": {"@type": "Organization", "name": f"{SITE_NAME}（Claude Code）"},
+        "publisher": publisher,
+        "mainEntityOfPage": url,
+        "url": url,
+        "image": f"{base_url}og_image.png",
+        "keywords": ", ".join(summary.get("tags") or []),
+        "about": code,
+    }
+    crumbs = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": SITE_NAME, "item": base_url},
+            {"@type": "ListItem", "position": 2, "name": summary["repo"], "item": url},
+        ],
+    }
+    return [article, crumbs]
 
 
 def dated_href(day: str, period: str) -> str:
@@ -254,6 +310,9 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
     env.globals["latest_day"] = days[0] if days else None  # ヘッダの日付（日ごとのページ以外）
     env.globals["issue_no"] = {d: n for n, d in enumerate(sorted(days), start=1)}  # 号数：最初の日が第1号
     env.globals["asset_v"] = asset_versions()  # CSS・ロゴの URL に付ける版の印
+    # Google Search Console の所有確認のタグ（0035）。値は環境変数から（.env か Actions の Variables）
+    env.globals["site_verification"] = os.environ.get("GOOGLE_SITE_VERIFICATION", "").strip()
+    env.globals["site_description"] = SITE_DESCRIPTION
     history = store.load_history()
     day_tpl, repo_tpl, archive_tpl = (env.get_template(f"{n}.html") for n in ("day", "repo", "archive"))
 
@@ -302,16 +361,30 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
     summaries = []
     for path in sorted((store.dir / "repos").glob("*.json")):
         summary = store.load_summary(path.stem.replace("__", "/", 1))
-        if summary is None:
-            continue
+        if summary is not None:
+            summaries.append(summary)
+    ordered = newest_first(summaries)
+    for summary in summaries:
         repo = summary["repo"]
         href = f"r/{repo}/"
+        item = latest_item.get(repo)
         _write(out / href / "index.html", repo_tpl.render(
-            root="../../../", path=href, s=summary, item=latest_item.get(repo),
+            root="../../../", path=href, s=summary, item=item,
             seen=history.get(repo, {}).get("seen", []),
+            related=related_summaries(summary, ordered),
+            jsonld=repo_jsonld(summary, item, base_url) if base_url else None,
         ))
         urls.append((href, summary["summarized_at"]))
-        summaries.append(summary)
+
+    # サイトの説明のページ（検索からの入り口。0035）
+    _write(out / "about" / "index.html", env.get_template("about.html").render(
+        root="../", path="about/", recent=ordered[:ABOUT_RECENT],
+        n_repos=len(summaries), n_days=len(days), first_day=days[-1] if days else None,
+    ))
+    if days:
+        urls.append(("about/", days[0]))
+    # 見つからない URL のページ（0035）。どの深さの URL でも出るので、リンクはサイトの根からの絶対パスにする
+    _write(out / "404.html", env.get_template("404.html").render(root="/", path=None))
 
     archive_days = [
         dict(pages[(d, "daily")], has_weekly=bool(pages[(d, "weekly")]), has_monthly=bool(pages[(d, "monthly")]))
@@ -325,8 +398,6 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
     if base_url:
         _write(out / "sitemap.xml", env.get_template("sitemap.xml").render(urls=urls))
         _write(out / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {base_url}sitemap.xml\n")
-        # 新しい日付の順、同じ日はリポジトリ名の順
-        entries = sorted(sorted(summaries, key=lambda x: x["repo"]), key=lambda x: x["summarized_at"], reverse=True)
-        entries = entries[:FEED_ENTRIES]
+        entries = ordered[:FEED_ENTRIES]
         _write(out / "feed.xml", env.get_template("feed.xml").render(entries=entries))
     return out

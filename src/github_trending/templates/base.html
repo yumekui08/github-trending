@@ -5,14 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}github新聞{% endblock %}</title>
 {# 検索エンジンと、Discord・X などに URL を貼ったときのカード（OGP）。絶対 URL は site_base_url から（0027） #}
-<meta name="description" content="{% block description %}GitHub Trending（日次・週次・月次）に上がったリポジトリを、毎朝日本語で要約して届ける新聞です。{% endblock %}">
+<meta name="description" content="{% block description %}{{ site_description }}{% endblock %}">
+{% if site_verification %}<meta name="google-site-verification" content="{{ site_verification }}">{% endif %}
+{% block robots %}{% endblock %}
 <meta property="og:site_name" content="github新聞">
 <meta property="og:type" content="{% block og_type %}website{% endblock %}">
 <meta property="og:title" content="{{ self.title() }}">
 <meta property="og:description" content="{{ self.description() }}">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-{% if base_url %}
+{% if base_url and path is not none %}
 <link rel="canonical" href="{{ base_url }}{{ path }}">
 <meta property="og:url" content="{{ base_url }}{{ path }}">
 <meta property="og:image" content="{{ base_url }}og_image.png?v={{ asset_v['og_image.png'] }}">
@@ -33,6 +35,8 @@
 <link rel="icon" type="image/png" href="{{ root }}favicon_light.png?v={{ asset_v['favicon_light.png'] }}" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/png" href="{{ root }}favicon_dark.png?v={{ asset_v['favicon_dark.png'] }}" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="{{ root }}favicon_light.png?v={{ asset_v['favicon_light.png'] }}">
+{# 構造化データ（schema.org の JSON-LD）。ページごとに（0035） #}
+{% block jsonld %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
 {% set header_day = page.date if page is defined else latest_day %}
@@ -62,7 +66,11 @@
 </main>
 <footer class="site">
   GitHub Trending（全言語の日次・週次・月次）を日本語で要約しています。要約は Claude Code が書いたもので、誤りを含むことがあります。
-  {% if base_url %}<a class="feed-link" href="{{ root }}feed.xml">RSS（Atom）で購読する</a>{% endif %}
+  <span class="footer-links">
+    <a href="{{ root }}about/">github新聞について</a>
+    <a href="{{ root }}archive/">過去の日</a>
+    {% if base_url %}<a href="{{ root }}feed.xml">RSS（Atom）で購読する</a>{% endif %}
+  </span>
 </footer>
 </div>
 <script>

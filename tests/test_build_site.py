@@ -277,3 +277,53 @@ def test_briefs_from_rank_10_and_top_figure(tmp_path):
     # トップ記事だけに、スターの推移の図
     assert index.count('class="top-figure"') == 1
     assert 'src="https://api.star-history.com/chart?repos=o/r&amp;type=date"' in index
+
+
+def test_site_verification_from_env(tmp_path, monkeypatch):
+    monkeypatch.delenv("GOOGLE_SITE_VERIFICATION", raising=False)
+    out = build(Config(), make_store(tmp_path), tmp_path / "site")
+    assert "google-site-verification" not in (out / "index.html").read_text()  # 値がなければ出さない
+
+    monkeypatch.setenv("GOOGLE_SITE_VERIFICATION", "abc123")
+    out = build(Config(), make_store(tmp_path), tmp_path / "site2")
+    assert '<meta name="google-site-verification" content="abc123">' in (out / "index.html").read_text()
+
+
+def test_about_and_404_pages(tmp_path):
+    out = build(Config(site_base_url="https://example.com/"), make_store(tmp_path), tmp_path / "site")
+    about = (out / "about/index.html").read_text()
+    assert "<title>github新聞とは｜GitHub Trending を毎朝日本語で要約</title>" in about
+    assert '<link rel="canonical" href="https://example.com/about/">' in about
+    assert '"@type": "AboutPage"' in about
+    assert "<b>1</b> 件のリポジトリを解説" in about and 'href="../r/o/r/"' in about  # 最近の解説
+    assert "https://example.com/about/" in (out / "sitemap.xml").read_text()
+    assert 'href="about/"' in (out / "index.html").read_text()  # フッターから入れる
+
+    # 404：検索エンジンに載せない。どの深さでも出るので、リンクは根からの絶対パス。canonical は出さない
+    notfound = (out / "404.html").read_text()
+    assert '<meta name="robots" content="noindex">' in notfound
+    assert 'href="/archive/"' in notfound and 'rel="canonical"' not in notfound
+    assert "/404" not in (out / "sitemap.xml").read_text()
+
+
+def test_repo_page_seo(tmp_path):
+    import json
+    import re
+
+    store = make_store(tmp_path)
+    store.save_summary(dict(SUMMARY, repo="a/b", what="別の CLI。", tags=["CLI"], summarized_at="2026-10-01"))
+    store.save_summary(dict(SUMMARY, repo="c/d", what="別の分野。", tags=["Web"], summarized_at="2026-10-02"))
+    out = build(Config(site_base_url="https://example.com/"), store, tmp_path / "site")
+    repo = (out / "r/o/r/index.html").read_text()
+
+    assert "<title>o/r とは：HTTP の負荷試験 CLI | github新聞</title>" in repo
+    assert '<meta property="article:published_time" content="2026-09-30">' in repo
+    lds = [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', repo, re.S)]
+    article = next(x for x in lds if x["@type"] == "TechArticle")
+    assert article["url"] == "https://example.com/r/o/r/" and article["datePublished"] == "2026-09-30"
+    assert article["about"]["codeRepository"] == "https://github.com/o/r"
+    assert any(x["@type"] == "BreadcrumbList" for x in lds)
+
+    # 同じ分野（先頭のタグ CLI）のほかの記事だけ
+    related = re.search(r'<nav class="related".*?</nav>', repo, re.S).group(0)
+    assert 'href="../../../r/a/b/"' in related and "c/d" not in related and "r/o/r/" not in related

@@ -40,6 +40,9 @@ jobs:
         run: python -m github_trending validate
 
       - name: HTML を作る
+        # Google Search Console の所有確認のタグの値（0035）。秘密ではないので Secrets ではなく Variables に置く
+        env:
+          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
         run: python -m github_trending build
 
       - name: Cloudflare Pages に公開する

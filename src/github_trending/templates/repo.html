@@ -1,7 +1,16 @@
 {% extends "base.html" %}
-{% block title %}{{ s.repo }} | github新聞{% endblock %}
+{# 題は「owner/name とは：what」。「〇〇 とは」で探す人に見つけてもらうため（0035） #}
+{% block title %}{{ s.repo }} とは：{{ s.what | headline | replace("`", "") }} | github新聞{% endblock %}
 {% block description %}{{ s.what | headline }}。{{ s.short | replace("`", "") }}{% endblock %}
 {% block og_type %}article{% endblock %}
+{% block jsonld %}
+<meta property="article:published_time" content="{{ s.summarized_at }}">
+<meta property="article:modified_time" content="{{ s.summarized_at }}">
+{% for t in s.tags or [] %}<meta property="article:tag" content="{{ t }}">
+{% endfor %}
+{% if jsonld %}{% for ld in jsonld %}<script type="application/ld+json">{{ ld | tojson }}</script>
+{% endfor %}{% endif %}
+{% endblock %}
 {% block main %}
 {% set conf = {"high": "高", "medium": "中", "low": "低"}[s.confidence] %}
 <article class="detail">
@@ -78,5 +87,17 @@
       {% if item and item.description %}<dt>作者による説明</dt><dd class="orig" lang="en">{{ item.description }}</dd>{% endif %}
     </dl>
   </aside>
+
+  {% if related %}
+  {# 同じ分野（先頭のタグ）の、ほかのリポジトリの解説。新しい順に（0035） #}
+  <nav class="related" aria-label="同じ分野の記事">
+    <h2>同じ分野の記事<small>{{ s.tags[0] }}</small></h2>
+    <ul>
+      {% for x in related %}
+      <li><a href="{{ root }}r/{{ x.repo }}/"><span class="related-title">{{ x.repo | repo_title }}</span><span class="related-dek">{{ x.what | headline }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
 </article>
 {% endblock %}

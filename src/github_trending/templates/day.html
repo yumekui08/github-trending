@@ -4,6 +4,12 @@
 {% set period_name = dict(period_name, daily="本日") if is_top else period_name %}
 {# タブの題：トップは「github新聞」だけ（base.html の既定）、日付を指定したページは「github新聞（26/10/02）」（0026） #}
 {% block title %}{% if is_top %}{{ super() }}{% else %}github新聞（{{ page.date[2:].replace("-", "/") }}）{% if page.period != "daily" %} {{ period_name[page.period] }}{% endif %}{% endif %}{% endblock %}
+{% block jsonld %}
+{% if is_top and page.period == "daily" and base_url %}
+{# トップ：サイトそのものの構造化データ（0035） #}
+<script type="application/ld+json">{{ {"@context": "https://schema.org", "@type": "WebSite", "name": "github新聞", "url": base_url, "inLanguage": "ja", "description": site_description} | tojson }}</script>
+{% endif %}
+{% endblock %}
 {% block description %}{{ page.date | ja_date }}の GitHub Trending（{{ period_name[page.period] }}）{{ page.cards | length }}件を日本語で要約。{% for c in page.cards[:3] if c.summary %}{{ c.repo }}：{{ c.summary.what | headline }}。{% endfor %}{% endblock %}
 {% set field_title = {"daily": ("本日の分野" if is_top else "この日の分野"), "weekly": "今週の分野", "monthly": "今月の分野"}[page.period] %}
 {% block main %}

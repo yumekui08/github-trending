@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{# サイトの説明のページ。検索からの入り口にもなるよう、何のサイトかを最初に書く（0035） #}
+{% block title %}github新聞とは｜GitHub Trending を毎朝日本語で要約{% endblock %}
+{% block description %}github新聞は、GitHub Trending（日次・週次・月次）に上がったリポジトリを毎朝集め、README などをもとに日本語で要約するサイトです。できること・使い方・注意点まで、英語を読まずにざっと掴めます。{% endblock %}
+{% block body_class %}narrow{% endblock %}
+{% block jsonld %}
+{% if base_url %}<script type="application/ld+json">{{ {"@context": "https://schema.org", "@type": "AboutPage", "name": "github新聞とは", "url": base_url ~ "about/", "inLanguage": "ja", "isPartOf": {"@type": "WebSite", "name": "github新聞", "url": base_url}} | tojson }}</script>{% endif %}
+{% endblock %}
+{% block main %}
+<article class="about-page">
+  <header class="page-title">
+    <h1>github新聞とは</h1>
+    <p>GitHub Trending を、毎朝日本語で。</p>
+  </header>
+
+  <p class="about-lead">github新聞は、<a href="https://github.com/trending">GitHub Trending</a> に上がったリポジトリを毎朝集めて、日本語で要約するサイトです。いま話題のリポジトリが「何をするものか」「どう使うのか」「何に気をつけるか」を、英語の README を読まずにざっと掴めます。</p>
+
+  <section>
+    <h2>なぜ作ったか</h2>
+    <p>GitHub Trending には毎日、新しいツールやライブラリが上がってきます。追いかけたいけれど、英語の README を毎日いくつも読むのはつらい。そこで、日本語でざっと中身を知り、気になったものだけ原文を読みに行けるようにしました。</p>
+  </section>
+
+  <section>
+    <h2>読めるもの</h2>
+    <ul>
+      <li><a href="{{ root }}">今日の紙面</a>：その日の Trending を順位どおりに。日次のほか、週次・月次のランキングも</li>
+      <li>リポジトリごとの解説：できること、使い方、活用できそうな場面、向いている人、似ているもの、技術、注意点、スターの推移</li>
+      <li><a href="{{ root }}archive/">過去の日</a>：記録を始めた日からの紙面</li>
+      {% if base_url %}<li><a href="{{ root }}feed.xml">RSS（Atom）</a>：新しい解説をフィードリーダーで</li>{% endif %}
+    </ul>
+    {% if n_repos %}<p class="about-stats">これまでに <b>{{ "{:,}".format(n_repos) }}</b> 件のリポジトリを解説し、<b>{{ n_days }}</b> 日分の紙面を残しています{% if first_day %}（{{ first_day | ja_date }}から）{% endif %}。</p>{% endif %}
+  </section>
+
+  <section>
+    <h2>どうやって作っているか</h2>
+    <ol>
+      <li>毎朝、GitHub Trending（日次・週次・月次）のページを読み、初めて上がったもの・続けて上がっているもの・久しぶりに戻ってきたものを分けます</li>
+      <li>まだ解説していないリポジトリについて、GitHub API でリポジトリの情報、README、ファイルの構成などを集めます</li>
+      <li>集めた材料を AI（Claude Code）が読み、日本語で要約します</li>
+      <li>静的なサイトとして公開し、Discord にも届けます</li>
+    </ol>
+    <p>要約では、README の宣伝文句をそのまま訳さないこと、分からないことは書かないこと、推測は推測と書くことを決まりにしています。材料が少ないものには「情報が少ない」と印を付け、解説ごとに「確かさ」（高・中・低）を添えています。同じリポジトリは一度解説したら使い回し、90日たってまた上がってきたら書き直します。</p>
+  </section>
+
+  <section>
+    <h2>紙面の見方</h2>
+    <ul>
+      <li>記事は Trending の順位どおり。1位はトップ記事として大きく、10位からは「短信」として短く並べます</li>
+      <li>記事の右上の印：<i class="mark mark-new">新</i> 初めてランク入り、<i class="mark mark-continuing">続</i> 前回から継続、<i class="mark mark-returning">再</i> 圏外から再びランク入り。<span class="move up">▲</span><span class="move down">▼</span> は前回からの順位の変化</li>
+      <li>「本日の分野」は、その日の記事に多い分野です</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>ご注意</h2>
+    <p>要約は AI が書いたもので、誤りを含むことがあります。使う前には、リポジトリの原文（GitHub）を確かめてください。このサイトは GitHub とは関係のない、個人のサイトです。</p>
+    <p>サイトを作っている仕組みは <a href="https://github.com/koizumib/github-trending">GitHub で公開</a>しています。</p>
+  </section>
+
+  {% if recent %}
+  <section>
+    <h2>最近の解説</h2>
+    <ul class="about-recent">
+      {% for x in recent %}
+      <li><a href="{{ root }}r/{{ x.repo }}/"><span class="related-title">{{ x.repo | repo_title }}</span><span class="related-dek">{{ x.what | headline }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <p class="about-cta"><a class="button" href="{{ root }}">今日の紙面を読む</a></p>
+</article>
+{% endblock %}

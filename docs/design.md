@@ -172,6 +172,8 @@ routine が従う手順は `docs/routine.md` に書く。routine のプロンプ
 /d/2026-09-30/             日ごとのページ（/d/日付/weekly/、/d/日付/monthly/ も）
 /r/owner/name/             リポジトリの詳しいページ
 /archive/                  過去の日の一覧
+/about/                    github新聞の説明（検索からの入り口。0035）
+/404.html                  見つからない URL のページ（noindex）
 /feed.xml                  Atom フィード（要約1件を1記事、新しい順に50件）
 /sitemap.xml  /robots.txt  検索エンジン向け
 ```
@@ -196,10 +198,11 @@ routine が従う手順は `docs/routine.md` に書く。routine のプロンプ
 - トップ記事と詳しいページの本文は、書き出しを大きくする。日本語で始まるなら1文字目、英字で始まるなら最初の単語（10文字まで）（0015、0026）
 - CSS とロゴの URL には、中身から作った印（`?v=8桁`）を付け、変更がキャッシュに邪魔されずに届くようにする（0014）
 - ライトの背景は新聞紙のように、少し青みがかった薄いグレーに、紙の写真から取り出した凹凸の質感（`paper_texture.webp`）を soft-light で薄く重ねる（0012、0018）
-- タブの題：トップは「github新聞」、日付を指定したページは「github新聞（26/10/02）」（週次・月次は後ろに期間）、詳しいページは「owner/name | github新聞」（0026）
+- タブの題：トップは「github新聞」、日付を指定したページは「github新聞（26/10/02）」（週次・月次は後ろに期間）、詳しいページは「owner/name とは：what | github新聞」（0026、0035）、説明のページは「github新聞とは｜GitHub Trending を毎朝日本語で要約」
 - 要約のある記事は、どこを押しても詳しいページへ行く（0025）
 - favicon は明るい画面用（墨色）と暗い画面用（白）を出し分ける（0025）
 - 検索エンジンとリンクのカード（0027）：各ページに description、canonical、OGP（og:title・og:description・og:image など）、`twitter:card`。OGP の画像は題字を紙の色に置いた 1200×630 の `og_image.png`。絶対 URL は `site_base_url` から作り、`site_base_url` がないときは canonical・og:url・og:image・sitemap・フィードを出さない
+- 検索に出るように（0035）：構造化データ（JSON-LD）を、トップは `WebSite`、詳しいページは `TechArticle`（リポジトリを `SoftwareSourceCode` として）とパンくず、説明のページは `AboutPage`。詳しいページの末尾に「同じ分野の記事」（先頭のタグが同じ解説を新しい順に5件）。全ページのフッターに「github新聞について」「過去の日」「RSS」。環境変数 `GOOGLE_SITE_VERIFICATION` があれば、全ページに Search Console の所有確認のタグ
 - 右上のボタンでダーク／ライトを切り替える（初めは OS の設定、選んだものはブラウザに覚える）。JavaScript はこのためだけの数行（0003）
 
 ## 7. 通知（Discord Webhook）
@@ -230,6 +233,7 @@ routine が従う手順は `docs/routine.md` に書く。routine のプロンプ
 
 ### GitHub（リポジトリ yumekui08/github-trending、公開）
 - Secrets：`DISCORD_WEBHOOK_URL`、`CLOUDFLARE_API_TOKEN`（Cloudflare Pages の編集権限だけ）、`CLOUDFLARE_ACCOUNT_ID`。GitHub API の鍵は Actions が自動で用意する `GITHUB_TOKEN` を使う
+- Variables（秘密ではない設定）：`GOOGLE_SITE_VERIFICATION`（Search Console の所有確認のタグの値。0035）。手元では `.env` に書く
 - Pages：使わない（0027 でやめた。Settings → Pages は無効にする）
 
 ### Cloudflare

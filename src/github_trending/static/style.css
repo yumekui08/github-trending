@@ -419,7 +419,8 @@ footer.site::before {
   content: ""; position: absolute; top: 0; left: 12px; right: 12px;
   border-top: 2px solid var(--rule-strong);
 }
-footer.site .feed-link { display: inline-block; margin-top: 6px; color: var(--muted); }
+footer.site .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 16px; margin-top: 6px; }
+footer.site .footer-links a { color: var(--muted); }
 
 /* ---- PC：2段組み（左 → 右 → 次の行の順）、段のあいだに縦の罫線（0016） ---- */
 @media (min-width: 900px) {
@@ -564,4 +565,35 @@ footer.site .feed-link { display: inline-block; margin-top: 6px; color: var(--mu
 @media (min-width: 1360px) {
   .briefs ol { columns: 3; }
 }
+
+/* ---- 詳しいページの「同じ分野の記事」と、説明のページ（0035） ---- */
+.related { margin-top: 30px; }
+.related h2, .about-page h2 {
+  margin: 0 0 4px; padding-bottom: 5px; font-size: 14px; letter-spacing: 0.14em;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.related h2 small { margin-left: 10px; font-size: 12px; font-weight: 400; letter-spacing: 0.04em; color: var(--muted); }
+.related ul, .about-recent { list-style: none; margin: 0; padding: 0; }
+.related li, .about-recent li { border-bottom: 1px solid var(--rule); }
+.related a, .about-recent a { display: block; padding: 8px 0; color: var(--ink); }
+.related a:hover, .about-recent a:hover { text-decoration: none; }
+.related a:hover .name, .about-recent a:hover .name { text-decoration: underline; text-underline-offset: 3px; }
+.related-title { display: block; font-family: var(--font-headline); font-weight: 700; font-size: 17px; line-height: 1.3; overflow-wrap: anywhere; }
+.related-title .owner { display: inline; font-size: 12px; }
+.related-title .name { display: inline; }
+.related-dek { display: block; font-size: 13.5px; color: var(--muted); }
+@media (min-width: 900px) {
+  .related ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: 44px; }
+}
+
+.about-page section { margin-top: 28px; }
+.about-page p, .about-page li { line-height: 1.9; }
+.about-page ul, .about-page ol { padding-left: 1.3em; }
+.about-page .about-recent { padding-left: 0; }
+.about-lead { margin: 18px 0 0; font-size: 17.5px; line-height: 1.95; }
+.about-stats { color: var(--muted); font-size: 14px; }
+.about-stats b { color: var(--accent); font-size: 1.15em; }
+.about-page .mark { font-size: 11px; vertical-align: 1px; }
+.about-cta { margin-top: 32px; text-align: center; }
+.notfound-links { margin-top: 18px; line-height: 2.2; }
 
