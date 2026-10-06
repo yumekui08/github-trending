@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import logging
+import os
 from pathlib import Path
 
 from .config import ROOT, load_config, load_dotenv, today
@@ -98,6 +99,9 @@ def cmd_build(args) -> int:
 
     out = build(load_config())
     print(f"{out} に書き出した")
+    # 確認のタグを出したかどうか（値は出さない）。Actions のログで、設定が届いているかを見るため（0035）
+    verified = bool(os.environ.get("GOOGLE_SITE_VERIFICATION", "").strip())
+    print("Search Console の確認タグ：" + ("出した" if verified else "出していない（GOOGLE_SITE_VERIFICATION が空）"))
     return 0
 
 

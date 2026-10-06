@@ -9,7 +9,7 @@
 0027 で、description・canonical・OGP・sitemap・robots.txt・フィードはすでに出している。
 
 ## 決定
-- **所有確認のタグ**：環境変数 `GOOGLE_SITE_VERIFICATION` に値があれば、全ページの `<head>` に `<meta name="google-site-verification" content="値">` を出す。なければ出さない。手元は `.env`、Actions は Variables（Settings → Secrets and variables → Actions → Variables）の `GOOGLE_SITE_VERIFICATION` を `daily.yml` の「HTML を作る」に渡す。HTML に出る値で秘密ではないので、Secrets ではなく Variables に置く
+- **所有確認のタグ**：環境変数 `GOOGLE_SITE_VERIFICATION` に値があれば、全ページの `<head>` に `<meta name="google-site-verification" content="値">` を出す。なければ出さない。手元は `.env`、Actions は Variables（Settings → Secrets and variables → Actions → Variables）の `GOOGLE_SITE_VERIFICATION` を `daily.yml` の「HTML を作る」に渡す。HTML に出る値で秘密ではないので、Secrets ではなく Variables に置く。どちらに登録しても動くよう、Variables になければ Secrets の同じ名前から読む。`build` は確認のタグを出したかどうかをログに1行出す（値は出さない）
 - **説明のページ `/about/`**：題は「github新聞とは｜GitHub Trending を毎朝日本語で要約」。何のサイトか、なぜ作ったか、読めるもの、作り方（取得 → 材料集め → AI の要約 → 公開）と要約の決まり、紙面の見方、注意（AI の要約で誤りがありうる、GitHub とは無関係）、これまでの件数、最近の解説6件。全ページのフッターから入れる。sitemap に載せる
   - URL は `/welcome/` や `/home/` ではなく、こうしたページで広く使われる `/about/` にした
   - トップ（`/`）の題は 0026 のとおり「github新聞」のまま。説明の言葉は `/about/` が受け持つ
