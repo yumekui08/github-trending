@@ -1,0 +1,36 @@
+{
+  "repo": "msitarzewski/agency-agents",
+  "summarized_at": "2026-10-06",
+  "short": "職種ごとの AI agent 用プロンプト（Markdown）を大量に集めた集合。Claude Code、Cursor、Gemini CLI などへ install スクリプトで入れられる。ソフトウェア本体ではなく、プロンプト集。",
+  "what": "職種別の AI agent プロンプトを集めたリポジトリ",
+  "can_do": [
+    "engineering、design、marketing、security、sales など多数の division に分けた agent 定義（Markdown）を収録",
+    "各 agent ファイルは役割、性格、ワークフロー、成果物の例、成功指標を記述（`engineering-sre.md` で確認）",
+    "`scripts/install.sh` で Claude Code（`~/.claude/agents/`）、Cursor、Gemini CLI、Codex など多くのツールへ導入",
+    "`--division` や `--agent` で必要なチームだけを選んで入れる",
+    "`scripts/convert.sh` で各ツール向けの形式に変換"
+  ],
+  "how_to_use": "`./scripts/install.sh --tool claude-code` で全 agent を Claude Code に入れる。一部だけなら `cp engineering/*.md ~/.claude/agents/`。入れたあと、Claude Code のセッションで「Frontend Developer mode にして」のように指示する。",
+  "use_cases": [
+    "SRE、Network Engineer、Incident Response Commander などの agent を Claude Code に入れ、運用の場面でレビューや整理役に使えそう",
+    "自分用の agent 定義を書くときの書式の参考にできそう"
+  ],
+  "for_whom": "Claude Code などで役割別の agent を手早く用意したい人、agent の書き方の実例を見たい人",
+  "similar": [
+    "ComposioHQ/awesome-claude-skills：Claude 向けの skill 集。こちらは役割（persona）別の agent 定義が中心"
+  ],
+  "tech": "Markdown（frontmatter 付き）が中心で、導入スクリプトは Shell。MIT。",
+  "caveats": "中身はプロンプトで、「production-ready」「battle-tested」は README の宣伝文句。効果や品質は材料からは確認できない。README は同じ作者のデスクトップアプリ（agencyagents.app）への導入も勧める。agent 数が多く、全部を入れるとコンテキストや選択に影響しうると思われる。個々の agent の中身は SRE の1件しか読んでいない。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "engineering/engineering-sre.md"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と構成、SRE の agent 1件を読んだ。ほかの agent や install スクリプトの中身は読んでいない。"
+}

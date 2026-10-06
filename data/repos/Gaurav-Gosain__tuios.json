@@ -1,0 +1,40 @@
+{
+  "repo": "Gaurav-Gosain/tuios",
+  "summarized_at": "2026-10-06",
+  "short": "tmux に近い terminal multiplexer 兼 tiling window manager。Go 製。daemon でセッションを保ち、ペインで動く coding agent の状態を Inbox にまとめる点が特徴。",
+  "what": "coding agent の状態を一覧できる terminal multiplexer",
+  "can_do": [
+    "vim 風の modal 操作で複数のペインとワークスペースを扱う。BSP、master-stack、scrolling の各 tiling に対応",
+    "daemon が常駐し、再起動後もセッションを保つ。detach/attach や、ほかのマシンのセッションへの接続も可能",
+    "Claude Code、opencode、Qwen Code などの agent の承認待ち、質問、エラー、完了を Inbox（Prefix+i）に集約。キー1つで許可の応答もできる",
+    "`tuios ask-human` や `tuios send-agent-message` で、agent から人や agent へ質問・連絡",
+    "tmux を操作するツール（Claude Code の agent teams など）向けの tmux shim と、kitty graphics protocol の通過"
+  ],
+  "how_to_use": "`brew install tuios`、`go install github.com/Gaurav-Gosain/tuios/cmd/tuios@latest`、`docker run -it --rm ghcr.io/gaurav-gosain/tuios:latest` などで入れて `tuios` を起動する。インストール不要の体験版が tuios.dev/learn にある（WebAssembly 版）。",
+  "use_cases": [
+    "複数の Claude Code を別ペインで走らせ、承認待ちを Inbox でまとめて処理する用途に使えそう",
+    "tmux の代わりとして、リモートのビルド機などのセッションを横断して扱う用途に使えそう",
+    "agent の状態に応じて hooks でシェルコマンドを動かす自動化に使えそう"
+  ],
+  "for_whom": "terminal 中心で作業し、複数の coding agent を並行して動かしている人",
+  "similar": [
+    "tmux：multiplexer としての基本機能は同じ。こちらは agent の状態把握と Inbox が加わっている",
+    "Zellij：tiling や workspace を持つ Rust 製の multiplexer。agent 向けの機能は材料からは分からない"
+  ],
+  "tech": "Go 1.26.6 以上。Charm の Bubble Tea v2、Lipgloss v2 を使用。Linux、macOS、Windows、FreeBSD、OpenBSD のバイナリがある。ghostty の emulator 版もある。Docker イメージあり。MIT。",
+  "caveats": "バージョンが 0.8.5 でまだ 1.0 前。release note に breaking changes と移行手順があり、emulator が行を reflow するようになるなど挙動が変わる。agent の承認を1キーで通せる機能は、誤操作や権限付与の扱いに注意が要ると思われる。他マシンの操作は `[hosts]` の policy で制御される。クローンはしていない。",
+  "tags": [
+    "CLI",
+    "開発ツール",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:go.mod",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release の冒頭を読んだ。docs/ の中身（AGENT_STATE.md など）は読んでおらず、agent 連携の詳細は未確認。"
+}

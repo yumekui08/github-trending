@@ -1,0 +1,37 @@
+{
+  "repo": "M-Abozaid/esp32-c3-adblock",
+  "summarized_at": "2026-10-06",
+  "short": "約2ドルの ESP32-C3 で動く DNS 広告ブロッカー。ブロックリストを 40bit の hash にして flash に置き、二分探索で引くので RAM は約50KB で済む。Pi-hole の小型版のような用途。",
+  "what": "ESP32-C3 で動かす DNS sinkhole 型の広告ブロッカー",
+  "can_do": [
+    "UDP の DNS クエリを受け、リストに載るドメイン（サブドメイン含む）には 0.0.0.0 を返し、それ以外は上流 resolver へ転送",
+    "PSRAM なしの 4MB flash で約25万ドメインまで保持（OTA 併用時）。単一アプリ構成なら537k の大きいリストも載る",
+    "Web ダッシュボード（`c3adblock.local`）で統計の確認、ドメインの追加・解除、WiFi 設定",
+    "ブロックリストとファームウェアを WiFi 経由で更新。リストは毎週月曜に Actions が再生成し、固定 URL から自動取得可能",
+    "`tools/build_blocklist.py` で hosts 形式、ドメイン一覧、AdGuard 形式のリストから独自のブロックリストを作る"
+  ],
+  "how_to_use": "`cp src/secrets.example.h src/secrets.h` で `WEB_USER`、`WEB_PASS`、`OTA_PASS` を設定し、`python3 tools/build_blocklist.py data/blocklist.bin` でリストを作る。続けて `pio run -t upload` と `pio run -t uploadfs` で書き込む。最後に端末の DNS をこの C3 の IP に向け、`dig @<c3-ip> doubleclick.net` で 0.0.0.0 が返るか確かめる。",
+  "use_cases": [
+    "家庭やラボの LAN で、router の USB ポートに挿して2台目の DNS resolver として使えそう",
+    "flash 上の hash 表を二分探索する設計は、メモリの小さい IoT 機器でリストを引く実装の参考になりそう"
+  ],
+  "for_whom": "Pi-hole を小さく安い機器で動かしたい人、組み込みでメモリを節約する設計に関心のあるエンジニア",
+  "similar": [
+    "Pi-hole：用途は同じ。こちらは Linux 機ではなく ESP32-C3 単体で動く",
+    "AdGuard Home：DNS フィルタの機能は近い。こちらは機能が少なく、ハードも限られる"
+  ],
+  "tech": "C++（Arduino フレームワーク、PlatformIO）。対象は ESP32-C3（C3 SuperMini で確認）で、通常の ESP32 もビルドできるがコンパイル確認のみ。ブロックリスト生成は Python。MIT。",
+  "caveats": "作成は2026年6月で新しい。管理画面は HTTP のみで、Basic Auth は LAN 内での信頼を前提にした簡易的な保護。盗聴には耐えない。secrets.h のパスワードを初期値のまま使うと既知のパスワードになる。hash 方式のため衝突で誤ブロックが起こりうる（537k で1件と README にある）。regex やワイルドカードのルールは使えない。DNS が単一障害点になる。",
+  "tags": [
+    "ネットワーク",
+    "セキュリティ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

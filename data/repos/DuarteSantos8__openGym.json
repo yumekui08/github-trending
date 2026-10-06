@@ -1,0 +1,41 @@
+{
+  "repo": "DuarteSantos8/openGym",
+  "summarized_at": "2026-10-06",
+  "short": "筋トレと体重を記録するセルフホストの Web アプリ。docker compose で自分のサーバーに立て、passkey でログインする。FitNotes・Strong・Hevy からの移行にも対応。",
+  "what": "筋トレと体重を記録するセルフホストの PWA",
+  "can_do": [
+    "曜日ごとのルーティン作成。1,324種の種目ライブラリと、Push/Pull/Legs など4つの初期プラン",
+    "ガイド付きのトレーニング記録（スーパーセット、ウォームアップ、ドロップセット、休憩タイマー、PR 検出）",
+    "推定 1RM、年間ヒートマップ、筋肉ごとの量・回復・未実施を示す body map、体重グラフ",
+    "FitNotes / Strong / Hevy / Apple Health の取り込みと、JSON での全データ書き出し",
+    "passkey ログインと、複数端末間の同期（同時編集はマージ）"
+  ],
+  "how_to_use": "`docker compose pull && docker compose up -d` で起動する。初回に種目の画像・GIF（約140MB）を別リポジトリから取得する。詳細は docs/SELF_HOSTING.md。",
+  "use_cases": [
+    "家の Docker 環境にホストして、自分のトレーニング記録を外部サービスに預けずに管理する用途に使えそう",
+    "既存アプリの履歴を取り込んで、セルフホストへ移行する用途に使えそう",
+    "MCP server を使い、Claude Desktop などから記録を質問する用途に使えそう（README の記述による。動作は未確認）"
+  ],
+  "for_whom": "筋トレの記録を自分のサーバーに置きたいセルフホスト派の人",
+  "similar": [
+    "Hevy、Strong：記録アプリとして近い。こちらは自前ホストでデータを手元に置く",
+    "wger：同じくセルフホストできる運動記録アプリ。機能構成は異なると思われる"
+  ],
+  "tech": "Node.js の API（データは ./data に JSON で保存）と React + Vite のフロントエンド、nginx。Docker Compose で動作し、amd64 と arm64 のイメージがある。AGPL-3.0。",
+  "caveats": "作成は2026年7月で新しい。ロードマップでは v1.4.0 でデータベース保存へ移行し、互換性が切れる予定。種目の画像・GIF は別データセット由来で © Gym visual。再利用には別途ライセンスが要る（NOTICE.md）。AI コーチと MCP server は任意機能で、外部プロバイダの設定が要る。",
+  "tags": [
+    "セルフホスト",
+    "Web",
+    "モバイル"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

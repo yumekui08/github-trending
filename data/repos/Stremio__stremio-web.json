@@ -1,0 +1,37 @@
+{
+  "repo": "Stremio/stremio-web",
+  "summarized_at": "2026-10-06",
+  "short": "動画ストリーミングアプリ Stremio の公式 Web UI。React 製で、状態管理は Rust 製の stremio-core（WASM）に任せる。addon から映画やドラマの一覧と配信元を取得する。",
+  "what": "Stremio の公式 Web UI（React アプリ）",
+  "can_do": [
+    "addon が提供するカタログから映画・ドラマ・チャンネルを探す",
+    "Stremio アカウントでライブラリと視聴中の一覧を端末間で同期",
+    "Chromecast へのキャスト、字幕（addon 提供またはローカル、見た目を変更可）",
+    "キーボードだけで操作できる player",
+    "50以上の言語、PWA としてのインストール"
+  ],
+  "how_to_use": "Node.js 22+ と pnpm 11+ を入れ、`pnpm install && pnpm start` で http://localhost:8080 に開発サーバーが立つ。Docker は `docker build -t stremio-web .` と `docker run -p 8080:8080 stremio-web`。",
+  "use_cases": [
+    "Stremio の Web 版を自分で build して、社内や自宅の環境にホストする用途に使えそう",
+    "Rust core を WASM で Web Worker に載せ、React UI と分ける構成の実例として読めそう"
+  ],
+  "for_whom": "Stremio の UI を改造・自前ビルドしたい人、または WASM core と React を組み合わせる構成を見たい人",
+  "similar": [
+    "Jellyfin、Plex：メディアセンターとして近い。Stremio は自前のメディアを配信せず、addon が配信元を示す方式"
+  ],
+  "tech": "JavaScript（React 18、webpack、jest）。`@stremio/stremio-core-web`（Rust→WASM）と `@stremio/stremio-video` に依存する。配信は express の `http_server.js`。Docker（Node 22 alpine）で動く。GPL-2.0。",
+  "caveats": "UI のみで、中身の多くは別リポジトリの stremio-core と、Stremio のアカウント・API に依存する。単体で完結するものではない。バージョンは 5.0.0-beta.41 で beta。何が視聴できるかは addon 次第で、addon の内容や著作権の扱いは材料から分からない。",
+  "tags": [
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
