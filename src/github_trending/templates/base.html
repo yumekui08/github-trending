@@ -7,7 +7,8 @@
 {# 検索エンジンと、Discord・X などに URL を貼ったときのカード（OGP）。絶対 URL は site_base_url から（0027） #}
 <meta name="description" content="{% block description %}{{ site_description }}{% endblock %}">
 {% if site_verification %}<meta name="google-site-verification" content="{{ site_verification }}">{% endif %}
-{% block robots %}{% endblock %}
+{# 検索に載せないページ（日付を指定した一覧など。0037）。リンクはたどってもらう #}
+{% block robots %}{% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}{% endblock %}
 <meta property="og:site_name" content="github新聞">
 <meta property="og:type" content="{% block og_type %}website{% endblock %}">
 <meta property="og:title" content="{{ self.title() }}">
@@ -43,7 +44,7 @@
 <div class="paper">
 <header class="site">
   <div class="nameplate">
-    <a class="brand" href="{{ root }}" aria-label="github新聞 トップへ">
+    <a class="brand" href="{{ root or './' }}" aria-label="github新聞 トップへ">
       <img class="logo logo-light" src="{{ root }}logo_light.png?v={{ asset_v['logo_light.png'] }}" alt="github新聞" width="1040" height="184">
       <img class="logo logo-dark" src="{{ root }}logo_dark.png?v={{ asset_v['logo_dark.png'] }}" alt="" width="1040" height="184">
     </a>
@@ -69,6 +70,7 @@
   <span class="footer-links">
     <a href="{{ root }}about/">github新聞について</a>
     <a href="{{ root }}archive/">過去の日</a>
+    <a href="{{ root }}t/">分野別</a>
     {% if base_url %}<a href="{{ root }}feed.xml">RSS（Atom）で購読する</a>{% endif %}
   </span>
 </footer>

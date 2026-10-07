@@ -143,6 +143,9 @@ def _env() -> Environment:
     env.filters["lang_color"] = lang_color
     env.filters["rank_tier"] = rank_tier
     env.filters["star_chart"] = star_chart
+    env.filters["tag_slug"] = tag_slug
+    env.filters["source_label"] = source_label
+    env.globals["summary_time"] = SUMMARY_TIME
     env.globals["brief_from_rank"] = BRIEF_FROM_RANK
     return env
 
@@ -157,6 +160,42 @@ FEED_ENTRIES = 50  # フィードに載せる要約の数（新しい順）
 RELATED_ENTRIES = 5  # 詳しいページの「同じ分野の記事」の数（0035）
 ABOUT_RECENT = 6  # 「github新聞について」のページに出す、最近の解説の数（0035）
 SITE_NAME = "github新聞"
+# 要約を書いた日の時刻。持っていないので、朝7時（日本時間）とする（フィードと同じ。0027、0037）
+SUMMARY_TIME = "T07:00:00+09:00"
+# 分野ごとの一覧ページの URL（/t/英字の名前/）。分野は schemas/summary.schema.json の決まった一覧（0037）
+TAG_SLUGS = {
+    "AI エージェント": "ai-agent", "LLM": "llm", "機械学習": "machine-learning",
+    "音声・画像・動画": "media", "開発ツール": "dev-tools", "CLI": "cli", "エディタ・IDE": "editor",
+    "データベース": "database", "データ処理": "data", "インフラ・運用": "infra",
+    "コンテナ・Kubernetes": "container", "ネットワーク": "network", "セキュリティ": "security",
+    "監視・可観測性": "observability", "Web": "web", "デスクトップアプリ": "desktop", "モバイル": "mobile",
+    "セルフホスト": "self-hosted", "ライブラリ・SDK": "library", "言語・ランタイム": "language",
+    "自動化・ワークフロー": "automation", "ドキュメント・知識管理": "docs", "学習資料": "learning",
+    "ゲーム": "game", "その他": "other",
+}
+# 学習用の AI ボット。Cloudflare が止めているのに合わせ、robots.txt でも断る（検索用のボットは許す。0037）
+AI_TRAINING_BOTS = (
+    "GPTBot", "ClaudeBot", "anthropic-ai", "CCBot", "Bytespider", "Google-Extended", "Applebot-Extended",
+    "meta-externalagent",
+)
+# 「材料」の表示名（0037）。ファイルのパスや manifest:ファイル はそのまま出す
+SOURCE_LABELS = {"meta": "リポジトリ情報", "readme": "README", "tree": "ファイル構成", "release": "リリース"}
+
+
+def tag_slug(tag: str) -> str:
+    return TAG_SLUGS.get(tag, "other")
+
+
+def source_label(source: str) -> str:
+    """要約の材料の、人が読める名前。manifest:pyproject.toml → pyproject.toml（依存の定義）"""
+    if source.startswith("manifest:"):
+        return f"{source.removeprefix('manifest:')}（依存の定義）"
+    return SOURCE_LABELS.get(source, source)
+
+
+def robots_txt(base_url: str) -> str:
+    bots = "".join(f"User-agent: {b}\n" for b in AI_TRAINING_BOTS)
+    return f"{bots}Disallow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: {base_url}sitemap.xml\n"
 SITE_DESCRIPTION = "GitHub Trending（日次・週次・月次）に上がったリポジトリを、毎朝日本語で要約して届ける新聞です。"
 
 
@@ -176,10 +215,15 @@ def related_summaries(summary: dict, ordered: list[dict], limit: int = RELATED_E
 def repo_jsonld(summary: dict, item: dict | None, base_url: str) -> list[dict]:
     """詳しいページの構造化データ（schema.org。0035）：記事と、パンくず。絶対 URL が要るので base_url があるときだけ。"""
     url = f"{base_url}r/{summary['repo']}/"
-    publisher = {"@type": "Organization", "name": SITE_NAME, "url": base_url}
+    when = summary["summarized_at"] + SUMMARY_TIME
+    publisher = {
+        "@type": "Organization", "name": SITE_NAME, "url": base_url,
+        "logo": {"@type": "ImageObject", "url": f"{base_url}logo_light.png", "width": 1040, "height": 184},
+    }
     code = {
         "@type": "SoftwareSourceCode",
         "name": summary["repo"].split("/", 1)[1],
+        "description": headline(summary["what"]),
         "codeRepository": f"https://github.com/{summary['repo']}",
     }
     if item and item.get("language"):
@@ -190,9 +234,9 @@ def repo_jsonld(summary: dict, item: dict | None, base_url: str) -> list[dict]:
         "headline": f"{summary['repo']}：{headline(summary['what'])}",
         "description": summary["short"].replace("`", ""),
         "inLanguage": "ja",
-        "datePublished": summary["summarized_at"],
-        "dateModified": summary["summarized_at"],
-        "author": {"@type": "Organization", "name": f"{SITE_NAME}（Claude Code）"},
+        "datePublished": when,
+        "dateModified": when,
+        "author": {"@type": "Organization", "name": f"{SITE_NAME}（Claude Code）", "url": f"{base_url}about/"},
         "publisher": publisher,
         "mainEntityOfPage": url,
         "url": url,
@@ -200,12 +244,18 @@ def repo_jsonld(summary: dict, item: dict | None, base_url: str) -> list[dict]:
         "keywords": ", ".join(summary.get("tags") or []),
         "about": code,
     }
+    # パンくず：トップ → 主な分野の一覧 → この記事（0037）
+    trail = [(SITE_NAME, base_url)]
+    if summary.get("tags"):
+        tag = summary["tags"][0]
+        trail.append((tag, f"{base_url}t/{tag_slug(tag)}/"))
+    trail.append((summary["repo"], url))
     crumbs = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": SITE_NAME, "item": base_url},
-            {"@type": "ListItem", "position": 2, "name": summary["repo"], "item": url},
+            {"@type": "ListItem", "position": i, "name": name, "item": link}
+            for i, (name, link) in enumerate(trail, start=1)
         ],
     }
     return [article, crumbs]
@@ -344,20 +394,23 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
                 ]
                 html = day_tpl.render(
                     root=depth_root(href), path=href, page=dict(page, tabs=tabs, others=others), nav=nav,
-                    is_top=is_top,
+                    is_top=is_top, noindex=not is_top,
                 )
                 _write(out / href / "index.html", html)
-                urls.append((href, day))
+                # 日付を指定したページは、前の日やトップとほぼ重なるので検索に載せない（noindex。0037）
+                if is_top:
+                    urls.append((href, day))
     if not days:
         _write(out / "index.html", archive_tpl.render(root="", path="", days=[]))
 
     # リポジトリの詳しいページ（要約があるものすべて）。言語やスター数は、いちばん新しく見たときの値
+    # 見た日（seen_on）も添える。スター数が「いつ時点か」を出すため（0037）
     latest_item: dict[str, dict] = {}
     for day in reversed(days):
         for period in ("monthly", "weekly", "daily"):  # 同じ日ならデイリーの値を優先
             page = pages[(day, period)]
             for item in page["cards"] if page else []:
-                latest_item[item["repo"]] = item
+                latest_item[item["repo"]] = dict(item, seen_on=day)
     summaries = []
     for path in sorted((store.dir / "repos").glob("*.json")):
         summary = store.load_summary(path.stem.replace("__", "/", 1))
@@ -374,7 +427,22 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
             related=related_summaries(summary, ordered),
             jsonld=repo_jsonld(summary, item, base_url) if base_url else None,
         ))
-        urls.append((href, summary["summarized_at"]))
+        # 確かさが「低」のものは検索に載せない（noindex。テンプレートで）ので、sitemap にも入れない（0037）
+        if summary["confidence"] != "low":
+            urls.append((href, summary["summarized_at"]))
+
+    # 分野ごとの一覧（0037）：その分野のタグが付いた解説を、新しい順にすべて
+    tag_tpl = env.get_template("tag.html")
+    by_tag = {tag: [x for x in ordered if tag in (x.get("tags") or [])] for tag in TAG_SLUGS}
+    by_tag = {tag: xs for tag, xs in by_tag.items() if xs}
+    for tag, xs in by_tag.items():
+        href = f"t/{tag_slug(tag)}/"
+        _write(out / href / "index.html", tag_tpl.render(root="../../", path=href, tag=tag, entries=xs))
+        urls.append((href, xs[0]["summarized_at"]))
+    tags_sorted = sorted(by_tag.items(), key=lambda kv: (-len(kv[1]), list(TAG_SLUGS).index(kv[0])))
+    _write(out / "t" / "index.html", env.get_template("tags.html").render(root="../", path="t/", tags=tags_sorted))
+    if by_tag:
+        urls.append(("t/", ordered[0]["summarized_at"]))
 
     # サイトの説明のページ（検索からの入り口。0035）
     _write(out / "about" / "index.html", env.get_template("about.html").render(
@@ -397,7 +465,7 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
     # 検索エンジンと RSS リーダー向け。絶対 URL が要るので、site_base_url があるときだけ作る（0027）
     if base_url:
         _write(out / "sitemap.xml", env.get_template("sitemap.xml").render(urls=urls))
-        _write(out / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {base_url}sitemap.xml\n")
+        _write(out / "robots.txt", robots_txt(base_url))
         entries = ordered[:FEED_ENTRIES]
         _write(out / "feed.xml", env.get_template("feed.xml").render(entries=entries))
     return out

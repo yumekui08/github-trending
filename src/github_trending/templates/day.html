@@ -3,7 +3,8 @@
 {% set stars_label = {"daily": "今日", "weekly": "今週", "monthly": "今月"}[page.period] %}
 {% set period_name = dict(period_name, daily="本日") if is_top else period_name %}
 {# タブの題：トップは「github新聞」だけ（base.html の既定）、日付を指定したページは「github新聞（26/10/02）」（0026） #}
-{% block title %}{% if is_top %}{{ super() }}{% else %}github新聞（{{ page.date[2:].replace("-", "/") }}）{% if page.period != "daily" %} {{ period_name[page.period] }}{% endif %}{% endif %}{% endblock %}
+{# トップの題は、検索で何のサイトか分かるよう説明を添える（0026 を 0037 で改めた） #}
+{% block title %}{% if is_top %}github新聞｜GitHub Trending {{ {"daily": "を毎朝日本語で", "weekly": "の週次ランキングを日本語で", "monthly": "の月次ランキングを日本語で"}[page.period] }}{% else %}github新聞（{{ page.date[2:].replace("-", "/") }}）{% if page.period != "daily" %} {{ period_name[page.period] }}{% endif %}{% endif %}{% endblock %}
 {% block jsonld %}
 {% if is_top and page.period == "daily" and base_url %}
 {# トップ：サイトそのものの構造化データ（0035） #}
@@ -39,7 +40,7 @@
   {% if page.fields %}
   <section>
     <h2>{{ field_title }}</h2>
-    <ul class="side-fields">{% for tag, n in page.fields %}<li><span>{{ tag }}</span><b>{{ n }}</b></li>{% endfor %}</ul>
+    <ul class="side-fields">{% for tag, n in page.fields %}<li><a href="{{ root }}t/{{ tag | tag_slug }}/">{{ tag }}</a><b>{{ n }}</b></li>{% endfor %}</ul>
   </section>
   {% endif %}
   {% for o in page.others %}
@@ -83,7 +84,7 @@
 <aside class="field-box" aria-label="分野の内訳">
   <h2>{{ field_title }}</h2>
   <ul>
-    {% for tag, n in page.fields %}<li><span>{{ tag }}</span><b>{{ n }}</b></li>{% endfor %}
+    {% for tag, n in page.fields %}<li><a href="{{ root }}t/{{ tag | tag_slug }}/">{{ tag }}</a><b>{{ n }}</b></li>{% endfor %}
   </ul>
 </aside>
 {% endif %}

@@ -3,9 +3,11 @@
 {% block title %}{{ s.repo }} とは：{{ s.what | headline | replace("`", "") }} | github新聞{% endblock %}
 {% block description %}{{ s.what | headline }}。{{ s.short | replace("`", "") }}{% endblock %}
 {% block og_type %}article{% endblock %}
+{# 確かさが「低」の解説は、材料が少ないので検索には載せない（サイトでは読める。0037） #}
+{% block robots %}{% if s.confidence == "low" %}<meta name="robots" content="noindex, follow">{% endif %}{% endblock %}
 {% block jsonld %}
-<meta property="article:published_time" content="{{ s.summarized_at }}">
-<meta property="article:modified_time" content="{{ s.summarized_at }}">
+<meta property="article:published_time" content="{{ s.summarized_at }}{{ summary_time }}">
+<meta property="article:modified_time" content="{{ s.summarized_at }}{{ summary_time }}">
 {% for t in s.tags or [] %}<meta property="article:tag" content="{{ t }}">
 {% endfor %}
 {% if jsonld %}{% for ld in jsonld %}<script type="application/ld+json">{{ ld | tojson }}</script>
@@ -23,7 +25,7 @@
       <span class="tag {% if s.confidence == 'low' %}warn{% endif %}">確かさ：{{ conf }}</span>
       {% if s.confidence == "low" %}<span class="tag warn">情報が少ない</span>{% endif %}
     </p>
-    {% if s.tags %}<ul class="tags">{% for t in s.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+    {% if s.tags %}<ul class="tags">{% for t in s.tags %}<li><a href="{{ root }}t/{{ t | tag_slug }}/">{{ t }}</a></li>{% endfor %}</ul>{% endif %}
   </header>
 
   <div class="article-body">
@@ -79,10 +81,10 @@
     <p class="actions"><a class="button" href="https://github.com/{{ s.repo }}">GitHub で開く</a></p>
     <dl class="about">
       {% if item and item.language %}<dt>言語</dt><dd><span class="lang"><i style="background: {{ item.language | lang_color }}"></i>{{ item.language }}</span></dd>{% endif %}
-      {% if item and item.stars %}<dt>スター</dt><dd>★ {{ "{:,}".format(item.stars) }}</dd>{% endif %}
+      {% if item and item.stars %}<dt>スター</dt><dd>★ {{ "{:,}".format(item.stars) }}<span class="note">（{{ item.seen_on }} 時点）</span></dd>{% endif %}
       <dt>確かさ</dt><dd>{{ conf }}{% if s.confidence_note %}　<span class="note">{{ s.confidence_note }}</span>{% endif %}</dd>
       <dt>要約した日</dt><dd>{{ s.summarized_at | ja_date }}</dd>
-      <dt>材料</dt><dd>{{ s.sources | join("、") }}</dd>
+      <dt>材料</dt><dd>{{ s.sources | map("source_label") | join("、") }}</dd>
       {% if seen %}<dt>Trending に上がった日</dt><dd>{% for d in seen %}<a href="{{ root }}d/{{ d }}/">{{ d }}</a>{% if not loop.last %}、{% endif %}{% endfor %}</dd>{% endif %}
       {% if item and item.description %}<dt>作者による説明</dt><dd class="orig" lang="en">{{ item.description }}</dd>{% endif %}
     </dl>
@@ -97,6 +99,7 @@
       <li><a href="{{ root }}r/{{ x.repo }}/"><span class="related-title">{{ x.repo | repo_title }}</span><span class="related-dek">{{ x.what | headline }}</span></a></li>
       {% endfor %}
     </ul>
+    <p class="related-more"><a href="{{ root }}t/{{ s.tags[0] | tag_slug }}/">{{ s.tags[0] }}の解説をすべて見る</a></p>
   </nav>
   {% endif %}
 </article>

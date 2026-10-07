@@ -1,0 +1,19 @@
+# Cloudflare Pages が読む、応答のヘッダーの設定（0037）。site/ の根に置かれる
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+# ?v=（中身から作った印）付きで参照するファイルは、中身が変わると URL も変わるので長くキャッシュしてよい
+/style.css
+  Cache-Control: public, max-age=31536000, immutable
+/logo_light.png
+  Cache-Control: public, max-age=31536000, immutable
+/logo_dark.png
+  Cache-Control: public, max-age=31536000, immutable
+/favicon_light.png
+  Cache-Control: public, max-age=31536000, immutable
+/favicon_dark.png
+  Cache-Control: public, max-age=31536000, immutable

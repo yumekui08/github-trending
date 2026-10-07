@@ -173,6 +173,7 @@ routine が従う手順は `docs/routine.md` に書く。routine のプロンプ
 /r/owner/name/             リポジトリの詳しいページ
 /archive/                  過去の日の一覧
 /about/                    github新聞の説明（検索からの入り口。0035）
+/t/  /t/ai-agent/          分野の一覧と、分野ごとの解説の一覧（0037）
 /404.html                  見つからない URL のページ（noindex）
 /feed.xml                  Atom フィード（要約1件を1記事、新しい順に50件）
 /sitemap.xml  /robots.txt  検索エンジン向け
@@ -198,11 +199,12 @@ routine が従う手順は `docs/routine.md` に書く。routine のプロンプ
 - トップ記事と詳しいページの本文は、書き出しを大きくする。日本語で始まるなら1文字目、英字で始まるなら最初の単語（10文字まで）（0015、0026）
 - CSS とロゴの URL には、中身から作った印（`?v=8桁`）を付け、変更がキャッシュに邪魔されずに届くようにする（0014）
 - ライトの背景は新聞紙のように、少し青みがかった薄いグレーに、紙の写真から取り出した凹凸の質感（`paper_texture.webp`）を soft-light で薄く重ねる（0012、0018）
-- タブの題：トップは「github新聞」、日付を指定したページは「github新聞（26/10/02）」（週次・月次は後ろに期間）、詳しいページは「owner/name とは：what | github新聞」（0026、0035）、説明のページは「github新聞とは｜GitHub Trending を毎朝日本語で要約」
+- タブの題：トップは「github新聞｜GitHub Trending を毎朝日本語で」（週次・月次は「…の週次ランキングを日本語で」など。0037）、日付を指定したページは「github新聞（26/10/02）」（週次・月次は後ろに期間）、詳しいページは「owner/name とは：what | github新聞」（0026、0035）、説明のページは「github新聞とは｜GitHub Trending を毎朝日本語で要約」
 - 要約のある記事は、どこを押しても詳しいページへ行く（0025）
 - favicon は明るい画面用（墨色）と暗い画面用（白）を出し分ける（0025）
 - 検索エンジンとリンクのカード（0027）：各ページに description、canonical、OGP（og:title・og:description・og:image など）、`twitter:card`。OGP の画像は題字を紙の色に置いた 1200×630 の `og_image.png`。絶対 URL は `site_base_url` から作り、`site_base_url` がないときは canonical・og:url・og:image・sitemap・フィードを出さない
-- 検索に出るように（0035）：構造化データ（JSON-LD）を、トップは `WebSite`、詳しいページは `TechArticle`（リポジトリを `SoftwareSourceCode` として）とパンくず、説明のページは `AboutPage`。詳しいページの末尾に「同じ分野の記事」（先頭のタグが同じ解説を新しい順に5件）。全ページのフッターに「github新聞について」「過去の日」「RSS」。環境変数 `GOOGLE_SITE_VERIFICATION` があれば、全ページに Search Console の所有確認のタグ
+- 検索に載せる範囲（0037）：日付を指定した一覧（`/d/…`）と、確かさが「低」の解説には `noindex, follow` を付け、sitemap から外す。分野ごとの一覧 `/t/…/` を作り、詳しいページのタグ・「本日の分野」・フッターから入れる。robots.txt は学習用の AI ボット（GPTBot・ClaudeBot など）を断り、ほかは許す。`_headers` でセキュリティのヘッダーと、`?v=` 付きのファイルの長いキャッシュ
+- 検索に出るように（0035）：構造化データ（JSON-LD）を、トップは `WebSite`、詳しいページは `TechArticle`（リポジトリを `SoftwareSourceCode` として。日付は要約した日の 7:00 日本時間。0037）とパンくず（トップ → 主な分野 → 記事）、説明のページは `AboutPage`。詳しいページの末尾に「同じ分野の記事」（先頭のタグが同じ解説を新しい順に5件）。全ページのフッターに「github新聞について」「過去の日」「RSS」。環境変数 `GOOGLE_SITE_VERIFICATION` があれば、全ページに Search Console の所有確認のタグ
 - 右上のボタンでダーク／ライトを切り替える（初めは OS の設定、選んだものはブラウザに覚える）。JavaScript はこのためだけの数行（0003）
 
 ## 7. 通知（Discord Webhook）

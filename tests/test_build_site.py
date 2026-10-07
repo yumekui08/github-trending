@@ -62,7 +62,7 @@ def test_tags_shown_on_card_and_detail(tmp_path):
     out = build(Config(), make_store(tmp_path), tmp_path / "site")
     day = (out / "d/2026-09-29/index.html").read_text()
     assert "<li>CLI</li><li>インフラ・運用</li>" in day
-    assert "<li>インフラ・運用</li>" in (out / "r/o/r/index.html").read_text()
+    assert '<li><a href="../../../t/infra/">インフラ・運用</a></li>' in (out / "r/o/r/index.html").read_text()
 
 
 def test_weekly_and_monthly_pages_with_tabs(tmp_path):
@@ -111,7 +111,7 @@ def test_issue_number_and_field_box(tmp_path):
     assert "第1号" in (out / "d/2026-09-29/index.html").read_text()
     assert "第2号" in (out / "r/o/r/index.html").read_text()  # 詳しいページは最新の日の号数
     # 9/30 の記事：o/r（継続、要約あり：CLI・インフラ・運用）
-    assert "本日の分野" in index and "<span>CLI</span><b>1</b>" in index
+    assert "本日の分野" in index and '<a href="t/cli/">CLI</a><b>1</b>' in index
     assert "この日の分野" in (out / "d/2026-09-30/index.html").read_text()
 
 
@@ -191,7 +191,8 @@ def test_whole_card_links_to_detail_only_when_summarized(tmp_path):
 
 def test_page_title(tmp_path):
     out = build(Config(), make_store(tmp_path), tmp_path / "site")
-    assert "<title>github新聞</title>" in (out / "index.html").read_text()   # トップは名前だけ
+    # トップは名前と、何のサイトかの説明（0037）
+    assert "<title>github新聞｜GitHub Trending を毎朝日本語で</title>" in (out / "index.html").read_text()
     assert "<title>github新聞（26/09/29）</title>" in (out / "d/2026-09-29/index.html").read_text()
 
 
@@ -208,8 +209,10 @@ def test_seo_files_and_ogp_with_base_url(tmp_path):
 
     ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "a": "http://www.w3.org/2005/Atom"}
     locs = [e.text for e in ET.parse(out / "sitemap.xml").findall("s:url/s:loc", ns)]
-    assert "https://example.com/" in locs and "https://example.com/r/o/r/" in locs
-    assert "https://example.com/d/2026-09-29/" in locs and "https://example.com/archive/" in locs
+    assert "https://example.com/" in locs and "https://example.com/archive/" in locs
+    # 確かさが「低」の o/r と、日付を指定した一覧は検索に載せないので sitemap にも入れない（0037）
+    assert "https://example.com/r/o/r/" not in locs
+    assert not any("/d/" in x for x in locs)
     assert "Sitemap: https://example.com/sitemap.xml" in (out / "robots.txt").read_text()
 
     feed = ET.parse(out / "feed.xml").getroot()
@@ -317,13 +320,53 @@ def test_repo_page_seo(tmp_path):
     repo = (out / "r/o/r/index.html").read_text()
 
     assert "<title>o/r とは：HTTP の負荷試験 CLI | github新聞</title>" in repo
-    assert '<meta property="article:published_time" content="2026-09-30">' in repo
+    assert '<meta property="article:published_time" content="2026-09-30T07:00:00+09:00">' in repo
     lds = [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', repo, re.S)]
     article = next(x for x in lds if x["@type"] == "TechArticle")
-    assert article["url"] == "https://example.com/r/o/r/" and article["datePublished"] == "2026-09-30"
+    assert article["url"] == "https://example.com/r/o/r/" and article["datePublished"] == "2026-09-30T07:00:00+09:00"
+    assert article["author"]["url"] == "https://example.com/about/" and article["publisher"]["logo"]["width"] == 1040
     assert article["about"]["codeRepository"] == "https://github.com/o/r"
-    assert any(x["@type"] == "BreadcrumbList" for x in lds)
+    crumbs = next(x for x in lds if x["@type"] == "BreadcrumbList")["itemListElement"]
+    assert [c["item"] for c in crumbs] == [  # トップ → 主な分野 → 記事（0037）
+        "https://example.com/", "https://example.com/t/cli/", "https://example.com/r/o/r/"]
 
     # 同じ分野（先頭のタグ CLI）のほかの記事だけ
     related = re.search(r'<nav class="related".*?</nav>', repo, re.S).group(0)
     assert 'href="../../../r/a/b/"' in related and "c/d" not in related and "r/o/r/" not in related
+
+
+def test_noindex_dated_pages_and_low_confidence(tmp_path):
+    out = build(Config(site_base_url="https://example.com/"), make_store(tmp_path), tmp_path / "site")
+    noindex = '<meta name="robots" content="noindex, follow">'
+    assert noindex in (out / "d/2026-09-30/index.html").read_text()   # 日付を指定した一覧
+    assert noindex not in (out / "index.html").read_text()            # トップは載せる
+    assert noindex in (out / "r/o/r/index.html").read_text()          # 確かさが「低」
+
+
+def test_tag_pages(tmp_path):
+    store = make_store(tmp_path)
+    store.save_summary(dict(SUMMARY, repo="a/b", tags=["CLI"], summarized_at="2026-10-01", confidence="high"))
+    out = build(Config(site_base_url="https://example.com/"), store, tmp_path / "site")
+    cli = (out / "t/cli/index.html").read_text()
+    assert "<h1>CLI</h1>" in cli and "解説 2 件" in cli
+    assert cli.index('href="../../r/a/b/"') < cli.index('href="../../r/o/r/"')  # 新しい順
+    assert '<a href="../t/infra/">インフラ・運用</a><b>1</b>' in (out / "t/index.html").read_text()
+    locs = (out / "sitemap.xml").read_text()
+    assert "https://example.com/t/cli/" in locs and "https://example.com/t/" in locs
+    # 詳しいページから、主な分野の一覧へ
+    assert 'href="../../../t/cli/">CLIの解説をすべて見る' in (out / "r/a/b/index.html").read_text()
+
+
+def test_robots_headers_and_repo_details(tmp_path):
+    out = build(Config(site_base_url="https://example.com/"), make_store(tmp_path), tmp_path / "site")
+    robots = (out / "robots.txt").read_text()
+    assert "User-agent: GPTBot\n" in robots and "Disallow: /\n\nUser-agent: *\nAllow: /" in robots
+    headers = (out / "_headers").read_text()
+    assert "Strict-Transport-Security" in headers and "/style.css\n  Cache-Control: public, max-age=31536000, immutable" in headers
+
+    repo = (out / "r/o/r/index.html").read_text()
+    assert "<dt>材料</dt><dd>README</dd>" in repo                     # 材料は読める名前で
+    assert "★ 20<span class=\"note\">（2026-09-30 時点）</span>" in repo  # スターはいつ時点か
+    about = (out / "about/index.html").read_text()
+    assert "https://github.com/yumekui08/github-trending/issues" in about
+
