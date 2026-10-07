@@ -1,0 +1,37 @@
+{
+  "repo": "cathrynlavery/diagram-design",
+  "summarized_at": "2026-10-07",
+  "short": "AI コーディングエージェント向けの図作成 skill。architecture、sequence、ER など 40 種超の図を、単体で開ける HTML + SVG として生成する。ブランドの色やフォントに合わせた見た目にできる。",
+  "what": "エージェントに HTML + SVG の図を描かせる skill",
+  "can_do": [
+    "architecture、flowchart、sequence、state、ER、timeline、swimlane など 40 種超の図を生成（README は 42 種と書く）",
+    "各図を minimal light / minimal dark / full-editorial の 3 variant で出力。ビルド、JavaScript、外部画像は不要で、ブラウザで直接開ける",
+    "draw.io・Mermaid・Excalidraw の図を読み込み、指定の形式・サイズ・詳細度で描き直す（`/import-mermaid` など）",
+    "自分のサイトを読んでブランドの色・フォントを取り込み、プロファイルとして保存",
+    "`/export-diagram` で書き出し、`/doctor` で環境を診断"
+  ],
+  "how_to_use": "Claude Code では `/plugin marketplace add cathrynlavery/diagram-design` のあと `/plugin install diagram-design@diagram-design`。他のエージェントは `npx skills add cathrynlavery/diagram-design` などで入れ、自然言語で図を頼む。",
+  "use_cases": [
+    "設計書や運用手順書に載せる architecture 図・sequence 図を、Mermaid より見た目を整えて作るのに使えそう",
+    "障害報告や構成変更の before/after を図にするのに使えそう（architecture delta という型がある）"
+  ],
+  "for_whom": "ドキュメントや記事に載せる図を、エージェントに頼んで見た目よく作りたい人",
+  "similar": [
+    "Mermaid：テキストから図を描く定番。こちらは見た目の作り込みを重視した HTML + SVG を出す",
+    "draw.io：GUI の作図ツール。こちらはエージェントが生成し、draw.io の図の読み込みもできる"
+  ],
+  "tech": "Agent Skills 形式（SKILL.md）。出力は HTML + SVG。補助スクリプトは Python。Claude Code、Codex、GitHub Copilot、Factory Droid、Pi、Kiro、OpenCode などに対応。MIT。",
+  "caveats": "作成から約半年。バージョンが頻繁に上がっており、仕様が変わりやすい。出来栄えはエージェントとプロファイルの設定次第で、README の画像は作者の選んだ例。skill 本体の SKILL.md と各 reference は読んでおらず、README と構成からの要約。",
+  "tags": [
+    "AI エージェント",
+    "ドキュメント・知識管理",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と構成は読んだが、SKILL.md と reference の中身は読んでおらず、図の品質や生成の仕組みは確認できていない。"
+}

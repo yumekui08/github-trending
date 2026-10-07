@@ -1,0 +1,39 @@
+{
+  "repo": "JustVugg/colibri",
+  "summarized_at": "2026-10-07",
+  "short": "巨大な MoE（mixture-of-experts）モデルを手元のマシンで動かす、C 製のローカル推論エンジン。常用する部分だけ RAM に置き、experts はディスクから都度読む。GPU なしの CPU でも動く。",
+  "what": "巨大な MoE モデルをディスク streaming で動かす推論エンジン",
+  "can_do": [
+    "GLM-5.2、Kimi K3、DeepSeek V4 Flash、Qwen3.6 など多数の LLM と、画像生成（Qwen-Image-2.1）を動かす（README は 13 engine と書く）",
+    "experts をディスクから読むため、RAM 8GB 以上（16GB 以上が推奨）から動かせる。モデルのダウンロードには最小のものでも空き 22GB が要る",
+    "CPU のほか、Vulkan・CUDA・Metal の GPU backend に対応",
+    "ブラウザの dashboard、OpenAI 互換と Anthropic 互換の API（`http://127.0.0.1:8000/v1`）を提供",
+    "`coli serve --kv-slots N` で最大 16 の会話を同時に処理"
+  ],
+  "how_to_use": "リポジトリを clone して `./start-here.sh`（Windows は `START-HERE.bat`）。マシンを調べて入るモデルを提案し、engine の取得とモデルのダウンロード、起動までを行う。2 回目以降は同じコマンドで起動のみ。`c/coli status` / `c/coli stop` で状態確認と停止。",
+  "use_cases": [
+    "クラウド API を使えない環境で、OpenAI 互換 API としてローカル LLM を立てるのに使えそう",
+    "GPU のないサーバーで、遅くても大きなモデルを試すのに使えそう"
+  ],
+  "for_whom": "大きなオープンモデルを、専用の GPU なしでローカルに動かしてみたい人",
+  "similar": [
+    "llama.cpp：ローカル推論の定番。こちらは MoE の experts をディスクから読む点に特化している",
+    "Ollama：モデル管理込みのローカル実行ツール"
+  ],
+  "tech": "C（モデル系列ごとに 1 ファイル）と、setup や CLI 用の Python（3.10 以上）。CUDA / Metal / Vulkan backend は任意。Linux、macOS、Windows に対応。Apache-2.0。",
+  "caveats": "作成から約 3 か月で、v2.0.0 が昨日出たばかり。Development Status は Beta。experts をディスクから読むため、速度は SSD の性能に強く依存すると思われ、README にある速度や「どのマシンでも動く」は材料からは検証できていない。モデルの重みは数十 GB から数百 GB 単位で、別途ダウンロードが要る。実測の速度や出力品質は読んでいない。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の冒頭・導入手順・release を読んだが、実際の速度や必要スペックの根拠となる性能の記述（表やベンチマーク）までは読んでいない。"
+}

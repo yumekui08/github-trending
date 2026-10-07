@@ -1,0 +1,40 @@
+{
+  "repo": "morluto/rea",
+  "summarized_at": "2026-10-07",
+  "short": "リバースエンジニアリング用の MCP サーバー兼 CLI。native binary、JavaScript/Electron アプリ、.NET assembly、Web サイトを AI エージェントから調べさせ、根拠つきで結果を返す。",
+  "what": "エージェント向けのリバースエンジニアリング MCP/CLI",
+  "can_do": [
+    "Hopper・Ghidra・IDA Pro と連携して native binary を逆アセンブル・decompile",
+    "展開済みの JavaScript/Electron アプリや ASAR を実行せずに静的解析し、グラフ・limitations・unknowns を返す",
+    "APK の静的解析（JADX の JAR と Java が別途必要）、firmware の Binwalk / Unblob による抽出",
+    "Claude Code、Cursor、Codex、Gemini CLI など多数のエージェントへ `setup` で MCP 登録と workflow の skill を導入",
+    "`doctor` でホスト・依存・エージェント設定を診断"
+  ],
+  "how_to_use": "`npx rea-agents setup` で対象のエージェントを選んで登録。または `npm install --global rea-agents` のあと `rea setup`。JavaScript アプリなら `npx -y rea-agents@latest analyze-javascript-application /path/to/app --json` で MCP なしに試せる。",
+  "use_cases": [
+    "ソースのない社内ツールや Electron アプリの挙動を調べるときに使えそう",
+    "マルウェアや firmware の初期トリアージを、エージェントに下調べさせる用途に使えそう",
+    "CTF の binary 問題で decompile 結果の整理に使えそう"
+  ],
+  "for_whom": "binary やアプリの挙動をエージェント経由で調べたいセキュリティ・リバースエンジニアリング寄りのエンジニア",
+  "similar": [
+    "GhidraMCP：Ghidra を MCP で公開するもの。こちらは Hopper・IDA・JS/Electron・APK・firmware まで範囲が広い"
+  ],
+  "tech": "TypeScript（Node.js 22.19 以上）。MIT。macOS 12+ / Ubuntu 24.04+ / Fedora 41+ / Arch。native 解析には Hopper・Ghidra・IDA のいずれかが別途必要（Hopper は別ライセンスで demo は制限あり）。Windows x64 の Ghidra 対応は experimental。",
+  "caveats": "作成から約半年で、v4.1.0 が昨日出たばかりで更新が非常に活発。native 解析は外部の商用・別ツールに依存し、Hopper と IDA は有料。AI エージェントに解析を任せるため、結果は根拠（evidence）を確認して使う必要がある。",
+  "tags": [
+    "セキュリティ",
+    "AI エージェント",
+    "CLI",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

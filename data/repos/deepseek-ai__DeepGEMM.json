@@ -1,0 +1,39 @@
+{
+  "repo": "deepseek-ai/DeepGEMM",
+  "summarized_at": "2026-10-07",
+  "short": "NVIDIA GPU（SM90/SM100）向けの CUDA kernel ライブラリ。FP8/FP4/BF16 の GEMM、MoE 用の grouped GEMM、attention の indexer 用 kernel を提供する。kernel は実行時に JIT コンパイルする。",
+  "what": "LLM 向け GPU 行列演算 kernel の Python ライブラリ",
+  "can_do": [
+    "FP8・FP4・BF16 の GEMM（`fp8_gemm_nt` など。D = C + A @ B）",
+    "MoE 向けの grouped GEMM（M 軸を連結した contiguous layout と、decode 向けの masked layout）",
+    "DeepSeek V3.2 の lightning indexer 用の MQA logits kernel（prefill 用の non-paged と decode 用の paged）",
+    "MoE の通信を重ねて処理する fused kernel（Mega MoE）、HyperConnection 関連の kernel",
+    "kernel は実行時に DeepJIT でコンパイルされ、インストール時に CUDA のビルドは不要（と README にある）"
+  ],
+  "how_to_use": "`git clone --recursive` のあと `./install.sh`（開発時は `./develop.sh`）。Python で `import deep_gemm` して `fp8_gemm_nt` などを呼ぶ。入力の転置や FP8 へのキャストは利用側で行う必要がある。",
+  "use_cases": [
+    "H100/B200 世代の GPU で LLM の推論・学習の GEMM を自前の stack に組み込むときに使えそう",
+    "CUTLASS に頼らない短い実装として、GPU kernel 最適化の学習資料に使えそう"
+  ],
+  "for_whom": "NVIDIA の最新 GPU 上で LLM の kernel を扱う ML infra・GPU プログラミングの人",
+  "similar": [
+    "CUTLASS：NVIDIA 公式の template ライブラリ。DeepGEMM は一部の考え方を使いつつ、template への依存を減らした小さな実装",
+    "cuBLAS：汎用の BLAS。こちらは LLM 向けの用途に絞っている"
+  ],
+  "tech": "CUDA / C++20 と Python。PyTorch 2.3 以上、CUDA Toolkit 12.9 以上、CUTLASS 4.0 以上（submodule）が必要。SM90 または SM100 の NVIDIA GPU が必須。MIT。",
+  "caveats": "対応 GPU が SM90/SM100 に限られ、手元の一般的な GPU や CPU では動かない。SM90 は NT layout のみ。scaling factor の形式が世代で異なり、利用側での前処理が要る。ビルドに submodule と C++20 `<format>` 対応のコンパイラが必要。最新の release tag は 2025-10 のもので、README の新機能はそれ以降の main の内容。",
+  "tags": [
+    "機械学習",
+    "ライブラリ・SDK",
+    "LLM"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:setup.py",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
