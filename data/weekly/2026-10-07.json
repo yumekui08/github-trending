@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-07",
+  "period": "weekly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "mvschwarz/openrig",
+      "description": "Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
+      "language": "TypeScript",
+      "stars": 5511,
+      "stars_period": 3327
+    },
+    {
+      "rank": 2,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 57937,
+      "stars_period": 3614
+    },
+    {
+      "rank": 3,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 10105,
+      "stars_period": 1106
+    },
+    {
+      "rank": 4,
+      "repo": "NVIDIA/OpenShell",
+      "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
+      "language": "Rust",
+      "stars": 15138,
+      "stars_period": 5228
+    },
+    {
+      "rank": 5,
+      "repo": "VectifyAI/PageIndex",
+      "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
+      "language": "Python",
+      "stars": 38791,
+      "stars_period": 2079
+    },
+    {
+      "rank": 6,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 97157,
+      "stars_period": 2104
+    },
+    {
+      "rank": 7,
+      "repo": "pablostanley/yoinks",
+      "description": "yoink any video from your terminal. no shady ads.",
+      "language": "TypeScript",
+      "stars": 4859,
+      "stars_period": 2947
+    },
+    {
+      "rank": 8,
+      "repo": "HunxByts/GhostTrack",
+      "description": "Useful tool to track location or mobile number",
+      "language": "Python",
+      "stars": 17220,
+      "stars_period": 2017
+    },
+    {
+      "rank": 9,
+      "repo": "DuarteSantos8/openGym",
+      "description": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server.",
+      "language": "JavaScript",
+      "stars": 5662,
+      "stars_period": 3318
+    },
+    {
+      "rank": 10,
+      "repo": "boykopovar/AnyPS5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "language": "C++",
+      "stars": 6475,
+      "stars_period": 3073
+    },
+    {
+      "rank": 11,
+      "repo": "Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stars": 92628,
+      "stars_period": 6454
+    },
+    {
+      "rank": 12,
+      "repo": "byoungd/up",
+      "description": "中英双语终身学习指南：英语学习、AI 协作、真实项目与成长证据。A bilingual guide to English learning and AI-era growth.",
+      "language": "JavaScript",
+      "stars": 67503,
+      "stars_period": 2154
+    }
+  ]
+}
