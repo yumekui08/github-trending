@@ -1,0 +1,34 @@
+{
+  "repo": "spotify/portal-ai-plugins",
+  "summarized_at": "2026-10-08",
+  "short": "portal-ai-plugins は、Spotify Portal の CLI を Claude Code・Codex・Cursor から使うためのプラグイン集。ソフトウェアカタログの検索やサービス概要の作成ができる。",
+  "what": "Spotify Portal 用のコーディングエージェント向けプラグイン",
+  "can_do": [
+    "setup：Portal CLI の認証を設定",
+    "doctor：プラグイン・CLI・認証・アクションの準備状況を読み取り専用で診断",
+    "search：ソフトウェアカタログと技術文書を自然言語で検索",
+    "service：オーナー、ヘルス、インシデント、文書をまとめたサービス概要を作成",
+    "actions：Portal のアクションを調べ、dry-run と確認つきで実行"
+  ],
+  "how_to_use": "Claude Code では claude plugin marketplace add spotify/portal-ai-plugins のあと claude plugin install portal@portal、新しいセッションで /portal:setup。Codex と Cursor でもマーケットプレイスから入れる。",
+  "use_cases": [
+    "Spotify Portal（Backstage 系の開発者ポータルと思われる）を使う組織で、カタログ検索をエージェント経由で行うのに使えそう",
+    "社内ポータルとエージェントを連携させるプラグインの作り方の参考になりそう"
+  ],
+  "for_whom": "Spotify Portal を契約・利用していて、コーディングエージェントから使いたい人",
+  "similar": [],
+  "tech": "TypeScript。Claude Code、Codex、Cursor 用のプラグイン定義（スキル形式）。内部で npx @spotify/portal-cli を実行。",
+  "caveats": "Spotify Portal（サービス）と認証が前提で、ないと使えない。shunt（別プラグイン）は Claude Code のみ対応で、AiKA のモードにタスクを回す。README の説明のみ読み、中身は未確認。2026年7月に作られた新しいリポジトリ。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "インフラ・運用"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とファイル構成のみ読んだ。スキルの中身と shunt の実装、Portal 自体は未確認。"
+}

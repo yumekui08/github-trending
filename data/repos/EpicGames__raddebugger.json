@@ -1,0 +1,38 @@
+{
+  "repo": "EpicGames/raddebugger",
+  "summarized_at": "2026-10-08",
+  "short": "raddebugger は、Windows x64 向けのネイティブな GUI デバッガ。PDB を独自の RDI 形式に変換して使い、リンカ（RAD Linker）も同梱する。α 版。",
+  "what": "ネイティブ GUI デバッガと高速リンカ",
+  "can_do": [
+    "ユーザーモードのネイティブプロセスを GUI でデバッグ（マルチプロセス対応）",
+    "PDB のデバッグ情報を RDI 形式に変換して利用",
+    "radbin で RDI の変換とテキストダンプ",
+    "RAD Linker：x64 PE/COFF を生成する、巨大な実行ファイル向けのリンカ（MSVC とコマンドライン互換）",
+    "v0.9.29 で Linux x64 の初期対応と Minidump の読み込みを追加"
+  ],
+  "how_to_use": "Windows では Releases のビルド済みバイナリを使う。ソースからは MSVC（または Clang）の環境で build.bat、Linux では build.sh（Linux 用バイナリは未配布）。使い方の説明はリリース同梱の README にあり、リポジトリの README は技術概要。",
+  "use_cases": [
+    "Visual Studio を使わずに Windows のネイティブプログラムをデバッグするのに使えそう",
+    "巨大なバイナリのリンク時間が問題になるビルド環境で RAD Linker を試せそう"
+  ],
+  "for_whom": "C/C++ などのネイティブコードを Windows（一部 Linux）でデバッグする開発者",
+  "similar": [
+    "WinDbg：Windows のデバッガ。こちらは GUI が軽量で独自のデバッグ情報形式を持つ",
+    "gdb / lldb：Linux 側の定番。こちらの Linux 対応はまだ初期段階"
+  ],
+  "tech": "C。MSVC または Clang でビルド。Windows x64 が主、Linux x64 は初期対応。MIT ライセンス。",
+  "caveats": "README に α 版と明記されている。Windows は x64 のローカルデバッグと PDB が前提。Linux 版は非常に初期で、fork/vfork 未対応など既知の制限が多い（リリースノートより）。Linux 用のビルド済みバイナリはない。",
+  "tags": [
+    "開発ツール",
+    "デスクトップアプリ",
+    "言語・ランタイム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

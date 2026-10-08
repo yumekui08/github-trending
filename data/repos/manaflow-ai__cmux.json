@@ -1,0 +1,39 @@
+{
+  "repo": "manaflow-ai/cmux",
+  "summarized_at": "2026-10-08",
+  "short": "cmux は、AI コーディングエージェント向けの通知と縦タブを備えた macOS 用ターミナル。Ghostty のレンダリング（libghostty）を使い、Swift/AppKit 製。",
+  "what": "エージェント向け通知付きの macOS ターミナル",
+  "can_do": [
+    "エージェントが入力待ちのとき、ペインに青い枠、タブに強調表示を出す",
+    "縦タブのサイドバーに git ブランチ、PR 番号と状態、作業ディレクトリ、待ち受けポート、最新の通知を表示",
+    "ペインの縦横分割とアプリ内ブラウザ（スクリプト操作可）",
+    "cmux ssh でリモートマシン用のワークスペースを作成",
+    "CLI とソケット API でワークスペース作成や操作を自動化、cmux.json にプロジェクト別コマンドを定義"
+  ],
+  "how_to_use": "Releases の DMG をアプリケーションに入れる。または brew tap manaflow-ai/cmux && brew install --cask cmux。エージェントのフックから cmux notify を呼ぶと通知が出る。",
+  "use_cases": [
+    "Claude Code や Codex を複数並行して動かす作業で、どれが待ちかを見分けるのに使えそう",
+    "リモートの検証機への SSH 作業をワークスペース単位で整理するのに使えそう"
+  ],
+  "for_whom": "macOS で複数の AI コーディングエージェントを並行して使う人",
+  "similar": [
+    "tmux：ターミナル多重化の定番。こちらは GUI アプリでエージェント通知に特化",
+    "Ghostty：ベースにしている端末。既存の Ghostty 設定を読み込む"
+  ],
+  "tech": "Swift（AppKit）、libghostty。一部に TypeScript（bun、React、solid-js など）。macOS 専用。",
+  "caveats": "macOS のみ。ライセンスは GitHub 上で判定不能（NOASSERTION）。README は GPL、package.json は GPL-3.0-or-later と書いている。2026年1月に作られた新しいプロジェクトで、更新が非常に頻繁。リポジトリが大きい（約3.8GB）。",
+  "tags": [
+    "開発ツール",
+    "AI エージェント",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
