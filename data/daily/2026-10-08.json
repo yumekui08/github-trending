@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-08",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "stars": 15014,
+      "stars_today": 4655,
+      "status": "continuing"
+    },
+    {
+      "rank": 2,
+      "repo": "mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 279572,
+      "stars_today": 1403,
+      "status": "continuing"
+    },
+    {
+      "rank": 3,
+      "repo": "boykopovar/AnyPS5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "language": "C++",
+      "stars": 10541,
+      "stars_today": 2716,
+      "status": "continuing"
+    },
+    {
+      "rank": 4,
+      "repo": "ayghri/i-have-adhd",
+      "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "language": "Python",
+      "stars": 55102,
+      "stars_today": 619,
+      "status": "continuing"
+    },
+    {
+      "rank": 5,
+      "repo": "cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Factory Droid, and Pi. 42 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 44952,
+      "stars_today": 825,
+      "status": "continuing"
+    },
+    {
+      "rank": 6,
+      "repo": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 102803,
+      "stars_today": 677,
+      "status": "continuing"
+    },
+    {
+      "rank": 7,
+      "repo": "EpicGames/raddebugger",
+      "description": "A native, user-mode, multi-process, graphical debugger.",
+      "language": "C",
+      "stars": 7856,
+      "stars_today": 90,
+      "status": "new"
+    },
+    {
+      "rank": 8,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 97709,
+      "stars_today": 578,
+      "status": "continuing"
+    },
+    {
+      "rank": 9,
+      "repo": "manaflow-ai/cmux",
+      "description": "Open source Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents. Built for multitasking, organization, and programmability.",
+      "language": "Swift",
+      "stars": 27833,
+      "stars_today": 44,
+      "status": "new"
+    },
+    {
+      "rank": 10,
+      "repo": "trycua/cua",
+      "description": "Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation.",
+      "language": "Rust",
+      "stars": 28744,
+      "stars_today": 228,
+      "status": "new"
+    },
+    {
+      "rank": 11,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 26043,
+      "stars_today": 576,
+      "status": "new"
+    },
+    {
+      "rank": 12,
+      "repo": "tester-army/e2e",
+      "description": "Next generation e2e testing framework for web and mobile apps.",
+      "language": "TypeScript",
+      "stars": 7433,
+      "stars_today": 1390,
+      "status": "continuing"
+    },
+    {
+      "rank": 13,
+      "repo": "DuarteSantos8/openGym",
+      "description": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server.",
+      "language": "JavaScript",
+      "stars": 6881,
+      "stars_today": 1493,
+      "status": "continuing"
+    }
+  ],
+  "errors": []
+}
