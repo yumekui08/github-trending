@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-09",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 44589,
+      "stars_period": 22779
+    },
+    {
+      "rank": 2,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 55297,
+      "stars_period": 34334
+    },
+    {
+      "rank": 3,
+      "repo": "bilawalsidhu/gods-eye-view",
+      "description": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+      "language": "JavaScript",
+      "stars": 49183,
+      "stars_period": 30207
+    },
+    {
+      "rank": 4,
+      "repo": "anthropics/financial-services",
+      "description": "",
+      "language": "Python",
+      "stars": 39055,
+      "stars_period": 4400
+    },
+    {
+      "rank": 5,
+      "repo": "paperclipai/paperclip",
+      "description": "The open-source app everyone uses to manage agents at work",
+      "language": "TypeScript",
+      "stars": 98846,
+      "stars_period": 18863
+    },
+    {
+      "rank": 6,
+      "repo": "affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 275392,
+      "stars_period": 23115
+    },
+    {
+      "rank": 7,
+      "repo": "vectorize-io/hindsight",
+      "description": "Hindsight: Agent Memory That Learns",
+      "language": "Python",
+      "stars": 47287,
+      "stars_period": 24260
+    },
+    {
+      "rank": 8,
+      "repo": "Tencent/WeKnora",
+      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "language": "Go",
+      "stars": 32633,
+      "stars_period": 11015
+    },
+    {
+      "rank": 9,
+      "repo": "anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "TypeScript",
+      "stars": 149720,
+      "stars_period": 6111
+    },
+    {
+      "rank": 10,
+      "repo": "TencentCloud/Octop",
+      "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+      "language": "Python",
+      "stars": 7999,
+      "stars_period": 6497
+    },
+    {
+      "rank": 11,
+      "repo": "agent-substrate/substrate",
+      "description": "Agent Substrate: the core system",
+      "language": "Go",
+      "stars": 4614,
+      "stars_period": 2793
+    },
+    {
+      "rank": 12,
+      "repo": "NVIDIA/OpenShell",
+      "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
+      "language": "Rust",
+      "stars": 15479,
+      "stars_period": 6997
+    },
+    {
+      "rank": 13,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 25745,
+      "stars_period": 4606
+    },
+    {
+      "rank": 14,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 59189,
+      "stars_period": 11862
+    },
+    {
+      "rank": 15,
+      "repo": "spotify/portal-ai-plugins",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 2450,
+      "stars_period": 1993
+    },
+    {
+      "rank": 16,
+      "repo": "JustVugg/colibri",
+      "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
+      "language": "C",
+      "stars": 40573,
+      "stars_period": 13653
+    },
+    {
+      "rank": 17,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 27549,
+      "stars_period": 3453
+    },
+    {
+      "rank": 18,
+      "repo": "ayghri/i-have-adhd",
+      "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "language": "Python",
+      "stars": 55791,
+      "stars_period": 27656
+    },
+    {
+      "rank": 19,
+      "repo": "trycua/cua",
+      "description": "Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation.",
+      "language": "Rust",
+      "stars": 29041,
+      "stars_period": 6777
+    },
+    {
+      "rank": 20,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 10397,
+      "stars_period": 3443
+    },
+    {
+      "rank": 21,
+      "repo": "tashfeenahmed/freellmapi",
+      "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+      "language": "TypeScript",
+      "stars": 32162,
+      "stars_period": 7238
+    },
+    {
+      "rank": 22,
+      "repo": "DietrichGebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "language": "JavaScript",
+      "stars": 158529,
+      "stars_period": 27284
+    },
+    {
+      "rank": 23,
+      "repo": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 103399,
+      "stars_period": 10948
+    },
+    {
+      "rank": 24,
+      "repo": "max-sixty/worktrunk",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "language": "Rust",
+      "stars": 9038,
+      "stars_period": 2240
+    }
+  ]
+}
