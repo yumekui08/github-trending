@@ -1,0 +1,32 @@
+{
+  "repo": "liquidslr/system-design-notes",
+  "summarized_at": "2026-10-09",
+  "short": "system-design-notes は、書籍『System Design Interview』（Alex Xu 著）Vol 1・2 の章ごとの読書ノート。ソフトウェアではなく学習資料。",
+  "what": "システム設計面接の本の読書ノート（Markdown）",
+  "can_do": [
+    "全28章を章ごとのディレクトリに分け、Readme.md と図の画像でまとめている",
+    "題材は rate limiter、consistent hashing、key-value store、URL shortener、web crawler、chat、YouTube、payment、stock exchange など",
+    "章ごとの参考文献リンク（Dynamo、Bigtable、Snowflake ID、Discord の記事など）を載せる"
+  ],
+  "how_to_use": "リポジトリの README にある章の一覧から各章の Readme.md を読む。作者のノート用 Web サイトでも読める（README に URL がある）。",
+  "use_cases": [
+    "分散システムの基本の復習に使えそう",
+    "システム設計面接の準備や、設計レビューの前の知識の確認に使えそう"
+  ],
+  "for_whom": "システム設計面接を受ける人や、分散システムの設計を一通り復習したい人",
+  "similar": [
+    "donnemartin/system-design-primer：同じく設計の学習資料。こちらは特定の書籍の章立てに沿った要約"
+  ],
+  "tech": "Markdown と画像のみ。コードや依存はない。",
+  "caveats": "元の書籍の要約ノートで、README に作業中（work in progress）とある。ライセンスの記載がなく、書籍の内容に基づくため再利用の可否は不明。内容の正確さは原書と照らして確認すべき。各章の本文は読んでいない。",
+  "tags": [
+    "学習資料"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と構成は読んだが、各章のノートの本文は読んでいない。"
+}

@@ -1,0 +1,37 @@
+{
+  "repo": "storytold/artcraft",
+  "summarized_at": "2026-10-09",
+  "short": "ArtCraft は、AI の画像・動画生成を 2D/3D のシーンを組んでから行うデスクトップアプリ。複数の外部モデルを切り替えて使う。映像・デザイン制作者向け。",
+  "what": "AI 画像・動画生成のためのデスクトップアプリ",
+  "can_do": [
+    "2D のレイヤー合成（背景除去、描画、マスク、inpainting）で構図を作ってから画像を生成する",
+    "3D 空間で背景・小道具・キャラクターを配置し、ポーズとカメラ位置を決めてから生成する",
+    "画像から 3D mesh を作り、位置や向きを調整する",
+    "text to image、プロンプトによる画像編集、image to video",
+    "Nano Banana、GPT Image、FLUX、Seedream、Veo、Kling、Sora など複数のモデルを選んで使う（README には 62 モデルの一覧がある）"
+  ],
+  "how_to_use": "公式サイト getartcraft.com から Windows / macOS 版をダウンロードする。Linux はソースからのビルド（`_docs/dev_setup.md`）。",
+  "use_cases": [
+    "動画・絵コンテ制作で、カメラ位置や配置を固めてから生成する用途に使えそう",
+    "モデルごとに別サービスを開かず、1つのアプリで複数モデルを比べる用途に使えそう"
+  ],
+  "for_whom": "AI 生成を構図やカメラまで制御して使いたい、アーティスト・デザイナー・映像制作者",
+  "similar": [
+    "ComfyUI：複数モデルを組み合わせるが、ノード式。こちらは 2D/3D のシーン編集が中心"
+  ],
+  "tech": "Rust（Cargo workspace）の Tauri 2 アプリ＋ TypeScript のフロントエンド（nx）。Windows / macOS 向けの配布、Linux はソースビルド。",
+  "caveats": "生成自体は外部のモデル提供元（ArtCraft のサービス、Grok、Midjourney、Sora、World Labs など）を使い、ローカルでは動かないと思われる。利用にはアカウントや課金が要る可能性がある（材料からは未確認）。ライセンスは独自（SPDX では判別不能の NOASSERTION）で、利用条件を `LICENSE.md` で確認すべき。バージョンは v0.41 で開発が速く、一部モデルは無効または制限付きと README にある。",
+  "tags": [
+    "音声・画像・動画",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とビルド定義は読んだが、課金・アカウントの要否とライセンスの中身は LICENSE.md を読んでおらず、推測を含む。"
+}
