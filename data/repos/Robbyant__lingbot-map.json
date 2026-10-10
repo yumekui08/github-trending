@@ -1,0 +1,38 @@
+{
+  "repo": "Robbyant/lingbot-map",
+  "summarized_at": "2026-10-10",
+  "short": "lingbot-map は、動画のフレームを順に入れて 3D 再構成（カメラ姿勢と点群）を行う feed-forward のモデルとその推論コード。10,000 フレームを超える長い映像も流しながら処理できるとしている。GPU が前提の研究コード。",
+  "what": "動画から 3D を逐次再構成するモデルの研究コード",
+  "can_do": [
+    "画像列・動画を順に処理して、カメラ姿勢と 3D 点群を推定する（streaming 3D reconstruction）",
+    "demo.py でサンプルシーンを処理し、viser のブラウザビューで確認する",
+    "keyframe 間隔の指定や、3000 フレーム超の長尺向け windowed inference を使う",
+    "sky masking で空を除外する",
+    "KITTI、Oxford Spires などで評価する benchmark スクリプトを動かす",
+    "オフライン rendering pipeline（demo_render/batch_demo.py）で動画を出力する"
+  ],
+  "how_to_use": "conda で Python 3.10 の環境を作り、PyTorch 2.8.0（CUDA 12.8）を入れて `pip install -e .`。推奨は `pip install flashinfer-python`（無ければ `--use_sdpa` で PyTorch 標準の attention）。重みは Hugging Face の robbyant/lingbot-map から取得し、`python demo.py` に付属の example（courthouse、loop、university）を渡して試す。",
+  "use_cases": [
+    "ドローンや車載・手持ちカメラの映像から、地図作成の材料になる 3D を作る研究の下地に使えそう",
+    "SLAM や 3D 再構成の手法を比較評価するときの baseline に使えそう"
+  ],
+  "for_whom": "3D vision・SLAM の研究者や、長尺映像の 3D 再構成を試したい ML エンジニア",
+  "similar": [
+    "VGGT：feed-forward の 3D 再構成モデル。README には stage1 の重みを VGGT に読み込めるとある",
+    "DUSt3R / MASt3R：画像から 3D を直接推定する系統（違いの詳細は未確認）"
+  ],
+  "tech": "Python 3.10 以上、PyTorch 2.8.0（CUDA 12.8 推奨）。依存は Pillow、einops、safetensors、opencv-python、scipy、huggingface_hub。attention は FlashInfer（推奨）か SDPA。可視化は viser。NVIDIA GPU が必要。batch rendering は Kaolin が要る",
+  "caveats": "NVIDIA GPU と CUDA 環境が事実上必須。版は 0.1.0 で、研究プロジェクトの公開コード。README の ~20 FPS、10,000 フレーム超という数値は著者の報告で、環境依存と思われる。「ECCV 2026 Best Paper Award Candidate」は説明文の自己申告。batch rendering は Kaolin の prebuilt wheel が torch 2.8.0 / cu128 向けで、他の組み合わせはビルドが要る。ライセンスは Apache-2.0。",
+  "tags": [
+    "機械学習",
+    "音声・画像・動画"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の導入部とインストール手順は読んだが、モデルの詳しい仕組みは論文を読んでおらず、README の説明に頼っている。実際の精度や速度は動かして確認していない"
+}

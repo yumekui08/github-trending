@@ -1,0 +1,44 @@
+{
+  "repo": "BerriAI/litellm",
+  "summarized_at": "2026-10-10",
+  "short": "litellm は、100 以上の LLM プロバイダーを OpenAI 形式の API で呼べるようにする Python SDK と AI Gateway（proxy server）。仮想キー、コスト集計、guardrails、load balancing を備え、チームで共有する LLM 窓口として立てられる。",
+  "what": "複数の LLM API を OpenAI 形式で呼ぶ Gateway と SDK",
+  "can_do": [
+    "OpenAI、Anthropic、Gemini、Bedrock、Azure など 100 以上のプロバイダーを同じ OpenAI 形式で呼ぶ",
+    "/chat/completions、/responses、/embeddings、/images、/audio、/batches、/rerank、/a2a、/messages などのエンドポイントを扱う",
+    "proxy として立て、仮想キーの発行、利用額（spend）の追跡、guardrails、load balancing、ログ出力を行う",
+    "A2A プロトコルのエージェントを SDK と Gateway 経由で呼ぶ",
+    "管理用の dashboard を持つ"
+  ],
+  "how_to_use": "SDK は `uv add litellm`。`from litellm import completion` して `completion(model=\"openai/gpt-4o\", messages=[...])` のようにプロバイダー名付きのモデル名で呼ぶ。Gateway は `uv tool install 'litellm[proxy]'` のあと `litellm --model gpt-4o` で起動し、openai クライアントの base_url を `http://0.0.0.0:4000` に向ける。",
+  "use_cases": [
+    "社内の複数チームが使う LLM の窓口を1つにして、キーと利用額を一元管理するのに使えそう",
+    "プロバイダーを切り替えても呼び出しコードを変えない構成にしたいときに使えそう",
+    "Docker / Kubernetes 上のセルフホストの共通基盤として運用する場面に向いていそう"
+  ],
+  "for_whom": "複数の LLM プロバイダーを使い、キー管理・コスト管理・障害時の切り替えを一か所でやりたい開発者や基盤担当",
+  "similar": [
+    "OpenRouter：複数モデルを1つの API で呼ぶ点は近い。こちらはセルフホストできる",
+    "Portkey：AI Gateway という位置づけは近い（細かい機能差は未確認）"
+  ],
+  "tech": "Python 3.10 以上（SDK は httpx、openai、pydantic、tiktoken、boto3 など）。説明文では Rust core とあるが、実装の範囲は未確認。proxy は FastAPI、uvicorn / gunicorn / granian など。Docker、docker-compose の定義あり。管理画面用に Node の package.json もある",
+  "caveats": "GitHub のライセンス表示は NOASSERTION。pyproject.toml は MIT だが、リポジトリに enterprise 向けの有料機能（Enterprise Tier）の案内もあり、範囲は要確認。大規模で更新が非常に速い（最新 push は今日、バージョンが 1.104 と 1.106 で並走）。README の 8ms P95 latency は自己申告の数値。Hosted Proxy と Enterprise Tier の案内が README に並ぶ。",
+  "tags": [
+    "LLM",
+    "インフラ・運用",
+    "セルフホスト",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

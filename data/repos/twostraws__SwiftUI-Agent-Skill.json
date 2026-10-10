@@ -1,0 +1,37 @@
+{
+  "repo": "twostraws/SwiftUI-Agent-Skill",
+  "summarized_at": "2026-10-10",
+  "short": "SwiftUI-Agent-Skill は、AI コーディングエージェントに SwiftUI を新しい書き方で書かせるための agent skill（SwiftUI Pro）。非推奨 API の使用、VoiceOver 対応の抜け、性能の落とし穴など、LLM がよくやる間違いに絞ったルール集。",
+  "what": "AI エージェントに SwiftUI を正しく書かせる skill",
+  "can_do": [
+    "SwiftUI のコードをレビューさせ、非推奨 API を指摘させる",
+    "アクセシビリティ（VoiceOver など）の抜けを指摘させる",
+    "性能問題になりやすい書き方を指摘させる",
+    "navigation、layout、animation、state 管理などの作法を踏まえてコードを書かせる",
+    "Claude Code、Codex、Gemini、Cursor などで使える（Agent Skills 形式）"
+  ],
+  "how_to_use": "`npx skills add https://github.com/twostraws/swiftui-agent-skill --skill swiftui-pro` で入れる。Claude Code なら `/plugin marketplace add twostraws/SwiftUI-Agent-Skill` のあと `/plugin install swiftui-pro@swiftui-agent-skill`。使うときは `/swiftui-pro`（Codex は `$swiftui-pro`）、または自然文で依頼する。",
+  "use_cases": [
+    "iOS / macOS アプリを AI エージェントと開発するときに、生成コードの質を揃えるのに使えそう",
+    "既存の SwiftUI プロジェクトのレビューを自動化する場面に使えそう"
+  ],
+  "for_whom": "AI エージェントで SwiftUI アプリを書く iOS / macOS 開発者",
+  "similar": [
+    "作者の別リポジトリ SwiftData-Agent-Skill、Swift-Concurrency-Agent-Skill、Swift-Testing-Agent-Skill：同じ形式で対象が違う"
+  ],
+  "tech": "Markdown 主体（SKILL.md と references）で、実行コードは確認できない。Agent Skills 形式。対象は iOS 26 以上、Swift 6.4 以上と README にある。インストールに Node（npx）を使う",
+  "caveats": "Swift / Apple 開発者以外には用がない。ルールの中身（SKILL.md、references）は読んでいないので、実際の指摘の質は未確認。最新リリース 2.0.0 で iOS 27 と iPhone Duo のルールを追加とあり、新しい OS / Swift に追従する内容。ライセンスは MIT。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "モバイル"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とファイル構成から目的と使い方は分かったが、SKILL.md と references の中身は読んでいないため、具体的なルールの内容は推測"
+}
