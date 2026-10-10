@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-10",
+  "period": "weekly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "boykopovar/AnyPS5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "language": "C++",
+      "stars": 22272,
+      "stars_period": 15539
+    },
+    {
+      "rank": 2,
+      "repo": "mvschwarz/openrig",
+      "description": "Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
+      "language": "TypeScript",
+      "stars": 6445,
+      "stars_period": 2338
+    },
+    {
+      "rank": 3,
+      "repo": "mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 282664,
+      "stars_period": 8156
+    },
+    {
+      "rank": 4,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 59785,
+      "stars_period": 4003
+    },
+    {
+      "rank": 5,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 10581,
+      "stars_period": 1125
+    },
+    {
+      "rank": 6,
+      "repo": "EpicGames/raddebugger",
+      "description": "A native, user-mode, multi-process, graphical debugger.",
+      "language": "C",
+      "stars": 8263,
+      "stars_period": 654
+    },
+    {
+      "rank": 7,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 98983,
+      "stars_period": 3850
+    },
+    {
+      "rank": 8,
+      "repo": "earthtojake/text-to-cad",
+      "description": "Give your agent CAD superpowers.",
+      "language": "Python",
+      "stars": 18752,
+      "stars_period": 2125
+    },
+    {
+      "rank": 9,
+      "repo": "pingdotgg/t3code",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 26625,
+      "stars_period": 2379
+    },
+    {
+      "rank": 10,
+      "repo": "Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stars": 94885,
+      "stars_period": 7084
+    },
+    {
+      "rank": 11,
+      "repo": "DuarteSantos8/openGym",
+      "description": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server.",
+      "language": "JavaScript",
+      "stars": 8662,
+      "stars_period": 6749
+    }
+  ]
+}
