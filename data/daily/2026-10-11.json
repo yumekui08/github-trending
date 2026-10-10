@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-11",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "stars": 71774,
+      "stars_today": 25784,
+      "status": "continuing"
+    },
+    {
+      "rank": 2,
+      "repo": "boykopovar/AnyPS5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "language": "C++",
+      "stars": 26730,
+      "stars_today": 5831,
+      "status": "continuing"
+    },
+    {
+      "rank": 3,
+      "repo": "storytold/artcraft",
+      "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+      "language": "Rust",
+      "stars": 14410,
+      "stars_today": 3217,
+      "status": "continuing"
+    },
+    {
+      "rank": 4,
+      "repo": "cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 48915,
+      "stars_today": 1189,
+      "status": "continuing"
+    },
+    {
+      "rank": 5,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 26304,
+      "stars_today": 178,
+      "status": "continuing"
+    },
+    {
+      "rank": 6,
+      "repo": "mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 284438,
+      "stars_today": 1737,
+      "status": "continuing"
+    },
+    {
+      "rank": 7,
+      "repo": "flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "language": "Dart",
+      "stars": 179506,
+      "stars_today": 164,
+      "status": "new"
+    },
+    {
+      "rank": 8,
+      "repo": "tensorflow/tensorflow",
+      "description": "An Open Source Machine Learning Framework for Everyone",
+      "language": "C++",
+      "stars": 200721,
+      "stars_today": 24,
+      "status": "new"
+    },
+    {
+      "rank": 9,
+      "repo": "hugohe3/ppt-master",
+      "description": "AI turns documents or topics into real, native PowerPoint decks—with native shapes, transitions and animations, data-backed charts and tables on demand, audio narration from speaker notes, and support for your own .pptx templates. · by Hugo He",
+      "language": "Python",
+      "stars": 59409,
+      "stars_today": 515,
+      "status": "new"
+    },
+    {
+      "rank": 10,
+      "repo": "pytorch/pytorch",
+      "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+      "language": "Python",
+      "stars": 104134,
+      "stars_today": 81,
+      "status": "new"
+    },
+    {
+      "rank": 11,
+      "repo": "huggingface/transformers",
+      "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+      "language": "Python",
+      "stars": 167239,
+      "stars_today": 94,
+      "status": "new"
+    },
+    {
+      "rank": 12,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 28807,
+      "stars_today": 626,
+      "status": "continuing"
+    },
+    {
+      "rank": 13,
+      "repo": "multica-ai/andrej-karpathy-skills",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "language": null,
+      "stars": 218247,
+      "stars_today": 279,
+      "status": "new"
+    }
+  ],
+  "errors": []
+}
