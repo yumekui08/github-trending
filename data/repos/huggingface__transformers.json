@@ -1,0 +1,41 @@
+{
+  "repo": "huggingface/transformers",
+  "summarized_at": "2026-10-11",
+  "short": "transformers は、テキスト・画像・音声・マルチモーダルの学習済みモデルの定義を集めた Python ライブラリ。pipeline API で数行から推論でき、学習にも使える。",
+  "what": "学習済みモデルの定義を集めた Python ライブラリ",
+  "can_do": [
+    "pipeline API で text-generation など各種タスクの推論を数行で行う",
+    "Hugging Face Hub のモデルをダウンロードして使う",
+    "`transformers chat` でコマンドラインからモデルと対話する（`transformers serve` が必要）",
+    "学習用の Trainer などで微調整する",
+    "モデル定義を共通化し、vLLM、SGLang、DeepSpeed、llama.cpp など周辺ツールとの互換の基礎になる"
+  ],
+  "how_to_use": "`pip install transformers`（PyTorch も別に要る）。`from transformers import pipeline` して `pipeline(task=\"text-generation\", model=\"Qwen/Qwen2.5-1.5B\")(\"文\")` のように呼ぶ。",
+  "use_cases": [
+    "社内で新しい公開モデルを手早く試して動作確認する場面に使えそう",
+    "自前の GPU サーバーでの推論環境の基礎ライブラリとして入れる用途",
+    "vLLM などの推論基盤が参照するモデル定義の確認先として使えそう"
+  ],
+  "for_whom": "公開されている機械学習モデルを自分で動かす・微調整するエンジニアや研究者",
+  "similar": [
+    "vLLM：推論サーバーに特化。transformers のモデル定義を使う側",
+    "llama.cpp：C++ 製の軽量な推論エンジン。用途は推論に絞られる"
+  ],
+  "tech": "Python 3.10 以上。依存は huggingface-hub、numpy、safetensors、tokenizers、PyTorch（torch>=2.6）など。GPU は任意だが大きなモデルでは実質必要",
+  "caveats": "モデルごとに必要なメモリが大きく変わる。モデルの重みのライセンスは個別で、ライブラリ本体とは別に確認が要る。v5 系で更新が速く、リリースごとにモデルが追加される。",
+  "tags": [
+    "機械学習",
+    "LLM",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:setup.py",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

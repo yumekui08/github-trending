@@ -1,0 +1,38 @@
+{
+  "repo": "tensorflow/tensorflow",
+  "summarized_at": "2026-10-11",
+  "short": "tensorflow は、機械学習モデルの学習と推論を行う Google 発の OSS フレームワーク。Python と C++ の API を持ち、pip で入れて GPU でも動かせる。",
+  "what": "機械学習モデルを作って動かすフレームワーク",
+  "can_do": [
+    "ニューラルネットワークの定義・学習・推論を Python と C++ の API で行う",
+    "CUDA 対応 GPU（Ubuntu、Windows）で学習・推論を高速化する",
+    "Device Plugins で DirectX や macOS の Metal など他のデバイスにも対応する",
+    "tf.lite で端末向けの軽量モデル（int8、int4 など低精度の演算）を扱う",
+    "tf.data で入力データのパイプラインを組む"
+  ],
+  "how_to_use": "`pip install tensorflow` で入れる（GPU 対応込み）。CPU のみの小さいパッケージは `pip install tensorflow-cpu`。Docker とソースからのビルドも公式の install guide にある。",
+  "use_cases": [
+    "社内の GPU 基盤で学習ジョブを動かす際の実行環境として検証できそう",
+    "既存の TensorFlow モデルを使う推論サービスの保守・移行の場面で参照しそう",
+    "tf.lite でエッジ機器向けにモデルを小さくする用途に使えそう"
+  ],
+  "for_whom": "機械学習モデルを自分で学習・運用したい開発者・研究者。既存の TensorFlow 資産を保守する人",
+  "similar": [
+    "PyTorch：用途はほぼ同じ。研究用途ではこちらが主流と言われるが、比較は未確認",
+    "JAX：Google 製の数値計算ライブラリ。違いの詳細は未確認"
+  ],
+  "tech": "C++ が中心で Python の API を提供。ビルドは Bazel。Python 3.9 のサポートは 2.21 で終了。CUDA 対応 GPU は任意",
+  "caveats": "2.21.0 でTensorBoard への依存が外れ、Python 3.9 のサポートが終了するなど、更新で壊れる変更がある。リポジトリが非常に大きい（約 1.4GB、ファイル約 4 万）。ソースからのビルドは Bazel が要る。",
+  "tags": [
+    "機械学習",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,32 @@
+{
+  "repo": "multica-ai/andrej-karpathy-skills",
+  "summarized_at": "2026-10-11",
+  "short": "andrej-karpathy-skills は、Claude Code の振る舞いを改善するための CLAUDE.md を1つ配るリポジトリ。Andrej Karpathy の LLM コーディングの失敗の指摘を4原則にまとめた。",
+  "what": "Claude Code 向けの指針を書いた CLAUDE.md",
+  "can_do": [
+    "「先に考える」「単純さを優先」「最小限の変更」「検証できる目標で動く」の4原則を CLAUDE.md として渡す",
+    "Claude Code の plugin として入れる",
+    "CLAUDE.md を既存プロジェクトに追記する",
+    "Cursor 用のルールファイルも同梱している"
+  ],
+  "how_to_use": "Claude Code で `/plugin marketplace add forrestchang/andrej-karpathy-skills` のあと `/plugin install andrej-karpathy-skills@karpathy-skills`。プロジェクト単位なら curl で CLAUDE.md を取得する。",
+  "use_cases": [
+    "自分のリポジトリの CLAUDE.md に、余計な変更を抑える指針を足す際の下敷きに使えそう",
+    "チーム共通のエージェント設定を作る際の参考になりそう"
+  ],
+  "for_whom": "Claude Code や Cursor に任せたコード変更で、不要な書き換えが多いと感じている人",
+  "similar": [],
+  "tech": "プログラムではなく Markdown の指針ファイルとプラグイン定義（.claude-plugin）。実行環境は不要",
+  "caveats": "ソフトウェアではなく文章の指針。効果の根拠は README の主張で、測定は示されていない。ライセンスの表記がない（GitHub 上は不明）。",
+  "tags": [
+    "AI エージェント",
+    "ドキュメント・知識管理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

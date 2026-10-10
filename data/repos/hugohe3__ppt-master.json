@@ -1,0 +1,40 @@
+{
+  "repo": "hugohe3/ppt-master",
+  "summarized_at": "2026-10-11",
+  "short": "ppt-master は、資料やテーマから編集可能な .pptx を生成する、AI エージェント向けの workflow（skill）。図形・グラフ・表を PowerPoint ネイティブの形で出す。",
+  "what": "文書から編集可能な PowerPoint を作る AI skill",
+  "can_do": [
+    "PDF、DOCX、Web ページなどの資料を読み、構成を考えてスライドを作る",
+    "図形、データに紐づくグラフ・表を PowerPoint ネイティブのオブジェクトとして出力する",
+    "トランジション、アニメーション、発表者ノートからの音声ナレーションを付ける",
+    "手持ちの .pptx を元にテンプレートを作る、既存の .pptx に内容を差し込む",
+    "画像生成 API（gpt-image-2、Google の Nano Banana 2.1 など）で画像を入れる"
+  ],
+  "how_to_use": "Python 3.10 以上を入れ、リポジトリを clone して `pip install -r requirements.txt`。Claude Code などのエージェントのチャットで資料の場所を伝え「この PDF からデッキを作って」と頼む。Claude Code の plugin marketplace（`/plugin install ppt-master@ppt-master`）からも入れられる。",
+  "use_cases": [
+    "技術調査やポストモーテムの資料を、社内向けのスライドに起こす場面に使えそう",
+    "既存の社内テンプレートの見た目を保ったまま内容を入れ替える用途に使えそう",
+    "データ自体はローカルに置いたまま、スライドの下書きを作る用途に向いていそう"
+  ],
+  "for_whom": "資料作りを AI エージェントに任せ、仕上げは PowerPoint で手直ししたい人",
+  "similar": [
+    "Marp：Markdown からスライドを作る。こちらは AI が構成を考え、PowerPoint で編集できる .pptx を出す点が違う",
+    "python-pptx：.pptx を扱うライブラリ。こちらは workflow 全体を含む（内部で使っているかは未確認）"
+  ],
+  "tech": "Python（pip の依存は skills/ppt-master/requirements.txt に集約）。エージェント（Claude Code、Cline など）の上で動く。Markdown の変換に pandoc が要る場合がある。画像生成には外部 API のキーが要る（任意）",
+  "caveats": "動かすには LLM のエージェントと API の利用料が別に要る。品質はモデルに左右されると README 自身が書いている（Kimi K3 か Claude の推奨）。README の冒頭は複数のスポンサー広告が占める。2025年12月に作られた新しいプロジェクトで、リリースが頻繁（v6.7.0）。",
+  "tags": [
+    "自動化・ワークフロー",
+    "AI エージェント",
+    "ドキュメント・知識管理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:requirements.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
