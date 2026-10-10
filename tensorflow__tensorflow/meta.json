@@ -1,0 +1,25 @@
+{
+  "full_name": "tensorflow/tensorflow",
+  "description": "An Open Source Machine Learning Framework for Everyone",
+  "homepage": "https://tensorflow.org",
+  "topics": [
+    "deep-learning",
+    "deep-neural-networks",
+    "distributed",
+    "machine-learning",
+    "ml",
+    "neural-network",
+    "python",
+    "tensorflow"
+  ],
+  "language": "C++",
+  "stargazers_count": 200721,
+  "forks_count": 78963,
+  "size": 1399324,
+  "created_at": "2015-11-07T01:19:20Z",
+  "pushed_at": "2026-10-10T22:42:15Z",
+  "default_branch": "master",
+  "archived": false,
+  "fork": false,
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,13 @@
+# ファイルとディレクトリの総数：14
+.claude-plugin/
+.claude-plugin/marketplace.json
+.claude-plugin/plugin.json
+.cursor/
+.cursor/rules/
+CLAUDE.md
+CURSOR.md
+EXAMPLES.md
+README.md
+README.zh.md
+skills/
+skills/karpathy-guidelines/

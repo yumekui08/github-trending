@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-11",
+  "items": [
+    {
+      "repo": "tensorflow/tensorflow",
+      "rank": 8,
+      "status": "new",
+      "work_dir": ".work/tensorflow__tensorflow",
+      "output": "data/repos/tensorflow__tensorflow.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "hugohe3/ppt-master",
+      "rank": 9,
+      "status": "new",
+      "work_dir": ".work/hugohe3__ppt-master",
+      "output": "data/repos/hugohe3__ppt-master.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:requirements.txt",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "huggingface/transformers",
+      "rank": 11,
+      "status": "new",
+      "work_dir": ".work/huggingface__transformers",
+      "output": "data/repos/huggingface__transformers.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:pyproject.toml",
+        "manifest:setup.py",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "multica-ai/andrej-karpathy-skills",
+      "rank": 13,
+      "status": "new",
+      "work_dir": ".work/multica-ai__andrej-karpathy-skills",
+      "output": "data/repos/multica-ai__andrej-karpathy-skills.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme"
+      ],
+      "errors": []
+    }
+  ],
+  "deferred": []
+}
