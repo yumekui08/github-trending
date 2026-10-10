@@ -192,7 +192,7 @@ def test_whole_card_links_to_detail_only_when_summarized(tmp_path):
 def test_page_title(tmp_path):
     out = build(Config(), make_store(tmp_path), tmp_path / "site")
     # トップは名前と、何のサイトかの説明（0037）
-    assert "<title>github新聞｜GitHub Trending を毎朝日本語で</title>" in (out / "index.html").read_text()
+    assert "<title>github新聞｜GitHub トレンドの人気リポジトリを毎朝日本語で解説</title>" in (out / "index.html").read_text()
     assert "<title>github新聞（26/09/29）</title>" in (out / "d/2026-09-29/index.html").read_text()
 
 
@@ -319,7 +319,8 @@ def test_repo_page_seo(tmp_path):
     out = build(Config(site_base_url="https://example.com/"), store, tmp_path / "site")
     repo = (out / "r/o/r/index.html").read_text()
 
-    assert "<title>o/r とは：HTTP の負荷試験 CLI | github新聞</title>" in repo
+    assert "<title>o/r とは？使い方・できることを日本語で解説 | github新聞</title>" in repo
+    assert '<h2><span class="h2-name">r</span> でできること</h2>' in repo and '<span class="h2-name">r</span> の使い方' in repo  # 見出しにリポジトリ名（0038）
     assert '<meta property="article:published_time" content="2026-09-30T07:00:00+09:00">' in repo
     lds = [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', repo, re.S)]
     article = next(x for x in lds if x["@type"] == "TechArticle")
@@ -369,4 +370,32 @@ def test_robots_headers_and_repo_details(tmp_path):
     assert "★ 20<span class=\"note\">（2026-09-30 時点）</span>" in repo  # スターはいつ時点か
     about = (out / "about/index.html").read_text()
     assert "https://github.com/yumekui08/github-trending/issues" in about
+
+
+def test_top_description_is_stable_and_lang_pages(tmp_path):
+    import re
+
+    out = build(Config(site_base_url="https://example.com/"), make_store(tmp_path), tmp_path / "site")
+    index = (out / "index.html").read_text()
+    desc = re.search(r'<meta name="description" content="([^"]*)"', index).group(1)
+    # トップの説明は毎日変わらない「何のサイトか」。その日の要約の寄せ集めにしない（0038）
+    assert desc.startswith("GitHub Trending（トレンド）に上がった人気リポジトリを") and "2026" not in desc
+    assert '<meta name="robots" content="max-image-preview:large">' in index
+    assert '<p class="motto">' in index
+    # 日付を指定したページは、その日の中身の説明のまま
+    assert "2026年9月30日" in (out / "d/2026-09-30/index.html").read_text().split('name="description"')[1][:200]
+
+    go = (out / "lang/go/index.html").read_text()
+    assert "<title>Go の人気 GitHub リポジトリ一覧（トレンド入り・日本語解説）| github新聞</title>" in go
+    assert 'href="../../r/o/r/"' in go
+    assert 'href="../lang/go/">Go</a>' in (out / "t/index.html").read_text()
+    assert 'href="../../../lang/go/"' in (out / "r/o/r/index.html").read_text()
+    assert "https://example.com/lang/go/" in (out / "sitemap.xml").read_text()
+
+
+def test_lang_slug():
+    from github_trending.build_site import lang_slug
+
+    assert lang_slug("C++") == "c-plus-plus" and lang_slug("C#") == "c-sharp"
+    assert lang_slug("Jupyter Notebook") == "jupyter-notebook" and lang_slug("Python") == "python"
 

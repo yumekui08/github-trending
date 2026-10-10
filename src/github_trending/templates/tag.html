@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {# 分野ごとの一覧（0037）：その分野のタグが付いた解説を、要約した日の新しい順にすべて #}
-{% block title %}{{ tag }}の GitHub リポジトリ解説一覧 | github新聞{% endblock %}
+{% block title %}{{ tag }}の人気 GitHub リポジトリ一覧（日本語解説）| github新聞{% endblock %}
 {% block description %}GitHub Trending に上がった「{{ tag }}」分野のリポジトリ {{ entries | length }} 件の日本語の解説。{% for x in entries[:3] %}{{ x.repo }}：{{ x.what | headline }}。{% endfor %}{% endblock %}
 {% block body_class %}narrow{% endblock %}
 {% block jsonld %}
-{% if base_url %}<script type="application/ld+json">{{ {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "github新聞", "item": base_url}, {"@type": "ListItem", "position": 2, "name": "分野別", "item": base_url ~ "t/"}, {"@type": "ListItem", "position": 3, "name": tag, "item": base_url ~ path}]} | tojson }}</script>{% endif %}
+{% if base_url %}<script type="application/ld+json">{{ {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "github新聞", "item": base_url}, {"@type": "ListItem", "position": 2, "name": "分野・言語別", "item": base_url ~ "t/"}, {"@type": "ListItem", "position": 3, "name": tag, "item": base_url ~ path}]} | tojson }}</script>{% endif %}
 {% endblock %}
 {% block main %}
 <header class="page-title">
-  <p class="page-kicker"><a href="{{ root }}t/">分野別</a></p>
+  <p class="page-kicker"><a href="{{ root }}t/">分野・言語別</a></p>
   <h1>{{ tag }}</h1>
   <p>GitHub Trending に上がった「{{ tag }}」のリポジトリの解説 {{ entries | length }} 件。新しい順。</p>
 </header>

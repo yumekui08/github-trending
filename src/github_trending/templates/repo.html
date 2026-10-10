@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {# 題は「owner/name とは：what」。「〇〇 とは」で探す人に見つけてもらうため（0035） #}
-{% block title %}{{ s.repo }} とは：{{ s.what | headline | replace("`", "") }} | github新聞{% endblock %}
+{# 題は「owner/name とは？使い方・できることを日本語で解説」。検索候補に多い「〇〇 とは」「〇〇 使い方」に合わせる（0038） #}
+{% block title %}{{ s.repo }} とは？使い方・できることを日本語で解説 | github新聞{% endblock %}
 {% block description %}{{ s.what | headline }}。{{ s.short | replace("`", "") }}{% endblock %}
 {% block og_type %}article{% endblock %}
 {# 確かさが「低」の解説は、材料が少ないので検索には載せない（サイトでは読める。0037） #}
@@ -14,6 +15,7 @@
 {% endfor %}{% endif %}
 {% endblock %}
 {% block main %}
+{% set name = s.repo.split("/", 1)[1] %}
 {% set conf = {"high": "高", "medium": "中", "low": "低"}[s.confidence] %}
 <article class="detail">
   <header class="article-head">
@@ -32,40 +34,40 @@
     <p class="lead">{{ s.short | dropcap }}</p>
 
     {% if s.can_do %}
-    <section><h2>できること</h2>
+    <section><h2><span class="h2-name">{{ name }}</span> でできること</h2>
       <ul>{% for x in s.can_do %}<li>{{ x | code }}</li>{% endfor %}</ul></section>
     {% endif %}
 
     {% if s.how_to_use %}
-    <section><h2>使い方</h2><p>{{ s.how_to_use | code }}</p></section>
+    <section><h2><span class="h2-name">{{ name }}</span> の使い方</h2><p>{{ s.how_to_use | code }}</p></section>
     {% endif %}
 
     {% if s.use_cases %}
-    <section><h2>活用できそうな場面</h2>
+    <section><h2><span class="h2-name">{{ name }}</span> を活用できそうな場面</h2>
       <ul>{% for x in s.use_cases %}<li>{{ x | code }}</li>{% endfor %}</ul></section>
     {% endif %}
 
     {% if s.for_whom %}
-    <section><h2>向いている人</h2><p>{{ s.for_whom | code }}</p></section>
+    <section><h2><span class="h2-name">{{ name }}</span> が向いている人</h2><p>{{ s.for_whom | code }}</p></section>
     {% endif %}
 
     {% if s.similar %}
-    <section><h2>似ているもの</h2>
+    <section><h2><span class="h2-name">{{ name }}</span> に似ているもの</h2>
       <ul>{% for x in s.similar %}<li>{{ x | code }}</li>{% endfor %}</ul></section>
     {% endif %}
 
     {% if s.tech %}
-    <section><h2>技術</h2><p>{{ s.tech | code }}</p></section>
+    <section><h2><span class="h2-name">{{ name }}</span> の技術</h2><p>{{ s.tech | code }}</p></section>
     {% endif %}
 
     {% if s.caveats %}
-    <section><h2>注意点</h2><p>{{ s.caveats | code }}</p></section>
+    <section><h2><span class="h2-name">{{ name }}</span> の注意点</h2><p>{{ s.caveats | code }}</p></section>
     {% endif %}
 
     {# スターの推移：本文の節のひとつとして、新聞の図版のように（0031）。star-history.com の画像を読む人のブラウザが取りに行く。
        明暗はサイトのテーマに合わせて出し分け、読み込めなければ節ごと隠す #}
     {% set chart = s.repo | star_chart %}
-    <section class="star-chart"><h2>スターの推移</h2>
+    <section class="star-chart"><h2><span class="h2-name">{{ name }}</span> のスターの推移</h2>
       <figure>
         <a href="https://www.star-history.com/?repos={{ s.repo }}&amp;type=date">
           <img class="chart-light" src="{{ chart }}" alt="{{ s.repo }} のスターの推移" width="800" height="533" loading="lazy" onerror="this.closest('section').hidden = true">
@@ -80,7 +82,7 @@
     <h2>基本データ</h2>
     <p class="actions"><a class="button" href="https://github.com/{{ s.repo }}">GitHub で開く</a></p>
     <dl class="about">
-      {% if item and item.language %}<dt>言語</dt><dd><span class="lang"><i style="background: {{ item.language | lang_color }}"></i>{{ item.language }}</span></dd>{% endif %}
+      {% if item and item.language %}<dt>言語</dt><dd><a class="lang" href="{{ root }}lang/{{ item.language | lang_slug }}/"><i style="background: {{ item.language | lang_color }}"></i>{{ item.language }}</a></dd>{% endif %}
       {% if item and item.stars %}<dt>スター</dt><dd>★ {{ "{:,}".format(item.stars) }}<span class="note">（{{ item.seen_on }} 時点）</span></dd>{% endif %}
       <dt>確かさ</dt><dd>{{ conf }}{% if s.confidence_note %}　<span class="note">{{ s.confidence_note }}</span>{% endif %}</dd>
       <dt>要約した日</dt><dd>{{ s.summarized_at | ja_date }}</dd>

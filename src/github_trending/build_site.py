@@ -144,6 +144,7 @@ def _env() -> Environment:
     env.filters["rank_tier"] = rank_tier
     env.filters["star_chart"] = star_chart
     env.filters["tag_slug"] = tag_slug
+    env.filters["lang_slug"] = lang_slug
     env.filters["source_label"] = source_label
     env.globals["summary_time"] = SUMMARY_TIME
     env.globals["brief_from_rank"] = BRIEF_FROM_RANK
@@ -180,6 +181,12 @@ AI_TRAINING_BOTS = (
 )
 # 「材料」の表示名（0037）。ファイルのパスや manifest:ファイル はそのまま出す
 SOURCE_LABELS = {"meta": "リポジトリ情報", "readme": "README", "tree": "ファイル構成", "release": "リリース"}
+
+
+def lang_slug(language: str) -> str:
+    """言語ごとの一覧の URL の名前（0038）。C++ → c-plus-plus、C# → c-sharp、Jupyter Notebook → jupyter-notebook"""
+    s = language.lower().replace("++", "-plus-plus").replace("#", "-sharp")
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-") or "other"
 
 
 def tag_slug(tag: str) -> str:
@@ -440,7 +447,21 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
         _write(out / href / "index.html", tag_tpl.render(root="../../", path=href, tag=tag, entries=xs))
         urls.append((href, xs[0]["summarized_at"]))
     tags_sorted = sorted(by_tag.items(), key=lambda kv: (-len(kv[1]), list(TAG_SLUGS).index(kv[0])))
-    _write(out / "t" / "index.html", env.get_template("tags.html").render(root="../", path="t/", tags=tags_sorted))
+
+    # 言語ごとの一覧（0038）：「Python 人気リポジトリ」のような検索に合わせる。言語は最後に Trending で見たときの値
+    lang_tpl = env.get_template("lang.html")
+    by_lang: dict[str, list[dict]] = {}
+    for x in ordered:
+        language = (latest_item.get(x["repo"]) or {}).get("language")
+        if language:
+            by_lang.setdefault(language, []).append(x)
+    for language, xs in by_lang.items():
+        href = f"lang/{lang_slug(language)}/"
+        _write(out / href / "index.html", lang_tpl.render(root="../../", path=href, language=language, entries=xs))
+        urls.append((href, xs[0]["summarized_at"]))
+    langs_sorted = sorted(by_lang.items(), key=lambda kv: (-len(kv[1]), kv[0]))
+    _write(out / "t" / "index.html", env.get_template("tags.html").render(
+        root="../", path="t/", tags=tags_sorted, langs=langs_sorted))
     if by_tag:
         urls.append(("t/", ordered[0]["summarized_at"]))
 

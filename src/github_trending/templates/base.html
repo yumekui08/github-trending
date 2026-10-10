@@ -8,7 +8,7 @@
 <meta name="description" content="{% block description %}{{ site_description }}{% endblock %}">
 {% if site_verification %}<meta name="google-site-verification" content="{{ site_verification }}">{% endif %}
 {# 検索に載せないページ（日付を指定した一覧など。0037）。リンクはたどってもらう #}
-{% block robots %}{% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}{% endblock %}
+{% block robots %}{% if noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="max-image-preview:large">{% endif %}{% endblock %}
 <meta property="og:site_name" content="github新聞">
 <meta property="og:type" content="{% block og_type %}website{% endblock %}">
 <meta property="og:title" content="{{ self.title() }}">
@@ -44,10 +44,14 @@
 <div class="paper">
 <header class="site">
   <div class="nameplate">
-    <a class="brand" href="{{ root or './' }}" aria-label="github新聞 トップへ">
-      <img class="logo logo-light" src="{{ root }}logo_light.png?v={{ asset_v['logo_light.png'] }}" alt="github新聞" width="1040" height="184">
-      <img class="logo logo-dark" src="{{ root }}logo_dark.png?v={{ asset_v['logo_dark.png'] }}" alt="" width="1040" height="184">
-    </a>
+    <div class="nameplate-main">
+      <a class="brand" href="{{ root or './' }}" aria-label="github新聞 トップへ">
+        <img class="logo logo-light" src="{{ root }}logo_light.png?v={{ asset_v['logo_light.png'] }}" alt="github新聞" width="1040" height="184">
+        <img class="logo logo-dark" src="{{ root }}logo_dark.png?v={{ asset_v['logo_dark.png'] }}" alt="" width="1040" height="184">
+      </a>
+      {# 題字の下の標語。どのページにも、何のサイトかを一行で（0038） #}
+      <p class="motto">GitHub トレンドの人気リポジトリを、毎朝日本語で</p>
+    </div>
     <div class="nameplate-side">
       {% if header_day %}
       <p class="dateline"><time datetime="{{ header_day }}">{{ header_day | ja_ymd }}</time><span>{{ header_day | ja_weekday }}　第{{ issue_no[header_day] }}号</span></p>
@@ -70,7 +74,7 @@
   <span class="footer-links">
     <a href="{{ root }}about/">github新聞について</a>
     <a href="{{ root }}archive/">過去の日</a>
-    <a href="{{ root }}t/">分野別</a>
+    <a href="{{ root }}t/">分野・言語別</a>
     {% if base_url %}<a href="{{ root }}feed.xml">RSS（Atom）で購読する</a>{% endif %}
   </span>
 </footer>

@@ -2,20 +2,20 @@
 {% from "_card.html" import card, brief %}
 {% set stars_label = {"daily": "今日", "weekly": "今週", "monthly": "今月"}[page.period] %}
 {% set period_name = dict(period_name, daily="本日") if is_top else period_name %}
-{# タブの題：トップは「github新聞」だけ（base.html の既定）、日付を指定したページは「github新聞（26/10/02）」（0026） #}
-{# トップの題は、検索で何のサイトか分かるよう説明を添える（0026 を 0037 で改めた） #}
-{% block title %}{% if is_top %}github新聞｜GitHub Trending {{ {"daily": "を毎朝日本語で", "weekly": "の週次ランキングを日本語で", "monthly": "の月次ランキングを日本語で"}[page.period] }}{% else %}github新聞（{{ page.date[2:].replace("-", "/") }}）{% if page.period != "daily" %} {{ period_name[page.period] }}{% endif %}{% endif %}{% endblock %}
+{# 日付を指定したページの題は「github新聞（26/10/02）」（0026）。トップの題は 0037・0038 で改めた #}
+{# トップの題と説明は、毎日変わらない「何のページか」にする。検索候補に多い「GitHub トレンド」「人気リポジトリ」「ランキング」を入れる（0038） #}
+{% block title %}{% if is_top %}{{ {"daily": "github新聞｜GitHub トレンドの人気リポジトリを毎朝日本語で解説", "weekly": "GitHub 週間トレンド・人気リポジトリランキング（日本語解説）｜github新聞", "monthly": "GitHub 月間トレンド・人気リポジトリランキング（日本語解説）｜github新聞"}[page.period] }}{% else %}github新聞（{{ page.date[2:].replace("-", "/") }}）{% if page.period != "daily" %} {{ period_name[page.period] }}{% endif %}{% endif %}{% endblock %}
 {% block jsonld %}
 {% if is_top and page.period == "daily" and base_url %}
 {# トップ：サイトそのものの構造化データ（0035） #}
-<script type="application/ld+json">{{ {"@context": "https://schema.org", "@type": "WebSite", "name": "github新聞", "url": base_url, "inLanguage": "ja", "description": site_description} | tojson }}</script>
+<script type="application/ld+json">{{ {"@context": "https://schema.org", "@type": "WebSite", "name": "github新聞", "alternateName": ["GitHub新聞", "github 新聞"], "url": base_url, "inLanguage": "ja", "description": site_description, "publisher": {"@type": "Organization", "name": "github新聞", "url": base_url, "logo": base_url ~ "logo_light.png", "sameAs": ["https://github.com/yumekui08/github-trending"]}} | tojson }}</script>
 {% endif %}
 {% endblock %}
-{% block description %}{{ page.date | ja_date }}の GitHub Trending（{{ period_name[page.period] }}）{{ page.cards | length }}件を日本語で要約。{% for c in page.cards[:3] if c.summary %}{{ c.repo }}：{{ c.summary.what | headline }}。{% endfor %}{% endblock %}
+{% block description %}{% if is_top %}{{ {"daily": "GitHub Trending（トレンド）に上がった人気リポジトリを、毎朝日本語で解説する新聞です。今日のランキングと、各リポジトリのできること・使い方・注意点を、英語の README を読まずに掴めます。", "weekly": "GitHub Trending の週間ランキング（今週スターを集めた人気リポジトリ）を日本語で解説。各リポジトリのできること・使い方・注意点を毎朝更新します。", "monthly": "GitHub Trending の月間ランキング（今月スターを集めた人気リポジトリ）を日本語で解説。各リポジトリのできること・使い方・注意点を毎朝更新します。"}[page.period] }}{% else %}{{ page.date | ja_date }}の GitHub Trending（{{ period_name[page.period] }}）{{ page.cards | length }}件を日本語で要約。{% for c in page.cards[:3] if c.summary %}{{ c.repo }}：{{ c.summary.what | headline }}。{% endfor %}{% endif %}{% endblock %}
 {% set field_title = {"daily": ("本日の分野" if is_top else "この日の分野"), "weekly": "今週の分野", "monthly": "今月の分野"}[page.period] %}
 {% block main %}
 <header class="section-bar">
-  <h1 class="visually-hidden">{{ page.date | ja_date }}の GitHub Trending（{{ period_name[page.period] }}）</h1>
+  <h1 class="visually-hidden">{% if is_top %}GitHub トレンドの人気リポジトリ{{ {"daily": "", "weekly": "（週間ランキング）", "monthly": "（月間ランキング）"}[page.period] }}：{% endif %}{{ page.date | ja_date }}の GitHub Trending（{{ period_name[page.period] }}）</h1>
   <nav class="tabs" aria-label="期間">
     {% for p in ("daily", "weekly", "monthly") %}
       {% if page.tabs[p] is none %}<span class="tab disabled">{{ period_name[p] }}</span>

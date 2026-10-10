@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {# 分野の一覧（0037）。件数の多い順 #}
-{% block title %}分野別の GitHub リポジトリ解説 | github新聞{% endblock %}
+{% block title %}分野別・言語別の人気 GitHub リポジトリ（日本語解説）| github新聞{% endblock %}
 {% block description %}GitHub Trending に上がったリポジトリの日本語の解説を、分野ごとにまとめています。{% endblock %}
 {% block body_class %}narrow{% endblock %}
 {% block main %}
 <header class="page-title">
-  <h1>分野別</h1>
+  <h1>分野別・言語別</h1>
   <p>これまでに解説したリポジトリを、分野ごとにまとめています。</p>
 </header>
 <ul class="tag-index">
@@ -13,4 +13,12 @@
   <li><a href="{{ root }}t/{{ tag | tag_slug }}/">{{ tag }}</a><b>{{ xs | length }}</b></li>
   {% endfor %}
 </ul>
+{% if langs %}
+<h2 class="tag-index-title">言語別</h2>
+<ul class="tag-index">
+  {% for language, xs in langs %}
+  <li><a href="{{ root }}lang/{{ language | lang_slug }}/">{{ language }}</a><b>{{ xs | length }}</b></li>
+  {% endfor %}
+</ul>
+{% endif %}
 {% endblock %}

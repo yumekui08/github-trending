@@ -145,7 +145,7 @@ header.site { padding: 14px 12px 0; }
 }
 .brand { display: block; flex: 0 1 auto; min-width: 0; }
 .brand:hover { text-decoration: none; }
-.logo { display: block; width: min(300px, calc(100vw - 150px)); height: auto; }  /* 日付の欄に要る幅を残して大きく（0022） */
+.logo { display: block; width: min(300px, calc(100vw - 172px)); height: auto; }  /* 日付の欄（「10月10日」のような2桁の日も）に要る幅を残して大きく（0022、0038） */
 .logo-dark, .chart-dark { display: none; }
 :root[data-theme="dark"] :is(.logo-light, .chart-light) { display: none; }
 :root[data-theme="dark"] :is(.logo-dark, .chart-dark) { display: block; }
@@ -609,3 +609,11 @@ footer.site .footer-links a { color: var(--muted); }
 .related-more { margin: 8px 0 0; font-size: 13px; text-align: right; }
 .related-more a::after { content: " →"; }
 
+/* ---- 題字の下の標語（0038）。新聞の題字に添える一行 ---- */
+.nameplate-main { flex: 0 1 auto; min-width: 0; }
+.motto { margin: 4px 0 0; font-size: 11px; letter-spacing: 0.06em; color: var(--muted); line-height: 1.4; }
+@media (min-width: 900px) { .motto { font-size: 12px; letter-spacing: 0.12em; } }
+.tag-index-title { margin: 28px 0 0; padding-bottom: 5px; font-size: 14px; letter-spacing: 0.14em; border-bottom: 1px solid var(--rule-strong); }
+a.lang { color: inherit; }
+
+.article-body h2 .h2-name { letter-spacing: 0.01em; }  /* 見出しのリポジトリ名は字間を広げない（0038） */
