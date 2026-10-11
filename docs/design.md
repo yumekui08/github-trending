@@ -204,6 +204,8 @@ routine が従う手順は `docs/routine.md` に書く。routine のプロンプ
 - 要約のある記事は、どこを押しても詳しいページへ行く（0025）
 - favicon は明るい画面用（墨色）と暗い画面用（白）を出し分ける（0025）
 - 検索エンジンとリンクのカード（0027）：各ページに description、canonical、OGP（og:title・og:description・og:image など）、`twitter:card`。OGP の画像は題字を紙の色に置いた 1200×630 の `og_image.png`。絶対 URL は `site_base_url` から作り、`site_base_url` がないときは canonical・og:url・og:image・sitemap・フィードを出さない
+- インストールの手順（0039）：要約に `install` があれば、詳しいページの「〇〇 のインストール」の節に、コマンドをコピーできる塊で出す
+- OGP 画像（0039）：詳しいページは、リポジトリごとの `r/owner/name/og.png`（題字、リポジトリ名、一文。同梱のフォントで Pillow で描く）。ほかのページはサイトの `og_image.png`
 - 検索に載せる範囲（0037）：日付を指定した一覧（`/d/…`）と、確かさが「低」の解説には `noindex, follow` を付け、sitemap から外す。分野ごとの一覧 `/t/…/` を作り、詳しいページのタグ・「本日の分野」・フッターから入れる。robots.txt は学習用の AI ボット（GPTBot・ClaudeBot など）を断り、ほかは許す。`_headers` でセキュリティのヘッダーと、`?v=` 付きのファイルの長いキャッシュ
 - 検索に出るように（0035）：構造化データ（JSON-LD）を、トップは `WebSite`、詳しいページは `TechArticle`（リポジトリを `SoftwareSourceCode` として。日付は要約した日の 7:00 日本時間。0037）とパンくず（トップ → 主な分野 → 記事）、説明のページは `AboutPage`。詳しいページの末尾に「同じ分野の記事」（先頭のタグが同じ解説を新しい順に5件）。全ページのフッターに「github新聞について」「過去の日」「RSS」。環境変数 `GOOGLE_SITE_VERIFICATION` があれば、全ページに Search Console の所有確認のタグ
 - 右上のボタンでダーク／ライトを切り替える（初めは OS の設定、選んだものはブラウザに覚える）。JavaScript はこのためだけの数行（0003）

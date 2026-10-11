@@ -9,6 +9,7 @@ dependencies = [
     "jinja2",
     "pyyaml",
     "jsonschema",
+    "pillow",  # リポジトリごとの OGP 画像を作る（0039）
 ]
 
 [project.optional-dependencies]
@@ -22,7 +23,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-github_trending = ["templates/*", "static/*"]
+github_trending = ["templates/*", "static/*", "fonts/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

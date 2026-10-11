@@ -37,7 +37,7 @@ github-trending は、**GitHub Trending に新しく上がったリポジトリ�
 ## 開発環境
 
 - WSL2（Ubuntu）、Python 3.12。仮想環境は `.venv/` で、実行には `.venv/bin/python` を使います。
-- 依存は必要最小限にします（httpx、beautifulsoup4、jinja2、pyyaml、jsonschema）。依存を足したら `pyproject.toml` に書きます。
+- 依存は必要最小限にします（httpx、beautifulsoup4、jinja2、pyyaml、jsonschema、pillow）。pillow は OGP 画像を作るため（0039）。依存を足したら `pyproject.toml` に書きます。
 - 手元で動かすときは、秘密情報を `.env` に書きます（`.gitignore` 済み）。Discord への送信は `--dry-run` で止められるようにします。
 
 ## よく使うコマンド

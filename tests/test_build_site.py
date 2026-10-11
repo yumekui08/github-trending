@@ -202,7 +202,9 @@ def test_seo_files_and_ogp_with_base_url(tmp_path):
     out = build(Config(site_base_url="https://example.com"), make_store(tmp_path), tmp_path / "site")
     repo = (out / "r/o/r/index.html").read_text()
     assert '<link rel="canonical" href="https://example.com/r/o/r/">' in repo
-    assert '<meta property="og:image" content="https://example.com/og_image.png?v=' in repo
+    # 詳しいページは、リポジトリごとの OGP 画像（0039）。ほかのページはサイトの画像
+    assert '<meta property="og:image" content="https://example.com/r/o/r/og.png?v=2026-09-30">' in repo
+    assert '<meta property="og:image" content="https://example.com/og_image.png?v=' in (out / "index.html").read_text()
     assert '<meta property="og:type" content="article">' in repo
     assert 'content="HTTP の負荷試験 CLI。負荷をかける CLI。&lt;b&gt;太字' in repo  # 説明文もエスケープされる
     assert '<link rel="canonical" href="https://example.com/">' in (out / "index.html").read_text()
@@ -398,4 +400,39 @@ def test_lang_slug():
 
     assert lang_slug("C++") == "c-plus-plus" and lang_slug("C#") == "c-sharp"
     assert lang_slug("Jupyter Notebook") == "jupyter-notebook" and lang_slug("Python") == "python"
+
+
+def test_install_section_and_og_image(tmp_path):
+    from PIL import Image
+
+    store = make_store(tmp_path)
+    store.save_summary(dict(SUMMARY, confidence="high", install=[
+        "Python 3.10 以上が要る。", "`pip install r && r --init`", "`curl -fsSL https://x/<i>.sh | sh`"]))
+    out = build(Config(site_base_url="https://example.com/"), store, tmp_path / "site")
+    repo = (out / "r/o/r/index.html").read_text()
+    assert '<span class="h2-name">r</span> のインストール' in repo
+    assert "<p>Python 3.10 以上が要る。</p>" in repo
+    assert '<pre class="cmd"><code>pip install r &amp;&amp; r --init</code></pre>' in repo
+    assert "&lt;i&gt;.sh" in repo  # コマンドの中もエスケープする
+
+    png = out / "r/o/r/og.png"
+    with Image.open(png) as img:
+        assert img.size == (1200, 630)
+    # 同じ入力なら同じ画像（作り直しても同じバイト列）
+    again = build(Config(site_base_url="https://example.com/"), store, tmp_path / "site2")
+    assert (again / "r/o/r/og.png").read_bytes() == png.read_bytes()
+
+
+def test_install_section_absent_for_old_summaries(tmp_path):
+    out = build(Config(), make_store(tmp_path), tmp_path / "site")
+    assert "のインストール" not in (out / "r/o/r/index.html").read_text()
+
+
+def test_og_wrap_keeps_words_and_punctuation():
+    from github_trending.og_image import _gothic, wrap
+
+    font = _gothic(44)
+    lines = wrap("Kubernetes の manifest を検査して、問題を報告する CLI。とても長い文がここに続いていく。", font, 600, 3)
+    assert all("Kubernet" not in x or "Kubernetes" in x for x in lines)  # 英単語の途中で折らない
+    assert not any(x.startswith(("、", "。")) for x in lines)            # 句読点を行の頭にしない
 

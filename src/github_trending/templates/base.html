@@ -18,7 +18,7 @@
 {% if base_url and path is not none %}
 <link rel="canonical" href="{{ base_url }}{{ path }}">
 <meta property="og:url" content="{{ base_url }}{{ path }}">
-<meta property="og:image" content="{{ base_url }}og_image.png?v={{ asset_v['og_image.png'] }}">
+<meta property="og:image" content="{% block og_image %}{{ base_url }}og_image.png?v={{ asset_v['og_image.png'] }}{% endblock %}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <link rel="alternate" type="application/atom+xml" title="github新聞" href="{{ base_url }}feed.xml">
@@ -80,6 +80,19 @@
 </footer>
 </div>
 <script>
+  /* インストールのコマンドに「コピー」のボタンを付ける（0039）。JavaScript がなくてもコマンドは読める */
+  document.querySelectorAll("pre.cmd").forEach(function (pre) {
+    if (!navigator.clipboard) return;
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "copy-btn"; btn.textContent = "コピー";
+    btn.addEventListener("click", function () {
+      navigator.clipboard.writeText(pre.querySelector("code").textContent).then(function () {
+        btn.textContent = "コピーした";
+        setTimeout(function () { btn.textContent = "コピー"; }, 1500);
+      });
+    });
+    pre.appendChild(btn);
+  });
   document.querySelector(".theme-toggle").addEventListener("click", function () {
     var root = document.documentElement;
     var dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;

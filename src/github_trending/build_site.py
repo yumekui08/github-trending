@@ -10,11 +10,20 @@ from pathlib import Path
 from jinja2 import Environment, PackageLoader, select_autoescape
 from markupsafe import Markup, escape
 
+from . import og_image
 from .config import ROOT, Config
 from .storage import Store
 
 STATIC = Path(__file__).parent / "static"
 STATUS_LABEL = {"new": "新着", "returning": "再登場", "continuing": "継続"}
+
+
+def install_step(text: str) -> Markup:
+    """インストールの手順の1つ（0039）。全体が `...` のコマンドはコピーできるコードの塊に、ほかは文に。"""
+    m = re.fullmatch(r"`([^`]+)`", text.strip())
+    if m:
+        return Markup('<pre class="cmd"><code>') + escape(m.group(1)) + Markup("</code></pre>")
+    return Markup("<p>") + inline_code(text) + Markup("</p>")
 
 
 def inline_code(text: str) -> Markup:
@@ -133,6 +142,7 @@ def _env() -> Environment:
     env.globals["status_label"] = STATUS_LABEL
     env.globals["period_name"] = PERIOD_NAME
     env.filters["code"] = inline_code
+    env.filters["install_step"] = install_step
     env.filters["dropcap"] = dropcap
     env.filters["ja_date"] = ja_date
     env.filters["ja_ymd"] = ja_ymd
@@ -247,7 +257,7 @@ def repo_jsonld(summary: dict, item: dict | None, base_url: str) -> list[dict]:
         "publisher": publisher,
         "mainEntityOfPage": url,
         "url": url,
-        "image": f"{base_url}og_image.png",
+        "image": f"{url}og.png",
         "keywords": ", ".join(summary.get("tags") or []),
         "about": code,
     }
@@ -362,6 +372,7 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
     env = _env()
     base_url = config.site_base_url.rstrip("/") + "/" if config.site_base_url else ""
     env.globals["base_url"] = base_url  # canonical・OGP・sitemap・フィードに使う絶対 URL の頭（0027）
+    site_host = base_url.split("://", 1)[-1].rstrip("/")  # OGP 画像の右下に出すドメイン
     urls: list[tuple[str, str]] = []  # sitemap に載せる（ページの path、最終更新日）
     days = store.list_days()
     env.globals["latest_day"] = days[0] if days else None  # ヘッダの日付（日ごとのページ以外）
@@ -428,6 +439,9 @@ def build(config: Config, store: Store | None = None, out: Path | None = None) -
         repo = summary["repo"]
         href = f"r/{repo}/"
         item = latest_item.get(repo)
+        # OGP 画像（0039）。言語は最後に Trending で見たときの値
+        og_image.write(out / href / "og.png", repo, headline(summary["what"]).replace("`", ""),
+                       (item or {}).get("language"), site_host)
         _write(out / href / "index.html", repo_tpl.render(
             root="../../../", path=href, s=summary, item=item,
             seen=history.get(repo, {}).get("seen", []),

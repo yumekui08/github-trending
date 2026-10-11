@@ -48,6 +48,15 @@
       },
       "maxItems": 10
     },
+    "install": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 6,
+      "description": "インストールの手順（0039）。README などに書かれたコマンドだけ。1つのコマンドは `...` で全体を囲む。書かれていなければ []。古い要約にはない（必須にしない）"
+    },
     "how_to_use": {
       "type": "string"
     },
