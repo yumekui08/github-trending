@@ -1,0 +1,43 @@
+{
+  "repo": "ranxianglei/billion-context",
+  "summarized_at": "2026-10-12",
+  "short": "billion-context は、コーディングエージェントと LLM API の間に入る proxy で、会話の古い部分を要約に畳んでコンテキストを節約する TypeScript 製ツール。Claude Code、Codex、OpenCode、pi など多数のクライアントに対応する。圧縮はモデル自身が判断する。",
+  "what": "エージェントの会話コンテキストを圧縮する proxy / plugin",
+  "can_do": [
+    "エージェントの base URL を proxy に向け、Anthropic / OpenAI 形式のリクエストを書き換えて転送する",
+    "compress、decompress、search_context、acp_status の4つの tool を会話に注入し、モデルが自分で範囲を要約に畳む・元に戻す・検索する",
+    "bili <client>（launcher）や bili plugin install <client>（native plugin）で、Claude Code、Codex、OpenCode、pi、Gemini CLI、aider など20種ほどのクライアントに組み込む",
+    "要約を小さい範囲ずつ書いて prefix cache を保つ設計。README では cache hit 率 95〜97% を健全な目安としている",
+    "手法をまとめた論文（paper/）を同梱"
+  ],
+  "install": [
+    "`npm install -g billion-context --prefix=~/.local`"
+  ],
+  "how_to_use": "`bili claude` や `bili codex` のように `bili <クライアント名>` で launcher 経由で起動する。native plugin にするなら `bili plugin install <クライアント名>`。クライアントごとの手順は CLIENTS.md、設定は CONFIGURATION.md。cache の状態は `/acp` や `/acp-cache` で見る。",
+  "use_cases": [
+    "コンテキストが小さいモデルやローカル LLM で、長い作業セッションを続けるのに使えそう",
+    "従量課金の API で、長いコーディングセッションの token 消費を減らす検証に使えそう",
+    "複数のエージェントクライアントの前に共通の圧縮層として置く構成を試せそう"
+  ],
+  "for_whom": "コーディングエージェントを長時間使い、コンテキストあふれや token 費用に困っている人",
+  "similar": [
+    "各エージェントの組み込み compaction（Claude Code の /compact など）：要約で畳む点は近い。こちらは外部 proxy で、可逆で cache に配慮するとしている",
+    "LiteLLM：LLM API の前に proxy を置く点は近い（圧縮機能の有無は異なる）"
+  ],
+  "tech": "TypeScript（Node 20 以上）。依存は zod など少数で、画像圧縮用に sharp（optional）。kernel/ に acp-kernel、pi-subagents/、Python の hermes-plugin を同梱。cert-MITM で通信を中継する launcher もある。Windows / macOS / Linux 対応と記載",
+  "caveats": "「5 倍省 token」「数十億 token の単一セッション」は作者の自己申告で、README の論文も作者自身のもの。proxy が API の通信を書き換えて中継するため、プロンプトや API キーが通る経路になる（導入前にソースの確認が要る）。cert-MITM の launcher は通信を復号して中継する。作られて 2 か月ほどで、リリースが 0.1.194 と非常に速く更新されている。ライセンスは package.json では MIT だが、GitHub の表示は NOASSERTION。ホストごとに対応の深さが違い、native でなく launcher のみのものも多い。",
+  "tags": [
+    "AI エージェント",
+    "LLM",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とリリースは読んだが、compress の動作や圧縮の効果は実装・論文までは確認しておらず、数値は README の記述のまま"
+}

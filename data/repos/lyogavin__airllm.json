@@ -1,0 +1,43 @@
+{
+  "repo": "lyogavin/airllm",
+  "summarized_at": "2026-10-12",
+  "short": "airllm は、巨大な LLM を層ごとにディスクから GPU に読み込んで、少ない VRAM で推論する Python ライブラリ。README では 70B が 4GB の GPU で動くとしている。最近は少ない VRAM での LoRA 学習にも対応した。",
+  "what": "少ない VRAM で巨大 LLM を動かす Python ライブラリ",
+  "can_do": [
+    "Hugging Face のモデル ID を AutoModel.from_pretrained に渡すだけで、Llama、Qwen、DeepSeek、Mistral、Gemma などを推論する",
+    "モデルを層ごとに分割してディスクに保存し、1層ずつ GPU に載せて処理する（量子化や蒸留なしで 70B が約 4GB の VRAM と README に記載）",
+    "compression に 4bit / 8bit を指定して、ディスク読み込み量を減らし推論を速くする（README では最大 3 倍）",
+    "Apple silicon の Mac（mlx + torch）や CPU でも動かす",
+    "凍結した重みをディスクから流し、adapter だけ GPU に置く LoRA 学習（Qwen3.8 系）"
+  ],
+  "install": [
+    "`pip install airllm`"
+  ],
+  "how_to_use": "`from airllm import AutoModel` して `AutoModel.from_pretrained(\"Qwen/Qwen3-32B\")` でモデルを読み込み、`model.generate(...)` で通常の transformers に近い形で生成する。初回はモデルが層ごとに分割保存されるので、Hugging Face のキャッシュ先に十分なディスクが要る。ディスクが少ないときは `delete_original=True`。ゲート付きモデルは `hf_token` を渡す。",
+  "use_cases": [
+    "手元の小さい GPU で大きいモデルの出力を一度試してみる検証に使えそう",
+    "オフラインやバッチ的な処理で、速度より VRAM を優先して大型モデルを回す場面に使えそう",
+    "VRAM が足りない環境で LoRA 学習を試す実験に使えそう"
+  ],
+  "for_whom": "高価な GPU がなくても大型の open-weight モデルを動かして試したい人",
+  "similar": [
+    "llama.cpp：量子化して少ないメモリで動かす点は近い。こちらは量子化なしで層をディスクから流す方式",
+    "Hugging Face accelerate（device_map / offload）：オフロードで大モデルを動かす点は近い（性能差は未確認）"
+  ],
+  "tech": "Python。主な依存は transformers、bitsandbytes（compression 用）、torch、sentencepiece など（requirements.txt は古いバージョン固定を含む）。Linux の NVIDIA GPU が主、Apple silicon は mlx で対応。新しいモデルは transformers の main が要ることがある。Apache-2.0",
+  "caveats": "層ごとにディスクから読むので、速度は VRAM に全部載せる場合より大きく遅いと思われる（README に具体的な tokens/s の記載は見当たらない）。分割保存で大きなディスク容量が要る（Qwen3.8-Flash-Next は約 360GB と記載）。VRAM の数値は作者の自己申告。README に外部サービスの広告リンクがある。Kimi K3、Qwen3.8 などモデル名の対応状況は README の記載のみで、未検証。リポジトリには古い Anima（中国語 LLM の学習）関連のコードも同居している。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:requirements.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

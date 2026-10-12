@@ -1,0 +1,37 @@
+{
+  "repo": "chrislgarry/Apollo-11",
+  "summarized_at": "2026-10-12",
+  "short": "Apollo-11 は、アポロ 11 号の誘導コンピュータ（AGC）のソースコードを置いた資料用リポジトリ。司令船（Comanche055）と月着陸船（Luminary099）のアセンブリを含む。動かすためのソフトウェアではなく、歴史的なコードを読むためのもの。",
+  "what": "アポロ 11 号の誘導コンピュータのソースコード（歴史資料）",
+  "can_do": [
+    "司令船用 Comanche055（Colossus 2A）のソースを読む",
+    "月着陸船用 Luminary099（Luminary 1A）のソースを読む。THE_LUNAR_LANDING.agc、LUNAR_LANDING_GUIDANCE_EQUATIONS.agc など着陸関連のファイルがある",
+    "ファイル名から、Executive、Waitlist、割り込み、姿勢制御、軌道計算などの構成を追える",
+    "アセンブルして動かしたい場合は Virtual AGC（yaYUL）へ進む"
+  ],
+  "install": [],
+  "how_to_use": "インストールするものはなく、Comanche055/ と Luminary099/ の .agc ファイルを読む。各ディレクトリの README.md に概要がある。コンパイルしたい場合は README が案内する Virtual AGC のプロジェクトを使う。",
+  "use_cases": [
+    "1960 年代の組み込み・リアルタイム OS のスケジューリング（Executive / Waitlist）の実装を読む教材として使えそう",
+    "AGC の仮想マシンやエミュレータを調べるときの一次資料として使えそう",
+    "OS やリアルタイムシステムの歴史を知る読み物として使えそう"
+  ],
+  "for_whom": "古い組み込みソフトウェアや宇宙開発の歴史に興味がある人",
+  "similar": [
+    "Virtual AGC：同じソースを扱う元プロジェクトで、アセンブラやシミュレータがある"
+  ],
+  "tech": "AGC アセンブリ言語（.agc）。ビルド定義はなく、package.json は README の Markdown lint 用のみ。270 ファイル弱で、多くは翻訳版 README",
+  "caveats": "ソフトウェアではなく歴史資料。そのまま実行はできない。著作権表記は Public domain とあるが、GitHub のライセンス表示は NOASSERTION。ソースは MIT Museum 所蔵の紙資料をデジタル化したもので、README は転記の誤りの修正のみ PR を受け付けるとしている。",
+  "tags": [
+    "学習資料",
+    "その他"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,40 @@
+{
+  "repo": "danyuchn/asd-ste100-skill",
+  "summarized_at": "2026-10-12",
+  "short": "asd-ste100-skill は、曖昧な英文を ASD-STE100（Simplified Technical English）の考え方で書き直させる Claude Code の skill。AI エージェントが読む tool の説明、エラーメッセージ、エージェント間の指示を対象にする。構造的な違反を調べる Python 製 linter も付く。",
+  "what": "英文を曖昧さの少ない形に書き直す Claude Code の skill",
+  "can_do": [
+    "英文を読み、受動態、現在完了、1文に複数の指示、長い文、句動詞などの違反を文ごとに洗い出して書き直す",
+    "Strict（手順、エラーメッセージ、tool の説明）と STE-flavored（README、PR の説明）の2つのモードを使い分ける",
+    "「show the diff」と頼むと、どの規則を適用したかの before / after 表を出す",
+    "scripts/ste-lint.py で、セミコロン、名詞化、受動態、長文などを機械的に検査する"
+  ],
+  "install": [
+    "`npx skills add danyuchn/asd-ste100-skill`",
+    "`git clone https://github.com/danyuchn/asd-ste100-skill ~/.claude/skills/asd-ste100`"
+  ],
+  "how_to_use": "インストール後、Claude Code に「Disambiguate this tool description」「Apply ASD-STE100 to this instruction」のように頼んで英文を渡す。書き直した文だけが返る。linter は `python scripts/ste-lint.py ファイル名`。",
+  "use_cases": [
+    "自作の MCP tool や skill の description を、他の LLM が読み違えにくい英語に整えるのに使えそう",
+    "運用手順書やエラーメッセージの英文を、非ネイティブの読み手にも誤読されにくくするのに使えそう",
+    "linter を CI に入れて、英文ドキュメントの文の長さや受動態を機械的に検査する用途に使えそう"
+  ],
+  "for_whom": "英語で tool の説明や手順書を書くエンジニア、エージェント向けの文章を整えたい人",
+  "similar": [
+    "textlint / Vale：文章の lint という点は近い。こちらは STE の考え方と LLM による書き直しが中心"
+  ],
+  "tech": "Markdown の SKILL.md と規則集（references/writing-rules.md）、Python の linter 1ファイル。Claude Code の skills 機構で動く。MIT",
+  "caveats": "ASD の公式辞書（約 900 語）は含まず、公式の STE 準拠の検証はできない（認証が要るなら本物の規格を使う）。linter は構造だけを調べ、書き直しで意味が保たれたかは確認しない。作られて 3 か月ほどで、スター数に比べて小さい（10 ファイル）。README によると、リポジトリ自身の文章は linter を通らない。npx skills は匿名のインストール情報を送る（DISABLE_TELEMETRY=1 で止められる）。",
+  "tags": [
+    "AI エージェント",
+    "ドキュメント・知識管理",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
