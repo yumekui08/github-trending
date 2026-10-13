@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-14",
+  "period": "weekly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "boykopovar/AnyPS5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "language": "C++",
+      "stars": 35281,
+      "stars_period": 27263
+    },
+    {
+      "rank": 2,
+      "repo": "mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 289629,
+      "stars_period": 11139
+    },
+    {
+      "rank": 3,
+      "repo": "tester-army/e2e",
+      "description": "Next generation e2e testing framework for web and mobile apps.",
+      "language": "TypeScript",
+      "stars": 10080,
+      "stars_period": 5582
+    },
+    {
+      "rank": 4,
+      "repo": "EpicGames/raddebugger",
+      "description": "A native, user-mode, multi-process, graphical debugger.",
+      "language": "C",
+      "stars": 8481,
+      "stars_period": 845
+    },
+    {
+      "rank": 5,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 62754,
+      "stars_period": 4482
+    },
+    {
+      "rank": 6,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 100432,
+      "stars_period": 3762
+    },
+    {
+      "rank": 7,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 11219,
+      "stars_period": 1144
+    },
+    {
+      "rank": 8,
+      "repo": "earthtojake/text-to-cad",
+      "description": "Give your agent CAD superpowers.",
+      "language": "Python",
+      "stars": 19965,
+      "stars_period": 2441
+    },
+    {
+      "rank": 9,
+      "repo": "flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "language": "Dart",
+      "stars": 180102,
+      "stars_period": 806
+    },
+    {
+      "rank": 10,
+      "repo": "cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 54059,
+      "stars_period": 9237
+    }
+  ]
+}
