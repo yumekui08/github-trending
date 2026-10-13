@@ -1,0 +1,43 @@
+{
+  "repo": "vercel-labs/skills",
+  "summarized_at": "2026-10-14",
+  "short": "skills は、AI コーディングエージェント向けの「skill」（SKILL.md で定義する再利用可能な指示セット）を、各エージェントのディレクトリに入れたり更新したり消したりする npm 製の CLI。Claude Code、Codex、Cursor など 80 近くのエージェントに対応する。",
+  "what": "agent skill を管理する npm 製の CLI",
+  "can_do": [
+    "GitHub・GitLab・Azure Repos・任意の git URL・ローカルパス・アーカイブの URL から skill を取得してインストールする（`skills add`）",
+    "インストール先をプロジェクト単位（`./<agent>/skills/`）か全体（`-g`、`~/<agent>/skills/`）で選ぶ。symlink（標準）かコピーかも選べる",
+    "インストール済みの一覧表示、更新、削除（`list` / `update` / `remove`）",
+    "skill をインストールせず、プロンプトとして出力する、またはエージェントを起動して渡す（`skills use`）",
+    "キーワードで skill を検索する（`skills find`）。新しい SKILL.md のひな形も作れる（`skills init`）",
+    "private リポジトリは、git の認証情報・GitHub CLI・SSH の順に試して取得する"
+  ],
+  "install": [
+    "`npx skills add vercel-labs/agent-skills`"
+  ],
+  "how_to_use": "`npx skills add <owner/repo>` で skill を入れる。`--list` で中身を確認、`--skill 名` で個別指定、`-a claude-code` で対象エージェントを指定。CI では `-y` で確認を省略できる。",
+  "use_cases": [
+    "チームで共有する運用手順（デプロイ、リリースノート作成など）を skill にして、リポジトリ経由で各メンバーの Claude Code や Codex に配れそう",
+    "複数のエージェントを試すとき、同じ skill を各エージェントの置き場に一括で入れられそう",
+    "社内の private リポジトリに skill を置き、`update` で最新に保つ運用ができそう"
+  ],
+  "for_whom": "複数の AI コーディングエージェントを使っていて、skill の導入・更新を手作業でやりたくない人",
+  "similar": [
+    "npm / pnpm：パッケージ管理の考え方は近い。こちらの対象は skill の配置だけ"
+  ],
+  "tech": "TypeScript 製。Node.js 22.20 以上。実行時の依存は tar と yaml のみ。npm パッケージ名は skills（bin: skills / add-skill）。MIT",
+  "caveats": "Vercel Labs の実験的な製品（README のバッジによる）。変更が速く、直近のリリースでも sync 周りの機能追加が続いている。対応エージェントが多く、各エージェントの skill の置き場や挙動は個別に追従している。実際の対応状況は各エージェントごとの確認が要る。skill の中身は第三者が書いたものになり得る。入れる前に内容を確認する必要がある（README では特に検証の説明は読み取れなかった）。利用状況の telemetry を送るコードが含まれている（ファイル構成から。送る内容は未確認）。",
+  "tags": [
+    "AI エージェント",
+    "CLI",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

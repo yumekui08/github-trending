@@ -1,0 +1,42 @@
+{
+  "repo": "xtool-org/xtool",
+  "summarized_at": "2026-10-14",
+  "short": "xtool は、Linux・Windows（WSL）・macOS から iOS アプリを SwiftPM でビルドし、署名して実機に入れる Swift 製の CLI。Xcode なしで iOS 開発をしたい人向け。",
+  "what": "Xcode なしで iOS アプリを作る Swift 製 CLI",
+  "can_do": [
+    "SwiftPM のパッケージを iOS アプリ（ipa）としてビルドする（`xtool dev`）",
+    "アプリに署名して、接続した iOS 端末に入れる・消す・起動する（`install` / `uninstall` / `launch`）",
+    "Apple Developer Services の認証と操作（`auth`、`ds`）",
+    "iOS 向けの Darwin Swift SDK を管理する（`sdk`）。Xcode の xip から取り込む処理がある",
+    "新しいプロジェクトのひな形を作る（`xtool new`）",
+    "ライブラリ XKit を SwiftPM の依存に加えて、Apple Developer Services や端末の操作を自作アプリから呼べる"
+  ],
+  "install": [],
+  "how_to_use": "README はインストール手順を外部ドキュメント（xtool.sh）に任せている。`xtool setup` で環境を整え、`xtool new` でプロジェクトを作り、`xtool dev` でビルドして端末で動かす流れと思われる。",
+  "use_cases": [
+    "Linux や WSL2 の開発環境から、VSCode などのエディタで iOS アプリを書いてそのまま実機に入れられそう",
+    "Mac を用意できない CI で iOS アプリのビルドや署名を回す検討材料になりそう（Apple の SDK を取り込む必要はある）",
+    "Apple Developer Services の API を扱う自動化を XKit で書けそう"
+  ],
+  "for_whom": "Swift で iOS アプリを作りたいが、Xcode や Mac に縛られたくない人",
+  "similar": [
+    "Xcode / xcodebuild：同じ目的の公式ツール。こちらは macOS 以外でも動く",
+    "fastlane：署名や配布の自動化が主。こちらはビルドから端末への導入までを扱う"
+  ],
+  "tech": "Swift 製（swift-tools-version 6.2、Swift 6 系のツールチェーンが要る）。依存は swift-argument-parser、swift-crypto、swift-certificates、zsign など。Linux / WSL / macOS（14.0 以上）で動く。Dockerfile と docker-compose.yml あり。MIT",
+  "caveats": "iOS 向けのビルドには Apple 公式の SDK（Xcode 由来）の取り込みが必要と思われる。Apple のライセンス条件は別途確認が要る。端末への導入には Apple Developer アカウントでの認証を使う。無料アカウントでの制約は材料からは分からない。v1.21.0 で Darwin ホストの対象が macOS 14.0 / iOS 17.0 に上がった（ライブラリ利用者に影響しうる）。README にインストールのコマンドがなく、手順は外部サイトにある。そこは読んでいない。",
+  "tags": [
+    "モバイル",
+    "開発ツール",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Package.swift",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とリリースノートで目的と CLI の構成は分かったが、インストール手順と SDK の扱いは外部ドキュメント（xtool.sh）にあり、読んでいない。"
+}

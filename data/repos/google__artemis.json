@@ -1,0 +1,45 @@
+{
+  "repo": "google/artemis",
+  "summarized_at": "2026-10-14",
+  "short": "ARTEMIS は、自然言語の指示で実機や emulator の Android を操作する Python 製のエージェント。MCP サーバーも備え、Claude Code や Codex などの AI IDE から端末を動かし、Logcat やスクリーンショットを集められる。",
+  "what": "自然言語で Android を操作・テストする Python 製エージェント",
+  "can_do": [
+    "自然言語の指示で、複数アプリにまたがる操作を Android 端末上で実行する（`artemis run \"…\" --profile flash`）",
+    "画面の要素 index を優先して操作し、無理なら座標や画像での特定に切り替える",
+    "MCP サーバーとして動き、Claude Code、Codex、Antigravity、Windsurf などから端末を操作して Logcat とスクリーンショットを取得する",
+    "Flash（観察と操作を繰り返す高速モード）と Pro（操作前に対象を確認する探索・安定性テスト向けモード）の2つの実行プロファイルを使い分ける",
+    "ブラウザの Web UI（localhost:8000）で端末接続、画面ミラーリング、実行の再生ができる",
+    "AI IDE 向けに、モバイルテストの進め方を書いた rules.md を入れられる"
+  ],
+  "install": [
+    "`git clone https://github.com/google/artemis.git && cd artemis`",
+    "`./start.sh`（Windows PowerShell は `.\\start.bat`）",
+    "`uv run artemis mcp --install all`"
+  ],
+  "how_to_use": "USB デバッグを有効にした Android 端末か emulator をつないで `./start.sh` を実行する。ADB、scrcpy、FFmpeg、uv の依存を自動で入れ、MCP 設定の導入も確認される。CLI なら `uv run artemis run \"設定を開いてバッテリー残量を教えて\" --profile flash`。",
+  "use_cases": [
+    "Claude Code にアプリの実装と実機での動作確認を続けてやらせ、Logcat 付きの結果を受け取る使い方ができそう",
+    "手作業でやっている Android アプリの回帰テストを、自然言語のシナリオで置き換えられそう",
+    "端末の再現手順の確認や、ログ収集の下調べを AI に任せられそう"
+  ],
+  "for_whom": "Android アプリのテストや動作確認を AI エージェントに任せたい人",
+  "similar": [
+    "Appium：Android 操作の自動化の定番。こちらは自然言語の指示で動かす点が違う",
+    "mobile-mcp などの mobile 向け MCP サーバー：用途は近い"
+  ],
+  "tech": "Python 3.12 以上。langgraph、langchain、mcp、google-genai、adbutils、uiautomator2 などに依存。LLM は Gemini、Claude、GPT-4o、Qwen-VL を使える（README のバッジ）。Android 端末または emulator、ADB が要る。macOS / Linux / Windows。Dockerfile あり。Apache-2.0",
+  "caveats": "LLM の API が別途要り、利用には費用がかかると思われる（使うモデルによる）。「AndroidWorld で成功率 99% 以上」は作者自身の記載。第三者による検証は材料からは確認できていない。2026年8月に作られた新しいプロジェクト。版は 1.0 だが、変更が多いと思われる。start.sh はツールの自動インストールと、ホームディレクトリ以下の AI IDE 設定への書き込みを行う。実行前に内容を確認したほうがよい。Google のリポジトリだが、Google の公式サポート製品かどうかは材料から分からない。",
+  "tags": [
+    "AI エージェント",
+    "モバイル",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README 前半と pyproject は読んだが、アーキテクチャの詳細、対応モデルの実際の設定、ベンチマークの根拠は未確認。clone もしていない。"
+}
