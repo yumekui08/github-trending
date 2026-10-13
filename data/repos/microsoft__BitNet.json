@@ -1,0 +1,48 @@
+{
+  "repo": "microsoft/BitNet",
+  "summarized_at": "2026-10-13",
+  "short": "BitNet（bitnet.cpp）は、1-bit（1.58-bit）LLM を CPU / GPU で高速に推論するための Microsoft 公式の C++ 推論フレームワーク。llama.cpp をベースにした専用 kernel を持ち、GPU のない PC でも小さいモデルを動かせる。",
+  "what": "1-bit LLM 向けの CPU / GPU 推論フレームワーク",
+  "can_do": [
+    "BitNet b1.58 など ternary（1.58-bit）の LLM を GGUF 形式で CPU 上で推論する",
+    "公式 2B モデル（BitNet-b1.58-2B-4T、2.4B parameters）や Falcon3 の 1.58-bit 版などを動かす",
+    "I2_S / TL1 の量子化 kernel で x86・ARM の CPU を最適化する（GPU 用 kernel も別ディレクトリにある）",
+    "1-bit の embedding モデル（0.6B / 270M）の推論",
+    "ベンチマーク用スクリプトでダミーモデルの速度を測る",
+    "safetensors のチェックポイントを GGUF に変換する"
+  ],
+  "install": [
+    "`git clone --recursive https://github.com/microsoft/BitNet.git`",
+    "`pip install -r requirements.txt`",
+    "`huggingface-cli download microsoft/BitNet-b1.58-2B-4T-gguf --local-dir models/BitNet-b1.58-2B-4T`",
+    "`python setup_env.py -md models/BitNet-b1.58-2B-4T -q i2_s`",
+    "前提は python 3.10 以上、cmake 3.22 以上、clang 18 以上（README の Requirements より。conda で python 3.10 の環境を作ることを推奨）"
+  ],
+  "how_to_use": "モデルを用意したあと、`python run_inference.py -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf -p \"You are a helpful assistant\" -cnv` で対話モードを始める。-t でスレッド数、-n で生成トークン数を指定する。",
+  "use_cases": [
+    "GPU のないサーバーや ARM のエッジ機器で、小さい LLM を省電力で動かす検証に使えそう",
+    "CPU だけで動く embedding / 推論を、社内の閉じた環境に置く用途に使えそう",
+    "量子化・推論 kernel の仕組みを読んで学ぶ素材にもなりそう"
+  ],
+  "for_whom": "ローカルや edge で LLM を動かしたい人、量子化や推論の最適化に関心のある人",
+  "similar": [
+    "llama.cpp：GGUF で LLM を CPU 推論する点は同じ。BitNet はこれをベースに、1-bit 向けの kernel を足したもの",
+    "Ollama：ローカル LLM 実行の入口としては近い（BitNet は低レベルの推論エンジン側）"
+  ],
+  "tech": "C++（CMake、llama.cpp を 3rdparty に submodule で持つ）と Python のスクリプト。x86（AVX2）・ARM（NEON）の CPU と、別ディレクトリの GPU kernel。ライセンスは MIT。",
+  "caveats": "対応モデルは 1-bit / 1.58-bit で学習・変換されたものに限られる。大きいモデルほど効果が大きいという README の数値（最大 6.17x など）は自己申告のベンチマークで、未確認。ビルドに clang 18 以上が要り、Windows では Visual Studio の clang 設定で詰まる FAQ がある。最新 push は 2026-07-27 で、直近約 2.5 か月は更新が止まっている。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "言語・ランタイム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:requirements.txt",
+    "manifest:CMakeLists.txt"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

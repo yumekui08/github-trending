@@ -1,0 +1,46 @@
+{
+  "repo": "Alishahryar1/free-claude-code",
+  "summarized_at": "2026-10-13",
+  "short": "free-claude-code（FCC）は、Claude Code、Codex、Aider などのコーディングエージェントを、Anthropic 以外の LLM プロバイダー（NVIDIA NIM、OpenRouter、Groq など）に向けるローカル proxy。Admin UI でプロバイダーとモデルを選ぶ。",
+  "what": "コーディングエージェントを別の LLM に繋ぐローカル proxy",
+  "can_do": [
+    "Claude Code など 11 種のエージェント（Codex、Pi、OpenCode、Cline、Aider など）を、FCC 経由で好きなプロバイダーのモデルで動かす",
+    "プロバイダーと API キーを Admin UI で登録し、モデルを選ぶ（複数キー、独自の OpenAI 互換エンドポイントの追加も可）",
+    "障害時に、あらかじめ並べた fallback モデルへ自動で切り替える",
+    "RTK / Headroom を使って、コマンド出力やツール結果を圧縮しトークン消費を減らす",
+    "Discord / Telegram 経由での操作、音声入力（Whisper か NVIDIA NIM で文字起こし）",
+    "ブラウザ上で Codex のセッションを動かす"
+  ],
+  "install": [
+    "`curl -fsSL \"https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.sh\" | sh`（macOS / Linux）",
+    "Windows は README の PowerShell のコマンド（install.ps1 を取得して実行する形）を使う"
+  ],
+  "how_to_use": "Linux は `fcc-server` で起動し（Windows / macOS はアプリから開く）、Admin UI で NVIDIA NIM などの API キーを登録して MODEL を選び Apply する。そのあと `fcc-claude`、`fcc-codex` などのコマンドでエージェントを起動する。",
+  "use_cases": [
+    "Claude の契約なしで、無料枠のあるモデルでコーディングエージェントの操作感を試すのに使えそう",
+    "複数プロバイダーを切り替えながら、エージェント用のモデルの比較をするのに使えそう",
+    "プロバイダー障害時の fallback を入れた、自分用の LLM 窓口として使えそう"
+  ],
+  "for_whom": "コーディングエージェントを使いたいが、特定の有料契約に縛られたくない開発者",
+  "similar": [
+    "LiteLLM：複数プロバイダーを1つの API に束ねる点は近い。こちらはコーディングエージェント向けの設定と起動コマンドまで含む",
+    "Claude Code Router のような、Claude Code の向き先を変える proxy（細かい違いは未確認）"
+  ],
+  "tech": "Python（要求は 3.14.7 固定）。FastAPI、uvicorn、httpx、discord.py、python-telegram-bot など。パッケージ管理は uv。Windows / macOS はトレイ常駐アプリ。",
+  "caveats": "Anthropic とは無関係の非公式プロジェクトと README に明記されている。ライセンスは AGPL-3.0（pyproject.toml）で、GitHub 表示は NOASSERTION。「1.3B+ free tokens」などの無料枠はプロバイダー側の条件次第で変わる（README も明記）。外部プロバイダーの API キーを預ける proxy なので、キーの扱いは自分で確認が要る。curl で取得したスクリプトを実行するインストール方式。Python 3.14.7 固定で、環境によっては入れにくい。2026-01 作成と新しいが、更新が非常に速い。",
+  "tags": [
+    "AI エージェント",
+    "LLM",
+    "開発ツール",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

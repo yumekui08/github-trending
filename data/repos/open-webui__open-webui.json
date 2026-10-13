@@ -1,0 +1,49 @@
+{
+  "repo": "open-webui/open-webui",
+  "summarized_at": "2026-10-13",
+  "short": "open-webui は、Ollama や OpenAI 互換 API のモデルをブラウザから使うための、セルフホストの AI チャット Web アプリ。ユーザー・グループごとの権限管理、RAG、plugin、MCP 連携を備え、オフラインでも動かせる。",
+  "what": "LLM 用のセルフホスト型チャット Web UI",
+  "can_do": [
+    "Ollama と OpenAI 互換 API（vLLM、OpenRouter、LMStudio など）のモデルを同じ画面で切り替えて使う",
+    "ロール・グループ単位でアクセス権を管理する（RBAC）",
+    "RAG（複数のベクトル DB、BM25 とのハイブリッド検索）と、Web 検索の結果を会話に差し込む",
+    "Filters / Actions / Pipes / Tools / Skills の plugin と、MCP・OpenAPI ツールサーバーとの連携",
+    "音声・動画通話、画像生成、ノート、チャンネル、カレンダー、定期実行（Automations）",
+    "DB は SQLite か PostgreSQL、ファイルはローカルか S3 / GCS / Azure Blob"
+  ],
+  "install": [
+    "`pip install open-webui`（README は Python 3.11 を指定）",
+    "`docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main`",
+    "Kubernetes（kubectl、kustomize、helm）でも入れられると README にある"
+  ],
+  "how_to_use": "pip 版は `open-webui serve` で起動。Docker 版は起動後に http://localhost:3000 を開き、最初のアカウント作成後、設定で Ollama や OpenAI 互換 API の URL とキーを登録する。",
+  "use_cases": [
+    "社内向けに LLM のチャット画面を立て、部署ごとにモデルと権限を分ける用途に使えそう",
+    "オフライン環境で Ollama と組み合わせて、社内文書を RAG で検索させるのに使えそう",
+    "LiteLLM のような gateway の前段に置いて、利用者向けの窓口にする構成に使えそう"
+  ],
+  "for_whom": "LLM のチャット環境を自分たちで運用したい個人や、社内向けに提供する基盤担当",
+  "similar": [
+    "LibreChat：複数プロバイダー対応のセルフホスト型チャット UI。機能差は未確認",
+    "LobeChat：同じく OSS のチャット UI（細かい違いは未確認）"
+  ],
+  "tech": "バックエンドは Python（FastAPI、uvicorn、SQLAlchemy など）、フロントエンドは Node 系（package.json あり）。Docker イメージは main / cuda / ollama などのタグがある。SQLite か PostgreSQL。",
+  "caveats": "GitHub のライセンス表示は NOASSERTION。LICENSE_NOTICE や LICENSE_HISTORY があり、独自条件が付いていると思われるので、利用前に確認が要る。README に Enterprise Plan の案内がある。変更が非常に速い（v0.12.0 が 3 日前、最新 push は昨日）。リポジトリが大きい（約 470MB）。",
+  "tags": [
+    "LLM",
+    "セルフホスト",
+    "Web",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:package.json",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
