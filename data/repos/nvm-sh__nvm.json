@@ -1,0 +1,43 @@
+{
+  "repo": "nvm-sh/nvm",
+  "short": "nvm は、複数の Node.js のバージョンを入れ替えて使うための version manager。POSIX 準拠の bash スクリプトで、ユーザーのホームに入れて使う。",
+  "what": "Node.js のバージョンを切り替える bash 製ツール",
+  "can_do": [
+    "`nvm install 24` のように、指定したバージョンの Node.js をインストールする",
+    "`nvm use 22` で、シェルごとに使う Node.js のバージョンを切り替える",
+    "`.nvmrc` ファイルでプロジェクトごとにバージョンを指定する",
+    "エイリアス（default、LTS など）でバージョンに名前を付ける",
+    "インストール済みのバージョンを一覧する"
+  ],
+  "install": [
+    "`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash`",
+    "`wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash`",
+    "インストーラーは git、curl、wget のうち使えるものでダウンロードする。シェルの設定ファイルを書き換えたくなければ、実行前に `PROFILE=/dev/null` を付ける"
+  ],
+  "how_to_use": "シェルを開き直したあと、`nvm install 24` で入れ、`nvm use 24` で切り替える。プロジェクトには `.nvmrc` を置いてバージョンを固定する。",
+  "use_cases": [
+    "案件ごとに Node.js のバージョンが違う開発環境の切り替えに使えそう",
+    "CI や Docker イメージの中で、指定バージョンの Node.js を入れるのに使えそう"
+  ],
+  "for_whom": "複数の Node.js プロジェクトを1台のマシンで扱う開発者",
+  "similar": [
+    "fnm、Volta：同じく Node.js の version manager。nvm は Node.js 専用の bash スクリプトで、依存が少ない"
+  ],
+  "tech": "Shell（POSIX 準拠の bash スクリプト。zsh でも動く）。Linux、macOS などの Unix 系が対象。",
+  "caveats": "README の対象は Unix 系シェル。Windows は README の範囲では別の方法になると思われる（未確認）。インストールは curl の出力を bash に渡す方式。ライセンスは MIT。2010年作成で長く続いており、最新リリースは v0.40.8（2026-09）。",
+  "tags": [
+    "開発ツール",
+    "言語・ランタイム",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-10-15"
+}

@@ -1,0 +1,50 @@
+{
+  "repo": "vxcontrol/pentagi",
+  "short": "PentAGI は、ペネトレーションテストを自律的に行うセルフホストの multi-agent システム。対象と目的を文章で伝えると、複数の AI エージェントが nmap や sqlmap などを Docker の隔離環境で動かし、レポートを返す。",
+  "what": "ペネトレーションテストを自動で進める multi-agent システム",
+  "can_do": [
+    "対象と目的を自然言語で渡すと、専門役のエージェントが計画を立てて作業を進める",
+    "nmap、Metasploit、sqlmap など 20 以上のツールを Docker のサンドボックス内で実行する",
+    "結果とうまくいった手法を PostgreSQL（pgvector）に保存し、次回以降に使う",
+    "任意で Neo4j の knowledge graph にホストやサービスを記録する",
+    "10 以上のクラウド LLM、OpenAI 互換の gateway、Ollama / vLLM のローカルモデルから選べる",
+    "REST と GraphQL の API で自動化できる"
+  ],
+  "install": [
+    "`mkdir -p pentagi && cd pentagi`",
+    "`wget -O installer.zip https://pentagi.com/downloads/linux/amd64/installer-latest.zip`",
+    "`unzip installer.zip`",
+    "`./installer`（Docker socket を使うため root か docker グループが要る。README は sudo での実行を本番向けに推奨）",
+    "要件は Docker と Docker Compose（または Podman）、2 vCPU 以上、4GB RAM 以上、空き 20GB"
+  ],
+  "how_to_use": "installer の対話 UI で、LLM provider、検索エンジン、認証情報を設定して起動し、Web UI にログインしてから、対象と目的を入力して flow を始める。詳しい手順は README の「How to Use PentAGI After Login」にある。",
+  "use_cases": [
+    "許可を得た自社環境の脆弱性調査を自動化する下調べに使えそう",
+    "ローカル LLM を繋いで、外にデータを出さない pentest の実験環境に使えそう",
+    "検証用ネットワークでの red team 演習の補助に使えそう"
+  ],
+  "for_whom": "セキュリティエンジニア、ペネトレーションテスター、red team。許可を得たテストに限る",
+  "similar": [
+    "Metasploit、sqlmap：PentAGI がエージェントから呼ぶ個別のツール。こちらはそれらを自律的に組み合わせる側",
+    "他の AI pentest エージェント系（細かい違いは未確認）"
+  ],
+  "tech": "Go（backend）、React（frontend）、GraphQL。PostgreSQL + pgvector、任意で Neo4j（Graphiti）。Docker Compose で動く。Linux、macOS、Windows 用の installer がある。",
+  "caveats": "README は許可を得たテストのみに使うよう明記している。攻撃ツールを自律実行するので、対象と権限の管理は自分の責任になる。Docker socket へのアクセスが要り、権限が強い。LLM の API 費用がかかりうる。Enterprise 版には別機能がある。リリース 2.2.0 のノートに CVE-2026-14784（sandbox 隔離）の修正が載っている。ライセンスは MIT。",
+  "tags": [
+    "セキュリティ",
+    "AI エージェント",
+    "セルフホスト",
+    "コンテナ・Kubernetes"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-10-15"
+}

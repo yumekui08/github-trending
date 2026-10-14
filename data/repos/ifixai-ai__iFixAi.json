@@ -1,0 +1,44 @@
+{
+  "repo": "ifixai-ai/iFixAi",
+  "short": "iFixAi は、AI エージェントが本来の仕事どおりに動いているかを監査する Python 製の CLI。テストを走らせて採点し、JSON と Markdown のレポートを出す。",
+  "what": "AI エージェントの挙動を監査する診断 CLI",
+  "can_do": [
+    "モックまたは実際のモデル/エンドポイントに対して、既定で 10 項目の inspection を実行する（`--full-run` で 60 項目）",
+    "別ベンダーのモデルを judge にして採点する",
+    "`ifixai setup` の対話ウィザードで設定を `ifixai.yaml` に保存する",
+    "JSON と Markdown のレポートと、ターミナルのスコアカードを出す",
+    "Claude Code / Codex のプラグインや、各種エージェント用の skill として使う"
+  ],
+  "install": [
+    "`pip install \"ifixai[openai]\"`（テストするプロバイダーの extra を選ぶ。anthropic、gemini など）",
+    "`ifixai setup`",
+    "`ifixai run`"
+  ],
+  "how_to_use": "まず `ifixai run --provider mock --api-key not-used --eval-mode self` でキーなしの動作確認ができる（既定の fixture は意図的に欠陥入りなので、失敗する採点になる）。実際には自分の fixture を `--fixture` で渡す。",
+  "use_cases": [
+    "自社の LLM エージェントをリリース前に監査する手順に組み込めそう",
+    "CI でフラグ指定のスクリプト実行をして、挙動の回帰を見るのに使えそう"
+  ],
+  "for_whom": "業務で LLM エージェントを動かしていて、その挙動を検査したい開発者",
+  "similar": [
+    "promptfoo、Garak：LLM の評価や red teaming のツール。README は既存ツールが技術指標中心だとして、業務 KPI や組織構造に沿った監査を差別化点にしている"
+  ],
+  "tech": "Python 3.10 以上。pydantic、click、aiohttp、rich など。OpenAI、Anthropic、Gemini などの SDK は extra で追加。",
+  "caveats": "citable な採点には、評価対象とは別ベンダーの judge の API キーが要り、実行に API 費用がかかる（README の目安では full suite で $10〜18 程度）。有料の Pro 版があり、初回の対話実行で案内が出る。作成は2026-04で新しい。「120秒で答えが出る」などの記載は未検証。",
+  "tags": [
+    "LLM",
+    "AI エージェント",
+    "セキュリティ",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の概要とクイックスタートは読んだが、inspection の中身や採点方法（docs/）は読んでいない。",
+  "summarized_at": "2026-10-15"
+}

@@ -1,0 +1,37 @@
+{
+  "repo": "rust-lang/rust",
+  "short": "rust は、Rust 言語本体のソースリポジトリ。コンパイラ、標準ライブラリ、ドキュメントが入っている。",
+  "what": "Rust 言語のコンパイラと標準ライブラリのソース",
+  "can_do": [
+    "Rust のコンパイラ（rustc）を含む",
+    "標準ライブラリとドキュメントを含む",
+    "言語やコンパイラへのコントリビュートの入口になる"
+  ],
+  "install": [],
+  "how_to_use": "使うだけなら、このリポジトリからビルドせず、公式の手順（The Book の Installation）で入れる。README はソースからのインストールは非推奨とし、INSTALL.md を案内している。",
+  "use_cases": [
+    "言語仕様やコンパイラの挙動を調べるときに、ソースで確かめるのに使えそう",
+    "コンパイラや標準ライブラリへの貢献に使えそう"
+  ],
+  "for_whom": "Rust のコンパイラや標準ライブラリを読む、直す人。ふつうの利用者は公式の配布物を使えばよい",
+  "similar": [
+    "GCC、LLVM / Clang：別の言語処理系。Rust は所有権と型で、メモリと thread の安全性を compile 時に確かめる"
+  ],
+  "tech": "Rust が中心。ビルドと補助に Python、一部 JS / TypeScript（rustdoc の UI テスト用）。ライセンスは MIT と Apache-2.0 の併用。",
+  "caveats": "ふつうの利用者向けではなく、ソースからのビルドは README が非推奨としている。リポジトリが大きい（約1GB）。最新リリースは 1.99.0（2026-10）。",
+  "tags": [
+    "言語・ランタイム",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-10-15"
+}

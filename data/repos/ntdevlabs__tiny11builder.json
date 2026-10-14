@@ -1,0 +1,38 @@
+{
+  "repo": "ntdevlabs/tiny11builder",
+  "short": "tiny11builder は、Windows 11 のイメージから不要なアプリや機能を取り除き、小さい ISO を作る WinUI アプリ。モードは Tiny11、Tiny11 Core、Custom の3つ。",
+  "what": "小さい Windows 11 の ISO を作る WinUI アプリ",
+  "can_do": [
+    "公式の Windows イメージ、または手持ちのイメージから ISO を作る",
+    "Tiny11：同梱アプリや不要な機能を外し、更新・Defender・回復機能は残す",
+    "Tiny11 Core：更新と回復機能の対応を外し、Defender を無効にする、さらに削る形",
+    "Custom：アプリ、コンポーネント、機能、サービスを個別に選んで外す",
+    "Turbo mode で処理を速くする。中断したビルドは、途中から再開できる"
+  ],
+  "install": [],
+  "how_to_use": "リリースページから ZIP を取得し（Intel/AMD は x64、Windows on ARM は ARM64）、全体を展開して `Tiny11Builder.exe` を管理者権限で開く。モードを選んでビルドし、できた ISO は VM で試してからインストールする。",
+  "use_cases": [
+    "検証用の VM に使う、軽い Windows 11 イメージを作るのに使えそう",
+    "古めのハードで動かす Windows 11 を軽くする実験に使えそう"
+  ],
+  "for_whom": "Windows 11 のイメージを自分で削って作りたい人、VM や検証環境を軽くしたい人",
+  "similar": [
+    "NTLite：Windows イメージを編集する既存ツール（違いは未確認）",
+    "このリポジトリ内の旧 PowerShell 版（tiny11maker.ps1 など）：同じ目的の前身"
+  ],
+  "tech": "C#（WinUI アプリ。.NET）。x64 と ARM64 版。動作は Windows で、管理者権限が要る。旧版の PowerShell スクリプトも残る。",
+  "caveats": "WinUI 版は 0.1.1 と初期段階。デフォルトブランチが winui-preview。Core は更新も保守もできなくなる。Custom で保護対象を外すと Windows が壊れうると README が警告している。ライセンス表示がない（GitHub 上は不明。NOTICE.md の確認が要る）。Windows のイメージを改変する性質上、Microsoft のライセンス面は自分で確認が要る。",
+  "tags": [
+    "デスクトップアプリ",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と最新リリースのみ読んだ。docs/usage.md と NOTICE.md は読んでおらず、対応環境やライセンスの詳細は未確認。",
+  "summarized_at": "2026-10-15"
+}

@@ -1,0 +1,44 @@
+{
+  "repo": "K-Dense-AI/scientific-agent-skills",
+  "short": "scientific-agent-skills は、生物・化学・医学などの研究向けに、AI エージェントへ渡す Agent Skills を177件まとめたもの。Claude Code、Codex、Cursor など Agent Skills 標準に対応するエージェントで使う。",
+  "what": "科学研究向け Agent Skills 177件の集合",
+  "can_do": [
+    "各スキルが特定のパッケージ、データソース、ワークフローの使い方と、科学的な作法・検証手順をエージェントに教える",
+    "PubChem、ChEMBL、UniProt など 80 の DB の引き方を Database Lookup スキルにまとめている",
+    "Scanpy、RDKit、Biopython など研究用ライブラリを使うスキルを含む",
+    "スキルは1件ずつ、またはまとめて入れられる",
+    "論文用のスライド作成など、研究の周辺作業のスキルも含む"
+  ],
+  "install": [
+    "`npx skills add K-Dense-AI/scientific-agent-skills`",
+    "`gh skill install K-Dense-AI/scientific-agent-skills`（GitHub CLI v2.90.0 以上）",
+    "個別のスキルだけなら `gh skill install K-Dense-AI/scientific-agent-skills scanpy`"
+  ],
+  "how_to_use": "入れたあと、エージェントに研究タスクを頼むと、該当するスキルが読まれる。スキルの依存パッケージは別に入れる必要があり、README は uv を使うとしている。",
+  "use_cases": [
+    "バイオ・ケミ系の解析を頼まれたときに、エージェントに手順を持たせるのに使えそう",
+    "公開 DB の問い合わせ方をエージェントに覚えさせるのに使えそう",
+    "スキルの書き方の参考例として読めそう"
+  ],
+  "for_whom": "研究や解析で AI エージェントを使う、生命科学・化学・材料などの研究者やエンジニア",
+  "similar": [
+    "anthropics/skills：Anthropic 公式のスキル集。こちらは科学分野に特化"
+  ],
+  "tech": "Python（リポジトリのツール用は 3.13 以上）。中身は主に SKILL.md と補助スクリプト。macOS、Linux、Windows は WSL2。",
+  "caveats": "README 自身が、スキルは任意のコードを実行させうるので入れる前に確認するよう警告している。スキル用の依存は入れただけでは入らない。「250,000+ scientists」など利用者数の記載は検証していない。ライセンスは MIT。作成は2025-10で、更新が速い。",
+  "tags": [
+    "AI エージェント",
+    "学習資料",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README は冒頭と導入部、前提部分を読んだ。177件の各スキルの中身までは読んでいない。",
+  "summarized_at": "2026-10-15"
+}
