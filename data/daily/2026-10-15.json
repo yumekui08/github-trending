@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-15",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "stars": 240616,
+      "stars_today": 41187,
+      "status": "continuing"
+    },
+    {
+      "rank": 2,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 66215,
+      "stars_today": 3547,
+      "status": "continuing"
+    },
+    {
+      "rank": 3,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 29079,
+      "stars_today": 946,
+      "status": "continuing"
+    },
+    {
+      "rank": 4,
+      "repo": "nvm-sh/nvm",
+      "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+      "language": "Shell",
+      "stars": 95445,
+      "stars_today": 70,
+      "status": "new"
+    },
+    {
+      "rank": 5,
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "language": "Python",
+      "stars": 49296,
+      "stars_today": 146,
+      "status": "new"
+    },
+    {
+      "rank": 6,
+      "repo": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 52463,
+      "stars_today": 94,
+      "status": "new"
+    },
+    {
+      "rank": 7,
+      "repo": "ifixai-ai/iFixAi",
+      "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+      "language": "Python",
+      "stars": 27332,
+      "stars_today": 2143,
+      "status": "new"
+    },
+    {
+      "rank": 8,
+      "repo": "vxcontrol/pentagi",
+      "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+      "language": "Go",
+      "stars": 29392,
+      "stars_today": 1070,
+      "status": "new"
+    },
+    {
+      "rank": 9,
+      "repo": "rust-lang/rust",
+      "description": "Empowering everyone to build reliable and efficient software.",
+      "language": "Rust",
+      "stars": 120004,
+      "stars_today": 205,
+      "status": "new"
+    },
+    {
+      "rank": 10,
+      "repo": "xtool-org/xtool",
+      "description": "Cross-platform Xcode replacement. Build and deploy iOS apps with SwiftPM on Linux, Windows, macOS.",
+      "language": "Swift",
+      "stars": 10746,
+      "stars_today": 1510,
+      "status": "continuing"
+    },
+    {
+      "rank": 11,
+      "repo": "ntdevlabs/tiny11builder",
+      "description": "WinUI app for building smaller, customized Windows 11 images.",
+      "language": "C#",
+      "stars": 20197,
+      "stars_today": 194,
+      "status": "new"
+    },
+    {
+      "rank": 12,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 87443,
+      "stars_today": 1002,
+      "status": "new"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-15",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "paperclipai/paperclip",
+      "description": "The open-source app everyone uses to manage agents at work",
+      "language": "TypeScript",
+      "stars": 102149,
+      "stars_period": 21106
+    },
+    {
+      "rank": 2,
+      "repo": "anthropics/financial-services",
+      "description": "",
+      "language": "Python",
+      "stars": 39858,
+      "stars_period": 4971
+    },
+    {
+      "rank": 3,
+      "repo": "alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 47168,
+      "stars_period": 24283
+    },
+    {
+      "rank": 4,
+      "repo": "vectorize-io/hindsight",
+      "description": "Hindsight: Agent Memory That Learns",
+      "language": "Python",
+      "stars": 49678,
+      "stars_period": 25874
+    },
+    {
+      "rank": 5,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 66215,
+      "stars_period": 36408
+    },
+    {
+      "rank": 6,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 63673,
+      "stars_period": 13203
+    },
+    {
+      "rank": 7,
+      "repo": "affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 279454,
+      "stars_period": 22653
+    },
+    {
+      "rank": 8,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 29682,
+      "stars_period": 5569
+    },
+    {
+      "rank": 9,
+      "repo": "agent-substrate/substrate",
+      "description": "Agent Substrate: the core system",
+      "language": "Go",
+      "stars": 5157,
+      "stars_period": 3190
+    },
+    {
+      "rank": 10,
+      "repo": "NVIDIA/OpenShell",
+      "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
+      "language": "Rust",
+      "stars": 16232,
+      "stars_period": 7574
+    },
+    {
+      "rank": 11,
+      "repo": "anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "TypeScript",
+      "stars": 150871,
+      "stars_period": 6545
+    },
+    {
+      "rank": 12,
+      "repo": "TencentCloud/Octop",
+      "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+      "language": "Python",
+      "stars": 9334,
+      "stars_period": 7517
+    },
+    {
+      "rank": 13,
+      "repo": "Tencent/WeKnora",
+      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "language": "Go",
+      "stars": 33996,
+      "stars_period": 11177
+    },
+    {
+      "rank": 14,
+      "repo": "tashfeenahmed/freellmapi",
+      "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+      "language": "TypeScript",
+      "stars": 35285,
+      "stars_period": 8786
+    },
+    {
+      "rank": 15,
+      "repo": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 106680,
+      "stars_period": 12820
+    },
+    {
+      "rank": 16,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 29079,
+      "stars_period": 5378
+    },
+    {
+      "rank": 17,
+      "repo": "trycua/cua",
+      "description": "Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation.",
+      "language": "Rust",
+      "stars": 29739,
+      "stars_period": 7159
+    },
+    {
+      "rank": 18,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 87443,
+      "stars_period": 11115
+    },
+    {
+      "rank": 19,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 11389,
+      "stars_period": 3795
+    },
+    {
+      "rank": 20,
+      "repo": "rohitg00/ai-engineering-from-scratch",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "language": "Python",
+      "stars": 69119,
+      "stars_period": 14347
+    },
+    {
+      "rank": 21,
+      "repo": "longbridge/gpui-kit",
+      "description": "Rust GUI components for building fantastic cross-platform desktop application by using GPUI.",
+      "language": "Rust",
+      "stars": 17415,
+      "stars_period": 2812
+    },
+    {
+      "rank": 22,
+      "repo": "Gaurav-Gosain/tuios",
+      "description": "A terminal window manager that knows what your agents are doing. Tiling panes, workspaces, sessions that survive restarts, and one Inbox for every coding agent.",
+      "language": "Go",
+      "stars": 5326,
+      "stars_period": 1659
+    }
+  ]
+}

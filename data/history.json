@@ -55,6 +55,12 @@
       "2026-10-02"
     ]
   },
+  "HKUDS/CLI-Anything": {
+    "first_seen": "2026-10-15",
+    "seen": [
+      "2026-10-15"
+    ]
+  },
   "HunxByts/GhostTrack": {
     "first_seen": "2026-10-02",
     "seen": [
@@ -66,6 +72,12 @@
     "seen": [
       "2026-10-03",
       "2026-10-04"
+    ]
+  },
+  "K-Dense-AI/scientific-agent-skills": {
+    "first_seen": "2026-10-15",
+    "seen": [
+      "2026-10-15"
     ]
   },
   "M-Abozaid/esp32-c3-adblock": {
@@ -81,6 +93,12 @@
       "2026-10-01",
       "2026-10-02",
       "2026-10-03"
+    ]
+  },
+  "NationalSecurityAgency/ghidra": {
+    "first_seen": "2026-10-15",
+    "seen": [
+      "2026-10-15"
     ]
   },
   "NawfalMotii79/PLFM_RADAR": {
@@ -282,7 +300,8 @@
     "seen": [
       "2026-09-30",
       "2026-10-01",
-      "2026-10-14"
+      "2026-10-14",
+      "2026-10-15"
     ]
   },
   "deepseek-ai/DeepGEMM": {
@@ -371,6 +390,12 @@
       "2026-10-11"
     ]
   },
+  "ifixai-ai/iFixAi": {
+    "first_seen": "2026-10-15",
+    "seen": [
+      "2026-10-15"
+    ]
+  },
   "jamwithai/production-agentic-rag-course": {
     "first_seen": "2026-10-04",
     "seen": [
@@ -432,7 +457,8 @@
       "2026-10-04",
       "2026-10-11",
       "2026-10-13",
-      "2026-10-14"
+      "2026-10-14",
+      "2026-10-15"
     ]
   },
   "modelcontextprotocol/servers": {
@@ -451,7 +477,8 @@
       "2026-10-11",
       "2026-10-12",
       "2026-10-13",
-      "2026-10-14"
+      "2026-10-14",
+      "2026-10-15"
     ]
   },
   "msitarzewski/agency-agents": {
@@ -474,6 +501,18 @@
       "2026-10-01",
       "2026-10-02",
       "2026-10-03"
+    ]
+  },
+  "ntdevlabs/tiny11builder": {
+    "first_seen": "2026-10-15",
+    "seen": [
+      "2026-10-15"
+    ]
+  },
+  "nvm-sh/nvm": {
+    "first_seen": "2026-10-15",
+    "seen": [
+      "2026-10-15"
     ]
   },
   "oblien/openship": {
@@ -552,6 +591,12 @@
       "2026-09-30"
     ]
   },
+  "rust-lang/rust": {
+    "first_seen": "2026-10-15",
+    "seen": [
+      "2026-10-15"
+    ]
+  },
   "storytold/artcraft": {
     "first_seen": "2026-10-09",
     "seen": [
@@ -626,6 +671,12 @@
       "2026-10-14"
     ]
   },
+  "vxcontrol/pentagi": {
+    "first_seen": "2026-10-15",
+    "seen": [
+      "2026-10-15"
+    ]
+  },
   "willfaust/Madeira": {
     "first_seen": "2026-09-30",
     "seen": [
@@ -635,7 +686,8 @@
   "xtool-org/xtool": {
     "first_seen": "2026-10-14",
     "seen": [
-      "2026-10-14"
+      "2026-10-14",
+      "2026-10-15"
     ]
   }
 }
