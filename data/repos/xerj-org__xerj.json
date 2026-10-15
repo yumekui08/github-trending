@@ -1,0 +1,43 @@
+{
+  "repo": "xerj-org/xerj",
+  "summarized_at": "2026-10-16",
+  "short": "xerj は、フォルダのコード・文書・ログ・PDF を自動で index して検索できる Rust 製の検索エンジン。coding agent が grep でファイルを丸ごと読む代わりに、必要な箇所だけ取り出せるようにするのが狙い。Elasticsearch 互換 API を持つ。",
+  "what": "agent 向けの自動 index 付き検索エンジン",
+  "can_do": [
+    "`xerj autoindex` でフォルダを設定なしに index する",
+    "BM25、kNN、hybrid 検索を行い、`file:line` つきの passage を返す",
+    "`xerj def` で定義位置と signature を返す",
+    "`xerj init` で Claude Code / Cursor に MCP と skill を登録する",
+    "Elasticsearch 互換 API で既存 client から使う",
+    "agent 用の記憶領域（`/_memory`）を持つ"
+  ],
+  "install": [
+    "`curl -fsSL https://xerj.org/get | sh`"
+  ],
+  "how_to_use": "`xerj --insecure --data-dir ./data &` で server を起動し、`xerj init` で agent に組み込み、`xerj autoindex ~/my-project` で index してから `xerj search \"…\"` で検索する。",
+  "use_cases": [
+    "大きな repo を Claude Code に読ませるとき、grep の代わりに使って token を減らせそう",
+    "ログや PDF のローカル検索基盤として試せそう",
+    "Elasticsearch 互換なので、小規模な検索サーバーの代替として検証できそう"
+  ],
+  "for_whom": "coding agent の token 消費を減らしたい人。単一バイナリのローカル検索サーバーが欲しい人。",
+  "similar": [
+    "Elasticsearch：API 互換。こちらは JVM なしの単一 static binary",
+    "ripgrep / grep：agent が使う標準の検索。こちらは index を作って passage を返す"
+  ],
+  "tech": "Rust 製の単一 static binary（JVM 不要）。既定の embedder は lexical でオフライン動作。neural embedder は opt-in で約 90MB をダウンロードする。",
+  "caveats": "`--insecure` は TLS と API key 認証を切るので、到達できる全員が管理者になる。開発機で 127.0.0.1 のみに使う前提。token 削減（2.7倍、5倍）は作者の測定と利用者の報告で、第三者の検証は未確認。README が『field report を commit か PR で送る』ことを利用の条件のように求めている。2026年6月に作られ、バージョンは 1.0.0 の rc 版。",
+  "tags": [
+    "データベース",
+    "AI エージェント",
+    "データ処理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README は前半しか読んでおらず、token 削減などの数値は README の記載のままで、実際の動作は確認していない。"
+}

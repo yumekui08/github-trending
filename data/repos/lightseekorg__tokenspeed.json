@@ -1,0 +1,44 @@
+{
+  "repo": "lightseekorg/tokenspeed",
+  "summarized_at": "2026-10-16",
+  "short": "tokenspeed は、agentic な用途を狙った LLM inference engine。scheduler を C++ の制御面と Python の実行面に分け、kernel を差し替え可能な部品にしている。NVIDIA Blackwell と AMD GPU 向け。",
+  "what": "agentic 用途向けの LLM inference engine",
+  "can_do": [
+    "LLM を GPU 上で serve する（OpenAI 互換かは未確認）",
+    "request の状態や KV cache の管理を C++ の有限状態機械で行う",
+    "MLA（Multi-head Latent Attention）など専用 kernel を選んで使う",
+    "Qwen、Kimi、GLM、DeepSeek など多数のモデルを動かす（topics / News より）",
+    "NVIDIA（CUDA 13）と AMD（ROCm 7.2）の両方で動かす"
+  ],
+  "install": [
+    "`python -m pip install --upgrade tokenspeed --extra-index-url https://lightseek.org/whl/nightly`",
+    "`docker pull lightseekorg/tokenspeed-runner:latest`"
+  ],
+  "how_to_use": "docs の Getting Started に従い、runner container か nightly wheel で環境を作ってから、Launching a Server の手順で server を起動する。モデルごとの設定は Model Recipes を見る。",
+  "use_cases": [
+    "自前 GPU で agent 向けの LLM を serve する際の vLLM / TensorRT-LLM の代替として評価できそう",
+    "scheduler と kernel を分けた設計は、inference engine の構造を学ぶ素材になりそう"
+  ],
+  "for_whom": "自前の GPU で LLM を serve している人、inference engine の設計に興味がある人。",
+  "similar": [
+    "vLLM：使いやすさは同等を目標とする。こちらは制御面を C++ にした",
+    "TensorRT-LLM：性能面で比較されている。こちらは Python で拡張しやすい",
+    "SGLang：同じ領域の engine"
+  ],
+  "tech": "Python と C++（scheduler）。依存は manifests からは未確認。CUDA 13 の NVIDIA GPU（Blackwell が主）または ROCm 7.2 の AMD GPU が要る。Python 3.11〜3.13、Docker。",
+  "caveats": "GPU が必須で、ふつうの開発機では動かせない。2026年5月に作られた新しいプロジェクトで、バージョンは 0.1.x。性能比較は作者側の資料で、第三者の検証かは不明。nightly wheel の利用を案内している。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "インフラ・運用"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release",
+    "docs/guides/getting-started.md"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と getting-started は読んだが、server の起動方法や API の互換性、設計の中身（コード）は読んでいない。"
+}

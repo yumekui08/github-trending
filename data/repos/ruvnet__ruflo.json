@@ -1,0 +1,45 @@
+{
+  "repo": "ruvnet/ruflo",
+  "summarized_at": "2026-10-16",
+  "short": "ruflo は、Claude Code や Codex の周りに置く agent 用の harness（実行基盤）。複数 agent の swarm 協調、記憶、MCP tool、console / TUI を足す。npm（`npx ruflo`）と Claude Code plugin で入れる。",
+  "what": "Claude Code / Codex 向けの multi-agent harness",
+  "can_do": [
+    "複数の agent を swarm として協調・自動で振り分けて動かす",
+    "vector 検索ベースの記憶を作業をまたいで保持する",
+    "MCP server として tool を Claude Code や Codex などに公開する",
+    "`ruflo tui` や console で agent の実行・コストを確認する",
+    "federation で別マシンの agent と通信する（README の説明）"
+  ],
+  "install": [
+    "`/plugin marketplace add ruvnet/ruflo`",
+    "`/plugin install ruflo-core@ruflo`",
+    "`npx ruflo@latest init wizard`"
+  ],
+  "how_to_use": "Claude Code では plugin を入れて `/reload-plugins` のあと `/ruflo` を実行。他の MCP 対応 client は `npx -y ruflo@latest mcp start` を stdio MCP server として登録する。",
+  "use_cases": [
+    "Claude Code に複数 agent の分業と実行記録を足す試験に使えそう",
+    "MCP tool を横断して検証する用途に使えそう",
+    "agent の cost や実行ログの可視化を試すのに使えそう"
+  ],
+  "for_whom": "Claude Code / Codex で複数 agent の運用を試したい人。",
+  "similar": [
+    "Claude Code の subagents / hooks 機能：標準機能の範囲。こちらはそれを束ねて記憶や swarm を足す位置づけ"
+  ],
+  "tech": "TypeScript（npm パッケージ）、一部 Rust。Node.js 上で動く。Claude Code 2.1.287 以降が要る（plugin 利用時）。",
+  "caveats": "README の機能説明は宣伝調で、「self-learning」「314 MCP tools」などの実際の効果は確認できていない。リポジトリが巨大（約9,600ファイル、約650MB）で、機能の範囲が広くて把握しづらい。mods は利用者のアカウント権限で動くので、入れる前にコードを確認する必要がある。リリースは alpha タグ付きで更新が非常に速い。",
+  "tags": [
+    "AI エージェント",
+    "自動化・ワークフロー",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README は読んだが機能が非常に多く、各機能の実際の動作や効果はコードを読んでおらず確認できていない。"
+}

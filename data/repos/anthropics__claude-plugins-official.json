@@ -1,0 +1,40 @@
+{
+  "repo": "anthropics/claude-plugins-official",
+  "summarized_at": "2026-10-16",
+  "short": "claude-plugins-official は、Anthropic が管理する Claude Code 用 plugin の公式ディレクトリ（marketplace）。Anthropic 製の plugin とパートナー・コミュニティ製の plugin を集めていて、Claude Code から名前を指定して入れられる。",
+  "what": "Claude Code plugin の公式 marketplace",
+  "can_do": [
+    "Claude Code の `/plugin install {name}@claude-plugins-official` で plugin を入れる",
+    "`/plugin` の Discover 画面から plugin を探す",
+    "`plugins/` の Anthropic 製 plugin（code-review、commit-commands、各種 LSP など）を使う",
+    "`external_plugins/` の外部 plugin（GitHub、GitLab、Linear、Playwright、Terraform など）を使う",
+    "skill だけを配る plugin を `strict: false` と `skills` 配列で marketplace に登録する"
+  ],
+  "install": [
+    "`/plugin install {plugin-name}@claude-plugins-official`"
+  ],
+  "how_to_use": "Claude Code 内で `/plugin` を開いて Discover から探すか、上のコマンドに plugin 名を入れて実行する。plugin を作る側は `plugins/example-plugin` が参考実装。",
+  "use_cases": [
+    "チームで使う Claude Code の拡張（code review、commit 補助）を公式のものから選べそう",
+    "GitHub / GitLab / Terraform などの MCP 連携 plugin を入れて、インフラ作業を Claude Code から回せそう",
+    "自作 plugin を作るときの構成の手本として読める"
+  ],
+  "for_whom": "Claude Code を使っていて、plugin で機能を足したい人。plugin を作って配りたい人。",
+  "similar": [
+    "VS Code Marketplace：拡張を配る場所という点は同じ。こちらは Claude Code 専用"
+  ],
+  "tech": "Python（スクリプト類）、JSON（`.claude-plugin/marketplace.json`）。plugin ごとに commands / agents / skills / `.mcp.json` を持つ。Claude Code の plugin 機構上で動く。",
+  "caveats": "README が自ら注意しているとおり、plugin の中身（MCP server など）は Anthropic が管理しておらず、動作や安全性は保証されない。入れる前に信頼できるか確認が要る。plugin の `name` は変更不可の slug。rename は `renames` map で移行する。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
