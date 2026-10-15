@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-16",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "paperclipai/paperclip",
+      "description": "The open-source app everyone uses to manage agents at work",
+      "language": "TypeScript",
+      "stars": 102711,
+      "stars_period": 21643
+    },
+    {
+      "rank": 2,
+      "repo": "anthropics/financial-services",
+      "description": "",
+      "language": "Python",
+      "stars": 39992,
+      "stars_period": 5122
+    },
+    {
+      "rank": 3,
+      "repo": "vectorize-io/hindsight",
+      "description": "Hindsight: Agent Memory That Learns",
+      "language": "Python",
+      "stars": 50038,
+      "stars_period": 26274
+    },
+    {
+      "rank": 4,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 68982,
+      "stars_period": 37181
+    },
+    {
+      "rank": 5,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 64513,
+      "stars_period": 13722
+    },
+    {
+      "rank": 6,
+      "repo": "affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 280325,
+      "stars_period": 22689
+    },
+    {
+      "rank": 7,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 29794,
+      "stars_period": 5727
+    },
+    {
+      "rank": 8,
+      "repo": "agent-substrate/substrate",
+      "description": "Agent Substrate: the core system",
+      "language": "Go",
+      "stars": 5228,
+      "stars_period": 3286
+    },
+    {
+      "rank": 9,
+      "repo": "alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 47372,
+      "stars_period": 23047
+    },
+    {
+      "rank": 10,
+      "repo": "NVIDIA/OpenShell",
+      "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
+      "language": "Rust",
+      "stars": 16342,
+      "stars_period": 7698
+    },
+    {
+      "rank": 11,
+      "repo": "TencentCloud/Octop",
+      "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+      "language": "Python",
+      "stars": 9529,
+      "stars_period": 7717
+    },
+    {
+      "rank": 12,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 29773,
+      "stars_period": 6067
+    },
+    {
+      "rank": 13,
+      "repo": "tashfeenahmed/freellmapi",
+      "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+      "language": "TypeScript",
+      "stars": 35768,
+      "stars_period": 9154
+    },
+    {
+      "rank": 14,
+      "repo": "Tencent/WeKnora",
+      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "language": "Go",
+      "stars": 34205,
+      "stars_period": 11112
+    },
+    {
+      "rank": 15,
+      "repo": "trycua/cua",
+      "description": "Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation.",
+      "language": "Rust",
+      "stars": 29870,
+      "stars_period": 7248
+    },
+    {
+      "rank": 16,
+      "repo": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 107034,
+      "stars_period": 12981
+    },
+    {
+      "rank": 17,
+      "repo": "anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "TypeScript",
+      "stars": 151065,
+      "stars_period": 6685
+    },
+    {
+      "rank": 18,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 88699,
+      "stars_period": 11461
+    },
+    {
+      "rank": 19,
+      "repo": "rohitg00/ai-engineering-from-scratch",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "language": "Python",
+      "stars": 69762,
+      "stars_period": 14754
+    },
+    {
+      "rank": 20,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 11630,
+      "stars_period": 3840
+    },
+    {
+      "rank": 21,
+      "repo": "longbridge/gpui-kit",
+      "description": "Rust GUI components for building fantastic cross-platform desktop application by using GPUI.",
+      "language": "Rust",
+      "stars": 17617,
+      "stars_period": 3043
+    },
+    {
+      "rank": 22,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 101033,
+      "stars_period": 7332
+    }
+  ]
+}
