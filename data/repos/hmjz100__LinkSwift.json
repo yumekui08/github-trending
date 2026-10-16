@@ -1,0 +1,39 @@
+{
+  "repo": "hmjz100/LinkSwift",
+  "summarized_at": "2026-10-17",
+  "short": "LinkSwift は、中国の主要なクラウドストレージ（百度网盘、阿里云盘、夸克网盘など）のファイルのダウンロード URL を取り出す userscript。Tampermonkey などに入れて使い、aria2 や IDM などのダウンローダーに渡せる。",
+  "what": "中国のクラウドストレージの直リンクを取る userscript",
+  "can_do": [
+    "百度网盘、阿里云盘、中国移动云盘、天翼云盘、迅雷云盘、光鸭云盘、夸克网盘、UC网盘、123云盘の9つで、ダウンロード用の URL を取得する",
+    "取得した URL を aria2、IDM、AB Download Manager などのダウンローダーに渡す、または aria2・cURL のコマンドとしてコピーする",
+    "多スレッドの「増強ダウンロード」と進捗バーを提供する",
+    "取得した URL のキャッシュと、設定画面を備える"
+  ],
+  "install": [
+    "Tampermonkey などの userscript マネージャーに、README のリンクから `（改）网盘直链下载助手.user.js` を入れる（GitHub、OpenUserJS、脚本猫のいずれか）"
+  ],
+  "how_to_use": "インストール後、対応するクラウドストレージのページを開くと、スクリプトのダウンロード用ウィンドウが出る。ここから URL の取得、ダウンローダーへの送信、設定の変更ができる。",
+  "use_cases": [
+    "中国のクラウドストレージ上のファイルを、公式クライアントを使わずに aria2 などで落とすのに使えそう",
+    "各社のサービスの API が変わると壊れやすい種類のツールなので、userscript の保守の実例として読む用途にも使えそう"
+  ],
+  "for_whom": "公式クライアントを使えない、または使いたくない環境で、中国のクラウドストレージのファイルを取得したい人",
+  "similar": [
+    "油小猴の「网盘直链下载助手」（baiduyun）：README によるとこれが元のスクリプトで、LinkSwift はそれを改造して対応サービスと機能を増やしたもの"
+  ],
+  "tech": "JavaScript の userscript（実体は .user.js）。Tampermonkey などが必要。Chrome 76 以上、Edge 88 以上。Windows / Mac / Linux / Android。開発用に eslint を使う。AGPL-3.0。",
+  "caveats": "README は中国語のみ。各サービスの仕様変更で動かなくなることがあり、更新ログも対応の追従が多い。README は「限速の破解ではない」と明記しており、速度の向上は保証されない。利用規約への適合は各自で確認が要る。作者は一人で、最新版の更新ログは 1.1.4 が測試版で、正式版は 1.1.3。既知の問題として迅雷云盘のウィンドウ異常などが書かれている。元スクリプトの改造で、AGPL-3.0。",
+  "tags": [
+    "ネットワーク",
+    "自動化・ワークフロー"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とリリースノートは読んだが、.user.js 本体の中身は読んでいない。動作や API の使い方は README の説明に基づく。"
+}

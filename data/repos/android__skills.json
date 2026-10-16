@@ -1,0 +1,43 @@
+{
+  "repo": "android/skills",
+  "summarized_at": "2026-10-17",
+  "short": "android/skills は、Android 開発のベストプラクティスを AI エージェント向けにまとめた SKILL.md 集。Android CLI や plugin としてエージェントに取り込める。LLM が苦手な分野を優先して作られている。",
+  "what": "Android 開発向けのエージェント用 skill 集",
+  "can_do": [
+    "Android の個別の作業（R8 の解析、edge-to-edge 対応、Navigation 3 への移行、Play Billing の更新など）の手順を SKILL.md として提供する",
+    "Android CLI の `android skills add` で、特定の skill または全 skill をプロジェクトやエージェントのディレクトリに入れる",
+    "`android skills update` で導入済みの skill を更新する",
+    "Claude Code と Codex の plugin として導入できる（marketplace 経由）",
+    "Jetpack Compose、CameraX、Media3、Wear、TV、XR、セキュリティなど、分野別のディレクトリに分かれている"
+  ],
+  "install": [
+    "`android skills add r8-analyzer --project=.`",
+    "`android skills add --all`",
+    "`/plugin install android-skills --marketplace android/skills`（Claude Code）",
+    "`codex plugin marketplace add android/skills`",
+    "`codex plugin add android-skills@android-skills`（Codex）"
+  ],
+  "how_to_use": "導入後は、エージェントに関係する作業（例：「アプリを edge-to-edge にして」）を頼むと、該当する skill が自動で使われる。`--all` を付けない場合は `android-cli` skill だけが入る。",
+  "use_cases": [
+    "Android アプリの保守を頼まれたとき、エージェントに公式の手順を踏ませるのに使えそう",
+    "Compose や Navigation の移行作業をエージェントに任せる際の、ガイドとして使えそう",
+    "SKILL.md の書き方の実例として、自分用の skill を作る参考になりそう"
+  ],
+  "for_whom": "Claude Code や Codex などのエージェントで Android アプリを開発・保守する人",
+  "similar": [],
+  "tech": "実体は Markdown（SKILL.md）の集まり。GitHub 上の主な言語表示は Kotlin。Android CLI、または Claude Code / Codex の plugin 経由で使う。Apache-2.0。",
+  "caveats": "Google の Android チームのリポジトリだが、README に「AI は間違えるので結果を確認すること」とある。公開からの貢献は受け付けていない（issue でのフィードバックのみ）。個々の skill の中身は今回読んでおらず、品質や網羅の範囲は未確認。2026-03 作成で、更新が頻繁（最新 v1.0.15）。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "モバイル"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と構成から目的と導入方法は分かったが、個々の SKILL.md の中身は読んでいない。"
+}

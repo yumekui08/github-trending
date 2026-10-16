@@ -1,0 +1,41 @@
+{
+  "repo": "MadsLorentzen/ai-job-search",
+  "summarized_at": "2026-10-17",
+  "short": "ai-job-search は、Claude Code 上で求人の評価、CV の調整、カバーレター作成、面接対策を行う就職活動用のワークフロー集。fork して自分のプロフィールを入れて使う。求人ポータルの検索部分はデンマーク向け。",
+  "what": "Claude Code で就職活動を進めるワークフロー集",
+  "can_do": [
+    "`/setup` で CV や LinkedIn の資料からプロフィールを作る",
+    "`/scrape` で複数の求人ポータルを検索し、重複を除いて適合度順に並べる",
+    "`/apply <url>` で求人との適合度を評価し、LaTeX の CV とカバーレターを求人に合わせて作る。別の reviewer agent が批評して修正する",
+    "`/rank` で大量の求人を一括でスコアリングする",
+    "`/interview` で応募履歴から面接の準備資料と模擬面接を作る",
+    "`/outcome` や gmail・Notion との同期で、応募の状況を記録する"
+  ],
+  "install": [
+    "`gh repo fork MadsLorentzen/ai-job-search --clone`",
+    "`python3 tools/install_portal_clis.py`"
+  ],
+  "how_to_use": "リポジトリで `claude` を起動し、`/setup` でプロフィールを作ったあと、`/scrape` で求人を探し、`/apply <求人の URL>` で応募書類を作る。個人情報を tracked なファイルに書くため、README は public fork ではなく private リポジトリで使うことを勧めている。",
+  "use_cases": [
+    "転職活動で、求人ごとの CV とカバーレターの調整を自動化するのに使えそう",
+    "面接前の想定質問の整理や模擬面接の練習に使えそう",
+    "Claude Code の skill、command、sub agent を組み合わせた大きなワークフローの実例として、構成を読む参考になりそう"
+  ],
+  "for_whom": "Claude Code を使っていて、英語圏・欧州で就職活動をしている人",
+  "similar": [],
+  "tech": "Python（tools/ のスクリプト）、Bun 製の求人ポータル CLI、LaTeX（CV は lualatex、カバーレターは xelatex）。Claude Code の skills / commands / agents で構成。Python 3.10 以上が必要。MIT。",
+  "caveats": "Claude Code の利用に Claude の契約か API の費用が要る。求人ポータルの検索はデンマーク向けで、日本の求人サイトには別途作り替えが要る。fork は常に public になるため、個人情報を入れるなら private リポジトリにする必要がある。作者が自分の就職活動に使い、採用に至ったと README にあるが、効果は作者の自己申告。Anthropic とは無関係の非公式プロジェクト。2026-03 作成で、更新が頻繁（最新 v1.7.2）。",
+  "tags": [
+    "AI エージェント",
+    "自動化・ワークフロー",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
