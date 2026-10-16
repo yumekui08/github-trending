@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-17",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "language": "Python",
+      "stars": 40480,
+      "stars_today": 1552,
+      "status": "continuing"
+    },
+    {
+      "rank": 2,
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "language": "Python",
+      "stars": 51454,
+      "stars_today": 1158,
+      "status": "continuing"
+    },
+    {
+      "rank": 3,
+      "repo": "affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 281443,
+      "stars_today": 1057,
+      "status": "continuing"
+    },
+    {
+      "rank": 4,
+      "repo": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 53457,
+      "stars_today": 323,
+      "status": "continuing"
+    },
+    {
+      "rank": 5,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 30209,
+      "stars_today": 449,
+      "status": "continuing"
+    },
+    {
+      "rank": 6,
+      "repo": "ruvnet/ruflo",
+      "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+      "language": "TypeScript",
+      "stars": 75603,
+      "stars_today": 672,
+      "status": "continuing"
+    },
+    {
+      "rank": 7,
+      "repo": "android/skills",
+      "description": "",
+      "language": "Kotlin",
+      "stars": 8041,
+      "stars_today": 163,
+      "status": "new"
+    },
+    {
+      "rank": 8,
+      "repo": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 300650,
+      "stars_today": 973,
+      "status": "continuing"
+    },
+    {
+      "rank": 9,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 11911,
+      "stars_today": 282,
+      "status": "returning"
+    },
+    {
+      "rank": 10,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 71043,
+      "stars_today": 2301,
+      "status": "continuing"
+    },
+    {
+      "rank": 11,
+      "repo": "MadsLorentzen/ai-job-search",
+      "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+      "language": "Python",
+      "stars": 48436,
+      "stars_today": 879,
+      "status": "new"
+    },
+    {
+      "rank": 12,
+      "repo": "hmjz100/LinkSwift",
+      "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
+      "language": "JavaScript",
+      "stars": 23633,
+      "stars_today": 702,
+      "status": "new"
+    },
+    {
+      "rank": 13,
+      "repo": "xerj-org/xerj",
+      "description": "XERJ is the new way for AI to search data. Its autoindex capability activates agents to know your data without the token waste of grep and sed. One command indexes code, docs, logs and PDFs for search, RAG, security audits and agent memory, using 40x fewer tokens than grep. Elasticsearch compatible, so existing clients just work.",
+      "language": "Rust",
+      "stars": 6883,
+      "stars_today": 1647,
+      "status": "continuing"
+    }
+  ],
+  "errors": []
+}
