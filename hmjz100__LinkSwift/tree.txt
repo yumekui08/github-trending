@@ -1,0 +1,21 @@
+# ファイルとディレクトリの総数：23
+.github/
+.github/CODE_OF_CONDUCT.md
+.github/ISSUE_TEMPLATE/
+.github/contributing.md
+.gitignore
+LICENSE
+README-ScriptCat.md
+README.md
+config/
+config/ali.json
+config/config.json
+config/quark.json
+config/tianyi.json
+config/xunlei.json
+config/yidong.json
+default.min.css
+eslint.config.mjs
+package.json
+（改）百度网盘会员青春版.user.js
+（改）网盘直链下载助手.user.js

@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-17",
+  "items": [
+    {
+      "repo": "android/skills",
+      "rank": 7,
+      "status": "new",
+      "work_dir": ".work/android__skills",
+      "output": "data/repos/android__skills.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "MadsLorentzen/ai-job-search",
+      "rank": 11,
+      "status": "new",
+      "work_dir": ".work/MadsLorentzen__ai-job-search",
+      "output": "data/repos/MadsLorentzen__ai-job-search.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "hmjz100/LinkSwift",
+      "rank": 12,
+      "status": "new",
+      "work_dir": ".work/hmjz100__LinkSwift",
+      "output": "data/repos/hmjz100__LinkSwift.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "release"
+      ],
+      "errors": []
+    }
+  ],
+  "deferred": []
+}
