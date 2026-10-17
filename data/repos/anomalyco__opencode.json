@@ -1,0 +1,45 @@
+{
+  "repo": "anomalyco/opencode",
+  "summarized_at": "2026-10-18",
+  "short": "opencode は、ターミナルで動くオープンソースの AI コーディングエージェント。コードを書き換える build と、読み取り専用で調査する plan の2つのエージェントを Tab で切り替えて使う。デスクトップアプリ（beta）もある。",
+  "what": "ターミナルで動く AI コーディングエージェント",
+  "can_do": [
+    "ターミナルの UI（TUI）で AI とやり取りしながらコードを書き換える",
+    "build（全権限）と plan（読み取り専用、編集は既定で拒否、bash は確認あり）を Tab で切り替える",
+    "複雑な検索や複数手順の作業を任せる general サブエージェントを `@general` で呼ぶ",
+    "デスクトップアプリ（beta）として使う"
+  ],
+  "install": [
+    "`curl -fsSL https://opencode.ai/install | bash`",
+    "`npm i -g @opencode/cli@latest`（bun / pnpm / yarn でも可）",
+    "`brew install anomalyco/tap/opencode`（macOS と Linux。他に scoop、choco、pacman、mise、nix もある）",
+    "0.1.x より古いバージョンは先に削除する。インストール先は `$OPENCODE_INSTALL_DIR` などで変えられる"
+  ],
+  "how_to_use": "インストール後、プロジェクトのディレクトリで `opencode` を起動し、Tab で build と plan を切り替える。使うモデルなどの設定は公式 docs（opencode.ai/docs）にある。README だけではモデルの設定方法までは分からなかった。",
+  "use_cases": [
+    "知らないコードベースを plan エージェントで安全に読み解くのに使えそう",
+    "モデルのベンダーを選ばず、ターミナルでコーディングエージェントを使いたい場面に使えそう",
+    "Claude Code などと並べて、手元の作業で使い比べるのに向いていそう"
+  ],
+  "for_whom": "ターミナルでコーディングエージェントを使いたく、オープンソースのものを選びたい開発者",
+  "similar": [
+    "Claude Code：ターミナルで動くコーディングエージェントという点は同じ。こちらは MIT のオープンソース",
+    "Codex CLI：用途は近い（細かい機能差は未確認）"
+  ],
+  "tech": "TypeScript 製の bun モノレポ（packages/ 配下に cli、app、desktop、console など）。ビルドやテストは bun と turbo。Linux、macOS、Windows に対応。ライセンスは MIT。",
+  "caveats": "デスクトップアプリは beta。更新が非常に速い（最新 push は昨日、リリースは v1.19.3 だが package.json は 2.0.32 で、バージョンの付け方が複数あるように見える）。README は同名の派生プロジェクトに「公式ではない」と明記するよう求めている。npm のパッケージ名は README では `@opencode/cli`。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README が install とエージェントの紹介中心で、モデルの設定やできることの詳細は docs サイト側にあり、読んでいない。バージョンの付け方の違い（1.19.3 と 2.0.32）の理由も未確認。"
+}

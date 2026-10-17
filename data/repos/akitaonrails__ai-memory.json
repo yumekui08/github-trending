@@ -1,0 +1,47 @@
+{
+  "repo": "akitaonrails/ai-memory",
+  "summarized_at": "2026-10-18",
+  "short": "ai-memory は、コーディングエージェント向けの長期記憶サーバー。Claude Code や Codex など20以上のエージェントの作業内容を git 管理の markdown wiki にためて、別のエージェントや別マシンで続きから再開できるようにする。Rust 製の単一バイナリ。",
+  "what": "コーディングエージェントの記憶と引き継ぎを担う Rust 製サーバー",
+  "can_do": [
+    "lifecycle hooks でプロンプトやツール呼び出しを記録し、sanitize したうえで保存する",
+    "セッション終了時に記録を markdown の wiki ページにまとめる（LLM なしでも動く）",
+    "次のセッションに短い brief を渡し、全文検索・entity・リンクをまとめた検索も提供する",
+    "Claude Code から Codex へなど、別のエージェントへ「どこまでやったか・何が失敗したか」の handoff を渡す",
+    "複数ユーザーで1つのサーバーを共有し、プロジェクト単位で知識を共有する（認証・監査ログ付き）",
+    "使われない記憶の減衰・圧縮・重複統合を、API 呼び出しなしでかける"
+  ],
+  "install": [
+    "`curl -fsSL https://github.com/akitaonrails/ai-memory/releases/latest/download/install.sh | sh`",
+    "`ai-memory setup`",
+    "Claude Code のプラグインとして入れる場合：`claude plugin marketplace add akitaonrails/ai-memory && claude plugin install ai-memory@ai-memory`（バイナリは上のとおり別に入れる）"
+  ],
+  "how_to_use": "`ai-memory setup` で初期設定したあと、対応するエージェントを普段どおり使うと hooks が記録する。エージェントを切り替えるときは `ai-memory run codex` のように起動すると、共有された作業内容が渡される。詳細は docs/install.md を参照。",
+  "use_cases": [
+    "Claude Code と Codex を使い分けるとき、毎回アーキテクチャを説明し直さずに済ませるのに使えそう",
+    "自宅サーバーや社内サーバーに立てて、デスクトップとノート PC で同じ作業文脈を共有するのに使えそう",
+    "チームで1台立てて、各自のエージェントが学んだことを共有する運用に向いていそう"
+  ],
+  "for_whom": "複数のコーディングエージェントやマシンをまたいで作業していて、文脈の説明し直しを減らしたい開発者",
+  "similar": [
+    "Mem0：自動で記憶を抽出する点は近い。こちらは記憶が読み書きできる markdown ページになる",
+    "Zep / Graphiti：時系列の記憶という点は近い（細かい機能差は未確認）"
+  ],
+  "tech": "Rust 製（edition 2024、Rust 1.95 以上）。複数 crate の workspace で、MCP、hooks、store、wiki、web などに分かれる。Linux、macOS、WSL2 に対応、ネイティブ Windows は experimental。Docker の定義、NixOS module、rpm、AUR あり。",
+  "caveats": "作られて半年弱（2026年5月作成）だが、v3.1.1 まで進み更新が非常に速い。対応エージェントが多く、機能の範囲が広いので、使うエージェントごとの対応状況は docs/support-matrix.md で要確認。記憶の圧縮・重複統合・LLM による書き換え（dream）は初期設定では無効。ネイティブ Windows は experimental。README の性能の数値（書き込み約700/s）は自己申告。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "セルフホスト",
+    "ドキュメント・知識管理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
