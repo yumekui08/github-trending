@@ -1,0 +1,36 @@
+{
+  "repo": "mlabonne/llm-course",
+  "summarized_at": "2026-10-19",
+  "short": "llm-course は、LLM を学ぶためのロードマップと Colab ノートブックをまとめた教材リポジトリ。基礎、LLM の作り方（Scientist）、アプリ化と運用（Engineer）の3部構成。",
+  "what": "LLM を学ぶロードマップと Colab ノートブック集",
+  "can_do": [
+    "基礎編：数学、Python、ニューラルネットワーク、NLP の学習項目と参考資料をたどれる",
+    "LLM Scientist 編：アーキテクチャ、事前学習、SFT、preference alignment、評価、quantization までの項目を順に学べる",
+    "LLM Engineer 編：LLM の実行、vector storage、RAG、agent、推論の最適化、デプロイ、セキュリティの項目を学べる",
+    "fine-tuning、quantization、モデルのマージなどを Colab で試せるノートブックと記事の一覧",
+    "LLM AutoEval、AutoQuant などの one-click 系ノートブック"
+  ],
+  "install": [],
+  "how_to_use": "ソフトウェアではなく読み物。README のロードマップ（画像）と各節の参考資料のリンクを上から読み、必要な節の Colab ノートブックを開いて試す。基礎編は任意。",
+  "use_cases": [
+    "LLM の fine-tuning や quantization の全体像をつかむ入口に使えそう",
+    "社内で LLM を扱う前に、RAG・agent・デプロイ・セキュリティの論点を一覧で確認するのに使えそう",
+    "Colab のノートブックを動かして、GPU 環境なしで quantization や fine-tuning を試すのに使えそう"
+  ],
+  "for_whom": "LLM の仕組みと実装を体系的に学びたいエンジニア",
+  "similar": [],
+  "tech": "コードのリポジトリではない（Markdown と画像のみ）。ノートブックは Google Colab 上で動く。",
+  "caveats": "最終 push が 2026-02 で、新しい手法や最近のモデルは反映されていない可能性がある。ノートブックや記事は外部（Colab、著者のブログ）にあり、リンク切れや内容の古さは未確認。著者の書籍（LLM Engineer's Handbook）への案内がある。参考資料の多くは英語。ライセンスは Apache-2.0。",
+  "tags": [
+    "学習資料",
+    "LLM",
+    "機械学習"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

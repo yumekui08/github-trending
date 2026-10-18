@@ -1,0 +1,48 @@
+{
+  "repo": "Comfy-Org/ComfyUI",
+  "summarized_at": "2026-10-19",
+  "short": "ComfyUI は、画像・動画・音声・3D を生成する拡散モデルを、ノードをつなぐグラフ画面で組み立てて動かすローカル実行の GUI / API サーバー。Windows / Linux / macOS で動く。",
+  "what": "拡散モデルをノードグラフで動かす GUI 兼 API サーバー",
+  "can_do": [
+    "Stable Diffusion、SDXL、Flux、Wan、LTX-Video など多数のモデルで、画像・動画・音声・3D の生成や編集のワークフローをノードで組む",
+    "checkpoint、VAE、LoRA、ControlNet、upscaler を読み込み、inpainting、outpainting、upscale、frame interpolation などを行う",
+    "ワークフローを JSON で保存・読込。生成物からワークフローと seed を復元できる（対応形式のみ）",
+    "VRAM が少なくても動かすための weight streaming、モデルの offload、量子化モデルへの対応",
+    "ローカルの API で、ワークフローをアプリや production のパイプラインから呼び出す",
+    "custom nodes による拡張。`--offline` で外部の有料 Partner / API nodes を無効にして完全にローカルで動かす"
+  ],
+  "install": [
+    "Windows / macOS：公式の Desktop アプリ（comfy.org/download）が最も簡単と README にある",
+    "Windows の NVIDIA 向け：portable 版（ComfyUI_windows_portable_nvidia.7z）を展開して実行",
+    "手動（NVIDIA）：リポジトリを clone し、`pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130` のあと `pip install -r requirements.txt`"
+  ],
+  "how_to_use": "モデルの checkpoint を `models/checkpoints`、VAE を `models/vae` に置いて `python main.py` で起動し、ブラウザの画面でテンプレートのワークフローを開いて実行する。モデルによってはファイルが複数あり、置き場所のサブフォルダが決まっている。",
+  "use_cases": [
+    "社内の GPU サーバーで画像・動画生成のワークフローを組み、API 経由で他のシステムから呼ぶのに使えそう",
+    "VRAM の小さい手元の GPU で、大きなオープンモデルを試す検証環境に使えそう",
+    "生成ワークフローを JSON で管理して、再現可能な形で共有するのに使えそう"
+  ],
+  "for_whom": "ローカルの GPU で画像・動画などの生成 AI を細かく制御して使いたい人",
+  "similar": [
+    "AUTOMATIC1111 の Stable Diffusion WebUI：同じくローカル実行の生成 UI。こちらはノードグラフで組む点が違う",
+    "InvokeAI：ローカル実行の生成 UI（細かい違いは未確認）"
+  ],
+  "tech": "Python（3.13 を推奨、3.14 も可、必須は 3.10 以上）。PyTorch、transformers、safetensors、aiohttp、alembic など。NVIDIA（20 シリーズ以降は cu130 以上の PyTorch が必要）、AMD、Intel、Apple Silicon、Ascend に対応。フロントエンドは別パッケージ（comfyui-frontend-package）。",
+  "caveats": "ライセンスは GPL-3.0。モデルのファイルは別途用意が必要で、モデルごとにライセンスや置き場所が違う。Partner nodes と Comfy Cloud は有料サービスで、`--offline` などで無効にできる。週次リリースで更新が非常に速く、バージョン間で custom nodes が壊れることがある。Python 3.14 では一部の custom nodes に問題が出る可能性がある。",
+  "tags": [
+    "音声・画像・動画",
+    "機械学習",
+    "デスクトップアプリ",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:requirements.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

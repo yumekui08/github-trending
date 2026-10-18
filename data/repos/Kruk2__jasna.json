@@ -1,0 +1,41 @@
+{
+  "repo": "Kruk2/jasna",
+  "summarized_at": "2026-10-19",
+  "short": "Jasna は、動画・画像のモザイク部分を検出して AI モデルで復元する GPU 向けのデスクトップアプリ兼 CLI。復元した部分だけを元のフレームに戻す。NVIDIA GPU が前提で、高精度モデルの一部は支援者向けの有料。",
+  "what": "動画・画像のモザイクを GPU で復元するアプリ",
+  "can_do": [
+    "動画のフレームからモザイクを検出し、時間方向に追跡して clip にまとめ、BasicVSR++ で復元して元のフレームに合成する（モザイク部分以外は変えない）",
+    "復元モデルの選択：BasicVSR++（無料）、LTX（拡散モデル。遅いが細部が出る。支援者向け・NVIDIA のみ）",
+    "復元後の拡大・高精細化（UNet 4x、RTX Super Res、Topaz TVAI）を追加できる",
+    "Segment Editor で、復元する区間を選んでプレビューできる",
+    "VR180 動画、静止画（SD 1.5、支援者向け）の処理、ファイルを作らず復元結果をその場で見る Video Player",
+    "フォルダ単位のバッチ処理を CLI で実行（`jasna --input ... --output ...`）"
+  ],
+  "install": [],
+  "how_to_use": "リリースからシステムと GPU に合った版をダウンロードして、パスに日本語などを含まないフォルダに展開する。Windows は `jasna.exe`、Linux NVIDIA は `jasna` を起動し、動画を追加して下の ▶ ボタンで実行。CLI は `jasna --input input.mp4 --output output.mkv`。初回は GPU 向けにモデルを準備するため 15〜60 分かかる。",
+  "use_cases": [
+    "GPU 上のビデオパイプライン（NVDEC 検出→推論→NVENC）の構成を読む題材として使えそう",
+    "TensorRT / torch.compile でモデルを GPU ごとに最適化する実装の参考に使えそう",
+    "画像・動画の自前処理バッチをローカル GPU で回す CLI の例として使えそう"
+  ],
+  "for_whom": "モザイク処理された動画・画像を、手元の NVIDIA / AMD GPU で復元したい人",
+  "similar": [
+    "Lada：同種のモザイク復元ツール（リリース資料のベンチマークで比較対象になっている。細かい違いは未確認）"
+  ],
+  "tech": "Python 3.12 以上。PyTorch、TensorRT、ultralytics（YOLO）、diffusers、PyAV、OpenCV、customtkinter（GUI）。NVIDIA は GTX 16 / RTX 20 シリーズ以降（Windows はドライバ 610+、Linux は 580+）、AMD は Radeon RX 7000/9000（実験的）。LTX は RTX、VRAM 8GB 以上、RAM 16GB 以上。Windows と Linux、ローカルの SSD 推奨。",
+  "caveats": "用途は主にモザイク付き動画の復元で、扱う素材によっては法的・倫理的な確認が要る。アプリ本体は AGPL-3.0 だが、モデルや同梱の依存は別の条件で、LTX・UNet 4x・SD 1.5 は支援者向けのライセンスコードが要る（README は公式以外の販売はすべて詐欺と警告している）。初回の準備に 15〜60 分かかる。GTX 10 シリーズ以前は不可で、AMD は実験的、LTX は NVIDIA のみ。作成は 2026-01 と新しいが更新が非常に速い。",
+  "tags": [
+    "音声・画像・動画",
+    "機械学習",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
