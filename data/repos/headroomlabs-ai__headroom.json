@@ -1,0 +1,49 @@
+{
+  "repo": "headroomlabs-ai/headroom",
+  "summarized_at": "2026-10-20",
+  "short": "headroom は、AI エージェントが読む tool output・ログ・RAG chunk・ファイルを LLM に渡す前に圧縮して、token 数を減らす Python 製のライブラリ兼 proxy。MCP server としても動き、Claude Code や Codex などを1コマンドで包める。",
+  "what": "LLM に渡す入力を圧縮して token を減らす proxy とライブラリ",
+  "can_do": [
+    "JSON、ソースコード、文章をそれぞれ別の方法で圧縮し、LLM に渡す token を減らす（`compress(messages)` を Python / TypeScript から呼ぶ）",
+    "`headroom proxy --port 8787` でローカルに proxy を立て、コードを変えずに OpenAI / Anthropic 互換の API 呼び出しを経由させる",
+    "`headroom wrap claude` のように、Claude Code、Codex、Cursor、Aider など多数のコーディングエージェントを proxy 経由で起動する",
+    "圧縮前の原文をローカルに保存し、モデルが `headroom_retrieve` で必要なときに取り出せるようにする（MCP server としても提供）",
+    "モデルの出力側も、簡潔に答えさせる指示の追記や、thinking effort の引き下げで減らす（既定は無効）",
+    "過去のセッションから失敗を拾い、`CLAUDE.md` や `AGENTS.md` に修正点を書く `headroom learn`"
+  ],
+  "install": [
+    "`pip install \"headroom-ai[all]\"`",
+    "`uv tool install --python 3.13 \"headroom-ai[all]\"`",
+    "`npm install headroom-ai`（TypeScript SDK のみで、`headroom` コマンドは入らない）"
+  ],
+  "how_to_use": "`headroom doctor` で動作確認したあと、`headroom wrap claude` でエージェントを包むか、`headroom proxy --port 8787` で proxy を立てて API の接続先を向ける。効果は `headroom perf` や `headroom dashboard` で見る。",
+  "use_cases": [
+    "Claude Code などを日常的に使っていて、ログや JSON の出力が長く token を食う場面で、入力を減らすのに使えそう",
+    "障害調査で大きなログを LLM に読ませるとき、重要な行（FATAL など）を残しつつ縮める用途に使えそう",
+    "チーム共通の LLM 呼び出し経路に proxy として挟み、利用量を下げる構成に使えそう"
+  ],
+  "for_whom": "コーディングエージェントや RAG の LLM 利用料・context 長を減らしたい開発者",
+  "similar": [
+    "LiteLLM：proxy として LLM 呼び出しを仲介する点は近い。こちらの主眼は入力の圧縮"
+  ],
+  "tech": "Python 3.10 以上（tiktoken、pydantic など）。Rust のコード（Cargo.toml、maturin ビルド）と TypeScript SDK もある。圧縮はローカルで動き、テキスト圧縮用に Hugging Face のモデル（kompress-v2-base）を使う。Dockerfile、docker-compose の定義あり",
+  "caveats": "圧縮率は入力しだいで、README の数字（20〜60% 台、JSON は 90% 超）は自己申告の測定。文章や密度の高い出力はほとんど縮まないと README 自身が書いている。`headroom wrap` は Serena を入れ、`~/.claude.json` などの設定を書き換える（`unwrap` で戻せる）。リリースが速く（v0.41.0）、まだ 0 系。README に有料の Headroom for Teams / Enterprise の案内がある",
+  "tags": [
+    "LLM",
+    "AI エージェント",
+    "開発ツール",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Cargo.toml",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

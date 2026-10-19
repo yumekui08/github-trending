@@ -1,0 +1,36 @@
+{
+  "repo": "withmarbleapp/os-taxonomy",
+  "summarized_at": "2026-10-20",
+  "short": "os-taxonomy は、小学校段階で子どもが学ぶ内容を約1,600の micro-topic に分解し、前提関係のグラフとカリキュラム基準への対応を付けた JSON データセット。コードは検証スクリプトだけで、データそのものが本体。",
+  "what": "小学校段階の学習内容を前提関係つきで並べたデータセット",
+  "can_do": [
+    "1,591 の micro-topic（説明、習得の証拠、年齢の目安、科目と分野）を JSON で提供する",
+    "3,225 の前提関係（hard / soft と理由つき）で、ある topic の前に必要な topic をたどれる",
+    "各 topic を NGSS、Common Core、英国 National Curriculum などの基準に対応づける",
+    "Science と Mathematics の一部に、教え方や活動案を載せた研究データ（約24MB）を付ける",
+    "`node scripts/validate.mjs` で構造とチェックサムを検査する"
+  ],
+  "install": [],
+  "how_to_use": "実行環境は不要。`data/topics.json` と `data/dependencies.json` を読み込み、`topicId` と `prerequisiteId` で突き合わせて使う。README に JavaScript の読み込み例がある。",
+  "use_cases": [
+    "学習の依存関係を扱う教育系アプリの元データとして使えそう",
+    "前提知識グラフの構造（DAG）を可視化・分析する題材になりそう",
+    "LLM に学習計画を作らせるときの参照データとして使えそう"
+  ],
+  "for_whom": "教育系のサービスや研究で、学習内容の前提関係データが欲しい人",
+  "similar": [],
+  "tech": "JSON データと JSON Schema、検証用の Node.js スクリプト（依存パッケージなし）。実行環境の要件は特にない",
+  "caveats": "ライセンスが複数で、データは ODbL-1.0、内容部分は CC-BY-SA-4.0（package.json と LICENSE から。再配布する前に README の条件を要確認）。teaching research は AI が書いたもので、出典の再検証はされておらず、実証済みの手法ではないと README が明記している。研究データの対象は Science と Mathematics のみで、540 topic は未対応。作成元の Marble は自社サービスの宣伝も兼ねている",
+  "tags": [
+    "学習資料",
+    "データ処理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

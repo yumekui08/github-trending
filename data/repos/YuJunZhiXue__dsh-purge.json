@@ -1,0 +1,40 @@
+{
+  "repo": "YuJunZhiXue/dsh-purge",
+  "summarized_at": "2026-10-20",
+  "short": "dsh-purge は、DeepSeek Harness（DeepSeek の agent 実行環境）にインストールする Node.js 製のプラグイン。ホスト側のシステムプロンプトなどを書き換えて、モデルの安全上の制限を外す jailbreak 用のツール。作者はレッドチーム評価用と説明している。",
+  "what": "DeepSeek Harness のプロンプトを書き換える jailbreak プラグイン",
+  "can_do": [
+    "`dsh plugin add` でインストールし、Web 版とデスクトップ版の DeepSeek Harness それぞれに適用する",
+    "ホストにあるプロンプト、権限ポリシー、ツール上限などにパッチを当て、「清洗」画面から適用・還原する",
+    "モデルごとに別のプロンプトや複数の規則セットを切り替えて使う",
+    "「演練台」で、承認のあった環境に限って資産や環境を確認する（README の説明）",
+    "パッチを当てる前の状態に戻す"
+  ],
+  "install": [
+    "`dsh plugin --profile web add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz`",
+    "`dsh plugin --profile desktop add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz`",
+    "npm には公開されていない。Node.js 18 以上が要る"
+  ],
+  "how_to_use": "インストール後にホストを再起動し、会話タイトル横の dsh-purge を開いて「清洗」→「適用」を押す。成功するとホストが自動で再起動し、新しい会話から効く。`/purge status` で状態を確認できる。",
+  "use_cases": [
+    "自社で使う DeepSeek Harness の既定プロンプトが、モデルの拒否とホストの制限のどちらで拒否しているかを切り分ける評価に使えそう",
+    "LLM の安全対策を検証するレッドチーム作業の題材になりそう"
+  ],
+  "for_whom": "DeepSeek Harness を使い、LLM の安全対策の回避を自分の環境で検証する人",
+  "similar": [],
+  "tech": "JavaScript（ESM、Node.js 18 以上）。Windows で画面を出さずに動かすには Node 22 以上。DeepSeek Harness 0.2 系（Web とデスクトップ版 EXE）専用で、手元にインストール済みの `@deepseek-ai` パッケージにパッチを当てる",
+  "caveats": "LLM の安全制限を外すことが目的のツールで、使う側の責任が重い。ライセンスは商用ライセンス（GitHub 表示は NOASSERTION、MIT ではない）。作者は10月27日以降は GitHub での配布をやめ、新版は Telegram のみで出すと README に書いている。README にある既定のプロンプトは暗号化されて埋め込まれており、中身は読んでいない。ホストの本体ファイルに変更を加える。README に暗号資産の寄付先と広告枠の募集がある",
+  "tags": [
+    "AI エージェント",
+    "セキュリティ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README、package.json、release は読んだが、パッチの実装（lib/）やプロンプトの中身は読んでおらず、評価用との位置づけは作者の説明による。"
+}

@@ -1,0 +1,41 @@
+{
+  "repo": "shiyu-coder/Kronos",
+  "summarized_at": "2026-10-20",
+  "short": "Kronos は、株価などのローソク足（K-line）の系列を token 化して学習した、decoder-only の基盤モデル。公開済みの事前学習モデルを Hugging Face から読み込んで、OHLCV の将来を予測できる。fine-tuning と backtest のスクリプトも付く。",
+  "what": "ローソク足を予測する金融市場向けの基盤モデル",
+  "can_do": [
+    "`KronosPredictor` に過去の OHLCV の DataFrame を渡して、先の期間を予測する",
+    "Hugging Face で公開されている Kronos-mini / small / base のモデルと tokenizer を読み込む",
+    "自分のデータで tokenizer と predictor を fine-tuning する（Qlib 用、CSV 用の2系統）",
+    "予測を使った単純な top-K 戦略の backtest を回す",
+    "BTC/USDT の24時間予測を見せる live demo がある"
+  ],
+  "install": [
+    "`pip install -r requirements.txt`"
+  ],
+  "how_to_use": "Python 3.10 以上で依存を入れたあと、`KronosTokenizer.from_pretrained(...)` と `Kronos.from_pretrained(...)` でモデルを読み、`KronosPredictor(model, tokenizer, max_context=512)` を作って `predict` を呼ぶ。`examples/prediction_example.py` が最小の例。",
+  "use_cases": [
+    "時系列の基盤モデルを、金融以外のデータと比べる題材として試すのに使えそう",
+    "取引量やメトリクスのような系列にも、形が合えば流用して試せそう（金融以外での精度は未確認）",
+    "自前データでの fine-tuning の手順を学ぶ教材として使えそう"
+  ],
+  "for_whom": "金融時系列の予測や、時系列の基盤モデルに興味がある ML エンジニア・クオンツ",
+  "similar": [
+    "Chronos（Amazon）、TimesFM（Google）：汎用の時系列基盤モデル。こちらは K-line に特化する点が違う"
+  ],
+  "tech": "Python 3.10 以上。torch 2.0 以上、pandas、einops、huggingface_hub、safetensors、matplotlib。モデルは4.1M〜499M params（large は非公開）。GPU の要否は README では明記されておらず、fine-tuning は torchrun での複数 GPU を想定している",
+  "caveats": "README の予測例や backtest は説明用の簡単なもので、実運用には portfolio 最適化やコスト・slippage の考慮が必要と README 自身が書いている。最大 context は small / base が512。最新の push は2026年4月で、半年ほど更新がない。finetune/ のコードコメントは AI が書いたもので誤りがありうる。投資判断に使えるかは未検証",
+  "tags": [
+    "機械学習",
+    "データ処理",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:requirements.txt"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と examples の一覧は読んだが、予測精度の根拠となる論文や model/ のコードの中身、GPU の要否は確認していない。"
+}
