@@ -1,0 +1,47 @@
+{
+  "repo": "vllm-project/vllm",
+  "summarized_at": "2026-10-21",
+  "short": "vLLM は、LLM を高いスループットで推論・serving するための Python 製ライブラリ兼サーバー。PagedAttention による KV cache 管理と continuous batching が特徴で、OpenAI 互換 API で公開できる。",
+  "what": "LLM の推論と serving のためのエンジン",
+  "can_do": [
+    "Hugging Face のモデル（Llama、Qwen、DeepSeek、Mixtral、マルチモーダル、embedding など 200 以上のアーキテクチャ）を読み込んで推論する",
+    "PagedAttention による attention の key/value メモリ管理、continuous batching、chunked prefill、prefix caching で処理量を上げる",
+    "OpenAI 互換 API サーバーを立てる（Anthropic Messages API と gRPC にも対応と README にある）",
+    "tensor / pipeline / data / expert / context の各 parallelism で複数 GPU に分散する",
+    "FP8、INT4、GPTQ、AWQ、GGUF などの quantization、speculative decoding、multi-LoRA、structured outputs、tool calling を使う",
+    "NVIDIA / AMD / Intel の GPU、x86 / ARM / PowerPC の CPU、TPU や Gaudi、Ascend などの plugin で動かす"
+  ],
+  "install": [
+    "`uv pip install vllm`",
+    "`vllm download-kernels`"
+  ],
+  "how_to_use": "インストール後、公式ドキュメントの Quickstart に沿って、モデル名を指定して OpenAI 互換サーバーを起動する流れ。コマンドの細部は README に書かれておらず、公式ドキュメント（docs.vllm.ai）を見る必要がある。",
+  "use_cases": [
+    "社内の GPU サーバーに LLM をセルフホストし、OpenAI 互換 API として他のツールから使える形にするのに使えそう",
+    "複数 GPU への分散や quantization を使い、限られたハードウェアで大きなモデルを動かす検証に使えそう",
+    "LiteLLM のような Gateway の背後に置く推論バックエンドとして使えそう"
+  ],
+  "for_whom": "LLM を自前の GPU 環境で動かし、推論基盤を運用したいインフラ・ML 基盤の担当者",
+  "similar": [
+    "Hugging Face TGI：LLM serving という用途は近い（細かい機能差は未確認）",
+    "llama.cpp / Ollama：ローカルで LLM を動かす点は近い。こちらは GPU サーバー向けの高スループット serving が主眼と思われる"
+  ],
+  "tech": "Python（classifiers は 3.11〜3.14）、PyTorch（build 時に torch 2.14.0 を指定）。C++ / CUDA の拡張を CMake と setuptools でビルドし、一部に Rust（setuptools-rust）も使う。主に GPU 環境で動かす想定",
+  "caveats": "リポジトリが大きく（約 325MB）、更新がとても速い（v0.32.0 は 814 commit のリリース）ので、バージョン間の差が大きいと思われる。実用には対応する GPU とドライバ環境の整備が要る。ソースからのビルドは CUDA 拡張を含むため重い。README の性能に関する記述は定量的な数値がなく、実際の速度は未確認。",
+  "tags": [
+    "LLM",
+    "インフラ・運用",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:setup.py",
+    "manifest:CMakeLists.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

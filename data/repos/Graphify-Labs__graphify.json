@@ -1,0 +1,44 @@
+{
+  "repo": "Graphify-Labs/graphify",
+  "summarized_at": "2026-10-21",
+  "short": "graphify は、コード・ドキュメント・PDF・画像を読み取って knowledge graph にする Python 製の CLI で、AI コーディングアシスタントの /graphify スキルとして使う。コードは tree-sitter の AST でローカル解析し、vector store は使わない。",
+  "what": "コードベースを knowledge graph にする AI アシスタント用スキル",
+  "can_do": [
+    "フォルダ内のコード、docs、PDF、画像、動画を knowledge graph（graph.json）にまとめる",
+    "コードは tree-sitter の AST で約 40 言語を解析し、calls / imports / inherits などを LLM なしでローカルに解決する",
+    "各 edge に EXTRACTED（ソースに明示）か INFERRED（解決で導出）のタグを付ける",
+    "graphify query で質問に関する部分グラフを返し、graphify path で 2 つの要素の最短経路、graphify explain で 1 つの概念の接続を表示する",
+    "graph.html（ブラウザで操作できる図）と GRAPH_REPORT.md（主要概念と意外な接続のまとめ）を出力する"
+  ],
+  "install": [
+    "`uv tool install graphifyy`",
+    "`graphify install`",
+    "PyPI のパッケージ名は graphifyy（y が 2 つ）。uv の代わりに `pipx install graphifyy` も可。Python 3.10 以上が要る"
+  ],
+  "how_to_use": "`graphify install` でお使いのアシスタント（Claude Code、Cursor、Codex、Gemini CLI など）にスキルを登録し、アシスタント上で `/graphify .` を実行する。出力は graphify-out/ の graph.html、GRAPH_REPORT.md、graph.json。以降は graphify query / path / explain で graph.json に問い合わせる。",
+  "use_cases": [
+    "初めて入るリポジトリの構造や中心になっているモジュールを、grep せずに把握するのに使えそう",
+    "コードと設計書・ADR・SQL schema・設定ファイルの対応を 1 つの graph にして調べるのに使えそう",
+    "AI アシスタントに渡す文脈を graph の部分グラフに絞り、読ませるファイル量を減らす用途に使えそう"
+  ],
+  "for_whom": "Claude Code などの AI コーディングアシスタントを使い、大きめのコードベースの全体像を素早くつかみたい開発者",
+  "similar": [
+    "vector store を使う RAG 系のコード検索：embedding ではなく、辿れる graph を作る点が違う"
+  ],
+  "tech": "Python 3.10 以上。依存は networkx、numpy、rapidfuzz、tree-sitter と各言語の grammar など。Dockerfile あり。コードの解析はローカルで完結し、docs・PDF・画像・動画の意味解析にはアシスタントのモデルか設定した API キーを使う",
+  "caveats": "作られて半年ほどで更新がとても速い（リリース 0.9.93 は昨日付）。README の先頭と複数箇所に、有料の Graphify Cloud（14 日無料トライアル）への案内がある。README の「トークン消費 80% 削減」やベンチマーク数値は自己申告で、未検証。AST cache の schema が更新で変わることがあり、アップグレード後の最初のビルドは再抽出になる。docs・メディアの解析は外部モデルを使うため、コードだけがローカルで完結する。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
