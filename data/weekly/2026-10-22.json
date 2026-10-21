@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-22",
+  "period": "weekly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "stars": 357531,
+      "stars_period": 157631
+    },
+    {
+      "rank": 2,
+      "repo": "anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "language": "Python",
+      "stars": 43630,
+      "stars_period": 5650
+    },
+    {
+      "rank": 3,
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "language": "Python",
+      "stars": 53575,
+      "stars_period": 4549
+    },
+    {
+      "rank": 4,
+      "repo": "ruvnet/ruflo",
+      "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+      "language": "TypeScript",
+      "stars": 78207,
+      "stars_period": 3143
+    },
+    {
+      "rank": 5,
+      "repo": "android/skills",
+      "description": "",
+      "language": "Kotlin",
+      "stars": 9147,
+      "stars_period": 1255
+    },
+    {
+      "rank": 6,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 92620,
+      "stars_period": 6184
+    },
+    {
+      "rank": 7,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 80354,
+      "stars_period": 17057
+    },
+    {
+      "rank": 8,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 31647,
+      "stars_period": 3556
+    },
+    {
+      "rank": 9,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 69190,
+      "stars_period": 5994
+    },
+    {
+      "rank": 10,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 13391,
+      "stars_period": 2040
+    },
+    {
+      "rank": 11,
+      "repo": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 55921,
+      "stars_period": 3587
+    },
+    {
+      "rank": 12,
+      "repo": "akitaonrails/ai-memory",
+      "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+      "language": "Rust",
+      "stars": 12306,
+      "stars_period": 2640
+    },
+    {
+      "rank": 13,
+      "repo": "anomalyco/opencode",
+      "description": "The open source coding agent.",
+      "language": "TypeScript",
+      "stars": 219656,
+      "stars_period": 5792
+    },
+    {
+      "rank": 14,
+      "repo": "wshobson/agents",
+      "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi",
+      "language": "Python",
+      "stars": 41471,
+      "stars_period": 665
+    },
+    {
+      "rank": 15,
+      "repo": "earthtojake/text-to-cad",
+      "description": "Give your agent CAD superpowers.",
+      "language": "Python",
+      "stars": 22271,
+      "stars_period": 2069
+    },
+    {
+      "rank": 16,
+      "repo": "stablyai/orca",
+      "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+      "language": "TypeScript",
+      "stars": 101197,
+      "stars_period": 8173
+    }
+  ]
+}

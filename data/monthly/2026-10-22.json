@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-22",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "paperclipai/paperclip",
+      "description": "The open-source app everyone uses to manage agents at work",
+      "language": "TypeScript",
+      "stars": 105668,
+      "stars_period": 24372
+    },
+    {
+      "rank": 2,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 80354,
+      "stars_period": 45470
+    },
+    {
+      "rank": 3,
+      "repo": "vectorize-io/hindsight",
+      "description": "Hindsight: Agent Memory That Learns",
+      "language": "Python",
+      "stars": 52359,
+      "stars_period": 28261
+    },
+    {
+      "rank": 4,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 69190,
+      "stars_period": 16644
+    },
+    {
+      "rank": 5,
+      "repo": "NVIDIA/OpenShell",
+      "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
+      "language": "Rust",
+      "stars": 17009,
+      "stars_period": 8173
+    },
+    {
+      "rank": 6,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 31647,
+      "stars_period": 7699
+    },
+    {
+      "rank": 7,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 36357,
+      "stars_period": 15824
+    },
+    {
+      "rank": 8,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 92620,
+      "stars_period": 13031
+    },
+    {
+      "rank": 9,
+      "repo": "tashfeenahmed/freellmapi",
+      "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+      "language": "TypeScript",
+      "stars": 38941,
+      "stars_period": 10683
+    },
+    {
+      "rank": 10,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 31166,
+      "stars_period": 5496
+    },
+    {
+      "rank": 11,
+      "repo": "anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "language": "Python",
+      "stars": 43630,
+      "stars_period": 6997
+    },
+    {
+      "rank": 12,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 13391,
+      "stars_period": 5033
+    },
+    {
+      "rank": 13,
+      "repo": "anthropics/financial-services",
+      "description": "",
+      "language": "Python",
+      "stars": 40642,
+      "stars_period": 5457
+    },
+    {
+      "rank": 14,
+      "repo": "rohitg00/ai-engineering-from-scratch",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "language": "Python",
+      "stars": 72093,
+      "stars_period": 16986
+    },
+    {
+      "rank": 15,
+      "repo": "affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 285694,
+      "stars_period": 22836
+    },
+    {
+      "rank": 16,
+      "repo": "earthtojake/text-to-cad",
+      "description": "Give your agent CAD superpowers.",
+      "language": "Python",
+      "stars": 22271,
+      "stars_period": 5836
+    },
+    {
+      "rank": 17,
+      "repo": "TencentCloud/Octop",
+      "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+      "language": "Python",
+      "stars": 10618,
+      "stars_period": 6143
+    },
+    {
+      "rank": 18,
+      "repo": "pbakaus/impeccable",
+      "description": "The design language that makes your AI harness better at design.",
+      "language": "Rust",
+      "stars": 84434,
+      "stars_period": 14636
+    },
+    {
+      "rank": 19,
+      "repo": "pingdotgg/t3code",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 29149,
+      "stars_period": 5793
+    },
+    {
+      "rank": 20,
+      "repo": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 55921,
+      "stars_period": 6135
+    }
+  ]
+}
