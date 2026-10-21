@@ -1,0 +1,43 @@
+{
+  "repo": "wshobson/agents",
+  "summarized_at": "2026-10-22",
+  "short": "agents は、Claude Code、Codex CLI、Cursor、OpenCode、GitHub Copilot、Pi などで使える plugin、agent、skill、command を集めたマーケットプレイス。Markdown 1つの元から各ツール用の形式を生成する。",
+  "what": "AI コーディングツール向けの plugin / skill 集",
+  "can_do": [
+    "Claude Code に `/plugin marketplace add` で登録し、plugin を選んで入れる",
+    "94 plugin（agent 202、skill 185、command 105）から、Python、JavaScript、code review、security scanning などを選ぶ",
+    "Codex CLI のマーケットプレイスからも同じ plugin を入れる",
+    "skill 単体を `gh skill` か `npx skills` で入れる",
+    "OpenCode、Antigravity、Copilot、Pi には clone して `make install-*` で入れる"
+  ],
+  "install": [
+    "`/plugin marketplace add wshobson/agents`（Claude Code の中で実行）",
+    "`/plugin install python-development@claude-code-workflows`",
+    "`codex plugin marketplace add wshobson/agents`（Codex CLI）",
+    "`npx skills add wshobson/agents --skill python-testing-patterns`（skill 単体）"
+  ],
+  "how_to_use": "Claude Code で marketplace を登録して plugin を入れたら、Claude にその agent を使うよう頼むか、plugin の command（例：`/python-development:python-scaffold Create a FastAPI service with tests`）を実行する。",
+  "use_cases": [
+    "コードレビューやテスト、security 確認の定型作業に、既製の agent / skill を足すのに使えそう",
+    "チームで Claude Code の設定を揃えるときの出発点に使えそう",
+    "自作の skill を書くときの参考例として読めそう"
+  ],
+  "for_whom": "Claude Code や Codex などのコーディングエージェントを使っていて、既製の plugin や skill を入れたい開発者",
+  "similar": [
+    "Anthropic 公式の plugin marketplace：仕組みは同じ。こちらは個人が管理し、複数ツールに対応している",
+    "awesome 系の skill / prompt のリスト（違いは未確認）"
+  ],
+  "tech": "中身は Markdown の plugin と、各ツール用の形式を生成する Python のスクリプト。clone 版の導入には uv と Python 3.12 以上が要る。",
+  "caveats": "個人のプロジェクトで、README の件数（94 plugin など）は変わりうる。ツールによって使える部品が違い（例：Pi の agent は subagent 拡張が要る）、生成物は一部の機能が欠ける。入れた plugin の agent や hooks は自分のコーディングエージェントに作用するので、導入前に中身を確認したほうがよい。2025-07 作成。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,42 @@
+{
+  "repo": "supabase/supabase",
+  "summarized_at": "2026-10-22",
+  "short": "supabase は、Postgres を中心に、認証、REST / GraphQL の自動生成 API、Realtime、Storage、Edge Functions をまとめた開発基盤。Firebase 相当の機能をオープンソースの部品で組む。ホスト版のほか self-host もできる。",
+  "what": "Postgres 中心の Firebase 代替バックエンド基盤",
+  "can_do": [
+    "Postgres のデータベースを用意し、テーブルから REST / GraphQL の API を自動生成する",
+    "JWT ベースの認証と認可（GoTrue）",
+    "Postgres の変更を websocket で配信する Realtime",
+    "S3 互換のファイル保存（権限は Postgres で管理）",
+    "Edge Functions と database functions でサーバー側ロジックを動かす",
+    "pgvector による vector / embeddings の保存と検索"
+  ],
+  "install": [],
+  "how_to_use": "README の導線はホスト版（supabase.com/dashboard でサインアップ）。self-host とローカル開発は公式 docs の手順に従う。このリポジトリ自体は Studio、docs、www などを含む monorepo で、開発には pnpm を使う。",
+  "use_cases": [
+    "Firebase からの乗り換え先として、SQL を使える BaaS を検討するときに使えそう",
+    "小規模サービスの認証・DB・ファイル保存を1つにまとめたいときに使えそう",
+    "self-host して社内向けアプリのバックエンドにするのに使えそう（運用負荷は未確認）"
+  ],
+  "for_whom": "SQL と Postgres に慣れていて、バックエンドを自前で組む手間を減らしたい開発者",
+  "similar": [
+    "Firebase：機能の範囲は近い。こちらは Postgres と OSS の部品が土台",
+    "Appwrite、PocketBase のような BaaS（違いは未確認）"
+  ],
+  "tech": "TypeScript の monorepo（pnpm、turbo、Next.js の Studio など）。構成部品は Postgres、PostgREST、GoTrue、Realtime（Elixir）、Storage、pg_graphql、postgres-meta、Envoy。self-host は Docker 前提と思われる。",
+  "caveats": "README の主な導線はホスト版で、本体は複数の別リポジトリの部品の組み合わせ。self-host の具体手順はこのリポジトリの材料からは確認していない。リポジトリは約 2.5GB と非常に大きい。ライセンスは Apache-2.0。",
+  "tags": [
+    "データベース",
+    "Web",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と package.json は読んだ。self-host の手順と各部品の細部は公式 docs 側にあり、読んでいない。"
+}

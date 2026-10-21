@@ -1,0 +1,44 @@
+{
+  "repo": "twentyhq/twenty",
+  "summarized_at": "2026-10-22",
+  "short": "twenty は、Salesforce の代わりを目指すオープンソースの CRM。オブジェクト、ビュー、workflow、agent をコードで定義して拡張できる。ホスト版と Docker Compose での self-host がある。",
+  "what": "コードで拡張できるオープンソースの CRM",
+  "can_do": [
+    "顧客や取引などを扱う CRM を、ホスト版か self-host で使う",
+    "`defineObject` でオブジェクトとフィールドをコードとして定義し、ワークスペースに publish する",
+    "views、workflow、agent、logic functions で業務を組む",
+    "Twenty CLI（create-twenty-app）でアプリの雛形を作る",
+    "Claude Code などのコーディングエージェント向けに、Twenty アプリ開発用の skills を提供する"
+  ],
+  "install": [
+    "`npx create-twenty-app my-app`",
+    "`npx twenty app:publish --private`"
+  ],
+  "how_to_use": "手軽に試すなら twenty.com で workspace を作る。自前で動かすなら公式 docs の Docker Compose の手順に従う。アプリを作る場合は上の雛形コマンドで生成し、オブジェクトをコードで定義して publish する。",
+  "use_cases": [
+    "Salesforce や HubSpot の代わりに、データを自社で持てる CRM を探すときに使えそう",
+    "社内の顧客・案件管理を、コードでバージョン管理しながら作るのに使えそう",
+    "CRM のデータに agent や workflow をつなぐ自動化の土台に使えそう"
+  ],
+  "for_whom": "CRM を自社の業務に合わせて作り込みたい技術チーム",
+  "similar": [
+    "Salesforce：機能の範囲は近い。こちらは OSS で、コードによる拡張が前面に出ている",
+    "HubSpot、SuiteCRM などの CRM（違いは未確認）"
+  ],
+  "tech": "TypeScript の monorepo（NestJS、React、GraphQL、PostgreSQL。topics と package.json による）。Docker Compose で self-host できる。",
+  "caveats": "GitHub のライセンス表示は NOASSERTION（複数のライセンスが混在している可能性があるが、材料からは確認していない）。リリースに破壊的変更の項目があり、更新が非常に速い。課金（billing）や role の gating の機能が開発中で、self-host で使える範囲は公式 docs で要確認。リポジトリは約 2.2GB と非常に大きい。",
+  "tags": [
+    "Web",
+    "セルフホスト",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とリリースノートは読んだ。self-host の手順、ライセンスの中身、機能の細部は docs 側にあり、読んでいない。"
+}
