@@ -1,0 +1,41 @@
+{
+  "repo": "luongnv89/claude-howto",
+  "summarized_at": "2026-10-23",
+  "short": "claude-howto は、Claude Code の機能を順に学ぶ英語のガイドとテンプレート集。slash command、memory、skill、subagent、MCP、hook などの 10 モジュールに、コピーして使える設定例が付く。日本語版 README もある。",
+  "what": "Claude Code の使い方を学ぶチュートリアルとテンプレート集",
+  "can_do": [
+    "slash command、CLAUDE.md、skill、subagent、MCP、hook、plugin などの設定例をコピーして自分のプロジェクトに入れる",
+    "10 モジュールを順に読む学習ルート（README では 11〜13 時間と案内）をたどる",
+    "Mermaid 図で、各機能がどう動くかを確認する",
+    "Claude Code 内の `/self-assessment` や `/lesson-quiz` で理解度を確認する",
+    "チェックポイント、plan mode、CLI など上級機能の例を読む"
+  ],
+  "install": [
+    "`git clone https://github.com/luongnv89/claude-howto.git`"
+  ],
+  "how_to_use": "clone したあと、`01-slash-commands/optimize.md` を自分のプロジェクトの `.claude/commands/` にコピーして、Claude Code で `/optimize` を試す。次に `02-memory/project-CLAUDE.md` を `CLAUDE.md` として置く、と README は案内している。",
+  "use_cases": [
+    "Claude Code を使い始めたチームの、hook や CLAUDE.md の設定の雛形集として使えそう",
+    "社内の Claude Code 勉強会の教材として使えそう",
+    "hook スクリプト（フォーマット、セキュリティスキャンなど）や subagent の定義例を、運用ルールの参考にするのに使えそう"
+  ],
+  "for_whom": "Claude Code を使い始めた人、機能を一通り整理して使いこなしたい開発者",
+  "similar": [
+    "Claude Code の公式ドキュメント：機能の説明が中心。こちらは例とテンプレート重視"
+  ],
+  "tech": "中身は主に Markdown と設定例（JSON、シェルスクリプト、一部 Python）。言語は Python と表示されるが、ソフトウェアではなく教材が中心と思われる。OS 非依存。",
+  "caveats": "ソフトウェアではなく学習資料。内容は Claude Code の特定バージョンに合わせて更新されるもので、古い設定例が残ることがある。README は「GitHub Trending 1位」のバッジなど宣伝調の表現が多い。英語が基本だが、日本語版 README（ja/）がある。2025-11 作成と新しい。ライセンスは MIT。フックのスクリプトを自分の環境にコピーするときは、中身を確認してから使うこと。",
+  "tags": [
+    "学習資料",
+    "AI エージェント",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,42 @@
+{
+  "repo": "fastapi/fastapi",
+  "summarized_at": "2026-10-23",
+  "short": "FastAPI は、Python の型ヒントから API を組み立てる Web フレームワーク。リクエストの検証と OpenAPI のドキュメント生成を、型の宣言だけで済ませられる。Python で REST API を書く人向け。",
+  "what": "型ヒントで API を書く Python の Web フレームワーク",
+  "can_do": [
+    "関数に型を付けるだけで、パスパラメータ、クエリ、リクエストボディを検証する",
+    "OpenAPI / JSON Schema に沿った API 仕様と、Swagger UI（/docs）などの対話的ドキュメントを自動生成する",
+    "def でも async def でもエンドポイントを書ける",
+    "Pydantic のモデルでリクエストボディを宣言する",
+    "`fastapi dev` で、ファイル変更を監視する開発用サーバーを起動する"
+  ],
+  "install": [
+    "`uv add \"fastapi[standard]\"`"
+  ],
+  "how_to_use": "`main.py` に `FastAPI()` のインスタンスを作り、`@app.get(\"/\")` で関数を登録する。`uv run fastapi dev` で起動すると、http://127.0.0.1:8000/docs に API ドキュメントが出る。本番用は `fastapi run`。",
+  "use_cases": [
+    "社内ツールや運用自動化の結果を返す、小さな REST API の作成に使えそう",
+    "OpenAPI の仕様書が自動で付くので、他チームに渡す API の整備に使えそう",
+    "監視やバッチの状態を返す内部用 HTTP エンドポイントを短く書くのに使えそう"
+  ],
+  "for_whom": "Python で API サーバーを作りたい開発者、運用ツールに HTTP の口を付けたいインフラエンジニア",
+  "similar": [
+    "Flask：軽量な Web フレームワーク。型による検証や仕様の自動生成は標準では持たない",
+    "Django REST framework：Django 上の API 構築。こちらは Starlette と Pydantic が土台で、型ヒント中心"
+  ],
+  "tech": "Python 3.10 以上。依存は starlette、pydantic、typing-extensions、opentelemetry-api など。ビルドは pdm-backend。OS 非依存。起動には別途 uvicorn を含む `standard` extras を使う。",
+  "caveats": "pyproject.toml の分類は Development Status 4 - Beta で、バージョンも 0.x（最新 0.161.1）。README の「開発速度 200〜300% 向上」などの数字は、開発チーム内部の見積もりと README 自身が注記している。ライセンスは MIT。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

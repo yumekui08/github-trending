@@ -1,0 +1,37 @@
+{
+  "repo": "Meloong-Git/PCL",
+  "summarized_at": "2026-10-23",
+  "short": "PCL（Plain Craft Launcher）は、Minecraft 向けの Windows 用ランチャーのソースコード公開リポジトリ。UI ライブラリ、アニメーション、ダウンロード、起動の各モジュールを含む。README は中国語。",
+  "what": "Minecraft 用ランチャー PCL のソース",
+  "can_do": [
+    "Minecraft を起動するランチャー本体のソース（起動モジュール）を読む",
+    "独自の UI ライブラリとアニメーションモジュールの実装を読む",
+    "ダウンロードモジュールの実装を読む",
+    "配布されているビルド済みの PCL は、公式サイト meloong.com/pcl から入手する"
+  ],
+  "install": [],
+  "how_to_use": "README にビルド手順はない。使うだけなら README のリンク先（meloong.com/pcl）からビルド済みの正式版を入手する。ソースは Visual Studio 用のソリューション（Plain Craft Launcher 2.sln）の形で置かれている。",
+  "use_cases": [
+    "VB.NET と WPF による大きめのデスクトップアプリの構成を読む参考に使えそう",
+    "Minecraft の起動処理の実装を調べるのに使えそう"
+  ],
+  "for_whom": "Minecraft をよく遊ぶ人、VB.NET / WPF の実アプリのソースを読みたい開発者",
+  "similar": [
+    "Prism Launcher：オープンソースの Minecraft ランチャー（違いの詳細は未確認）",
+    "HMCL：Java 製の Minecraft ランチャー（違いの詳細は未確認）"
+  ],
+  "tech": "Visual Basic .NET（WPF）と C#（PCLCS）。Windows 向け。.sln と vbproj で構成。",
+  "caveats": "README に「ソースは PCL の更新の公開時にまとめて同期されるもので、リアルタイムではない」とある。最新リリース 2.99.0.0 のノートには、法令順守のため PCL が Minecraft のダウンロード機能を提供しなくなったとある。ライセンスは GitHub 上で NOASSERTION で、LICENCE ファイルの中身は読めておらず、再利用の条件は不明。README は中国語のみ。",
+  "tags": [
+    "デスクトップアプリ",
+    "ゲーム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README が短く、ビルド手順とライセンス本文（LICENCE）は材料になかった。ソースの中身は読んでおらず、機能は README の説明とディレクトリ構成からの推定。"
+}
