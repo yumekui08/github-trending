@@ -1,0 +1,39 @@
+{
+  "repo": "SnailSploit/Claude-Red",
+  "summarized_at": "2026-10-24",
+  "short": "Claude-Red は、攻撃的セキュリティ（レッドチーム）向けの Claude Skills を集めたリポジトリ。SQLi から exploit 開発、無線、クラウドまで78本の SKILL.md を分野別に収める。",
+  "what": "攻撃的セキュリティ向け Claude Skills 集",
+  "can_do": [
+    "SKILL.md 78本を23分野に分けて収録（Web、無線、AD、クラウド、コンテナ、exploit 開発、fuzzing など）",
+    "会話中のキーワード（例：SQL injection）に応じて対応する skill が自動で読み込まれる",
+    "`install.sh` で分野を指定して一括配置",
+    "報告書作成や素早いトリアージ用のチェックリスト skill も含む"
+  ],
+  "install": [
+    "`git clone https://github.com/SnailSploit/claude-red ~/.claude/skills/claude-red`",
+    "`./install.sh --target ~/.claude/skills`"
+  ],
+  "how_to_use": "`~/.claude/skills/` に clone すると、Claude が会話の内容に合う skill を読み込む。1分野だけなら sparse-checkout で `Skills/web` などを取る。Claude.ai では SKILL.md の中身を Project の system prompt に貼る。",
+  "use_cases": [
+    "許可を得た自社環境のペネトレーションテストで、手法の抜けを確認するチェックリストとして使えそう",
+    "CTF や脆弱性調査の下調べで、攻撃手法の整理を Claude に手伝わせるのに使えそう",
+    "SKILL.md の書き方の実例として、自作 skill の設計の参考になりそう"
+  ],
+  "for_whom": "認可された範囲でセキュリティ検証や学習をする人。Claude Skills に攻撃手法の知識を足したい人。",
+  "similar": [],
+  "tech": "Markdown（SKILL.md）が中心。付属の `install.sh` と Python スクリプト（`convert_skills.py`、`tools/build_manifest.py`）がある。Claude Skills 対応の環境で動く。",
+  "caveats": "中身は Markdown の知識集で、実行できるツールではない。個々の skill の正確さは未確認。攻撃手法を扱う。許可のない対象への利用は不可（README も認可された用途を想定）。2026年3月に作られて間もない。分野によって skill 数に偏りがある（Active Directory は1本など）。README は著者の別サイトへの誘導を含む。ライセンスは MIT。",
+  "tags": [
+    "セキュリティ",
+    "AI エージェント",
+    "学習資料"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の分野一覧と release は読んだが、個々の SKILL.md の中身は読んでおらず、品質は未確認。"
+}

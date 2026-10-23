@@ -1,0 +1,30 @@
+{
+  "repo": "nodejs/node",
+  "summarized_at": "2026-10-24",
+  "short": "node は、V8 上で動くオープンソースでクロスプラットフォームの JavaScript ランタイム、Node.js 本体。2026年10月21日に、TLS・DNS などの High 脆弱性の修正を含むセキュリティリリース v26.12.1 が出ている。",
+  "what": "JavaScript のランタイム、Node.js 本体",
+  "can_do": [
+    "JavaScript をブラウザの外（サーバー、CLI、スクリプト）で実行する",
+    "標準ライブラリで HTTP、TLS、ファイル操作、crypto、zlib などを提供する",
+    "Alpha、Current、LTS、Nightly のリリース系統で配布される（LTS は30か月サポート）",
+    "permission model によるファイルアクセスの制限（release の修正項目から確認）"
+  ],
+  "install": [],
+  "how_to_use": "利用者は公式サイト nodejs.org から Current か LTS のバイナリやインストーラーを入れるのが基本。README は利用方法を公式サイトに任せており、ソースからのビルドは `BUILDING.md` を見る。本番用は LTS を選ぶ。",
+  "use_cases": [
+    "今回の v26.12.1 は High の CVE 修正（tls、dns、brotli）を含むので、運用中の Node.js のバージョンを確認する対象になりそう",
+    "社内ツールや CI の実行環境のバージョン管理で、リリース系統（LTS か Current か）を決める材料になりそう",
+    "ソースから独自ビルドしたいとき、プラットフォーム対応の一覧と手順を調べる入口になりそう"
+  ],
+  "for_whom": "Node.js を使うアプリの運用者・開発者。セキュリティ修正やリリース計画を追いたい人。",
+  "similar": [
+    "Deno：TypeScript を標準で扱い、権限モデルを持つ JavaScript ランタイム",
+    "Bun：Zig 製で、パッケージマネージャーやバンドラーも一体の JavaScript ランタイム"
+  ],
+  "tech": "C++ と JavaScript が中心（言語は JavaScript と表示）。JavaScript エンジンに V8 を使い、undici、c-ares、brotli などを同梱する。Linux、macOS、Windows で動く。ビルドの Python スクリプトは ruff で検査している。",
+  "caveats": "このリポジトリは Node.js 本体で、README はバイナリの入れ方やコマンドをほとんど書いていない（ビルドは BUILDING.md、利用は公式サイト）。Alpha と Current は本番用ではない。リリースは年1回4月に新しい主版が出て、10月に LTS になる新しい日程で、26 以前は旧日程。ライセンスは MIT だが同梱物に別のライセンスのものがあり、GitHub のライセンス欄は NOASSERTION。",
+  "tags": ["言語・ランタイム", "開発ツール"],
+  "sources": ["meta", "readme", "tree", "manifest:pyproject.toml", "release"],
+  "confidence": "high",
+  "confidence_note": ""
+}

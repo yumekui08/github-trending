@@ -1,0 +1,35 @@
+{
+  "repo": "OpenBMB/VoxCPM",
+  "summarized_at": "2026-10-24",
+  "short": "VoxCPM は、テキストから音声を合成する TTS モデルと Python パッケージ。30言語に対応し、説明文から声を作る Voice Design と、短い参照音声からの voice cloning ができる。出力は 48kHz。",
+  "what": "多言語の音声合成（TTS）と voice cloning のモデル",
+  "can_do": [
+    "30言語（中国語の方言9種を含む）のテキストを、言語指定なしで音声にする",
+    "Voice Design：「若い女性、優しい声」のような説明文だけで新しい声を作る（参照音声は不要）",
+    "短い参照音声から声を複製し、速さや感情を指示で調整する",
+    "参照音声とその書き起こしを渡して、声の細部まで寄せる cloning",
+    "ストリーミング生成。RTX 4090 で RTF 約0.3（Nano-vLLM などで約0.13）と README にある",
+    "SFT と LoRA によるファインチューニング、Docker や Web demo での提供"
+  ],
+  "install": [
+    "`pip install voxcpm`",
+    "Python 3.10 以上 3.13 未満、PyTorch 2.5.0 以上、CUDA 12.0 以上が前提"
+  ],
+  "how_to_use": "`VoxCPM.from_pretrained(\"openbmb/VoxCPM2\")` でモデルを読み込み、`model.generate(text=...)` で波形を得て `soundfile` で wav に保存する。声の説明は `text` の先頭に括弧で付ける（例：`\"(A young woman, gentle and sweet voice)Hello\"`）。cloning は `reference_wav_path` に参照音声を渡す。CLI と Web demo（`app.py`）もある。",
+  "use_cases": [
+    "日本語を含む多言語のナレーションや読み上げを、セルフホストで作るのに使えそう",
+    "社内向けの音声ガイドやデモ動画の音声を、自前の GPU で生成するのに使えそう",
+    "自分の声のサンプルでファインチューニングして、読み上げ用の声を作るのに使えそう"
+  ],
+  "for_whom": "GPU を使える環境で TTS を自前運用したい人。音声合成を試して比較したい機械学習エンジニア。",
+  "similar": [
+    "XTTS（Coqui）：voice cloning ができる多言語 TTS。こちらは説明文から声を作る Voice Design がある",
+    "Fish Speech：オープンな多言語 TTS。用途は近い"
+  ],
+  "tech": "Python、PyTorch、transformers、gradio。MiniCPM-4 をベースにした2B パラメータの diffusion autoregressive モデル（tokenizer なし）。動作には CUDA 12 以上の GPU が前提。ライセンスは Apache-2.0。",
+  "caveats": "README は、voice cloning をなりすましや詐欺に使うことを固く禁じ、生成音声には AI 製と明示することを勧めている。Voice Design と controllable cloning は実行ごとに結果がぶれ、1〜3回の再生成が要ることがある。pyproject の Development Status は Alpha。対応30言語以外は未保証。",
+  "tags": ["音声・画像・動画", "機械学習", "ライブラリ・SDK"],
+  "sources": ["meta", "readme", "tree", "manifest:pyproject.toml", "release"],
+  "confidence": "high",
+  "confidence_note": ""
+}

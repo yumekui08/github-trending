@@ -1,0 +1,35 @@
+{
+  "repo": "elie222/rakazo",
+  "summarized_at": "2026-10-24",
+  "short": "rakazo は、会話・記憶・定期実行を持ち続ける AI bot を、自分の環境で動かすセルフホストの AI エージェント基盤。Web、Electron、iPhone、Android から使え、モデルと実行環境（sandbox）を自分で選べる。beta。",
+  "what": "モデルと sandbox を選べるセルフホストの AI bot 基盤",
+  "can_do": [
+    "会話、記憶、routine、履歴を持ち続ける bot を作る",
+    "ブラウザ、ターミナル、ファイル、GUI デスクトップを操作する computer を bot に与える（チーム共有と個人用の分離）",
+    "bot が別の bot や短命の subagent に仕事を任せる",
+    "自分のモデルの認証情報で使う（Pi 経由）。音声モードは ElevenLabs などの自前キーを使う",
+    "Composio、Pipedream、リモート MCP、OpenAPI でアプリや外部ツールと連携する",
+    "実行環境に Docker、E2B、Daytona、CreateOS、Boat、ローカル PC を選べる"
+  ],
+  "install": [
+    "`mkdir -p rakazo && cd rakazo && curl -fsSLO https://raw.githubusercontent.com/elie222/rakazo/main/infra/compose/install-images.sh && bash install-images.sh`",
+    "Docker Engine、Compose plugin、curl、OpenSSL が前提"
+  ],
+  "how_to_use": "インストーラーが Compose ファイルを取得し、ランダムな secret 入りの `.env` を作って起動する。http://127.0.0.1:5173 を開いてアカウントを作り、モデルを接続する。VPS に置くときは `--prepare-only` のあと `.env` に `SANDBOX_PROVIDER` と `RAKAZO_HOST` を書き、前段に HTTPS を置く。",
+  "use_cases": [
+    "個人や小規模チームで、常駐する AI アシスタントを自前のサーバーに置くのに使えそう",
+    "調査や定型作業を bot の routine に任せ、sandbox 内で実行させるのに使えそう",
+    "どのモデルを使うか、データをどこに置くかを自分で決めたい場面で、SaaS の bot の代わりになりそう"
+  ],
+  "for_whom": "AI エージェントを自分の管理下で動かしたい人。Docker と Compose でセルフホストできる開発者・運用者。",
+  "similar": [
+    "OpenClaw：README が比較対象に挙げる、自分で動かす AI エージェント。違いは未確認",
+    "Open WebUI：セルフホストの LLM 用 Web UI。こちらは bot の常駐、computer 操作、モバイルアプリまで含む点が違うと思われる"
+  ],
+  "tech": "TypeScript、React 19、Vite、Tailwind CSS、Electron、Expo、Hono、oRPC、PostgreSQL、Prisma、Better Auth、Graphile Worker、Pi。pnpm と turbo の monorepo。Node.js 22 以上、Docker（linux/amd64 と arm64）で動く。",
+  "caveats": "README に beta とあり、作られて約2か月（2026年8月）。bot にターミナルやデスクトップ操作を渡すので、権限と sandbox の設定に注意が要る（公開サーバーでは host の hardening が要ると README にある）。外部の model、音声、sandbox の各サービスは別に API キーが要り、有料のものがあると思われる。ライセンスは Apache-2.0。",
+  "tags": ["AI エージェント", "セルフホスト", "LLM"],
+  "sources": ["meta", "readme", "tree", "manifest:package.json", "release"],
+  "confidence": "medium",
+  "confidence_note": "README と package.json は読んだが、docs/ やコードは読んでおらず、他製品との違いや sandbox の安全性の詳細は未確認。"
+}
