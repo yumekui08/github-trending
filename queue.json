@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-24",
+  "items": [
+    {
+      "repo": "Renhuai123/ziwei-doushu",
+      "rank": 5,
+      "status": "new",
+      "work_dir": ".work/Renhuai123__ziwei-doushu",
+      "output": "data/repos/Renhuai123__ziwei-doushu.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "SnailSploit/Claude-Red",
+      "rank": 6,
+      "status": "new",
+      "work_dir": ".work/SnailSploit__Claude-Red",
+      "output": "data/repos/SnailSploit__Claude-Red.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "OpenBMB/VoxCPM",
+      "rank": 7,
+      "status": "new",
+      "work_dir": ".work/OpenBMB__VoxCPM",
+      "output": "data/repos/OpenBMB__VoxCPM.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:pyproject.toml",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "nodejs/node",
+      "rank": 8,
+      "status": "new",
+      "work_dir": ".work/nodejs__node",
+      "output": "data/repos/nodejs__node.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:pyproject.toml",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "elie222/rakazo",
+      "rank": 15,
+      "status": "weekly",
+      "work_dir": ".work/elie222__rakazo",
+      "output": "data/repos/elie222__rakazo.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "release"
+      ],
+      "errors": []
+    }
+  ],
+  "deferred": []
+}

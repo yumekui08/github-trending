@@ -1,0 +1,23 @@
+{
+  "full_name": "SnailSploit/Claude-Red",
+  "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+  "homepage": "",
+  "topics": [
+    "claude-ai",
+    "claude-pt",
+    "claude-skills",
+    "redteam",
+    "redteam-tools",
+    "skills"
+  ],
+  "language": "Python",
+  "stargazers_count": 8445,
+  "forks_count": 1096,
+  "size": 2428,
+  "created_at": "2026-03-04T05:52:35Z",
+  "pushed_at": "2026-10-12T15:02:40Z",
+  "default_branch": "main",
+  "archived": false,
+  "fork": false,
+  "license": "MIT"
+}
