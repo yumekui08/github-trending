@@ -1,0 +1,46 @@
+{
+  "repo": "google-gemini/gemini-cli",
+  "summarized_at": "2026-10-25",
+  "short": "gemini-cli は、Gemini をターミナルから使う Google 製の AI エージェント CLI。コードベースの質問・編集、MCP 経由の機能追加、スクリプトからの非対話実行ができる。",
+  "what": "Gemini をターミナルで使う AI エージェント CLI",
+  "can_do": [
+    "大きなコードベースへの質問や編集、自然言語でのデバッグ",
+    "PDF・画像・スケッチなどのマルチモーダル入力からアプリを生成する",
+    "MCP server をつないで機能を追加する（画像・動画・音楽の生成 server など）",
+    "`gemini -p \"…\"` による非対話実行と、`--output-format json` / `stream-json` による構造化出力",
+    "認証は Google アカウントでのサインイン、Gemini API key、Vertex AI から選ぶ"
+  ],
+  "install": [
+    "`npm install -g @google/gemini-cli`",
+    "`brew install gemini-cli`",
+    "`npx @google/gemini-cli`"
+  ],
+  "how_to_use": "プロジェクトのディレクトリで `gemini` を実行すると対話モードが始まる。API key で使うなら `export GEMINI_API_KEY=\"…\"` を先に設定する。スクリプトからは `gemini -p \"質問\" --output-format json`。リリースは preview（`@preview`）、stable（`@latest`）、nightly（`@nightly`）の 3 系統。",
+  "use_cases": [
+    "CI やシェルスクリプトに `gemini -p` を組み込み、ログの要約や変更点の説明をさせるのに使えそう",
+    "Claude Code など他のエージェントと並べて、同じ作業での出力を比較するのに使えそう",
+    "MCP server を足して、社内ツールを呼ばせるエージェントにするのに使えそう"
+  ],
+  "for_whom": "Gemini を使ってターミナルでコーディングや運用作業をしたいエンジニア",
+  "similar": [
+    "Claude Code：用途はほぼ同じ。こちらは Gemini 向けで、Apache-2.0 の OSS",
+    "OpenAI Codex CLI：同じ種類の CLI エージェント。対象モデルが違う"
+  ],
+  "tech": "TypeScript 製（Node.js）。npm / Homebrew / MacPorts / conda で配布。Dockerfile あり。ライセンスは Apache-2.0。",
+  "caveats": "README の冒頭に、無料枠と Google One ユーザーでは 2026-06-18 に Antigravity CLI に置き換えられたとある。README に、最新の Gemini モデル向けには最適化されておらず、最良の体験には Antigravity CLI を使うよう書かれている。Gemini 4 Argon を使うなら Antigravity を使うよう README にある。利用には Google アカウント、API key、または Vertex AI の認証が要る。",
+  "tags": [
+    "AI エージェント",
+    "CLI",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

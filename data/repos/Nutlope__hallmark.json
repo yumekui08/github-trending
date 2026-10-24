@@ -1,0 +1,41 @@
+{
+  "repo": "Nutlope/hallmark",
+  "summarized_at": "2026-10-25",
+  "short": "hallmark は、AI が作る UI を「AI 臭さ」のない見た目にするための、Claude Code・Codex・Cursor・OpenCode 向けの design skill。48 のテーマから選んで HTML/CSS のページを組み、ブラウザで lint してから出す。",
+  "what": "AI 生成 UI の見た目を整える design skill",
+  "can_do": [
+    "48 種のテーマ（紙・色・部品をまとめた「素材」）から 3 つを提示し、選んだものでページを作る",
+    "プロンプトだけから独自デザインを作る custom モード",
+    "sloplint で、AI 生成っぽい定型（見出し上の小ラベル、一語だけ色を変えた見出しなど）や、コントラスト・フォーカス・スマホ表示の崩れを検査する",
+    "`/hallmark redesign <path>` で既存ページの内容と配線を保ったまま作り直し、`/hallmark audit <path>` で報告だけを行う",
+    "公開ライセンスの写真を題材に合わせて選んで使う"
+  ],
+  "install": [
+    "`npx skills add nutlope/hallmark -g`"
+  ],
+  "how_to_use": "Claude Code なら `/hallmark <作りたいページの説明>` で呼ぶ（Codex は `$hallmark`）。Node 18 以上が要る。ブラウザでの検査（`sloplint --render`）には `npm i -g puppeteer-core` と Chrome も要り、なくても静的な検査は動く。",
+  "use_cases": [
+    "エージェントに作らせた LP や管理画面の見た目を、手直しの前に一度整えるのに使えそう",
+    "社内ツールの Web UI を作るとき、デザインの素養がなくても最低限の品質を担保するのに使えそう",
+    "既存ページに audit をかけて、見た目の問題点を洗い出すのに使えそう"
+  ],
+  "for_whom": "エージェントで Web ページを作る機会があり、デザインの経験が少ないエンジニア",
+  "similar": [
+    "Anthropic の frontend-design skill：同じく見た目を良くする skill。こちらはテーマ集と lint、redesign / audit まで持つ"
+  ],
+  "tech": "Markdown の skill 本体と、Node.js（.mjs）のスクリプト。評価用に Python も含む。ライセンスは MIT。Node 18 以上、検査には Chrome が必要。",
+  "caveats": "作成は 2026-04 と新しく、README は v2 の大改訂を載せている。Together AI 製で、README に Powered by Together AI とある。生成物は自己完結の HTML と CSS が前提で、既存の大きなフレームワーク構成への適合度は README からは分からない。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とファイル構成は読んだが、skill の本体（SKILL.md、references、scripts）は読んでいない。"
+}

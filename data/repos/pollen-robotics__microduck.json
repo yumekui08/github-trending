@@ -1,0 +1,39 @@
+{
+  "repo": "pollen-robotics/microduck",
+  "summarized_at": "2026-10-25",
+  "short": "microduck は、強化学習の policy で歩く小型二足歩行ロボット（約 25 cm、800 g）の制御ソフトウェア。Rust 製の daemon 群が 50 Hz の制御ループ、カメラ、無線、更新を担う。",
+  "what": "二足歩行ロボット Microduck の制御ソフトウェア",
+  "can_do": [
+    "RK3566 搭載の本体で、15 個のサーボを ONNX 化した neural policy から 50 Hz で制御する",
+    "ゲームパッドでの操縦、物を拾う、転倒から自力で立ち上がる、車輪モードで走る、といった動作",
+    "署名つきの更新を適用し、起動後に異常があればロールバックする更新機構（updaterd）",
+    "`robotctl` コマンドで操縦・設定・wifi・ログ確認を行い、`duckctl` で Bluetooth 経由でノート PC から操作する",
+    "`scripts/duck-sim` で、実機なしに MuJoCo 上の仮想の duck に対して同じ daemon を動かす"
+  ],
+  "install": [],
+  "how_to_use": "実機（pollen-robotics.com/microduck で販売）を持っている前提なら、docs/robot/cheatsheet.md の `robotctl` コマンド一覧が入口。実機がなければ docs/robot/simulation.md のシミュレータから試せそう。policy の学習は別リポジトリ microduck_rl。",
+  "use_cases": [
+    "Rust で書かれたロボット用 daemon 群（JSON-RPC over Unix socket）の構成例として読むのに使えそう",
+    "署名つき更新とロールバックを備えた、組み込み Linux 機器の更新設計の参考になりそう",
+    "sim2real（シミュレーションで学習した policy を実機で動かす）の実機側の実装例として使えそう"
+  ],
+  "for_whom": "ロボットや組み込み Linux、sim2real に関心があるエンジニア。実機の購入者",
+  "similar": [
+    "Open Duck Mini：同じく小型の二足ロボットのオープンプロジェクト。こちらは製品版として更新機構まで含む"
+  ],
+  "tech": "Rust の workspace（robotd、updaterd、configd、btd、padd、mediad ほか）。duckctl に Python のパッケージあり。動作は Rockchip RK3566 の Linux 機器、policy は ONNX。ライセンスは Apache-2.0。",
+  "caveats": "実機ありきのソフトウェアで、実機がないと動作の大半は試せない（シミュレータはある）。作成は 2026-07 と新しい。policy の学習側は別リポジトリ（microduck_rl）で、ここには含まれない。similar に挙げた Open Duck Mini との比較は README に書かれておらず、一般的な知識による。",
+  "tags": [
+    "その他",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とファイル構成は読んだが、docs/ 配下や各 daemon のコードは読んでいない。"
+}

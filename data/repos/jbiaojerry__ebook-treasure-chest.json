@@ -1,0 +1,32 @@
+{
+  "repo": "jbiaojerry/ebook-treasure-chest",
+  "summarized_at": "2026-10-25",
+  "short": "ebook-treasure-chest は、中国語の電子書籍（epub・mobi・azw3）のダウンロードリンクをタグ別に並べた索引。ソフトウェアではなくリンク集で、GitHub Pages の検索ページがある。",
+  "what": "中国語電子書籍のダウンロードリンク集（索引）",
+  "can_do": [
+    "文学・歴史・科普・管理など、タグごとの Markdown ページ（md/）から本のリンクをたどる",
+    "GitHub Pages の検索ページで、書名・著者・分類をスペース区切りの複数キーワードで即時検索する",
+    "各書籍について epub、mobi、azw3 の 3 形式のリンクを得られる（README の記載）"
+  ],
+  "install": [],
+  "how_to_use": "README の GitHub Pages の検索ページ（jbiaojerry.github.io/ebook-treasure-chest）にキーワードを入れるのが最初の一歩。リポジトリ上では、README の索引からタグ別ページに進むか、ブラウザの Ctrl+F で探す。",
+  "use_cases": [
+    "docs/ の静的検索ページ（books.json と search.js）の作りは、小さな静的サイトでの全文検索の参考になりそう",
+    "中国語の書籍を探す読者向けの資料。インフラ寄りの仕事への直接の用途は薄い"
+  ],
+  "for_whom": "中国語の電子書籍を探している人。ソフトウェアの利用者向けではない",
+  "similar": [],
+  "tech": "Markdown のリンク集が中心。docs/ に静的な検索ページ（HTML、JavaScript、JSON）、生成用と思われる Python スクリプトと GitHub Actions がある。",
+  "caveats": "リンク先の電子書籍が著作権者の許諾を得たものかは材料から分からない。書籍の提供元は商用の読書アプリ（帆书、微信读书など）とされており、利用前に確認が要る。ライセンスの記載がない。README が中国語のみ。最終 push は 2026-01 で、そのあと更新されていない。リンク先は外部サイトで、有効かどうかは確認していない。",
+  "tags": [
+    "学習資料",
+    "その他"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とファイル構成は読んだが、リンク先や docs/ の検索ページ、Python スクリプトの中身は読んでいない。"
+}

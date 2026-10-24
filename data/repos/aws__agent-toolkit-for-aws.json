@@ -1,0 +1,42 @@
+{
+  "repo": "aws/agent-toolkit-for-aws",
+  "summarized_at": "2026-10-25",
+  "short": "agent-toolkit-for-aws は、AI コーディングエージェントに AWS を扱わせるための AWS 公式の plugin / skill / ルールファイル集。AWS MCP Server の設定と skill を一括で入れられる。",
+  "what": "AI エージェントに AWS を扱わせる公式 plugin 集",
+  "can_do": [
+    "Claude Code、Codex、Cursor、Devin などに plugin として入れ、AWS MCP Server の設定と skill をまとめて導入する",
+    "skill（SKILL.md と references）で、CDK/CloudFormation、serverless、コンテナ、観測、課金などの手順をエージェントに渡す",
+    "AWS MCP Server 経由で、AWS API の呼び出し、sandbox での Python 実行、ドキュメント検索を行う",
+    "aws-agents-for-devsecops で、障害調査、コードの脆弱性スキャン、ペネトレーションテストを AWS DevOps Agent / Security Agent と連携して行う",
+    "rules/ のルールファイルで、エージェントに MCP Server の使い方や skill の探し方を指示する"
+  ],
+  "install": [
+    "`/plugin install aws-core@claude-plugins-official`",
+    "`npx skills add aws/agent-toolkit-for-aws/skills`",
+    "`aws configure agent-toolkit`"
+  ],
+  "how_to_use": "Claude Code なら aws-core plugin を入れるのが最初の一歩（README が「Start here」としている）。plugin なしで使うときは、AWS MCP Server を各エージェントの MCP 設定に追加し、skill を npx で入れる。uv と、ローカルに設定した AWS 認証情報が要る（ドキュメント検索と skill の探索だけなら認証は不要）。",
+  "use_cases": [
+    "CDK や CloudFormation の作成をエージェントに任せるとき、AWS 公式の手順を踏ませるのに使えそう",
+    "運用で障害調査をするとき、AWS DevOps Agent と連携した調査の入口に使えそう",
+    "チームで使うエージェントに AWS 向けの共通ルールを配るのに、rules/ や skill が使えそう"
+  ],
+  "for_whom": "Claude Code や Cursor などで AWS 上の開発・運用をしていて、エージェントに AWS の知識と権限を安全に渡したいエンジニア",
+  "similar": [
+    "awslabs/mcp：AWS 向け MCP server 集。こちらは MCP に加えて skill と各エージェント向け plugin をまとめている"
+  ],
+  "tech": "Python（検証用スクリプト）と Markdown / JSON 中心。AWS MCP Server への接続に uvx（mcp-proxy-for-aws-cli）を使う。AWS 認証情報が必要。",
+  "caveats": "実際に AWS API を呼ぶので、エージェントに渡す IAM 権限の範囲に注意が要る。AWS の外部サービス（MCP Server、DevOps Agent、Security Agent）を前提にしている。作成は 2026-04 で、README のバッジは GA 表記。README だけで各 skill の中身までは確認していない。",
+  "tags": [
+    "AI エージェント",
+    "インフラ・運用",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とファイル構成は読んだが、個々の skill や plugin の中身は読んでいない。"
+}

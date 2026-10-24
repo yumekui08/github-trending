@@ -1,0 +1,45 @@
+{
+  "repo": "makecindy/cindy",
+  "summarized_at": "2026-10-25",
+  "short": "cindy は、Claude Code や Codex などの harness とモデルを 1 つにまとめ、自分の PC 上で作業させる AI agent のデスクトップ／モバイルクライアント。バックエンドは別リポジトリで、公式のクラウドサービスに接続して使う。",
+  "what": "複数の AI harness をまとめるデスクトップ／モバイル agent",
+  "can_do": [
+    "Claude Code と Codex を harness として使い、モデルや harness をタスクの途中で切り替える",
+    "ワークスペース、記憶、skill、tool を harness 間で引き継ぐ",
+    "ブラウザ、PC、スマートフォンの操作や、IM・スケジュールからの依頼の受け付け",
+    "MCP で社内ツールをつなぎ、定期実行の作業を自動化する",
+    "モデルは公式 Cindy サービス、手持ちの Claude Code / Codex の契約、自前の API key、ローカルモデルから選ぶ"
+  ],
+  "install": [
+    "`git clone https://github.com/makecindy/cindy.git`",
+    "`git lfs pull`",
+    "`pnpm install`"
+  ],
+  "how_to_use": "利用だけなら cindy.app/download の配布版を入れる。ソースから開発する場合は上の手順のあと、`pnpm restart:desktop:remote --region=global` などで起動する（Node.js 22.x、pnpm 10.x、Git LFS が要る）。ログイン画面の「Skip Sign-In」でサインインなしに local agent を使えるが、サーバー側の機能は使えない。",
+  "use_cases": [
+    "Claude Code と Codex を同じ画面で使い分け、同じ作業の結果を比べるのに使えそう",
+    "スケジュール実行や IM 経由で、定期的な調査・報告をエージェントに任せるのに使えそう",
+    "Electron と React Native の monorepo として、agent クライアントの実装の参考にできそう"
+  ],
+  "for_whom": "Claude Code や Codex を日常的に使い、GUI で複数の agent を横断して扱いたい人",
+  "similar": [
+    "Claude Code：単体の CLI agent。こちらは複数の harness を束ねる GUI クライアント",
+    "Cursor：エディタ中心。こちらは PC やブラウザ操作を含む汎用 agent"
+  ],
+  "tech": "TypeScript の pnpm monorepo。デスクトップは Electron、モバイルは Expo / React Native。Windows、macOS、Linux、Android、iOS が対象。Node.js 22.x、pnpm 10.x、Git LFS。ライセンスは Apache-2.0。",
+  "caveats": "公開されているのはクライアントだけで、バックエンドは別リポジトリ（非公開か別管理）。既定では公式のクラウドサービスに接続し、自動更新も公式の CDN から行う。公式サービスの利用は課金（使用量の差し引き）がある。Skip Sign-In ではサーバー側の機能が使えない。作成は 2026-07 で新しい。README には plugin の marketplace やチーム共有、独自の harness を「準備中」とする記述がある。リポジトリが大きい（ファイル約 1.8 万、約 480MB）。ソースの中身までは読んでいない。",
+  "tags": [
+    "AI エージェント",
+    "デスクトップアプリ",
+    "モバイル"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とファイル構成は読んだが、アプリのコードや docs/ は読んでいない。"
+}
