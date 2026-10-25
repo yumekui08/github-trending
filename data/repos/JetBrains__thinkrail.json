@@ -1,0 +1,47 @@
+{
+  "repo": "JetBrains/thinkrail",
+  "summarized_at": "2026-10-26",
+  "short": "thinkrail は、コーディングエージェント pi を中心に据えた IDE。git worktree で作業を分けたワークスペースと、SPEC.md による仕様のグラフをエージェントに持たせる。デスクトップアプリか、ブラウザで開く CLI で使う。",
+  "what": "pi エージェント用の worktree 分離型の IDE（デスクトップ / CLI）",
+  "can_do": [
+    "git repo をプロジェクトとして開き、`git worktree` で独立したワークスペースを切って、複数のエージェントを並列に動かす",
+    "Monaco エディタ、Files ツリー、diff、ターミナルを同じ画面に置き、ファイルや diff にレビューコメントを付けてチャットに渡す",
+    "`SPEC.md` の仕様グラフをエージェントが `spec_*` ツールで読み書きする",
+    "MCP サーバーと Agent Skills を使う。呼び出し前にチャットで確認を求める",
+    "ブランチの push、PR の作成、CI とレビュー状況の表示、merge を画面から行う",
+    "JetBrains AI か、pi の認証経由で任意のプロバイダーを使う"
+  ],
+  "install": [
+    "デスクトップ版は releases ページから OS 向けの `thinkrail-desktop-*` を取得する（macOS は Apple Silicon のみ、Windows x64、Linux x64 / ARM64）",
+    "CLI（macOS / Linux）：`curl -fsSL https://raw.githubusercontent.com/JetBrains/thinkrail/main/install.sh | bash`",
+    "`git` が PATH に必要。Linux のデスクトップ版は glibc 2.38 以上と GTK 3、WebKitGTK 4.1 など"
+  ],
+  "how_to_use": "`thinkrail ~/code/my-repo` で repo を開き、JetBrains AI でサインインするか自分のプロバイダーの認証情報を設定して、ワークスペースを作ってチャットで指示する。",
+  "use_cases": [
+    "複数のタスクを worktree ごとに分けて、エージェントに並列で任せる使い方に向いていそう",
+    "仕様（SPEC.md）をコードのそばに置いて、セッションをまたいで意図を残す運用を試すのに使えそう",
+    "エージェントが書いた変更を、IDE 内で diff とレビューコメントで確認する用途に使えそう"
+  ],
+  "for_whom": "コーディングエージェントを日常的に使い、worktree を使った並列作業や仕様駆動の開発を試したい開発者",
+  "similar": [
+    "Cursor、Zed のエージェント機能：エージェント付きの IDE という点は近い。こちらは pi が土台で worktree 分離が中心",
+    "Claude Code：エージェント自体は別物。こちらは GUI でワークスペースを管理する（細かい機能差は未確認）"
+  ],
+  "tech": "TypeScript の monorepo（bun）。astro、react、tailwind、Monaco などを使う。デスクトップアプリとブラウザ版 CLI の2形態。エージェントの本体は pi（`@earendil-works/pi-coding-agent`）。",
+  "caveats": "JetBrains の incubator プロジェクトで、v0.2.0 とまだ初期。2026年7月に作られた新しいリポジトリ。モデルのプロバイダーの契約や認証が別に必要。macOS は Apple Silicon のみ。インストールは `curl | bash` 形式なので、スクリプトを先に確認したい。README には機能が多く並ぶが、実際の使い勝手は未確認。",
+  "tags": [
+    "AI エージェント",
+    "エディタ・IDE",
+    "開発ツール",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と manifests、release を読んだが、実際の動作や pi 側の仕様は調べておらず、機能の説明は README の記述に依る"
+}

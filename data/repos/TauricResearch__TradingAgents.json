@@ -1,0 +1,51 @@
+{
+  "repo": "TauricResearch/TradingAgents",
+  "summarized_at": "2026-10-26",
+  "short": "TradingAgents は、アナリスト・強気/弱気の研究者・トレーダー・リスク管理といった役割の LLM エージェントを議論させ、銘柄ごとの売買判断レポートを出す Python 製の research 用フレームワーク。LLM プロバイダーを選べる CLI 付き。",
+  "what": "複数 LLM エージェントで売買判断を出す research 用フレームワーク",
+  "can_do": [
+    "Fundamentals / Sentiment / News / Technical の各アナリストが並列に銘柄を分析し、レポートにまとめる",
+    "強気・弱気の研究者が議論し、Trader、Risk Management、Portfolio Manager が段階的に判断する",
+    "OpenAI、Anthropic、Gemini、Ollama、OpenAI 互換サーバーなど複数の LLM プロバイダーを切り替えて使う",
+    "対話式 CLI のほか、`--ticker`、`--date` などのフラグで質問なしに実行できる",
+    "レポートを HTML 1ページで保存する。過去の日付を対象にした backtest もできる",
+    "Python パッケージとして組み込める。Docker でも動く"
+  ],
+  "install": [
+    "`git clone https://github.com/TauricResearch/TradingAgents.git`",
+    "`cd TradingAgents`",
+    "`pip install .`",
+    "Python 3.11 以上が必要。仮想環境（conda または uv）の使用を勧めている",
+    "Docker の場合は `cp .env.example .env` のあと `docker compose run --rm tradingagents`"
+  ],
+  "how_to_use": "使う LLM プロバイダーの API キー（`OPENAI_API_KEY` など）を環境変数か `.env` に設定し、`tradingagents` で対話式 CLI を起動して銘柄・日付・プロバイダーを選ぶ。質問なしなら `tradingagents --ticker NVDA --date 2026-09-23 --analysts market,news,fundamentals --save --no-show`。",
+  "use_cases": [
+    "複数エージェントに役割分担させて議論させる構成の実例として、設計を読む題材に使えそう",
+    "LLM の構造化出力や LangGraph のチェックポイント再開など、エージェント基盤の作りを参考にできそう",
+    "投資の研究用途で、モデルやプロバイダーを替えたときの判断の違いを比べるのに使えそう"
+  ],
+  "for_whom": "マルチエージェント構成の実装例を見たい人や、LLM による金融分析を research として試したい開発者",
+  "similar": [
+    "LangGraph のマルチエージェントのサンプル：構成要素は近い。こちらは金融の売買判断に特化している"
+  ],
+  "tech": "Python 3.11 以上。langgraph、langchain（OpenAI / Anthropic / Google）、yfinance、pandas、typer、rich など。LLM の API キーが必要（ChatGPT の Plus / Pro プランやローカルの Ollama でも可）。Docker 対応。",
+  "caveats": "README は research 目的で、金融・投資・売買の助言ではないと明記している。出力は使うモデルや期間、データの質に左右される。LLM の API 利用料がかかる。v0.7.0 と開発が速く、import パスの変更を含むリリースもあるため、バージョン間の互換は要確認。スター数が多いが、判断の質の根拠ではない。",
+  "tags": [
+    "AI エージェント",
+    "LLM",
+    "ライブラリ・SDK",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:requirements.txt",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

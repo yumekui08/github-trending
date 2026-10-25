@@ -1,0 +1,49 @@
+{
+  "repo": "AgriciDaniel/claude-seo",
+  "summarized_at": "2026-10-26",
+  "short": "claude-seo は、Claude Code に SEO 監査をさせる plugin。26 の sub-skill と 19 の sub-agent が、技術的 SEO、構造化データ、AI 検索（GEO）などを調べ、優先度付きの改善案を出す。",
+  "what": "Web サイトの SEO 監査をする Claude Code の plugin",
+  "can_do": [
+    "`/seo` コマンドで、サイト全体の SEO 監査を実行し、優先度順の改善案を出す",
+    "技術的 SEO（クロール、インデックス、sitemap、robots.txt、Core Web Vitals）を調べる",
+    "E-E-A-T などのコンテンツ品質の確認と、Schema.org の構造化データの検出・検証・生成",
+    "AI 検索（GEO）で引用されやすいかの分析、llms.txt など agent 向けの対応状況の確認",
+    "ローカル SEO、EC、多言語 SEO の確認。拡張機能で外部の SEO データも使える",
+    "PDF や Excel のレポート出力"
+  ],
+  "install": [
+    "Claude Code 1.0.33 以上が必要",
+    "`/plugin marketplace add AgriciDaniel/claude-seo`",
+    "`/plugin install claude-seo@agricidaniel-claude-seo`",
+    "`/seo setup`"
+  ],
+  "how_to_use": "`/seo setup` で専用の Python 環境と headless ブラウザを用意し、`/seo doctor` で状態を確認する。`/seo audit` に調べたい URL を渡して監査を始める。",
+  "use_cases": [
+    "自分のサイトや社内の公開サイトの SEO と AI 検索対応を、手軽に一度洗い出すのに使えそう",
+    "Claude Code の skill / sub-agent を多数束ねた plugin の作り方の参考になりそう",
+    "変更の監視（drift）で、リリース後の SEO の劣化を見つける用途に使えそう"
+  ],
+  "for_whom": "Web サイトを運営し、Claude Code で SEO の点検と改善案づくりを済ませたい人",
+  "similar": [
+    "Lighthouse、PageSpeed Insights：性能や基本的な SEO 指標は近い。こちらは Claude が内容を読んで改善案を書く",
+    "Ahrefs、Semrush などの SEO ツール：用途は近いが、こちらは無料で、外部データは拡張機能を足す必要がある"
+  ],
+  "tech": "Python 3.11〜3.14（ruff、Pillow など）。Claude Code の plugin（skills と agents は Markdown 定義）。headless Chromium を使う。拡張機能は Google API などの外部サービスに接続する。",
+  "caveats": "Claude Code の利用が前提で、監査には Claude の利用量がかかる。README の「10.8K clicks」や代理店との費用比較は作者自身の数値や例示。homepage は作者のコミュニティ（skool.com）で、有料コミュニティの案内が README にある。v2.5.0 で Python 3.11 以上が必須に変わった。作られてから約8か月。",
+  "tags": [
+    "自動化・ワークフロー",
+    "AI エージェント",
+    "開発ツール",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:requirements.txt",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release を読んだが、各 sub-skill の中身や監査結果の質は調べておらず、機能は README の記述に依る"
+}

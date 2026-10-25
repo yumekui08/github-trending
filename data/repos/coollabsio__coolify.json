@@ -1,0 +1,48 @@
+{
+  "repo": "coollabsio/coolify",
+  "summarized_at": "2026-10-26",
+  "short": "Coolify は、自分のサーバーに SSH でつないで、アプリ・データベース・サービスをデプロイして管理するセルフホストの PaaS。Heroku、Vercel、Netlify の代わりを狙う。1コマンドで入る。",
+  "what": "自前サーバーにデプロイする、セルフホストの PaaS",
+  "can_do": [
+    "GitHub、GitLab、Bitbucket、Gitea のリポジトリから、Nixpacks、Railpack、Dockerfile、Docker Compose、既成イメージでビルドしてデプロイする",
+    "データベースと 360 以上の one-click サービスを、永続ストレージ付きで立てる",
+    "push ごとのデプロイ、PR のプレビュー、webhook、以前のイメージへの rollback",
+    "独自ドメイン、自動 HTTPS、reverse proxy、health check の設定",
+    "複数サーバーの管理、ログ、コンテナのターミナル、リソースの監視",
+    "データベースとストレージのバックアップ、定期タスク、環境変数、通知。API、CLI、MCP、チームの権限もある"
+  ],
+  "install": [
+    "`curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash`",
+    "対応するサーバーと要件は公式の installation guide を参照。スクリプトは `scripts/install.sh` で事前に確認できる"
+  ],
+  "how_to_use": "インストール後、管理画面を開いてサーバーを登録し（SSH で接続）、Git リポジトリか Docker イメージを指定してデプロイする。推奨は Coolify 用に1台、デプロイ先に1台以上。",
+  "use_cases": [
+    "VPS や自宅サーバー上に、社内向けや個人の Web アプリ・DB をまとめて置く基盤として使えそう",
+    "PR ごとのプレビュー環境を、クラウドの PaaS を使わずに用意するのに使えそう",
+    "Docker Compose ベースの OSS（one-click サービス）を手早く立てて試す用途に向いていそう"
+  ],
+  "for_whom": "自分のサーバーで PaaS 風のデプロイ環境を持ちたい開発者や小規模チーム",
+  "similar": [
+    "Dokploy、CapRover：セルフホストの PaaS として近い（細かい機能差は未確認）",
+    "Heroku、Vercel、Netlify：README が代替として挙げるマネージドサービス。こちらは自前運用"
+  ],
+  "tech": "PHP 8.4 以上の Laravel アプリ（topics と composer.json から）。topics には Inertia、Svelte 5 もあるが、フロントの構成は未確認。Docker 上で動き、docker-compose の定義あり。対象サーバーには SSH で接続する。",
+  "caveats": "Coolify 自体の運用（更新、バックアップ、セキュリティ）は自分で行う。`curl | bash` でのインストール。公式の Coolify Cloud は有料。v4.5.0 には beta 扱いの機能（server patching）が含まれ、更新が非常に速い。",
+  "tags": [
+    "インフラ・運用",
+    "セルフホスト",
+    "コンテナ・Kubernetes",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:composer.json",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
