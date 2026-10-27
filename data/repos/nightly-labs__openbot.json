@@ -1,0 +1,46 @@
+{
+  "repo": "nightly-labs/openbot",
+  "summarized_at": "2026-10-27",
+  "short": "openbot は、Codex・Claude Code・Grok などの AI エージェントを常駐の「チームメイト」としてローカルで動かすデスクトップアプリ。エージェントごとに作業場所と会話を持たせ、キュー、ファイル受け渡し、組み込みブラウザ、エージェント間メッセージを1つのアプリにまとめる。開発プレビュー版で、エージェントは確認なしで全権限で動く。",
+  "what": "複数の AI エージェントを動かすデスクトップアプリ",
+  "can_do": [
+    "Codex、Claude Code、Grok CLI、OpenCode、Gemini、Cursor CLI、Cline CLI を、エージェントごとに独立したセッションと作業場所で動かす",
+    "FIFO のメッセージキュー（一時停止、再開、キャンセル、クラッシュ後も保持）",
+    "エージェント間のメッセージ、返信、画像、ファイル転送",
+    "エージェントが開いて操作できる永続的な組み込みブラウザ",
+    "コンテキストの使用量の監視と、長いスレッドの自動 compaction",
+    "Ollama や LM Studio などローカルのモデルサーバーや、OpenAI 互換の endpoint の利用"
+  ],
+  "install": [
+    "macOS・Windows・Linux（AppImage）は GitHub Releases からインストーラをダウンロードして実行",
+    "`curl -fsSL https://raw.githubusercontent.com/nightly-labs/openbot/main/scripts/install-server.sh | sudo bash`",
+    "`nix run github:nightly-labs/openbot`",
+    "Docker でも動く（`ghcr.io/nightly-labs/openbot:latest`、seccomp プロファイルが必要）"
+  ],
+  "how_to_use": "アプリを起動して初回の同意をしたあと、onboarding で使うプロバイダの runtime をダウンロードするか、手元の CLI を選ぶ。画面なしのサーバーでは `sudo openbot login` でメールのコードでサインインし、デスクトップ版やスマホから接続する。",
+  "use_cases": [
+    "複数のエージェントに役割を分けて並行で作業させる運用に使えそう",
+    "VPS や自宅サーバーに常駐させて、手元の端末から指示を出す使い方ができそう",
+    "Codex と Claude Code など複数のプロバイダを1つの画面で比べるのに使えそう"
+  ],
+  "for_whom": "複数の AI コーディングエージェントを常駐させて並行で使いたい人",
+  "similar": [
+    "Claude Code や Codex の CLI 単体：こちらは複数のエージェントを束ねる GUI とキューが付く"
+  ],
+  "tech": "TypeScript、Electron、SolidJS、Bun。macOS 13 以降、Windows 10 以降、x64/arm64 の Linux（AppImage）。サーバー版は Ubuntu 24.04/26.04 の systemd か Docker。アカウント API は Cloudflare Workers と D1。",
+  "caveats": "README が開発プレビューと明記している。エージェントは `danger-full-access` と `approvalPolicy: never` で動き、ファイル変更、コマンド実行、ネットワーク、ブラウザ操作を確認なしで行う。ライセンスは PolyForm Noncommercial 1.0.0（非商用のみ）で、フリーソフトウェアではない。Codex は OpenAI、Claude は Anthropic など各社のサービスに接続するため、オフライン専用ではない。作られて約2.5か月で、更新が非常に速い。",
+  "tags": [
+    "AI エージェント",
+    "デスクトップアプリ",
+    "自動化・ワークフロー"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,46 @@
+{
+  "repo": "alchaincyf/huashu-design",
+  "summarized_at": "2026-10-27",
+  "short": "huashu-design は、Claude Code、Codex、Cursor などの agent に「デザインを作って」と頼むための skill。HTML の Web ページ、App の試作、PPTX、動画、infographic を作り、最初に6案のサムネイルから3つの方向を選ばせる。README は中国語。",
+  "what": "agent にデザイン成果物を作らせる HTML 中心の skill",
+  "can_do": [
+    "クリックできる App や Web の試作を、単一の HTML ファイルで作る",
+    "発表用スライドを HTML で作り、編集できる PPTX にも書き出す",
+    "タイムライン付きのアニメーションを MP4 や GIF（BGM 付き）で書き出す",
+    "デザインの案を3つ以上並べて比べる",
+    "infographic を作り、PDF、PNG、SVG に書き出す",
+    "84 種のスタイル見本から、デザインの方向を6案出して3案に絞る",
+    "デザインを5つの観点で評価する"
+  ],
+  "install": [
+    "`npx skills add alchaincyf/huashu-design`",
+    "古い skills CLI で一部のファイルしか入らないときは `npm i -g skills@latest` で更新して入れ直す",
+    "うまくいかなければ `git clone https://github.com/alchaincyf/huashu-design.git ~/.claude/skills/huashu-design`"
+  ],
+  "how_to_use": "Claude Code や Codex などで、「AI 心理学の発表の PPT を作って。風格の案を3つ出して」のように話しかける。ブランド素材（logo、色、画面のスクリーンショット）を渡すと、それに合わせて作る。",
+  "use_cases": [
+    "社内発表のスライドや技術の説明図を、agent に作らせるのに使えそう",
+    "新しいツールの画面イメージを、HTML の試作で素早く関係者に見せるのに使えそう",
+    "README やブログ用の短い解説アニメ（GIF）を作るのに使えそう"
+  ],
+  "for_whom": "デザインの専門知識がなくても、agent で見栄えのよいスライドや試作を作りたい人",
+  "similar": [
+    "Claude Design（Anthropic のデザイン機能）：README に比較の節がある。こちらは skill 形式で、どの agent にも入れられる"
+  ],
+  "tech": "HTML 中心。依存は pdf-lib、playwright、pptxgenjs、sharp（Node.js）。生成と書き出しはローカルで動く。TTS 配音や AI による動画の評価などの任意のクラウド機能は、自分の API キーと `--yes` の確認が要る。実行履歴は `~/.huashu-design/` に保存され、アップロードされない。",
+  "caveats": "README と説明文は中国語が中心（README.en.md もある）。README 自身が「80点の skill」と述べ、レイヤー単位で編集できる PPTX の Figma への書き出し、3D や物理シミュレーション級の複雑なアニメは範囲外。ブランド素材なしでゼロから作ると品質が落ちると自ら書いている。SKILL.md だけでなく references/ assets/ scripts/ demos/ が必要で、古い skills CLI だと欠けることがある。作例の品質は README の自己申告で、こちらでは確認していない。2026-05-14 に MIT ライセンスへ変更された（以前は商用に許諾が必要だった）。",
+  "tags": [
+    "AI エージェント",
+    "音声・画像・動画",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release は読んだが、SKILL.md や scripts の中身は読んでいないため、実際の動作と品質は README の記述に頼っている。"
+}

@@ -1,0 +1,42 @@
+{
+  "repo": "gitroomhq/postiz-app",
+  "summarized_at": "2026-10-27",
+  "short": "postiz-app は、Instagram、YouTube、LinkedIn、X、Bluesky など多数の SNS への投稿を予約・自動化する Web アプリ。分析、チームでの共同編集、Public API、MCP サーバーや CLI から AI エージェントで操作する口がある。自分のサーバーに置く AGPL 版と、運営元のホスト版（Postiz Cloud）がある。",
+  "what": "SNS の投稿予約・分析をするセルフホスト可能な Web アプリ",
+  "can_do": [
+    "複数の SNS に投稿を予約し、カレンダーで管理する",
+    "投稿の分析（セルフホストでは各サービスの分析スコープを持つ自分の app credentials が必要）",
+    "チームメンバーを招待して、コメントや共同作業をする",
+    "Public API と webhook、Node.js SDK、n8n や Make.com の連携で自動化する",
+    "MCP サーバーや CLI から ChatGPT、Claude、Codex、Cursor などの AI エージェントで操作する",
+    "自分の OpenAI などの API キーを入れると、AI による文面や画像の生成が使える"
+  ],
+  "install": [],
+  "how_to_use": "README にはインストールの手順がなく、公式の Quick Start（https://docs.postiz.com/quickstart）への案内だけがある。Docker、Coolify、Railway、VPS などに配置し、Postgres、Redis、ストレージ、環境変数を設定する。リポジトリには `docker-compose.yaml` と `.env.example` がある。セルフホストでは、投稿先の SNS ごとに自分で developer app を作って承認を受ける必要がある。",
+  "use_cases": [
+    "自社や個人の SNS 運用を、データを外に出さず自前のサーバーで回すのに使えそう",
+    "n8n や Make.com と組み合わせて、記事の公開に合わせて自動投稿するのに使えそう",
+    "AI エージェントから MCP 経由で投稿を下書き・予約させる運用に使えそう"
+  ],
+  "for_whom": "SNS の投稿管理を自前のインフラで運用したい人やチーム",
+  "similar": [
+    "Buffer、Hootsuite：用途は同じ。こちらは AGPL でセルフホストでき、MCP や API を備える"
+  ],
+  "tech": "TypeScript。Next.js（frontend）、NestJS（backend）、Prisma（既定は PostgreSQL）、Temporal、Redis、Resend（メール通知）。pnpm workspaces のモノレポ。Docker で動かす。",
+  "caveats": "ライセンスは AGPL-3.0。ネットワーク越しに提供する改変版はソースの公開義務がある。セルフホストでは SNS ごとの developer app の作成と承認が必要で、Meta、YouTube、TikTok は数週間かかることがある。AI 機能は自分の LLM などの API キーが必要で、費用は提供元に払う。README にスポンサー広告が多く、運営元の有料のホスト版への導線が強い。最新の v2.25.3 は2件のセキュリティ脆弱性の修正を含み、すぐのアップグレードが推奨されている。",
+  "tags": [
+    "Web",
+    "セルフホスト",
+    "自動化・ワークフロー",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README にインストール手順がなく、外部の Quick Start に任されている。docs や docker-compose の中身は読んでいないため、構成の細部は分からない。"
+}
