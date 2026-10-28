@@ -1,0 +1,52 @@
+{
+  "repo": "HKUDS/DeepTutor",
+  "summarized_at": "2026-10-28",
+  "short": "DeepTutor は、自分の資料や LLM を使って学習を進める、セルフホストの Web アプリ兼 CLI（Python と Next.js）。チャット、問題生成、リサーチ、読解、習熟練習などを1つの環境で扱い、LLM は自分で設定したプロバイダーを使う。",
+  "what": "LLM で学習を支援するセルフホストの Web アプリ",
+  "can_do": [
+    "チャット、質問、Quiz、Research、Visualize、Solve などのモードを1つの runtime で使う",
+    "Knowledge Base（LlamaIndex、GraphRAG、LightRAG など複数の RAG エンジン）に資料を入れ、それを根拠に答えさせる",
+    "YouTube や Bilibili の動画を読解に追加し、文字起こし検索や時刻に紐づいた質問をする",
+    "Claude Code、Codex などのエージェントや MCP サーバー、スキルをチャットから呼ぶ",
+    "学習の記憶（L1〜L3）を見て編集する。学習タスクを Task Board で管理する",
+    "deeptutor CLI から操作する"
+  ],
+  "install": [
+    "`pip install -U deeptutor`",
+    "`deeptutor init`",
+    "`deeptutor start`",
+    "`docker run --rm --name deeptutor -p 127.0.0.1:3782:3782 -v deeptutor-data:/app/data ghcr.io/hkuds/deeptutor:latest`",
+    "pip 版は Python 3.11〜3.14 と Node.js 20 以上が要る"
+  ],
+  "how_to_use": "`deeptutor start` のあと、表示された URL（既定は http://127.0.0.1:3782）を開き、Settings → Providers で LLM の provider と API key を設定する。そのあと資料を Knowledge Base に入れて、チャットや Quiz などのモードを試す。",
+  "use_cases": [
+    "手元の技術書や社内ドキュメントを Knowledge Base に入れて、質問しながら学ぶ用途に使えそう",
+    "動画や論文の読解を、メモと理解度の確認つきで進める用途に使えそう",
+    "RAG エンジンの比較（README に retrieval comparison の記述がある）の入口として使えそう"
+  ],
+  "for_whom": "自分の資料で LLM に学習を手伝わせたい人。セルフホストできて、LLM のプロバイダーを選びたい人",
+  "similar": [
+    "Open WebUI：セルフホストの LLM Web UI。DeepTutor は学習向けの機能（Quiz、習熟練習、読解）に寄っている",
+    "NotebookLM：資料を根拠に答える点は近い。こちらはセルフホストで LLM を選べる"
+  ],
+  "tech": "Python 3.11〜3.14（pyproject は openai、aiohttp、pydantic、typer、mcp など）と Next.js 16 の Web。Docker イメージあり。LLM と、使う機能によって embedding や検索の provider が別に要る。ライセンスは Apache-2.0。",
+  "caveats": "LLM の provider と API key を自分で用意する必要があり、利用料は provider 次第。機能が非常に多く、README の説明は宣伝調の部分もあるため、実際の使い勝手は確認していない。リリースが頻繁（直近は v1.6.15、10/19）で、仕様が変わりやすいと思われる。リポジトリ自体が大きい（約280MB）。一部機能は LaTeX、ffmpeg、libolm などの追加が要る。",
+  "tags": [
+    "AI エージェント",
+    "LLM",
+    "学習資料",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:requirements.txt",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

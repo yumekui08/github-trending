@@ -1,0 +1,36 @@
+{
+  "repo": "togg53192-cmd/jailbreaks",
+  "summarized_at": "2026-10-28",
+  "short": "jailbreaks は、各種 LLM の安全制限を外すことを狙った system prompt や AGENTS.md を集めた、markdown のファイル集。ソフトウェアではなくプロンプトの置き場で、README は研究・教育目的とうたっている。",
+  "what": "LLM 向け jailbreak プロンプトの markdown 集",
+  "can_do": [
+    "Claude、Gemini、Grok、GLM、DeepSeek、Kimi、Qwen などのモデル別に分けた system prompt を載せている",
+    "coding agent 向けの AGENTS.md や、OpenCode 向けの設定を載せている",
+    "Ollama 用の Modelfile（FROM と SYSTEM）を載せている",
+    "README に31個のプロンプトと対象モデルの表がある"
+  ],
+  "install": [],
+  "how_to_use": "README によると、system prompt はそのまま API の system message やカスタム指示欄に貼り、AGENTS.md はリポジトリのルートに置く。Ollama 版は `ollama create` に渡す。使うことは勧めない（提供側の利用規約に反する可能性がある）。",
+  "use_cases": [
+    "自社で使う LLM や agent に対する prompt injection・指示の乗っ取りへの耐性を試す、red team 的な検証の材料に使えそう",
+    "どういう書き方（persona 固定、workspace policy など）が使われているかを知り、防御側の設計に活かせそう"
+  ],
+  "for_whom": "LLM のセキュリティや prompt injection の対策を調べる人。攻撃側の手口を把握したい防御側の人",
+  "similar": [
+    "elder-plinius/L1B3RT4S：同種の jailbreak プロンプト集として知られている（内容は未確認）"
+  ],
+  "tech": "Markdown と txt のファイルだけ（約38ファイル）。コードや依存はない。ライセンスは未設定。",
+  "caveats": "ライセンスが書かれておらず、再利用の条件は不明。モデル提供元の利用規約に反しうる内容で、README 自身も規約順守は利用者の責任としている。各プロンプトが今のモデルで効くかは未確認で、README も保証していない。個々のプロンプトの本文は読んでいない。作られて約4か月。",
+  "tags": [
+    "セキュリティ",
+    "LLM",
+    "その他"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と一覧は読んだが、各プロンプトの本文は読んでいない。有効性は確認できていない。"
+}

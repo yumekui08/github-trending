@@ -1,0 +1,44 @@
+{
+  "repo": "elayadesign/ai-design-skills",
+  "summarized_at": "2026-10-28",
+  "short": "ai-design-skills は、Claude Code・Cursor・Codex などの AI コーディングツールに読ませる、デザイン用の skill（markdown のルール集）をまとめたもの。今は landing page を一から作る skill が1つだけ入っている。",
+  "what": "AI コーディングツール向けのデザイン skill 集",
+  "can_do": [
+    "landing-page-design skill を AI ツールに読ませて、landing page を一から作らせる",
+    "作る前の質問（目的、対象、実績・素材など）を AI に最初にまとめて聞かせる",
+    "ページ構成と、コンバージョンを意識したコピーの書き方を指示する",
+    "フォント、余白、角丸、背景、hero、アイコン、動きといった見た目のルールを固定する",
+    "フォント・色・余白・動きの値は SKILL.md の1か所にまとまっており、fork して書き換えられる"
+  ],
+  "install": [
+    "`mkdir -p .claude/skills`",
+    "`git clone https://github.com/elayadesign/ai-design-skills.git /tmp/ai-design-skills`",
+    "`cp -r /tmp/ai-design-skills/skills/<skill-name> .claude/skills/`",
+    "Cursor は `.cursor/rules/<skill-name>.md` に SKILL.md を `curl` で置く。Codex は `AGENTS.md`、Windsurf は `.windsurfrules` などにファイルの中身をコピーする"
+  ],
+  "how_to_use": "skill を `.claude/skills/` に置いたあと、「landing page を作って」のように普通の言葉で頼む。SKILL.md の description に従って、AI が構成や見た目のルールを参照する。",
+  "use_cases": [
+    "社内ツールや個人プロジェクトの紹介ページを AI に作らせるときの、見た目のばらつきを抑える用途に使えそう",
+    "自分用にフォントや余白の値を書き換えて、チーム共通のデザインルールとして配る用途に使えそう"
+  ],
+  "for_whom": "AI コーディングツールで Web ページを作る人で、デザインの細かい指定を自分で書きたくない人",
+  "similar": [
+    "elayadesign/redesign-skill：同じ作者の、既存サイトを直す側の skill。README が別リポジトリと書いている",
+    "Leonxlnx/taste-skill：landing-page-design が内容の現実味や動きの案を取り入れた元（README のクレジットより）"
+  ],
+  "tech": "Markdown の SKILL.md だけ。コードも依存もない。Claude Code、Cursor、Codex、Windsurf、Cline など、markdown のルールを読むツールで使う。ライセンスは MIT。",
+  "caveats": "中身はプロンプト（指示文）で、出来栄えは使う AI ツール次第。実際に作らせた結果は確認していない。作られて約3か月で、skill は今1つだけ（README は「more on the way」と書いている）。description が空で、README の説明のみで判断した。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "skills/landing-page-design/SKILL.md"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
