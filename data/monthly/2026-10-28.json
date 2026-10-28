@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-28",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 73930,
+      "stars_period": 20501
+    },
+    {
+      "rank": 2,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 50141,
+      "stars_period": 27415
+    },
+    {
+      "rank": 3,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 91289,
+      "stars_period": 52726
+    },
+    {
+      "rank": 4,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 33421,
+      "stars_period": 7792
+    },
+    {
+      "rank": 5,
+      "repo": "pbakaus/impeccable",
+      "description": "The design language that makes your AI harness better at design.",
+      "language": "Rust",
+      "stars": 90474,
+      "stars_period": 18683
+    },
+    {
+      "rank": 6,
+      "repo": "earthtojake/text-to-cad",
+      "description": "Design physical products with AI",
+      "language": "Python",
+      "stars": 23565,
+      "stars_period": 7192
+    },
+    {
+      "rank": 7,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 32560,
+      "stars_period": 8586
+    },
+    {
+      "rank": 8,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 14343,
+      "stars_period": 5597
+    },
+    {
+      "rank": 9,
+      "repo": "anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "language": "Python",
+      "stars": 44944,
+      "stars_period": 8017
+    },
+    {
+      "rank": 10,
+      "repo": "NVIDIA/OpenShell",
+      "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
+      "language": "Rust",
+      "stars": 20283,
+      "stars_period": 11510
+    },
+    {
+      "rank": 11,
+      "repo": "affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 290860,
+      "stars_period": 23998
+    },
+    {
+      "rank": 12,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 103723,
+      "stars_period": 9345
+    },
+    {
+      "rank": 13,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 95074,
+      "stars_period": 15456
+    },
+    {
+      "rank": 14,
+      "repo": "pingdotgg/t3code",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 30826,
+      "stars_period": 7188
+    },
+    {
+      "rank": 15,
+      "repo": "DietrichGebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "language": "JavaScript",
+      "stars": 178167,
+      "stars_period": 32214
+    },
+    {
+      "rank": 16,
+      "repo": "tashfeenahmed/freellmapi",
+      "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+      "language": "TypeScript",
+      "stars": 42733,
+      "stars_period": 13636
+    },
+    {
+      "rank": 17,
+      "repo": "paperclipai/paperclip",
+      "description": "The open-source app everyone uses to manage agents at work",
+      "language": "TypeScript",
+      "stars": 108016,
+      "stars_period": 19922
+    },
+    {
+      "rank": 18,
+      "repo": "Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stars": 104907,
+      "stars_period": 19461
+    },
+    {
+      "rank": 19,
+      "repo": "supabase/supabase",
+      "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "language": "TypeScript",
+      "stars": 114180,
+      "stars_period": 3634
+    },
+    {
+      "rank": 20,
+      "repo": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 57429,
+      "stars_period": 6879
+    },
+    {
+      "rank": 21,
+      "repo": "flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "language": "Dart",
+      "stars": 180456,
+      "stars_period": 1855
+    }
+  ]
+}
