@@ -1,0 +1,46 @@
+{
+  "repo": "ruvnet/RuView",
+  "summarized_at": "2026-10-29",
+  "short": "RuView は、ESP32 などが取る WiFi の CSI（電波の乱れ）から、在室検知、呼吸・心拍、姿勢推定を行うセンシング基盤。カメラ不要で、Home Assistant などにつなげる。Rust 製。",
+  "what": "WiFi の電波から在室・呼吸・姿勢を推定するセンシング基盤",
+  "can_do": [
+    "ESP32-S3 などから CSI を集め、在室・人数・動き・転倒の検知をする",
+    "呼吸数と心拍数を非接触で推定する",
+    "CSI から 17 点の姿勢（keypoint）を推定する",
+    "MQTT で Home Assistant に連携。Apple Home、Matter 経由で Google Home や Alexa にもつなぐ",
+    "学習済みモデル（Hugging Face）の読み込みと、環境ごとの LoRA 調整",
+    "`npx @ruvnet/ruview` の CLI や MCP server で、デバイス確認や agent 操作を行う"
+  ],
+  "install": [
+    "`docker pull ruvnet/wifi-densepose:latest`",
+    "`pip install ruview`"
+  ],
+  "how_to_use": "ハードなしで試すなら Docker 版（シミュレーションデータ）。`RUVIEW_API_TOKEN` を環境変数で渡して起動し、http://localhost:3000 を開く。実センシングは ESP32-S3 に firmware を書き込み、`provision.py` で WiFi と送信先を設定する。",
+  "use_cases": [
+    "自宅の在室・睡眠の見守りを、カメラなしで Home Assistant に足す実験に使えそう",
+    "WiFi CSI を使ったセンシングの研究・検証の土台として使えそう",
+    "ESP32 の firmware と Rust のセンシング処理の実装例として読めそう"
+  ],
+  "for_whom": "WiFi センシングや IoT、Home Assistant に興味があり、ESP32 などを触れる人",
+  "similar": [
+    "Home Assistant の mmWave / PIR センサー：在室検知の用途は近い。こちらは WiFi の電波だけで推定する",
+    "Wi-Fi DensePose 系の研究実装：姿勢推定は近い。こちらは ESP32 まで含めた製品寄りの構成"
+  ],
+  "tech": "Rust が中心。TypeScript / React、Python（PyO3 の wheel）、ESP32 firmware（ESP-IDF）。Docker で動かせる。実センシングには CSI を取れるハード（ESP32-S3 など。約 $9〜）が要る。",
+  "caveats": "README の精度の数値は作者の主張。README 自身が、以前の 100% という presence の数値を撤回し、現在は 82.3%（held-out の temporal-triplet accuracy）としている。unified RF world model の accuracy は実データ検証前で synthetic、17 点姿勢のオンデバイスモデルも first-cut。医療・安全用途では利用環境での検証が必要。Docker 版はシミュレーションデータで動く。README が非常に長く、機能の主張が多い。",
+  "tags": [
+    "ネットワーク",
+    "セルフホスト",
+    "監視・可観測性"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:requirements.txt",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の前半（概要、quick start、精度の注記）を読んだ。実機での精度や各 module の実装は調べていない"
+}

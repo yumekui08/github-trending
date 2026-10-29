@@ -1,0 +1,32 @@
+{
+  "repo": "xiaolai/the-craft-of-selfteaching",
+  "summarized_at": "2026-10-29",
+  "short": "the-craft-of-selfteaching は、李笑来『自学是门手艺』の本文を Jupyter Notebook にした中国語の書籍。独学の考え方と、Python を入口にしたプログラミング入門を扱う。",
+  "what": "独学と Python 入門を扱う中国語の書籍（Jupyter Notebook）",
+  "can_do": [
+    "独学の考え方（刻意練習、注意力の管理など）を読める",
+    "Python の基礎（値、流れ制御、関数、文字列、コンテナ、ファイル）を notebook で学べる",
+    "クラス、decorator / iterator / generator、正規表現、BNF/EBNF まで進む",
+    "付録で VS Code、Git、Jupyterlab の導入を扱う"
+  ],
+  "install": [],
+  "how_to_use": "README の目次から notebook を順に読む。ローカルで実行して読むなら、README が先に読むよう勧める T-appendix.jupyter-installation-and-setup.ipynb に従い Jupyterlab を入れる。Markdown 版もある。",
+  "use_cases": [
+    "Python を一から学び直したい人に勧める教材として使えそう",
+    "中国語の読解が苦でなければ、独学の方法論の読み物として使えそう"
+  ],
+  "for_whom": "中国語が読め、独学の方法と Python の入門を同時に学びたい人",
+  "similar": [],
+  "tech": "Jupyter Notebook（.ipynb）が中心。Python を扱う。本文は中国語。",
+  "caveats": "ソフトウェアではなく書籍。本文は中国語で、日本語訳はない。ライセンスは README に CC-BY-NC-ND（商用利用と改変が不可）とあるが、GitHub 上のライセンス表示はない。最後の push は2026年5月。",
+  "tags": [
+    "学習資料"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

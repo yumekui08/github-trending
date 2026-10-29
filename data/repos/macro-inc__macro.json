@@ -1,0 +1,43 @@
+{
+  "repo": "macro-inc/macro",
+  "summarized_at": "2026-10-29",
+  "short": "macro は、email・チャット・docs・tasks・CRM・agents を1つの画面にまとめたチーム向けワークスペース。全部を @link で相互参照でき、agent が共有メモリを使ってメールの下書きなども行う。Rust と SolidJS 製で、AGPLv3 の OSS。",
+  "what": "email・チャット・タスクを束ねたチーム向けワークスペース",
+  "can_do": [
+    "Gmail の複数アカウントを1つの inbox で扱い、キーボード中心で操作する",
+    "チャンネル／DM、Linear 風の tasks、CRDT ベースの共同編集 docs、canvas を同じ画面で使う",
+    "メール・メッセージ・タスク・docs を @link で双方向に結びつけ、横断検索する",
+    "通話の録音・文字起こしを team の共有メモリに入れ、agent が参照して作業する",
+    "contact／company 単位でメールを集約する CRM 機能"
+  ],
+  "install": [],
+  "how_to_use": "README の導線は2つ。ホスト版は macro.com/app にサインアップして Gmail / Google Workspace を接続する。自前で動かす場合は docs/development/running-locally.md（local の Docker Compose スタック）に従う。",
+  "use_cases": [
+    "Slack・Linear・Notion・メールに分かれた小さなチームの情報を1か所に寄せる実験に使えそう",
+    "MCP 経由で agent に社内の文脈を渡す構成の参考になりそう",
+    "Rust の hexagonal 構成のサービス群（42 services、167 crates）の設計例として読めそう"
+  ],
+  "for_whom": "小規模なチームで、チャット・タスク・メール・CRM を1つのツールに集約して agent にも使わせたい人",
+  "similar": [
+    "Slack + Linear + Notion：機能の寄せ集めに近い。こちらは1つのバックエンドで相互参照する",
+    "Superhuman：メールの操作感が近い。こちらはチャット・タスクまで含む"
+  ],
+  "tech": "Rust（services 42、crates 167）と SolidJS（browser、Tauri の desktop、mobile）。Pulumi の infra、Docker Compose の local スタック、Nix の dev shell。AGPL-3.0。",
+  "caveats": "全部入りで規模が大きい（リポジトリは約 2GB、ファイル 4.4 万）。自前で動かすには多数の service が要り、手軽ではないと思われる。AGPLv3 なので改変して提供するとソース公開義務が生じる。README の機能の説明は作者の主張で、動作は確認していない。作られて約1年。",
+  "tags": [
+    "自動化・ワークフロー",
+    "AI エージェント",
+    "セルフホスト",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README、tree、release を読んだ。ローカル起動の手順（docs/development/running-locally.md）と各 service の中身は調べておらず、install は材料に書かれていない"
+}

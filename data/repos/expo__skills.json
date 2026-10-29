@@ -1,0 +1,43 @@
+{
+  "repo": "expo/skills",
+  "summarized_at": "2026-10-29",
+  "short": "skills は、Expo 公式の AI agent 向け skill 集。Expo Router、EAS Build/Update/Workflows、SDK のアップグレードなど、Expo アプリの作業を agent が正しく進めるための知識をまとめる。Claude Code と Codex は plugin で入る。",
+  "what": "Expo アプリ開発のための AI agent skill 集",
+  "can_do": [
+    "Expo Router、アニメーション、native UI、データ取得などの Expo SDK 側の作法を agent に教える",
+    "EAS Build/Submit、Update、Workflows、Hosting の使い方を agent に教える",
+    "Expo SDK のアップグレードや依存の衝突解消の手順を与える",
+    "`expo-overview` が入口になり、依頼内容に応じて個別の skill に振り分ける",
+    "Expo MCP server の設定を plugin に同梱し、docs 参照や EAS の操作を agent から行える"
+  ],
+  "install": [
+    "`claude plugin install expo@claude-plugins-official`",
+    "`codex plugin add expo@openai-curated`",
+    "`npx skills@latest add expo/skills --skill '*'`"
+  ],
+  "how_to_use": "インストール後に agent を再起動して skill を読み込ませ、「EAS workflow で PR ごとに preview build を作って」のように Expo 固有の依頼をする。skill は説明文から agent が自動で選ぶ。",
+  "use_cases": [
+    "React Native / Expo のアプリを agent に書かせるときの精度を上げるのに使えそう",
+    "EAS workflow の YAML や CI/CD の雛形づくりを任せるのに使えそう",
+    "SDK アップグレードの下調べを agent にやらせる用途に使えそう"
+  ],
+  "for_whom": "Expo / React Native のアプリを AI coding agent と一緒に作る人",
+  "similar": [
+    "Expo 公式 docs：情報源は同じ。こちらは agent が読める形に整理したもの"
+  ],
+  "tech": "Markdown の SKILL.md が中心。Shell と TypeScript の検査スクリプト。Claude Code / Codex の plugin、skills CLI（Node.js）で配布。",
+  "caveats": "EAS Build・Hosting・Update などの skill は有料の EAS の利用が前提になるものがある（README が free / paid を分けている）。experimental の skill は内容が変わる可能性がある。skill 自体の中身はそれぞれ読んでいない。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "モバイル"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と tree を読んだが、個々の SKILL.md の中身は調べていない"
+}

@@ -1,0 +1,41 @@
+{
+  "repo": "Leonxlnx/taste-skill",
+  "summarized_at": "2026-10-29",
+  "short": "taste-skill は、coding agent に Web ページや画面のデザインをさせるときの agent skill。art direction の決定、実在の写真の探索、実際のブラウザでの確認を手順に組み込み、ありがちな AI 製ページになるのを避ける。",
+  "what": "agent に見た目のよい Web ページを作らせるデザイン skill",
+  "can_do": [
+    "brief から art direction を決めてページを作る手順を agent に与える",
+    "オープンなアーカイブから実在の写真を探し、クレジット付きで使う",
+    "Chrome / Edge / Chromium で実際に表示し、自分で見た目を確認させる",
+    "247 のサイトを調べて作った方針に基づく6段階の工程で構築する"
+  ],
+  "install": [
+    "`npx skills add https://github.com/Leonxlnx/taste-skill --skill \"design-taste-frontend\"`",
+    "`/plugin marketplace add Leonxlnx/taste-skill`",
+    "`/plugin install taste-skill@taste-skill`"
+  ],
+  "how_to_use": "インストールしたあと、agent にランディングページなどの brief を渡して作らせる。skill のスクリプトは Node 22 以上と Chrome 系ブラウザを使い、写真探しにはネットワークが要る。",
+  "use_cases": [
+    "LP や小さな社内ツールの画面を agent に作らせるときの見た目の底上げに使えそう",
+    "agent skill にブラウザ確認の工程を組み込む作り方の参考になりそう"
+  ],
+  "for_whom": "Claude Code や Codex でフロントエンドを作らせていて、見た目の質を上げたい人",
+  "similar": [
+    "jakubkrehel/skills：同じく UI 向けの skill 集。そちらはレビューや調整が中心"
+  ],
+  "tech": "Markdown の SKILL.md と JavaScript のスクリプト（Node 22 以上）。Chrome / Edge / Chromium が必要。Claude Code / Codex の plugin、skills CLI で配布。",
+  "caveats": "見た目のよさは主観で、README の例も作者が選んだもの。README にスポンサー欄とデスクトップアプリ（TasteCode）の宣伝がある。スター数が約10万と急に伸びているが、品質の根拠ではない。旧 skill は別の場所へ移動している。",
+  "tags": [
+    "AI エージェント",
+    "Web",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release を読んだ。SKILL.md やスクリプトの中身は調べておらず、出来栄えは確認していない"
+}

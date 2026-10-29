@@ -1,0 +1,42 @@
+{
+  "repo": "jakubkrehel/skills",
+  "summarized_at": "2026-10-29",
+  "short": "skills は、UI 作りを助ける agent skill 集。アクセシビリティ、レイアウト、文字組み、色、UI の仕上げ、画面の文言を点検・改善する。Figma からの実装や、コンポーネントの全状態の確認用ページを作るものもある。",
+  "what": "UI の点検と改善のための agent skill 集",
+  "can_do": [
+    "better-interface：画面全体を6観点で見て、優先度付きで1つのレポートにする",
+    "better-accessibility：キーボード操作、ARIA、フォームを WCAG 2.2 に照らして点検する",
+    "better-colors：パレット生成、semantic token の命名、コントラスト測定",
+    "better-typography / better-layout / better-writing：文字組み、構造、UI の文言",
+    "break / state-machine / variant：コンポーネントを全状態で試す一時ページや、複数案の作成",
+    "build-design：Figma やデザイン画像から実装する"
+  ],
+  "install": [
+    "`npx skills add jakubkrehel/skills`",
+    "`/plugin marketplace add jakubkrehel/skills`",
+    "`/plugin install interfaces@interfaces`"
+  ],
+  "how_to_use": "インストールしたら、agent に「この画面をレビューして」などと頼む。`interface-review`、`break` などの user-invoked と書かれた skill は、自分で呼び出して使う。",
+  "use_cases": [
+    "Web UI の PR に対し、アクセシビリティや見た目の指摘を agent にさせるのに使えそう",
+    "管理画面のような社内ツールの UI の最低限の品質確認に使えそう"
+  ],
+  "for_whom": "UI を作る・レビューする人で、点検の観点を agent にも持たせたい人",
+  "similar": [
+    "Leonxlnx/taste-skill：同じく UI 向けの skill。そちらは新しく作る見た目の方針が中心"
+  ],
+  "tech": "Markdown の SKILL.md が中心（言語は Markdown）。Claude Code の plugin と skills CLI で配布。opencode の設定ファイルもある。",
+  "caveats": "作者のサイトと雑誌（interfaces.dev）が情報源で、各 skill の基準は作者の考え方による。skill の中身は読んでいない。作られて約3か月。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と tree を読んだ。各 SKILL.md の中身と出力の質は調べていない"
+}
