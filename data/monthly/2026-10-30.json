@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-30",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 52842,
+      "stars_period": 29622
+    },
+    {
+      "rank": 2,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 75464,
+      "stars_period": 21520
+    },
+    {
+      "rank": 3,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 33846,
+      "stars_period": 8086
+    },
+    {
+      "rank": 4,
+      "repo": "earthtojake/text-to-cad",
+      "description": "Design physical products with AI",
+      "language": "Python",
+      "stars": 24137,
+      "stars_period": 7732
+    },
+    {
+      "rank": 5,
+      "repo": "pbakaus/impeccable",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "language": "Rust",
+      "stars": 95289,
+      "stars_period": 22473
+    },
+    {
+      "rank": 6,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 94295,
+      "stars_period": 47778
+    },
+    {
+      "rank": 7,
+      "repo": "anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "language": "Python",
+      "stars": 45300,
+      "stars_period": 8277
+    },
+    {
+      "rank": 8,
+      "repo": "mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "language": "TypeScript",
+      "stars": 32847,
+      "stars_period": 8800
+    },
+    {
+      "rank": 9,
+      "repo": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 14587,
+      "stars_period": 5677
+    },
+    {
+      "rank": 10,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 104774,
+      "stars_period": 9911
+    },
+    {
+      "rank": 11,
+      "repo": "Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars": 42084,
+      "stars_period": 12501
+    },
+    {
+      "rank": 12,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 95879,
+      "stars_period": 16113
+    },
+    {
+      "rank": 13,
+      "repo": "pingdotgg/t3code",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 31853,
+      "stars_period": 7708
+    },
+    {
+      "rank": 14,
+      "repo": "flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "language": "Dart",
+      "stars": 180603,
+      "stars_period": 1993
+    },
+    {
+      "rank": 15,
+      "repo": "affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 292704,
+      "stars_period": 24663
+    },
+    {
+      "rank": 16,
+      "repo": "Leonxlnx/taste-skill",
+      "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+      "language": "JavaScript",
+      "stars": 105533,
+      "stars_period": 14568
+    },
+    {
+      "rank": 17,
+      "repo": "Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stars": 106295,
+      "stars_period": 20593
+    },
+    {
+      "rank": 18,
+      "repo": "DietrichGebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "language": "JavaScript",
+      "stars": 180170,
+      "stars_period": 33063
+    },
+    {
+      "rank": 19,
+      "repo": "tashfeenahmed/freellmapi",
+      "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+      "language": "TypeScript",
+      "stars": 44025,
+      "stars_period": 14488
+    }
+  ]
+}
