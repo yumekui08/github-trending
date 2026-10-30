@@ -1,0 +1,50 @@
+{
+  "repo": "CopilotKit/OpenBot",
+  "summarized_at": "2026-10-30",
+  "short": "OpenBot は、AG-UI に対応した任意の AI エージェントを「同僚 bot」として動かす、セルフホスト型のエージェント基盤。bot ごとに専用のブラウザとファイル領域を持たせ、操作を実行前にポリシーで判定して監査ログに残す。clone して作り替える前提のテンプレート。",
+  "what": "社内向けにセルフホストする AI エージェント基盤",
+  "can_do": [
+    "AG-UI を話す任意のエンドポイント（LangGraph、Mastra、CrewAI、自作など）を bot として登録する",
+    "bot ごとに Docker コンテナ内の Chromium、/workspace、shell を割り当てる",
+    "ブラウザ・ファイル・シェル・MCP の操作を gateway 経由にして、CEL のポリシーで実行前に判定し、監査ログを残す",
+    "ログインや 2FA で詰まった bot から人が操作を引き継ぐ",
+    "Google / Microsoft / Okta や SAML / OIDC でのサインイン、管理画面からの権限・認証情報・MCP サーバーの管理",
+    "スケジュール実行（routine）と、チャット内にコンポーネントを出す UI"
+  ],
+  "install": [
+    "Docker と Bun 1.4 以上が必要",
+    "`cp .env.example .env`",
+    "`bun install`",
+    "`bash scripts/start.sh`",
+    "`docker run -p 3001:3001 --env-file .env -e EMBEDDED_POSTGRES=on -v openbot-data:/var/lib/postgresql ghcr.io/copilotkit/openbot:latest`"
+  ],
+  "how_to_use": "`.env` に `OPENAI_API_KEY` を入れ、`npx --yes copilotkit@latest login` と `project select`、`bun scripts/setup-learning.ts` で CopilotKit Intelligence のプロジェクトとキーを設定してから `bash scripts/start.sh` を実行する。起動したら http://localhost:3010 の `/bot` で「Open news.ycombinator.com and tell me the top story.」のように頼み、`/admin/audit` で記録を確認する。",
+  "use_cases": [
+    "社内に置く ChatGPT 的なアシスタントに、操作の監査と許可ルールを付けたい場面で検討できそう",
+    "手元の LangGraph などの自作エージェントに、ブラウザ操作と実行前の判定をまとめて与える土台に使えそう",
+    "ブラウザ操作を許可制にした bot の挙動検証（ポリシーを変えて同じ操作を再試行）に使えそう"
+  ],
+  "for_whom": "社内に AI エージェントを統制付きで導入したいエンジニア。自作エージェントを AG-UI で載せ替えたい人",
+  "similar": [
+    "OpenMausBot：bot をチャットで束ねる点は近い。こちらは監査・ポリシー・社内サインインなど組織向けの統制が中心",
+    "Open WebUI：セルフホストのチャット UI。こちらはブラウザ操作と実行前の判定が中心"
+  ],
+  "tech": "TypeScript（React/Vite の UI、Hono の API）、一部 Python の例。Bun 1.4 以上、Docker Compose、PostgreSQL（pgvector）。MIT ライセンス。bot ごとのコンテナは gVisor（runsc）でも動かせる。",
+  "caveats": "README 自身が beta と書いている。製品ではなく clone して作り替える前提のテンプレート（ホスト版なし）。動かすには CopilotKit Intelligence のプロジェクトとライセンスが必要（無料プランあり、セルフホストも可）。モデルのキー（OpenAI など）も別に要る。既定の .env は OPENBOT_SINGLE_USER=true で全リクエストが管理者扱いになる。他人に公開する前にサインインの設定が必要。README は CopilotKit の有償の構築支援への誘導を含む。2026年8月に作られたばかりで、変更が速い。",
+  "tags": [
+    "AI エージェント",
+    "セルフホスト",
+    "セキュリティ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とリリースノートは読んだが、gateway やポリシーの実装コードまでは読んでいない。機能の説明は README の記述に基づく。"
+}

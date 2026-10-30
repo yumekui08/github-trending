@@ -1,0 +1,44 @@
+{
+  "repo": "Donchitos/Claude-Code-Game-Studios",
+  "summarized_at": "2026-10-30",
+  "short": "Claude-Code-Game-Studios は、Claude Code でゲーム開発を進めるためのテンプレート。49 の subagent、74 の skill（スラッシュコマンド）、15 の hook、14 のルールを、ディレクター・リード・専門職という studio の階層に見立てて配置してある。中身は Markdown と Shell が中心。",
+  "what": "Claude Code をゲーム開発体制にするテンプレート",
+  "can_do": [
+    "`/start` で現状（アイデアなし〜既存プロジェクト）を聞き、設計・実装・リリースの工程へ案内する",
+    "`/brainstorm`、`/design-system`、`/create-epics`、`/create-stories`、`/dev-story` など、設計から実装までの工程ごとの skill を使う",
+    "creative-director や lead-programmer など役割別の subagent に、設計レビューやコードレビューを任せる",
+    "コミット・push・設計書の読み書きの前後で hook が検証し、パス別のルールでコーディング規約を適用する",
+    "Godot 4、Unity、Unreal Engine 5 それぞれの専門 agent と、GDD・ADR・スプリント計画などのテンプレート 62 種を使う",
+    "`project.yaml` の `modes.rigor` で、作るドキュメントの量（minimal / standard など）を切り替える"
+  ],
+  "install": [
+    "前提：Git、Claude Code、Python 3、Bash（jq は推奨）",
+    "`git clone https://github.com/Donchitos/Claude-Code-Game-Studios.git my-game`",
+    "`cd my-game`"
+  ],
+  "how_to_use": "clone したディレクトリの直下（CLAUDE.md と project.yaml がある場所）で `claude` を起動し、`/start` を実行する。サブディレクトリで起動すると hook や deny ルールが効かない。",
+  "use_cases": [
+    "個人でゲームを作るときに、設計書やレビューの手順を Claude Code に守らせる枠組みとして使えそう",
+    "agent・skill・hook・rules の構成例として、自分の Claude Code 運用（インフラ作業用の skill 群など）を設計する際の参考になりそう",
+    "Godot などのエンジン別の agent をそのまま試して、AI 支援のゲーム開発の進め方を確かめるのに使えそう"
+  ],
+  "for_whom": "Claude Code で個人または小規模にゲームを作りたい人。Claude Code の agent・skill・hook の組み合わせ方を知りたい人",
+  "similar": [
+    "BMAD-METHOD：役割別 agent で開発工程を進める枠組み。こちらはゲーム開発に特化している"
+  ],
+  "tech": "Shell と Markdown が中心の Claude Code 用設定一式（.claude/agents、skills、hooks、rules）。hook は Bash、設定読み取りに Python 3 を使う。対象エンジンは Godot 4、Unity、Unreal Engine 5。MIT ライセンス。",
+  "caveats": "ゲームのコードやサンプルは同梱されない。README 自身の計測では、書類を増やす standard は minimal より良いゲームにならなかったとある。Claude Code の利用（契約・トークン消費）が前提。skill や agent の数が多く、モデルの利用量が増えやすいと思われる。Python 3 がないと、データ JSON を含むコミットがブロックされる。2026年2月に作られた。更新は活発で、skill の構成が変わることがある。",
+  "tags": [
+    "AI エージェント",
+    "ゲーム",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とリリースノートは読んだが、個々の agent や skill、hook の中身までは読んでいない。機能は README の記述に基づく。"
+}

@@ -1,0 +1,48 @@
+{
+  "repo": "milind-soni/OpenMausBot",
+  "summarized_at": "2026-10-30",
+  "short": "OpenMausBot は、claude・codex・grok の CLI を裏で動かし、複数の AI bot をチャットアプリ風に使い分ける TypeScript 製のデスクトップ／Web アプリ。bot ごとにモデル・クラウド上の Linux デスクトップ・連携アプリを持たせ、危険な操作は承認カードで確認できる。",
+  "what": "複数の AI エージェントをチャットで束ねるアプリ",
+  "can_do": [
+    "bot ごとにモデルと性格を決め、手元の claude / codex / grok CLI を裏で動かして会話する",
+    "bot にクラウド上の Linux デスクトップや Local VM を持たせ、画面操作（computer use）をさせる",
+    "シェル実行やファイル編集の前に Allow / Deny の承認カードを出す",
+    "Composio 経由で 500 以上のアプリ（Gmail、Slack、GitHub など）に接続する",
+    "MCP サーバーとして外部から操作したり、スクリプトや CI から実行したりする",
+    "スケジュールや webhook で bot を起動する"
+  ],
+  "install": [
+    "Node 24 以上が必要",
+    "`npm install -g openmausbot`",
+    "`npx openmausbot`（グローバルインストールなしで実行）",
+    "ソースから：`git clone https://github.com/milind-soni/OpenMausBot && cd OpenMausBot`、`pnpm install`"
+  ],
+  "how_to_use": "`openmausbot` を実行すると初回は対話式の設定が始まり、AI のアクセス方法（サインインか API キー）とモデルを選ぶ。以後は同じコマンドで保存済みの設定を使ってブラウザが開く。再設定は `openmausbot setup`。VPS では `npx openmausbot serve`（`--tunnel` や `--tailscale`）か Docker で常時起動する。",
+  "use_cases": [
+    "手元で使っている Claude Code / Codex を、役割別の複数 bot としてまとめて管理するのに使えそう",
+    "VPS や自宅サーバーに常駐させ、スマホから bot に調査や定型作業を頼む用途に使えそう",
+    "承認カード付きで bot にシェルやファイル操作をさせる、検証用の隔離環境（Local VM）として試せそう"
+  ],
+  "for_whom": "複数のコーディングエージェントや AI bot を、1つのチャット画面で使い分けたい人。セルフホストで動かしたい人",
+  "similar": [
+    "Grok Bot：README によれば着想元。向こうは xAI のクローズドな製品で、こちらは OSS で bot ごとにモデルを選べる",
+    "Open WebUI：チャット UI という点は近い。こちらは CLI エージェントの実行と承認の仕組みが中心"
+  ],
+  "tech": "TypeScript。React 19 + Tailwind の UI、Electron のデスクトップ版（macOS・Windows・Ubuntu 24.04）、Node 24 以上のローカル harness サーバー（127.0.0.1:8799）。Docker イメージあり。pnpm 管理。クラウド機能は boat.dev と Composio に依存。",
+  "caveats": "README 自身が early と書いている。モバイル接続のホスト機能は開発中で、Ubuntu は beta。2026年8月に作られた新しいプロジェクトで、リリースの更新が非常に速い。クラウドデスクトップは boat.dev、外部アプリ連携は Composio、音声は ElevenLabs などの外部サービスが前提。動かすには claude / codex / grok の CLI のいずれかをログイン済みで用意する必要がある。API キーは config.json に平文で保存される（権限は 0600）。暗号資産のトークンとは無関係と README に明記されている。Grok Bot などとは非公式の関係。",
+  "tags": [
+    "AI エージェント",
+    "デスクトップアプリ",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と manifests は読んだが、実際のコード（server/ や drivers/）までは読んでいない。機能の説明は README の記述に基づく。"
+}
