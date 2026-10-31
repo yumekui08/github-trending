@@ -1,0 +1,45 @@
+{
+  "repo": "vorssaint/vorssaint-utils",
+  "summarized_at": "2026-11-01",
+  "short": "vorssaint-utils は、macOS のメニューバーに常駐する多機能ツール集。アプリ別の音量調整、システム監視、window 切り替え、clipboard 履歴などを1つにまとめ、使う機能だけ入れられる。Apple Silicon の Mac 向け。",
+  "what": "macOS のメニューバー常駐ユーティリティ集",
+  "can_do": [
+    "アプリごとの音量調整（100% 超のブーストも可）と、出力先の切り替え",
+    "CPU、GPU、メモリ、温度、バッテリー、ネットワークの監視と、しきい値の通知",
+    "live preview 付きの app switcher、window の snap 配置、Dock preview",
+    "clipboard 履歴、text snippet の展開、アプリのアンインストーラー",
+    "Claude、Codex、OpenCode、GitHub Copilot の使用量などを Dynamic Island 風の表示で追う",
+    "機能ごとにインストール・アンインストールでき、使わない機能は読み込まれない"
+  ],
+  "install": [
+    "`brew install --cask vorssaint`",
+    "Releases ページの disk image を Applications に入れる方法もある。Apple Silicon の Mac と macOS 14 以上が必要"
+  ],
+  "how_to_use": "起動するとメニューバーにアイコンが出る。初回の設定で使う機能（または preset）を選ぶと、必要な権限だけが求められる。権限は Settings の Permissions で確認できる。",
+  "use_cases": [
+    "Mac を作業用にしている人が、個別に有料アプリを入れていた小物ツールをまとめるのに使えそう",
+    "AI coding agent（Claude Code や Codex）の使用量と limit の把握に使えそう",
+    "温度やメモリ圧迫の通知で、重い処理中の Mac の状態確認に使えそう"
+  ],
+  "for_whom": "Apple Silicon の Mac で、複数のメニューバー系ユーティリティを1つにまとめたい人",
+  "similar": [
+    "Rectangle：window の snap 配置は近い。こちらは音量・監視・clipboard なども含む",
+    "AltTab：app switcher は近い。こちらは機能の一部",
+    "Stats：システム監視は近い。こちらは機能の一部"
+  ],
+  "tech": "Swift（SwiftUI / AppKit、Swift Package Manager）。macOS 14 以上、Apple Silicon のみ。ライセンスは GPL-3.0。",
+  "caveats": "2026年6月作成で新しいプロジェクト。機能がとても多く、Accessibility や画面収録などの権限を求める機能がある（README は権限は任意で、機能ごとに説明されると述べている）。Fan Control は beta と明記されている。Intel Mac は非対応。ライセンスは GPL-3.0 で、改変して配布する場合は同じ条件が要る。README は no telemetry と書いているが、update check など一部の通信は発生する。",
+  "tags": [
+    "デスクトップアプリ",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Package.swift",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

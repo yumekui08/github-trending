@@ -1,0 +1,47 @@
+{
+  "repo": "Orkas-AI/Orkas",
+  "summarized_at": "2026-11-01",
+  "short": "Orkas は、目標を to-do に分解して複数の AI agent に振り分けるデスクトップアプリ。Claude Code や Codex などの CLI agent も同じ画面から束ねて動かせる。データはローカルに置く設計。",
+  "what": "複数 AI agent をまとめて動かすデスクトップアプリ",
+  "can_do": [
+    "Commander に目標を伝えると、to-do に分解して専門 agent（組み込み16種）へ振り分ける",
+    "Claude Code、Codex、OpenCode、OpenClaw、Hermes-Agent を、すでに入れてある CLI としてローカルで呼び出して連携させる",
+    "project に目標・ルール・記憶・ファイルを持たせ、会話をまたいで引き継ぐ",
+    "定期実行（毎時・毎日・毎週・毎月）と、次の to-do を自動で進める Auto-advance",
+    "Gmail、Notion、Slack などの connector 経由の操作（送信・投稿・削除の前には確認を挟むのが既定）",
+    "動画・音声・画像、調査レポート、PPTX/Word/Excel/PDF などの成果物の生成"
+  ],
+  "install": [
+    "`git clone https://github.com/Orkas-AI/Orkas.git`",
+    "`cd Orkas`",
+    "`./run.sh`",
+    "Node 22.12 以上が必要。Windows は `run.cmd`。初回起動で依存とモデル等（埋め込みモデル約95MB など）を取得する。配布版の installer は orkas.ai からダウンロードする方法もある"
+  ],
+  "how_to_use": "初回起動後、Settings → AI Providers で API key か OAuth を設定する。そのあと Commander にやりたいことをチャットで伝える。ワークスペースは ~/.orkas/ に作られる。",
+  "use_cases": [
+    "調査レポートと資料を定期的に作らせる、といった定型の情報収集に使えそう",
+    "Claude Code と Codex に実装とレビューを分担させる、といった CLI agent の並行運用に使えそう",
+    "技術ブログや社内向け資料のたたき台づくりに使えそう"
+  ],
+  "for_whom": "複数の AI agent と CLI agent を1つの画面で束ねて、継続的な作業を任せたい人",
+  "similar": [
+    "CrewAI：複数 agent の協調という点は近い。こちらはコードで組む framework で、Orkas は GUI のデスクトップアプリ",
+    "LangChain：LLM アプリ用の framework。Orkas は組み込む対象ではなく、完成したアプリ"
+  ],
+  "tech": "JavaScript（Electron + Node、TypeScript も使用）。macOS / Windows / glibc 2.34 以上の Linux（x64・arm64）。MIT ライセンス。Python や uv、FFmpeg、whisper.cpp などを初回起動時に準備する。",
+  "caveats": "2026年4月作成で新しいプロジェクト。更新は非常に活発。共有 project、cloud sync、web アプリの公開は配布版のみで、OSS のソースビルドでは未対応。配布版の無料枠は 500 credits。組み込みモデルは Orkas のマネージドサービス経由で動く。自前の API key も使える。音声入力は Orkas の API key が必要で、音声は Orkas に送られる。ソース実行は初回に大きなリソースを取得するため時間とディスクがかかる（リポジトリ size は約150MB）。",
+  "tags": [
+    "AI エージェント",
+    "デスクトップアプリ",
+    "自動化・ワークフロー"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

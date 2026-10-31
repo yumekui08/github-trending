@@ -1,0 +1,47 @@
+{
+  "repo": "AstrBotDevs/AstrBot",
+  "summarized_at": "2026-11-01",
+  "short": "AstrBot は、QQ、Telegram、Slack、Discord などのチャットアプリに LLM ベースの agent bot をつなぐ Python 製のプラットフォーム。plugin、MCP、knowledge base に対応し、WebUI で管理する。個人用から社内用の bot まで想定している。",
+  "what": "チャットアプリにつなぐ LLM agent bot の基盤",
+  "can_do": [
+    "QQ、Telegram、Slack、Discord、Feishu、DingTalk、LINE など多くの IM に bot を接続する",
+    "OpenAI、Gemini、Anthropic などの LLM との会話。multimodal、MCP、Skills、knowledge base、persona 設定に対応",
+    "Dify、Coze、Alibaba Cloud Bailian など外部の agent 基盤との連携",
+    "plugin による機能追加（README では1000以上の plugin を one-click で導入できるとしている）",
+    "WebUI での設定と管理"
+  ],
+  "install": [
+    "`uv tool install astrbot --python 3.12`",
+    "`astrbot init`",
+    "`astrbot run`",
+    "uv が必要。`astrbot init` は初回だけ。Docker / Docker Compose での運用は公式ドキュメントに手順がある"
+  ],
+  "how_to_use": "`astrbot run` で起動して WebUI を開き、LLM provider と接続先の IM platform を設定する。そのあと plugin や persona を必要に応じて足す。",
+  "use_cases": [
+    "社内の Slack や Discord に LLM bot を置いて、問い合わせ対応や調べ物の窓口にするのに使えそう",
+    "knowledge base を持たせた、運用手順の質問応答 bot に使えそう",
+    "Telegram や Discord に通知や簡単な自動化の窓口を作るのに使えそう"
+  ],
+  "for_whom": "自分で運用する LLM chatbot を複数の IM につなぎたい人。Docker で常時運用できる人",
+  "similar": [
+    "Dify：LLM アプリ基盤。AstrBot は IM への接続を中心にしている",
+    "Open WebUI：Web 上のチャット UI が中心で、IM 連携が中心の AstrBot とは重心が違う"
+  ],
+  "tech": "Python 3.12 以上。FastAPI、aiohttp、faiss-cpu、各社 LLM SDK など。Docker image あり（Dockerfile は Python 3.12-slim、Node.js も同梱）。ライセンスは AGPL-3.0。",
+  "caveats": "AGPL-3.0 なので、改変して network 経由で提供する場合はソース公開の義務が生じうる。LLM の API key（有料のことが多い）が別途要る。リリースノートや一部の README は中国語中心で、日本語の README もある。対応 platform のうち WhatsApp は準備中（Coming Soon）と書かれている。版が頻繁に上がっており、更新で設定や plugin の互換が変わることがありうる。",
+  "tags": [
+    "AI エージェント",
+    "LLM",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

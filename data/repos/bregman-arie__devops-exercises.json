@@ -1,0 +1,35 @@
+{
+  "repo": "bregman-arie/devops-exercises",
+  "summarized_at": "2026-11-01",
+  "short": "devops-exercises は、DevOps・SRE まわりの問題と演習をまとめた学習用リポジトリ（Markdown が中心）。README によると約2600問で、Linux、Kubernetes、AWS、Prometheus などを扱う。面接対策に使えるが、実際の面接問題とは限らないと注記がある。",
+  "what": "DevOps・SRE の問題集（Markdown）",
+  "can_do": [
+    "DevOps、Git、Network、Linux、Kubernetes、AWS、Azure、GCP、Prometheus、Terraform などの分野別の問題と答えを読める",
+    "README 記載で約2600問の問題と演習（時期により増減）",
+    "AWS や Azure、CKA/CKAD などの認定試験向けの資料（certificates/）を読める",
+    "Docker やシェルの演習（exercises/）を手を動かして解ける",
+    "pull request で問題を追加できる"
+  ],
+  "install": [],
+  "how_to_use": "インストールは不要。README のトピック一覧から分野を選び、問題を読んで自分で答えを考えてから、答えを開いて確かめる使い方になる。",
+  "use_cases": [
+    "インフラ系の知識の抜けを探す自己点検に使えそう",
+    "DevOps・SRE 職の面接準備に使えそう（ただし README は実際の面接とは異なると注記している）",
+    "チーム内の勉強会の問題づくりの素材に使えそう"
+  ],
+  "for_whom": "DevOps・SRE の基礎を広く復習したい人、面接や認定試験の準備をしている人",
+  "similar": [],
+  "tech": "実体は Markdown の文書。一部の演習に Python、シェル、Docker を使う。言語は英語（ポルトガル語・中国語の README もある）。",
+  "caveats": "ソフトウェアではなく学習用の文書。README が、問題の多くは実際の面接を代表しないと明記している。最終 push は2025年12月で、内容が古い箇所があるかもしれない。ライセンスは GitHub 上で判別されず（NOASSERTION）、再利用の条件は LICENSE の確認が要る。内容の正しさはこちらでは検証していない。",
+  "tags": [
+    "学習資料",
+    "インフラ・運用"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
