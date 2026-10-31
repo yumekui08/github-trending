@@ -1,0 +1,18 @@
+{
+  "full_name": "anthropics/skills",
+  "description": "Public repository for Agent Skills",
+  "homepage": "",
+  "topics": [
+    "agent-skills"
+  ],
+  "language": "Python",
+  "stargazers_count": 185299,
+  "forks_count": 21895,
+  "size": 5488,
+  "created_at": "2025-09-22T15:53:31Z",
+  "pushed_at": "2026-10-28T19:20:39Z",
+  "default_branch": "main",
+  "archived": false,
+  "fork": false,
+  "license": null
+}

@@ -1,0 +1,25 @@
+{
+  "full_name": "lightpanda-io/browser",
+  "description": "Lightpanda: the headless browser designed for AI and automation",
+  "homepage": "https://lightpanda.io",
+  "topics": [
+    "browser",
+    "browser-automation",
+    "cdp",
+    "headless",
+    "lightpanda",
+    "playwright",
+    "puppeteer",
+    "zig"
+  ],
+  "language": "Zig",
+  "stargazers_count": 38346,
+  "forks_count": 1871,
+  "size": 41822,
+  "created_at": "2023-02-07T15:19:34Z",
+  "pushed_at": "2026-10-30T23:31:16Z",
+  "default_branch": "main",
+  "archived": false,
+  "fork": false,
+  "license": "AGPL-3.0"
+}

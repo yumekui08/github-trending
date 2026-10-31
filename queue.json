@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-31",
+  "items": [
+    {
+      "repo": "anthropics/skills",
+      "rank": 11,
+      "status": "new",
+      "work_dir": ".work/anthropics__skills",
+      "output": "data/repos/anthropics__skills.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "lightpanda-io/browser",
+      "rank": 15,
+      "status": "new",
+      "work_dir": ".work/lightpanda-io__browser",
+      "output": "data/repos/lightpanda-io__browser.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:Dockerfile",
+        "release"
+      ],
+      "errors": []
+    }
+  ],
+  "deferred": []
+}
