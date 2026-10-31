@@ -1,0 +1,39 @@
+{
+  "repo": "anthropics/skills",
+  "summarized_at": "2026-10-31",
+  "short": "skills は、Claude 用の Agent Skills（指示・スクリプト・資料をまとめたフォルダ）のサンプル集。docx / pdf / pptx / xlsx の文書系スキルも入っている。自分でスキルを作るときの参考になる。",
+  "what": "Claude 用 Agent Skills のサンプル集",
+  "can_do": [
+    "SKILL.md（YAML の name と description、本文に手順）だけで作るスキルの実例を読める",
+    "Claude Code のプラグイン marketplace として登録し、document-skills / example-skills を入れられる",
+    "docx・pdf・pptx・xlsx を扱うスキルのソースを参考にできる（オープンソースではなく source-available）",
+    "webapp-testing、mcp-builder、frontend-design、skill-creator など開発向けのスキルがある",
+    "template/SKILL.md をひな形にして自作スキルを始められる"
+  ],
+  "install": [
+    "`/plugin marketplace add anthropics/skills`",
+    "`/plugin install document-skills@anthropic-agent-skills`",
+    "`/plugin install example-skills@anthropic-agent-skills`"
+  ],
+  "how_to_use": "Claude Code で marketplace を追加してプラグインを入れたら、「PDF スキルで〜を抽出して」のようにスキル名を話に出すだけで使われる。自作するときは template/SKILL.md をコピーして書く。",
+  "use_cases": [
+    "社内の手順書やレビュー観点を SKILL.md にして、Claude Code に繰り返し守らせるときの書き方の見本に使えそう",
+    "運用ドキュメントや Excel 形式の報告書を Claude に作らせる自動化の下地に使えそう"
+  ],
+  "for_whom": "Claude Code や Claude API でスキルを自作・運用したい人",
+  "similar": [],
+  "tech": "Python のスクリプトを含む、Markdown 中心のリポジトリ。Claude Code / Claude.ai / Claude API で動く。",
+  "caveats": "README に「デモと教育目的」と明記されており、Claude 本体の挙動とは異なることがある。文書系スキル（docx / pdf / pptx / xlsx）は source-available で、Apache 2.0 のオープンソースではない。meta 上のライセンスは未設定。重要な用途では自分の環境で十分に試すこと。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "学習資料"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

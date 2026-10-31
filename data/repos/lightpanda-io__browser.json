@@ -1,0 +1,46 @@
+{
+  "repo": "lightpanda-io/browser",
+  "summarized_at": "2026-10-31",
+  "short": "browser は、AI やスクレイピング向けに Zig でゼロから書かれた headless browser。Chromium の fork ではなく、CDP で Puppeteer や Playwright から操作できる。ページ取得は軽量さが売り。",
+  "what": "AI・自動化向けの軽量 headless browser",
+  "can_do": [
+    "`fetch` で URL を取得し、HTML・markdown・構造化データ（JSON-LD など）として出力する",
+    "`serve` で CDP サーバーを起動し、Puppeteer / Playwright から接続して操作する（Unix socket も可）",
+    "WebDriver BiDi にも対応（`--protocol webdriver`）",
+    "`agent` で LLM にブラウザを操作させ、操作を PandaScript（JavaScript）として保存・再実行できる",
+    "MCP サーバーとしても使える（src/mcp があり、markdown などのツールがある）",
+    "`--obey-robots` で robots.txt を守らせられる"
+  ],
+  "install": [
+    "`brew install lightpanda-io/browser/lightpanda`",
+    "`docker run -d --name lightpanda -p 127.0.0.1:9222:9222 lightpanda/browser:latest`",
+    "`curl -L -o lightpanda https://github.com/lightpanda-io/browser/releases/download/nightly/lightpanda-x86_64-linux && chmod a+x ./lightpanda`"
+  ],
+  "how_to_use": "バイナリを置いたら `./lightpanda fetch --dump markdown <URL>` で1ページを取得する。ブラウザ操作は `./lightpanda serve --host 127.0.0.1 --port 9222` を起動し、Puppeteer の `browserWSEndpoint` に `ws://127.0.0.1:9222` を指定する。",
+  "use_cases": [
+    "多数のページを巡回するクローラーや監視のジョブを、Chromium より少ないメモリで回すのに使えそう",
+    "CI やコンテナ内での Web ページの疎通・表示確認を軽く済ませるのに使えそう",
+    "LLM エージェントに Web 閲覧をさせる際のブラウザとして使えそう"
+  ],
+  "for_whom": "大量のページ取得やブラウザ自動化を、軽い環境で動かしたい人",
+  "similar": [
+    "headless Chrome（Puppeteer / Playwright 経由）：用途は近い。こちらは Chromium ではなく独自実装で、軽さを狙っている"
+  ],
+  "tech": "Zig 製（一部 Rust あり）。JavaScript エンジンは V8。Linux（glibc）と macOS の x86_64 / aarch64 向けバイナリ、Docker イメージ、Nix がある。Windows は WSL2 経由。",
+  "caveats": "ライセンスは AGPL-3.0 で、組み込みや社内サービス化では条件の確認が要る。独自実装のため、Web API の対応は Chrome と完全には一致しない（リリースノートでも API の追加・修正が続いている）。速度・メモリの比較は README の自己計測。musl 系 Linux（Alpine など）ではバイナリが動かず、Android にもネイティブ版がない。",
+  "tags": [
+    "開発ツール",
+    "AI エージェント",
+    "自動化・ワークフロー",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
