@@ -1,0 +1,43 @@
+{
+  "repo": "cjpais/Handy",
+  "summarized_at": "2026-11-02",
+  "short": "Handy は、オフラインで動く音声入力のデスクトップアプリ。ショートカットを押して話すと、文字起こし結果が今開いているアプリのテキスト欄に貼り付けられる。",
+  "what": "オフラインで動く音声文字起こしのデスクトップアプリ",
+  "can_do": [
+    "ショートカットを押している間（または切り替え式）録音し、離すと文字起こしして貼り付ける",
+    "Whisper（Small〜Large）か Parakeet V3 のモデルを選べる",
+    "Silero の VAD で無音を取り除く",
+    "Windows、macOS、Linux で動く",
+    "音声はクラウドに送らず、PC 内で処理する"
+  ],
+  "install": [
+    "`brew install --cask handy`（macOS。Homebrew cask は作者の管理外）",
+    "`winget install cjpais.Handy`（Windows。winget は作者の管理外）",
+    "`sudo apt install ./Handy_*.deb`（Debian/Ubuntu。リリースページから .deb を取得する）"
+  ],
+  "how_to_use": "起動してマイクとアクセシビリティの権限を許可し、設定でショートカットを決める。あとは文字を入れたいアプリで押して話す。",
+  "use_cases": [
+    "ターミナルや Slack、ドキュメントへの入力を、声で下書きするのに使えそう",
+    "音声をクラウドに出せない環境での文字起こしに使えそう"
+  ],
+  "for_whom": "音声入力を使いたいが、音声を外部に送りたくない人",
+  "similar": [
+    "macOS／Windows の標準音声入力：用途は近い。こちらはローカルでモデルを選べる",
+    "OpenAI Whisper：同じモデル系統。Whisper 単体は CLI で、こちらはショートカットで貼り付けまで行う"
+  ],
+  "tech": "Rust 製（Tauri v2）。フロントエンドは React／TypeScript（bun）。Whisper（GPU があれば使う）と Parakeet V3（CPU 向け）。",
+  "caveats": "v0.9.x で 1.0 前。日本語の認識精度は選ぶモデル次第で、今回は確認していない。Homebrew と winget のパッケージは作者の管理外。作られて約1年8か月。",
+  "tags": [
+    "音声・画像・動画",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

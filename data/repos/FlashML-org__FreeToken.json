@@ -1,0 +1,46 @@
+{
+  "repo": "FlashML-org/FreeToken",
+  "summarized_at": "2026-11-02",
+  "short": "FreeToken は、MoE（Mixture-of-Experts）の大きな LLM を、ゲーミング PC などの手元の GPU と CPU で動かす推論エンジン。デスクトップアプリと Python の CLI があり、Anthropic／OpenAI 互換の API を出す。",
+  "what": "大きな MoE LLM を手元の PC で動かす推論エンジン",
+  "can_do": [
+    "GPU と CPU を併用して、VRAM に収まらない大きな MoE モデルを動かす（expert の cache と prefill の streaming を使う）",
+    "実行中に expert cache と KV cache の VRAM 配分を、再起動せずに変える",
+    "Anthropic／OpenAI 互換の API を出し、Claude Code や Codex などのエージェントから使う",
+    "GGUF のモデルと画像入力（mmproj）に対応する",
+    "Windows／Linux 向けのデスクトップアプリで、実行・チャット・調整ができる"
+  ],
+  "install": [
+    "`uv pip install \"freetoken[accel]\"`",
+    "`git clone https://github.com/FlashML-org/FreeToken.git && cd FreeToken`",
+    "`uv venv && source .venv/bin/activate`",
+    "`uv pip install -e \".[accel]\"`"
+  ],
+  "how_to_use": "デスクトップアプリは flashml.ai から入れる。CLI は docs/quickstart.md と docs/cli.md に沿って、モデルを指定して起動する（今回は docs を読んでいない）。",
+  "use_cases": [
+    "社内の GPU 1枚の機材で、大きなオープンウェイトモデルをコーディングエージェントの裏側に置けるか試すのに使えそう",
+    "ローカル推論の offload 戦略（CPU と GPU の分担）の参考になりそう"
+  ],
+  "for_whom": "手元の NVIDIA GPU で、大きなオープンウェイトの MoE モデルを動かしたい人",
+  "similar": [
+    "llama.cpp：GGUF を CPU／GPU 混在で動かす点が近い。こちらは MoE の expert 配置に特化している",
+    "vLLM：API サーバーとしては近いが、データセンター向けで、こちらは消費者向け GPU が対象"
+  ],
+  "tech": "Python（3.10 以上）。FastAPI、openai、huggingface_hub、numpy など。NVIDIA CUDA（RTX 30／40／50 シリーズ）が前提で、OS は Linux と Windows。",
+  "caveats": "v0.2.1 で、classifier は Beta。2026年7月に作られて約3か月。README の「290B 以上を対話的な速度で」は作者の主張で、確認していない。NVIDIA GPU が要る。自前の weight 形式（FTW）があり、古い checkpoint の修復手順がある。Apache-2.0。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:setup.py",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release、pyproject は読んだが、docs/ の導入手順や実際の速度は調べておらず、性能の数値は作者の主張に依る"
+}

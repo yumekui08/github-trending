@@ -1,0 +1,35 @@
+{
+  "repo": "public-apis/public-apis",
+  "summarized_at": "2026-11-02",
+  "short": "public-apis は、無料で使える公開 API を分野別にまとめた、コミュニティ管理のリスト。動くコードではなく、API を探すための索引。",
+  "what": "公開 API を分野別に集めたリスト",
+  "can_do": [
+    "動物、認証、ブロックチェーン、天気など、分野別の索引から無料の公開 API を探す",
+    "各 API の説明、認証方式の有無、HTTPS 対応、CORS の可否を表で比べる",
+    "MCP Server の一覧も載っている",
+    "PR で API を追加でき、scripts/ の検査スクリプトで形式を確かめる"
+  ],
+  "install": [],
+  "how_to_use": "README の Index から分野を選び、表の API 名のリンク先で仕様を確認する。リポジトリ自体を動かす必要はない。",
+  "use_cases": [
+    "検証用やプロトタイプ用のダミーデータ・外部 API を探すのに使えそう",
+    "社内ツールや監視スクリプトに外部データ（IP 情報、天気など）を足す候補探しに使えそう"
+  ],
+  "for_whom": "試作や自動化で、手早く使える外部 API を探したい人",
+  "similar": [
+    "RapidAPI Hub：API の探索という用途は近い。こちらは GitHub 上の Markdown リストで、アカウント不要"
+  ],
+  "tech": "Python 製の検査スクリプト（scripts/）が付くが、中身は Markdown のリスト。",
+  "caveats": "README の冒頭は APILayer（商用 API 群）の宣伝が大きい。一覧の API が今も動くか、無料枠がいつまで続くかは保証されない。ライセンスは MIT。",
+  "tags": [
+    "学習資料",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

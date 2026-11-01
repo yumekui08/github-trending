@@ -1,0 +1,48 @@
+{
+  "repo": "beenuar/AiSOC",
+  "summarized_at": "2026-11-02",
+  "short": "AiSOC は、セキュリティのログを取り込み、検知・相関付け・AI エージェントによる調査までを行うセルフホスト型の SOC 基盤。エージェントの各ステップを記録して後から再生でき、対応は人が承認してから実行される。",
+  "what": "セルフホストできる AI 付きの SOC（セキュリティ運用）基盤",
+  "can_do": [
+    "セキュリティ製品のテレメトリを取り込み、ルール（README では 7015 件中 2534 件が実行可能）で検知する",
+    "発火したアラートを incident にまとめる",
+    "AI エージェントが incident を調査し、プロンプトとツール呼び出しを全部記録する",
+    "MITRE ATT&CK に沿った調査と、CISA KEV などの脅威情報の取り込み",
+    "対応案を出し、ベンダー側に反映する前に人が承認する",
+    "MCP server を備え、Claude や Cursor から使える"
+  ],
+  "install": [
+    "`git clone https://github.com/beenuar/AiSOC && cd AiSOC`",
+    "`make up`",
+    "`pip install aisoc-sandbox && aisoc-sandbox demo`（Docker なしで、アラート1件が処理される流れをオフラインで試す）",
+    "Docker Compose v2 で、Docker VM に 8GB メモリと 20GB の空きが要る。初回に約 2GB のモデルを取得する"
+  ],
+  "how_to_use": "`make up` が表示するアドレスでサインインする（管理者のパスワードは初回に1度だけ表示される）。`make smoke` で取り込みから検知までの動作確認、`make doctor` で環境の点検ができる。",
+  "use_cases": [
+    "SOC の AI 支援による一次対応が実際に使えるかを、自前の環境で試す検証に使えそう",
+    "エージェントの判断を記録・再生する設計は、運用自動化の監査の参考になりそう"
+  ],
+  "for_whom": "SOC や incident response を担当し、AI 支援の一次調査を自前環境で試したいエンジニア",
+  "similar": [
+    "Wazuh：SIEM／検知の面は近い。こちらは AI エージェントによる調査が中心",
+    "Splunk SOAR、Cortex XSOAR：対応の自動化は近い。こちらは OSS でセルフホスト"
+  ],
+  "tech": "Python と TypeScript（apps/web）の構成で、Docker Compose で起動する。Kafka、Postgres を使い、LLM は同梱のローカルモデルか外部モデルを選べると思われる（API キーなしでも動くと README にある）。LangGraph を使う。",
+  "caveats": "v21.0.0 だが、README 自身が機能ごとに Beta などの成熟度を表にしており、npm パッケージは未公開の部分がある。リポジトリは 15,000 ファイル近くあり、作者による進捗メモが多い。検知ルール数や速度の数値は作者自身の主張。実運用の前に環境要件（8GB・20GB）と検知の質を確かめる必要がある。MIT。",
+  "tags": [
+    "セキュリティ",
+    "AI エージェント",
+    "セルフホスト",
+    "監視・可観測性"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release は読んだが、docs/audit/REPOSITORY_REALITY.md など実際の動作状況の資料と、コードの中身までは調べておらず、機能の成熟度は README の自己申告に依る"
+}

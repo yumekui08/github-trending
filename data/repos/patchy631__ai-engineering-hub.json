@@ -1,0 +1,36 @@
+{
+  "repo": "patchy631/ai-engineering-hub",
+  "summarized_at": "2026-11-02",
+  "short": "ai-engineering-hub は、LLM、RAG、AI エージェントのサンプルプロジェクトを 90 件以上集めた学習用リポジトリ。難易度別（初級・中級・上級）に並び、1 プロジェクトが 1 ディレクトリになっている。",
+  "what": "LLM・RAG・エージェントの実装例を集めた学習用リポジトリ",
+  "can_do": [
+    "初級（OCR、ローカルの ChatGPT 風 UI、基本的な RAG など）から上級（fine-tuning、本番構成）まで、難易度別に実装例を探す",
+    "Llama、DeepSeek、Qwen、Gemma などを Ollama や Streamlit で動かす例を読む",
+    "GitHub のリポジトリと対話する RAG、動画と対話する RAG などの具体例を参照する",
+    "ai-engineering-roadmap で学習の順番を確認する"
+  ],
+  "install": [],
+  "how_to_use": "README の目次から難易度と分野を選び、気になるプロジェクトのディレクトリに入る。依存と実行方法はプロジェクトごとの README にあると思われる（今回は個別には読んでいない）。",
+  "use_cases": [
+    "RAG やエージェントの最小構成を、動くコードで手早く把握するのに使えそう",
+    "ローカル LLM を社内ツールに組み込む前の、試作の叩き台に使えそう"
+  ],
+  "for_whom": "LLM アプリの作り方を、コードを読みながら学びたいエンジニア",
+  "similar": [
+    "LangChain の cookbook や LlamaIndex の examples：サンプル集という点は近い。こちらは多数の独立した小プロジェクトの集まり"
+  ],
+  "tech": "Python が中心と思われる（Jupyter notebook、Streamlit、Ollama、LlamaIndex、Qdrant など）。プロジェクトごとに依存が別で、リポジトリ全体では動かない。",
+  "caveats": "ソフトウェアではなく教材・サンプル集。プロジェクトごとに依存と品質が違い、一部は古いモデルや外部の有料 API が前提のはず。README に作者のニュースレター（Daily Dose of Data Science）の宣伝がある。MIT。",
+  "tags": [
+    "学習資料",
+    "LLM",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の目次と先頭の一部（約 4.5KB）と tree の一部だけを読んだ。個別プロジェクトの中身や実行方法は調べていない"
+}

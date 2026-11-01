@@ -1,0 +1,39 @@
+{
+  "repo": "hyprwm/Hyprland",
+  "summarized_at": "2026-11-02",
+  "short": "Hyprland は、Wayland 向けの tiling compositor。wlroots などに頼らず自前で作られ、アニメーションや blur などの見た目を重視する。設定は保存すると即時に反映される。",
+  "what": "見た目も重視した、独立実装の Wayland tiling compositor",
+  "can_do": [
+    "dwindle、scrolling、master、monocle などの tiling layout を、workspace ごとに切り替える",
+    "window、monitor、layer ごとに細かい rule を決める",
+    "socket 経由の IPC と、plugin（内蔵の plugin manager 付き）で拡張する",
+    "gradient border、blur、shadow、bezier／spring curve のアニメーション",
+    "scratchpad（special workspace）、tabbed の window group、tearing 対応",
+    "設定を保存すると即座に再読み込みされる"
+  ],
+  "install": [],
+  "how_to_use": "手順は wiki にある（Install: wiki.hypr.land/getting-started/installation/、Quick Start: master-tutorial）。README にコマンドは書かれていない。設定ファイルは wiki の Configure を参照する。",
+  "use_cases": [
+    "Linux デスクトップで、キーボード中心の tiling 環境を作るのに使えそう",
+    "開発用の作業環境で、workspace と window rule を使い分けるのに使えそう"
+  ],
+  "for_whom": "Linux のデスクトップを細かく作り込みたい人",
+  "similar": [
+    "Sway：Wayland の tiling compositor。Sway は wlroots 製で i3 互換、こちらは独立実装で見た目の機能が多い",
+    "i3、bspwm：tiling WM の考え方は近いが、X11 向け"
+  ],
+  "tech": "C++（CMake。ビルドに CMake 3.30 以上と pkg-config を使う）。Linux 上の Wayland 向けで、GPU でアニメーションを描画する。",
+  "caveats": "README に「最新の（bleeding-edge）機能を入れる」とあり、リリースごとの変更が大きいと思われる。Wayland の compositor なので、X11 だけの環境や一部の NVIDIA の組み合わせでは調べる必要がある（今回は未確認）。v0.57.0（1.0 前）。ライセンスは BSD-3-Clause。",
+  "tags": [
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:CMakeLists.txt",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README は機能の列挙が中心で、インストール手順と設定例は wiki にあり、読んでいない。依存ライブラリも CMakeLists の一部しか見ていない"
+}

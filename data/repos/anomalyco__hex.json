@@ -1,0 +1,44 @@
+{
+  "repo": "anomalyco/hex",
+  "summarized_at": "2026-11-02",
+  "short": "hex は、Mac・Windows・Linux で動くローカルの音声入力アプリ。キーを押して話し、離すと端末内で文字起こしして、使っているアプリに貼り付ける。",
+  "what": "ローカルで動く音声入力のデスクトップアプリ",
+  "can_do": [
+    "ショートカットを押している間に話し、離すと文字起こしして貼り付ける",
+    "初回に音声モデルを取得し、以降は端末内で処理する（README の説明）",
+    "macOS（Apple silicon）、Windows（x64、ARM64）、Linux（x86_64、ARM64）に対応",
+    "experimental な機能が Labs にまとまっている",
+    "docs/cli.md があり、CLI もあると思われる"
+  ],
+  "install": [
+    "`brew install --cask anomalyco/tap/hex`",
+    "`yay -S hex-bin`（AUR）",
+    "`curl -fsSL https://anoma.ly/hex/install-linux.sh | sh`（Linux）",
+    "`nix profile install github:anomalyco/hex`"
+  ],
+  "how_to_use": "インストーラ（DMG、Windows installer、.deb、.rpm など）か上のコマンドで入れ、ショートカットを決めて、貼り付けたいアプリで押して話す。",
+  "use_cases": [
+    "ターミナルや issue、メールの下書きを声で入力するのに使えそう",
+    "音声を外に出したくない環境の文字起こしに使えそう"
+  ],
+  "for_whom": "音声入力を端末内で完結させたい人",
+  "similar": [
+    "Handy（cjpais/Handy）：ほぼ同じ用途のローカル音声入力アプリ",
+    "macOS／Windows の標準音声入力：用途は近いが、こちらはモデルを端末内で動かす"
+  ],
+  "tech": "Rust 製（edition 2024、Cargo workspace）。Windows 用 resource の組み込みなど OS ごとの対応がある。使う音声モデルの種類は今回調べていない。",
+  "caveats": "2026年7月に作られたばかりで、変化が速いと思われる。pull request を受け付けず、issue から agent が直す運用と README にある。リリースのタグが @kitlangton/hex@0.3.1 で、Cargo.toml の version 3.2.0 と合わず、どれが最新の安定版か材料からは分からない。MIT。",
+  "tags": [
+    "音声・画像・動画",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README が短く、使う音声モデルや設定の中身は docs/ を読んでおらず分からなかった。リリースのタグとバージョンの食い違いも未確認"
+}

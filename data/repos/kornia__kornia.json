@@ -1,0 +1,43 @@
+{
+  "repo": "kornia/kornia",
+  "summarized_at": "2026-11-02",
+  "short": "kornia は、PyTorch 上で動く微分可能なコンピュータビジョンのライブラリ。画像変換、幾何、特徴量マッチングなど 1,200 以上の operator を、バッチ処理と GPU で使える。",
+  "what": "PyTorch 向けの微分可能なコンピュータビジョンライブラリ",
+  "can_do": [
+    "画像のリサイズ・回転・ワープ・ぼかしなどを、サンプルごとのパラメータ付きでバッチ一括処理する",
+    "カメラモデル、epipolar geometry、minimal solver と RANSAC など幾何処理",
+    "特徴点の検出・記述・マッチング、エッジ検出、モルフォロジー、色空間変換",
+    "データ拡張（augmentation）と画像の loss／metrics",
+    "処理が自動微分に対応し、GPU（CUDA、MPS）でも動く"
+  ],
+  "install": [
+    "`pip install kornia`",
+    "Python 3.11 以上、PyTorch 2.5.1 以上が必要"
+  ],
+  "how_to_use": "`import kornia` して、`kornia.filters.gaussian_blur2d` のような関数に PyTorch の tensor を渡す。まずは公式の Try it Now（Colab）やチュートリアルを見る。",
+  "use_cases": [
+    "学習パイプラインで、データ拡張を GPU 上でまとめて行うのに使えそう",
+    "画像の位置合わせやカメラ校正の処理を PyTorch の学習に組み込むのに使えそう"
+  ],
+  "for_whom": "PyTorch で画像・幾何処理をする機械学習エンジニアや研究者",
+  "similar": [
+    "torchvision：リサイズや色調整は重なる。こちらは幾何や特徴量など範囲が広い",
+    "OpenCV：同種の処理が多い。こちらは自動微分と tensor の GPU 実行が前提"
+  ],
+  "tech": "Python（3.11 以上）。依存は kornia_rs、numpy、torch。CUDA と Apple MPS に対応。",
+  "caveats": "v0.9.0 で 1.0 前のため、API が変わる可能性がある。README の速度比較（OpenCV より速いなど）は作者側の数値で、確認していない。ライセンスは Apache-2.0。",
+  "tags": [
+    "機械学習",
+    "ライブラリ・SDK",
+    "音声・画像・動画"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

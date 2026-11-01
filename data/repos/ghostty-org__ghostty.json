@@ -1,0 +1,37 @@
+{
+  "repo": "ghostty-org/ghostty",
+  "summarized_at": "2026-11-02",
+  "short": "ghostty は、Zig 製の terminal emulator。速度、機能、OS ネイティブの UI を兼ね備えることを目指し、GPU で描画する。C と Zig の埋め込み用ライブラリ libghostty も提供する。",
+  "what": "GPU 描画で OS ネイティブ UI の terminal emulator",
+  "can_do": [
+    "multi-window、tab、pane を備えた terminal として使う",
+    "Kitty graphics protocol、clipboard 系、synchronized rendering など、新しい control sequence に対応する",
+    "xterm との比較監査（audit）で挙動を揃えた、標準準拠の端末エミュレーションを行う",
+    "libghostty を使って、自作アプリに terminal を組み込む"
+  ],
+  "install": [],
+  "how_to_use": "README にコマンドはなく、ghostty.org/download から入手し、ghostty.org/docs で設定する。libghostty は example ディレクトリの C と Zig の例を見る。",
+  "use_cases": [
+    "日常の terminal を置き換える候補として使えそう",
+    "libghostty を使い、自作ツールに terminal 表示を埋め込むのに使えそう"
+  ],
+  "for_whom": "terminal の速度と機能を重視するエンジニア",
+  "similar": [
+    "Alacritty：速度重視の terminal。README も速度は同じ水準としている。こちらは tab や pane などの機能が多い",
+    "kitty、WezTerm：機能の多い GPU terminal で、用途は近い"
+  ],
+  "tech": "Zig 製（C の CMake ビルドも一部）。GPU 描画で、macOS と Linux 向けにネイティブ UI（README の記述）。libghostty は依存なしの C／Zig ライブラリ。",
+  "caveats": "材料に release の情報がなく、バージョンは分からない。README は「安定していて何百万人が使う」とするが、これは作者の記述。Ghostty 独自の control sequence（ロードマップの 6 番目）は未完。Windows 対応は材料から分からない。AI_POLICY.md と VOUCHED の仕組みがあり、貢献には条件があると思われる。MIT。",
+  "tags": [
+    "デスクトップアプリ",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:CMakeLists.txt"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README は読んだが、対応 OS の詳細、設定方法、release を調べていない。性能の主張は作者の記述に依る"
+}
