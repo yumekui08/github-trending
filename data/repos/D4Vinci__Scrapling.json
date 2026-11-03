@@ -1,0 +1,46 @@
+{
+  "repo": "D4Vinci/Scrapling",
+  "summarized_at": "2026-11-03",
+  "short": "Scrapling は、HTTP 取得・ステルスブラウザ・HTML パース・並行クロールを1つにまとめた Python 製の Web scraping フレームワーク。MCP server と CLI も付く。単発の取得から spider によるサイト全体の収集までを同じ API で書ける。",
+  "what": "取得からクロールまで扱う Python の scraping フレームワーク",
+  "can_do": [
+    "HTTP リクエスト、またはブラウザ（Playwright 系）でページを取得。JavaScript の描画や Cloudflare Turnstile の突破機能もある",
+    "CSS / XPath / テキスト / 正規表現でデータを抽出。ページ変更後も要素を追跡する adaptive 機能",
+    "Spider クラスで並行クロール。proxy rotation、retry、pause/resume、JSON / JSONL / CSV / XML への出力",
+    "ページを LLM 向けの Markdown に変換",
+    "MCP server（AI エージェントがブラウザ操作・抽出を行う）、Agent Skill、`scrapling extract` の CLI、対話 shell"
+  ],
+  "install": [
+    "`pip install scrapling`（パーサのみ。Python 3.10 以上）",
+    "`pip install \"scrapling[fetchers]\"`",
+    "`scrapling install`（ブラウザと依存をダウンロード）"
+  ],
+  "how_to_use": "`from scrapling.fetchers import Fetcher` で `Fetcher.get(url)` し、`page.css('.quote .text::text').getall()` で抽出する。複数ページなら `Spider` を継承して `parse` を書き、`.start()` で実行。コード不要なら `scrapling extract get URL out.md`。fetchers / spiders を使うには `[fetchers]` extra が必要。",
+  "use_cases": [
+    "対象サイトの公開情報（リリースノート、ベンダーの告知など）を定期収集して Markdown や JSON にする用途に使えそう",
+    "LLM 向けの社内ドキュメントやサイトを Markdown 化して RAG の材料にする用途に使えそう",
+    "AI エージェントにブラウザ経由の情報取得をさせる MCP server として使えそう"
+  ],
+  "for_whom": "Python で scraping やクロールを書く人。bot 対策のあるサイトからデータを取りたい人。AI エージェントにウェブ取得をさせたい人。",
+  "similar": [
+    "Scrapy：Python の定番クロールフレームワーク。こちらはブラウザ取得とステルス機能が標準で付く",
+    "Beautiful Soup：パーサのみ。こちらは取得とクロールまで含む",
+    "Playwright：ブラウザ自動化の基盤。こちらはそれを使う上位の scraping 層"
+  ],
+  "tech": "Python 3.10 以上。コア依存は lxml、cssselect、orjson。fetchers で curl_cffi、playwright、patchright、browserforge など。Docker イメージあり。",
+  "caveats": "v0.5 で破壊的変更が多く、移行ガイドの確認が必要（リリースノートの記述）。Cloudflare などの bot 対策の回避機能がある。対象サイトの利用規約と法的な扱いに注意が必要。classifiers は Beta（4）。ブラウザのダウンロードが必要で、環境が重い。",
+  "tags": [
+    "データ処理",
+    "ライブラリ・SDK",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

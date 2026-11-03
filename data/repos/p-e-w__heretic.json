@@ -1,0 +1,42 @@
+{
+  "repo": "p-e-w/heretic",
+  "summarized_at": "2026-11-03",
+  "short": "Heretic は、学習なしで言語モデルの挙動を書き換える Python 製 CLI。既定では censorship（拒否応答）を抑える。対比させたプロンプトと scorer の値をもとに、Optuna でパラメータを最適化して重みを修正する。",
+  "what": "学習せずに LLM の挙動を書き換える CLI",
+  "can_do": [
+    "指定した Hugging Face のモデルから、拒否応答（censorship）を抑えたモデルを作る（既定の動作）",
+    "設定ファイルの切り替えで slop の抑制、sycophancy の低減、humor の低減、感情面の調整もできる",
+    "scorer plugin（拒否率、KL divergence など）を自作して、何を最適化するか決められる",
+    "処理後に、モデルの保存、Hugging Face へのアップロード、チャットでの確認、ベンチマーク実行を選べる",
+    "bitsandbytes による 4bit 量子化で必要な VRAM を減らす"
+  ],
+  "install": [
+    "`pip install -U heretic-llm`",
+    "前提：Python 3.10 以上と、ハードウェアに合った PyTorch 2.6 以上"
+  ],
+  "how_to_use": "`heretic Qwen/Qwen3-4B-Instruct-2507` のようにモデル名を渡す。開始時に実行環境を測定して batch size を決める。RTX 3090 で上のモデルを処理すると 30〜40 分。別の目的には `config.noslop.toml` などの設定ファイルを指定する。",
+  "use_cases": [
+    "ローカル LLM が過剰に拒否する場面（セキュリティ検証やログ分析の質問など）を減らす用途に使えそう",
+    "モデルの回答の癖を、スコアで測りながら調整する実験に使えそう"
+  ],
+  "for_whom": "ローカルで LLM を動かし、モデルの挙動を調整したい人。abliteration 系の手法を試したい人。",
+  "similar": [
+    "abliteration 系のツール全般：README は競合ツールで作ったモデルと同等以上のベンチマークだと述べている（出典は Reddit の投稿）"
+  ],
+  "tech": "Python 3.10 以上。PyTorch、transformers 5.x、accelerate、bitsandbytes、peft、Optuna、lm-eval など。GPU が実質必要で、VRAM はモデルの大きさ次第。",
+  "caveats": "モデルの安全対策を取り除く用途が中心。作ったモデルの扱いや配布は、元モデルのライセンスと利用規約に注意が必要。ライセンスは AGPL-3.0。2.0 で設定ファイルの互換性がなくなり、研究用の機能も削除された。GPU とモデルに応じて数十分から数時間かかる。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

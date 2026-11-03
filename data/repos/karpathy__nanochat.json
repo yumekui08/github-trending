@@ -1,0 +1,44 @@
+{
+  "repo": "karpathy/nanochat",
+  "summarized_at": "2026-11-03",
+  "short": "nanochat は、LLM の tokenizer 学習から pretraining、finetuning、評価、CLI での対話までを1リポジトリで通せる、最小構成の学習環境。8xH100 のノード約2時間（README の見積もりで約 $48）で GPT-2 相当の性能のモデルを学習できるとされる。",
+  "what": "LLM を一から学習する最小構成の PyTorch 実装",
+  "can_do": [
+    "tokenizer の学習、pretraining、SFT、RL、評価、推論までのフルパイプラインを実行",
+    "`--depth`（層数）を1つ変えるだけで、幅・学習率などを自動計算して各サイズのモデルを学習",
+    "`runs/speedrun.sh` で GPT-2 相当のモデルを学習し、`scripts.chat_cli` で対話",
+    "「GPT-2 に到達するまでの時間」のリーダーボードに学習の改善を載せる（現在 1.65 時間）",
+    "CPU / MPS 向けの小規模な動作（`runs/runcpu.sh`）"
+  ],
+  "install": [
+    "`uv sync --extra gpu`（CUDA 向け）",
+    "`uv sync --extra cpu`（CPU / MPS 向け）",
+    "`source .venv/bin/activate`"
+  ],
+  "how_to_use": "8xH100 の GPU ノードで `bash runs/speedrun.sh` を実行（約1.5〜2時間）。終わったら `python -m scripts.chat_cli` で学習したモデルと対話する。GPU メモリが 80GB 未満なら `--device-batch-size` を下げる。",
+  "use_cases": [
+    "LLM の学習工程全体のコードを読んで、仕組みを学ぶ用途に向いていそう",
+    "社内の GPU 環境でスクラッチ学習の費用・時間を見積もる検証に使えそう",
+    "pretraining の改善手法を試し、同じ指標で比較する実験基盤に使えそう"
+  ],
+  "for_whom": "LLM の学習の仕組みをコードで理解したい人。小規模なモデルで研究・実験を回したい人。",
+  "similar": [
+    "nanoGPT：同じ作者の以前の最小 GPT 実装。こちらは SFT・RL・推論・評価まで含む",
+    "modded-nanogpt：GPT-2 の speedrun を競うリポジトリ。README がこれに着想を得たと述べている"
+  ],
+  "tech": "Python 3.10 以上、PyTorch 2.9.1（CUDA 12.8 または CPU）。依存は tiktoken、rustbpe、kernels、wandb など。uv で管理。実用的な学習には GPU（8xH100 想定）が必要。",
+  "caveats": "実用的な学習には 8xH100 クラスの GPU と、数十ドル規模のクラウド費用が必要。得られるモデルは README 自身が「幼稚園児と話すようなもの」と述べる性能で、実用の ChatGPT 代替ではない。CPU / MPS など GPU 以外の経路は作者が全て検証していない、と README に書かれている。実験的な research harness で、今の主な開発対象は pretraining の調整。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "学習資料"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

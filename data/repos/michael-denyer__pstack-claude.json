@@ -1,0 +1,46 @@
+{
+  "repo": "michael-denyer/pstack-claude",
+  "summarized_at": "2026-11-03",
+  "short": "pstack-claude は、Cursor 向けスキル集 pstack（Lauren Tan 作）を Claude Code、Codex、Copilot、Pi、Muse など他の agent harness に移植したもの。調査・設計・実装・検証の手順をスキルとして与え、`poteto-mode` にゴールを伝えると適切なワークフローを選ぶ。",
+  "what": "コーディングエージェント向けのワークフロースキル集",
+  "can_do": [
+    "`poteto-mode` にゴールを伝えると、バグ修正・計画・機能追加・refactoring・調査などの playbook から適切なものを選んで進める",
+    "バグでは失敗の再現、`how` / `why` での調査、修正の委任、失敗ケースの再実行までを行い、証拠付きで結果を返す",
+    "`/create-formal-verification-skill` で、並行処理の bug など test で届かない性質を検証するスキルをプロジェクトに残す",
+    "SessionStart hook で、タスクを `poteto-mode` に振り分ける指示を自動で差し込む",
+    "`setup-pstack` で自動 routing の切り替え、モデル、役割ごとの reasoning effort を設定"
+  ],
+  "install": [
+    "`/plugin marketplace add michael-denyer/pstack-claude`（Claude Code 2.1.292 以上）",
+    "`/plugin install pstack@pstack-claude`",
+    "`codex plugin marketplace add michael-denyer/pstack-claude`",
+    "`codex plugin add pstack@pstack-claude`"
+  ],
+  "how_to_use": "インストール後、Claude Code で「Use poteto-mode to fix the search filter resetting when I change pages.」のようにゴールを伝える。Claude Code の marketplace は auto-update が既定でオフなので、必要なら `/plugin` の Marketplaces タブで有効にする。",
+  "use_cases": [
+    "Claude Code で作業するときに、調査から検証までの手順を毎回同じ品質で踏ませる用途に使えそう",
+    "コードレビューや PR 保守をスキルとして標準化し、チームで共有する用途に使えそう",
+    "Claude Code と Codex など複数の agent harness を使い分けるときに、同じスキル集を揃えて使えそう"
+  ],
+  "for_whom": "Claude Code や Codex などのコーディングエージェントを日常的に使い、作業の進め方を型にしたい人。",
+  "similar": [
+    "cursor/plugins の pstack：元になった Cursor 向けのもの。こちらは他の harness 向けに事前変換した移植版",
+    "superpowers などの Claude Code スキル集：目的は近いが、中身と思想は別"
+  ],
+  "tech": "TypeScript と Markdown のスキル定義。Pi 向けの extension を含み、Bun を使う。Claude Code plugin、Codex plugin、Copilot、Muse、Pi、OpenCode、Gemini CLI などに対応。formal verification 用に Lean のコードも含む。",
+  "caveats": "別人の作った upstream（Cursor 向け pstack）の非公式な移植版で、upstream に追従しつつ独自の policy fork も持つ。リリースが 0.9.x と頻繁に出ており、仕様が変わりやすいと思われる。Codex と Muse では hook を承認するまで routing が動かない。OpenCode や Gemini CLI など hook のない環境では `poteto-mode` を名前で呼ぶ必要がある。Copilot 版は CLI 1.0.87〜1.0.92 で検証されたものと README に書かれている。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "自動化・ワークフロー"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とリリースノートは読んだが、各スキルの中身（SKILL.md）までは読んでいないため、個々の機能の挙動は README の記述に頼っている"
+}

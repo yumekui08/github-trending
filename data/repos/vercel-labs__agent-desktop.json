@@ -1,0 +1,45 @@
+{
+  "repo": "vercel-labs/agent-desktop",
+  "summarized_at": "2026-11-03",
+  "short": "agent-desktop は、AI エージェントがデスクトップアプリを操作するための CLI。OS の accessibility tree を JSON で返し、要素の ref を指定してクリックや入力を行う。macOS・Windows・Linux に対応。",
+  "what": "デスクトップアプリを操作させる AI エージェント向け CLI",
+  "can_do": [
+    "アプリの UI を accessibility tree から読み取り、操作できる要素ごとに ref を振った JSON を返す（snapshot）",
+    "ref を指定してクリック、入力、選択、スクロールなどを実行する",
+    "アプリやウィンドウの一覧取得・起動・移動・リサイズ、clipboard の読み書き、通知の取得と消去",
+    "コマンドは全て1つの JSON（ok と data か error）を出力し、エラーには retry できるかの情報が付く",
+    "C ライブラリ（libagent_desktop_ffi）も配布され、CLI を起動せずプロセス内から呼べる"
+  ],
+  "install": [
+    "`npm install -g agent-desktop`",
+    "macOS は Accessibility 権限が必要：`agent-desktop permissions --guide`",
+    "Linux は `at-spi2-core` と GUI セッションが必要"
+  ],
+  "how_to_use": "`agent-desktop snapshot --app Finder -i` で操作可能な要素と ref を取得し、`agent-desktop click @<snapshot_id>:e8` のように ref を指定して操作。変更後はもう一度 snapshot して確認する。ref は snapshot ごとに固有で、UI が変わると STALE_REF になるので取り直す。",
+  "use_cases": [
+    "GUI でしか操作できない業務アプリやベンダー製ツールの操作を、エージェントに任せる用途に使えそう",
+    "デスクトップアプリの操作手順を自動化するスクリプトを作る際の土台に使えそう",
+    "GUI アプリの動作確認を JSON の出力で検証する用途に使えそう"
+  ],
+  "for_whom": "AI エージェントにデスクトップアプリを操作させたい人。Claude Code などの agent harness に skill として組み込みたい人。",
+  "similar": [
+    "Playwright / Puppeteer：ブラウザ専用。こちらは OS 標準のアプリ全般が対象",
+    "pyautogui：座標とピクセルで操作する。こちらは accessibility tree の要素を参照する"
+  ],
+  "tech": "Rust 製（edition 2024、clap、serde）。macOS / Windows / Linux（AT-SPI）で動く。npm で配布され、ネイティブバイナリ（x64 / ARM64）を含む。",
+  "caveats": "snapshot・screenshot・clipboard にはデスクトップ上の秘匿情報が含まれうるので、公開ログに出さないよう README が注意している。Linux のマウス入力や画面取得は X11 前提の部分がある（Wayland は一部のみ）。key-down・key-up・mouse-down・mouse-up の4コマンドは、daemon がない現状では実行を拒否する。Homebrew・Scoop のパッケージはまだ審査中で、未提供。オプションの JEV helper は画面の説明を設定したモデルのプロバイダに送る。",
+  "tags": [
+    "AI エージェント",
+    "自動化・ワークフロー",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
