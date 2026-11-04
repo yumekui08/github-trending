@@ -1,0 +1,47 @@
+{
+  "repo": "floci-io/floci",
+  "summarized_at": "2026-11-04",
+  "short": "floci は、AWS をローカルで再現するエミュレータ。S3、SQS、DynamoDB、Lambda など多数のサービスを localhost:4566 で受け付け、アカウントや auth token なしで使える。LocalStack Community 版の代わりを狙った MIT ライセンスのもの。",
+  "what": "AWS をローカルで再現するエミュレータ",
+  "can_do": [
+    "AWS SDK / CLI / Terraform / CDK / OpenTofu の向き先を http://localhost:4566 に変えるだけで、ローカルの AWS 互換環境に対して動かせる",
+    "S3、SQS、SNS、DynamoDB、IAM、KMS、CloudFormation など多数のサービスをプロセス内で再現する",
+    "Lambda、RDS、ElastiCache、MSK、ECS、EC2、EKS、OpenSearch などは実際の Docker コンテナで動かす",
+    "保存方式を memory / persistent / hybrid / wal から選べる",
+    "Web コンソール（http://localhost:4566/_floci/ui）で、ローカルのリソースをブラウザから確認できる",
+    "LocalStack からはイメージの差し替えだけで移行できるとされている"
+  ],
+  "install": [
+    "`floci start`（公式 CLI floci-cli を使う方法。CLI 自体のインストール手順は README に無い）",
+    "`docker compose up`（image: floci/floci:latest、ports: 4566:4566 の compose.yaml を用意して実行）"
+  ],
+  "how_to_use": "`eval $(floci env)` で AWS 用の環境変数を設定し、そのまま `aws s3 mb s3://my-bucket` のように通常の AWS CLI を使う。Docker Compose の場合は AWS_ENDPOINT_URL=http://localhost:4566 と、空でない適当な認証情報（test/test など）を自分で設定する。Lambda など Docker を使うサービスや Web コンソールには、Docker ソケットのマウントが要る。",
+  "use_cases": [
+    "CI で AWS 依存のテストを実クラウドなしで回すのに使えそう",
+    "Terraform / CDK / CloudFormation の変更を、課金やアカウントなしで手元で試すのに使えそう",
+    "LocalStack Community 版からの乗り換え先の候補になりそう",
+    "SQS / SNS / Lambda を使うアプリの結合テストを、Testcontainers 経由で組み込むのに使えそう"
+  ],
+  "for_whom": "AWS を使うアプリやインフラコードを、手元や CI でクラウドなしに検証したい人。LocalStack の無償版が使えなくなって代わりを探している人。",
+  "similar": [
+    "LocalStack：用途は同じ。README では LocalStack Community 版は 2026年3月に終了し auth token が必要になったとして、こちらは MIT で無償と説明している",
+    "MinIO / moto：単一サービス、または Python 向けのモック。こちらは多数のサービスを 1 つのエンドポイントにまとめる"
+  ],
+  "tech": "Java 製（Quarkus 3.40、Maven）。GraalVM native image と JVM 版があり、Linux / macOS / Windows 向けの単体バイナリ floci-aws も配布。Docker イメージ floci/floci。コンテナ系サービスの利用には Docker が要る。",
+  "caveats": "作られたのは 2026年2月で新しく、リリースの変更履歴を見ると機能追加が非常に速い。互換性の範囲は更新で変わりやすいと思われる。Bedrock Runtime、Textract、Transcribe などは固定値を返す stub で、実処理はしない。README の起動時間・メモリ・イメージサイズの比較は作者側の数値。自分の環境で測った値ではない。Lambda、RDS、EKS など Docker 実行のサービスは Docker とそのイメージの取得が必要で、環境次第で重い。本物の AWS との挙動差は残る（CloudWatch などの simulation、policy が inert なものがあるとの注記が README にある）。",
+  "tags": [
+    "インフラ・運用",
+    "開発ツール",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pom.xml",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

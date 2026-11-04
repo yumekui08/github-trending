@@ -1,0 +1,44 @@
+{
+  "repo": "Usagi-org/ai-goofish-monitor",
+  "summarized_at": "2026-11-04",
+  "short": "ai-goofish-monitor は、中国の中古品売買サイト「闲鱼（Xianyu / Goofish）」の商品を Playwright で定期的に取得し、AI で条件に合うか判定して通知する Python 製の監視ツール。Web 管理画面つき。README は中国語。",
+  "what": "闲鱼の商品を監視して AI で選別する Web アプリ",
+  "can_do": [
+    "キーワード・価格帯・送料無料・新着範囲・省/市/区の地域で絞った検索タスクを複数作り、並行して実行する",
+    "自然言語の要望から、AI が判定基準（プロンプト）を生成する。キーワードルールだけで判定するモードもある",
+    "商品の画像と詳細・出品者情報を取得し、マルチモーダルモデルで条件に合うかを分析する",
+    "ntfy.sh、WeCom、Bark、Telegram、Gotify、Webhook、PushPlus などに通知する",
+    "Cron による定期実行、複数アカウントの管理、プロキシの切り替えと失敗時の再試行",
+    "結果の閲覧と、ブラックリスト（正規表現可）での除外を Web UI から行う"
+  ],
+  "install": [
+    "`git clone https://github.com/Usagi-org/ai-goofish-monitor && cd ai-goofish-monitor`",
+    "`cp .env.example .env`",
+    "`docker compose up -d`"
+  ],
+  "how_to_use": ".env に OPENAI_API_KEY、OPENAI_BASE_URL、OPENAI_MODEL_NAME（画像入力に対応したモデル）を書いて起動し、http://127.0.0.1:8000 の Web UI にログインする（初期は admin/admin123 なので変更が要る）。「闲鱼账号管理」で Chrome 拡張を使って取り出した闲鱼のログイン状態 JSON を貼り付け、「任务管理」でタスクを作って実行する。",
+  "use_cases": [
+    "闲鱼で特定の中古品（機材など）を継続的に探し、条件に合うものだけ通知させる用途に使えそう",
+    "AI による判定と通知の組み合わせを、Playwright で取得したデータに対して行う構成の参考になりそう"
+  ],
+  "for_whom": "闲鱼（中国の中古品サイト）で買い物をする人のうち、中国語の UI と設定を扱える人。日本から使う場合は闲鱼のアカウントとログイン状態の取得が前提と思われる。",
+  "similar": [],
+  "tech": "Python（FastAPI、Playwright、APScheduler、OpenAI 互換クライアント、SQLite）。フロントエンドは web-ui/ に Node.js でビルドする Web UI（Vite）。Docker イメージ（Chromium 内蔵）が推奨で、Python 3.10 以上。",
+  "caveats": "闲鱼のログイン状態（cookie）を預ける設計で、取り扱いに注意が要る。スクレイピングは闲鱼の規約や風控（不正検知）に触れる可能性があり、DISCLAIMER.md が用意されているが、中身は読んでいない。OpenAI 互換の API（画像入力対応モデル）が必要で、利用料が発生しうる。Web UI の初期アカウントが admin/admin123。公開する場合は変更が必須。README・UI・設定は中国語中心（英語版 README_EN.md はある）。",
+  "tags": [
+    "自動化・ワークフロー",
+    "AI エージェント",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:requirements.txt",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の前半を中心に読んだ。実際のコード（スクレイパー・AI 判定部分）、DISCLAIMER.md は読んでおらず、細かい挙動は README の記述に基づく。"
+}
