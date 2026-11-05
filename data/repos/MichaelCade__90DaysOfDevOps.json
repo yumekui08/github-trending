@@ -1,0 +1,37 @@
+{
+  "repo": "MichaelCade/90DaysOfDevOps",
+  "summarized_at": "2026-11-05",
+  "short": "90DaysOfDevOps は、DevOps の基礎を学ぶための Markdown 教材集。2022年に90日で書かれた DevOps 編に、DevSecOps 編とコミュニティセッションの記録が加わっている。ソフトウェアではなく学習資料。",
+  "what": "DevOps の原則とツールを学ぶ Markdown の学習教材",
+  "can_do": [
+    "2022年版：90日分の DevOps 入門（原則、プロセス、ツール）を読める",
+    "2023年版：DevSecOps など、セキュリティ寄りの話題を読める",
+    "2024年版：コミュニティセッション（91回分、YouTube）への案内がある",
+    "多言語訳（日本語、中国語、韓国語、スペイン語など）が2022年版に含まれる"
+  ],
+  "install": [],
+  "how_to_use": "インストールは不要。README から 2022.md、2023.md、2024.md の目次に進み、日ごとの Markdown（2022/Days/ や 2023/dayNN.md）を順に読む。サイト https://www.90daysofdevops.com/ でも読める。",
+  "use_cases": [
+    "Kubernetes、Terraform、Ansible など周辺ツールの全体像を体系的に押さえ直すのに使えそう",
+    "日本語訳が2022年版にあるので、英語が苦手な人の入門に使えそう（訳の質は未確認）"
+  ],
+  "for_whom": "DevOps の基礎を一通り学び直したい、または新しく入る人。インフラ寄りのエンジニアなら既知の内容も多いと思われる",
+  "similar": [
+    "roadmap.sh の DevOps ロードマップ：学ぶ項目の地図という点は近い。こちらは作者本人が書いた長文の教材"
+  ],
+  "tech": "Markdown 中心のリポジトリ（GitHub 上の主言語は Shell）。動かすコードは教材の付属サンプル程度で、ビルド環境は不要。",
+  "caveats": "ソフトウェアではなく学習資料。ファイル数が多く（8000 超）、リポジトリも大きい（約 380MB）。ライセンスは CC BY-NC-SA 4.0 で、商用利用に制限がある。2022年版の内容は古くなっている可能性がある。README の説明では、作者が自分の学習記録として始めたもの。範囲は DevOps の全てではないと作者が書いている。",
+  "tags": [
+    "学習資料",
+    "インフラ・運用",
+    "ドキュメント・知識管理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と構成のみ読み、各日の本文は読んでいない。内容の質や最新性は確認していない。"
+}

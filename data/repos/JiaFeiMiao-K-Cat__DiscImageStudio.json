@@ -1,0 +1,41 @@
+{
+  "repo": "JiaFeiMiao-K-Cat/DiscImageStudio",
+  "summarized_at": "2026-11-05",
+  "short": "DiscImageStudio は、画像を CD / DVD / 単層 BD-R の物理層の制約に合うデータに変換し、焼くと盤面に画像が肉眼で見えるようにする .NET 製ツール。ISO / RAW / WAV+CUE の出力か、直接書き込みができる。",
+  "what": "光ディスクの盤面に画像を焼き込む画像生成・書き込みツール",
+  "can_do": [
+    "画像を CD / DVD / 単層 BD-R 25GB 用のデータに変換する",
+    "ISO、RAW、WAV+CUE として出力し、cdrecord や ImgBurn などで焼ける",
+    "画像を生成しながら直接ディスクに書き込む（実験的機能、Windows）",
+    "レイヤーで盤面をデザインし、ディザ・ガンマ・輝度などの調整ができる",
+    "盤面の写真から内外半径とトラック間隔を推定する補助キャリブレーション",
+    "Linux / macOS 向けの実験的 CLI で、画像からイメージを生成する"
+  ],
+  "install": [
+    "`dotnet build DiscImageStudio.slnx --configuration Release`"
+  ],
+  "how_to_use": "Windows は Releases から win-x64.exe をダウンロードして実行する（.NET ランタイム同梱）。Linux / macOS は CPU に合う実験的 CLI のアーカイブを展開し、`./disc-image-studio --help` で確認する。GUI では新規プロジェクトで CD / DVD / BD を選び、画像を配置して、ISO / RAW / WAV+CUE を書き出す。",
+  "use_cases": [
+    "ディスクメディアに画像を焼き込む作品づくりや趣味の用途に使えそう",
+    "光ディスクの物理層（ECC、変調など）の仕組みを、実装を読んで学ぶ用途に使えそう"
+  ],
+  "for_whom": "光ディスクのレーベル面でなく記録面に絵を出して遊びたい人、光ディスクの物理層に興味がある人",
+  "similar": [
+    "DVD / CD のレーベル印刷ソフト：盤面に画像を出す点は近いが、こちらは印刷でなく記録データの並びで絵を作る"
+  ],
+  "tech": "C#（.NET 10）。GUI は Windows 10 2004 以上、CLI は Linux（glibc）と macOS（x64 / arm64）。書き込みには Windows が認識する CD / DVD / BD ライタが要る。",
+  "caveats": "README は中国語が主。英語・日本語など複数言語版もある。直接書き込みは実験的機能で、README は捨ててよい媒体だけで試すよう警告している。空でないメディアを使わないこと。Linux / macOS は実験的な CLI のみで、GUI は Windows 向け。BD-R は単層 25GB のみ対応。2026年8月に作られた新しいプロジェクト。GPL-3.0。",
+  "tags": [
+    "デスクトップアプリ",
+    "音声・画像・動画",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と最新 release の記述に基づく。見た目がきれいに出る条件や実機の結果は確認していない。meta に説明文がなく、実装は読んでいない。"
+}

@@ -1,0 +1,46 @@
+{
+  "repo": "The-PR-Agent/pr-agent",
+  "summarized_at": "2026-11-05",
+  "short": "pr-agent は、Pull Request を LLM でレビュー・説明・改善提案する OSS のエージェント。GitHub Action や CLI で動かし、GitHub / GitLab / Bitbucket などに対応する。",
+  "what": "PR を LLM でレビューする OSS ツール",
+  "can_do": [
+    "/review でPR の問題点や確認事項を指摘する",
+    "/describe で PR の説明文を生成する",
+    "/improve でコードの改善案を出す",
+    "/ask で PR について質問できる",
+    "GitHub、GitLab、BitBucket、Azure DevOps、Gitea に対応する",
+    "LiteLLM 経由で OpenAI、Claude、Gemini、Ollama など多数のモデルを使える"
+  ],
+  "install": [
+    "`pip install \"pr-agent[github]\"`"
+  ],
+  "how_to_use": "GitHub Action として使うなら、pull_request で動く workflow に the-pr-agent/pr-agent@main を指定し、OPENAI_KEY と GITHUB_TOKEN を env に渡す。CLI なら OPENAI_KEY を設定して `pr-agent --pr_url <PR の URL> review` を実行する。設定は configuration.toml や .pr_agent.toml で変える。",
+  "use_cases": [
+    "チームの PR に自動で一次レビューを付けたいときに使えそう",
+    "Ollama などのローカルモデルと組み合わせ、コードを外部に出さずにレビューする用途に使えそう",
+    "インフラ系リポジトリ（Terraform、YAML など）の PR 説明の自動生成に使えそう"
+  ],
+  "for_whom": "PR レビューの負荷を LLM で減らしたい、自前のモデルや API キーで運用したいチーム",
+  "similar": [
+    "Qodo Merge（旧 CodiumAI）：同じ系統の商用版。こちらはコミュニティが保守する OSS 版",
+    "GitHub Copilot code review：GitHub 組み込みの商用機能。こちらは自分でホストしてモデルを選べる"
+  ],
+  "tech": "Python（LiteLLM、pyproject.toml で管理）。Docker、GitHub Action、CLI、webhook、AWS Lambda 用の構成がある。LLM の API キーかローカルモデルが要る。",
+  "caveats": "README によると Qodo の無料版とは別物で、Qodo 側のコミュニティ保守のレガシープロジェクト。/help_docs は認証情報が漏れる問題のため v0.36.1 から一時的に無効。v0.49.0 で既定モデルの変更や設定の破壊的変更がある。アップグレード前に release notes を確認する。Docker イメージの置き場が 0.34.2 以降 pragent/pr-agent に変わっている。LLM の API 利用料がかかる。MIT ライセンス。",
+  "tags": [
+    "開発ツール",
+    "LLM",
+    "自動化・ワークフロー",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:setup.py",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

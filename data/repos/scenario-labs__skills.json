@@ -1,0 +1,44 @@
+{
+  "repo": "scenario-labs/skills",
+  "summarized_at": "2026-11-05",
+  "short": "skills は、Scenario（生成 AI の画像・動画・音声・3D サービス）を MCP 経由で使うための Agent Skills 集。Claude Code や Cursor などのエージェントに、モデル選びやキャラクター統一の手順を教える。Blender、Maya、Unreal、Unity を操作する expert tools も含む。",
+  "what": "Scenario の生成 AI を使うための Agent Skills 集",
+  "can_do": [
+    "画像・動画・音声・テクスチャ・skybox・3D アセットの生成手順を、skill としてエージェントに与える",
+    "用途に合うモデルを選び、実行前に費用を確認する",
+    "キャラクターやブランドの一貫性を保つ（brand kit、identity library、model training）",
+    "ゲーム素材、スプライトアニメ、動画広告、音楽動画などの用途別 skill を使える",
+    "ZBrush、Blender、Maya、Unreal Engine、Unity、Godot、Roblox Studio を操作する expert tools（Scenario MCP は不要）",
+    "70 以上のエージェントに対応する（Agent Skills 形式）"
+  ],
+  "install": [
+    "`npx skills add scenario-labs/skills`",
+    "`npx skills add scenario-labs/skills --skill scenario`"
+  ],
+  "how_to_use": "上のコマンドで対話メニューから選ぶか、--skill で名前を指定して入れる。Scenario の skill は Scenario MCP server（https://mcp.scenario.com）とアカウントが前提。expert tools は、各ファミリーの README にあるコマンドで一式を入れる。再現性が必要なら、リリースのタグからコミットを指定して固定する。",
+  "use_cases": [
+    "ゲーム開発で、エージェントにコンセプトアートや素材の生成を任せる用途に使えそう",
+    "Blender など DCC ツールをエージェントから操作する expert skills の作りを、参考に読む用途に使えそう",
+    "自分で Agent Skills を配布するときの構成（plugin manifest、検査スクリプト）の例として使えそう"
+  ],
+  "for_whom": "ゲーム・映像制作で生成 AI をエージェント経由で使いたい人。インフラ寄りの仕事とは縁が薄いと思われる",
+  "similar": [
+    "anthropics/skills：Agent Skills の公式サンプル集。こちらは特定サービス（Scenario）と DCC ツール向けに特化している"
+  ],
+  "tech": "Markdown の skill 定義が中心で、補助スクリプトは Python。管理に pnpm と Node.js（.nvmrc あり）を使う。skill の導入には npx が要る。",
+  "caveats": "本体の生成機能は Scenario の商用サービスで、アカウントと利用料が要る可能性が高い。リポジトリは skill 集で、README が Scenario への入口になっている。expert tools は、ツールが手元にインストールされている必要がある。検証の程度は各ファミリーの README に書かれていて、こちらでは読んでいない。2026年8月に作られた新しいプロジェクト。MIT ライセンス。",
+  "tags": [
+    "AI エージェント",
+    "音声・画像・動画",
+    "ゲーム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の前半（概要とインストール）と meta のみ読んだ。個別の skill の中身、expert tools の検証状況、Scenario の料金体系は確認していない。"
+}

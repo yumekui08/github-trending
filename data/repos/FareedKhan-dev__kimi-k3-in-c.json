@@ -1,0 +1,45 @@
+{
+  "repo": "FareedKhan-dev/kimi-k3-in-c",
+  "summarized_at": "2026-11-05",
+  "short": "kimi-k3-in-c は、Kimi K3（2.78T パラメータの MoE モデル）を C99 だけで CPU 推論する inference engine。重みをディスクから stream して、8GB RAM でも動かす作りと README にある。",
+  "what": "Kimi K3 を CPU で推論する C99 製エンジン",
+  "can_do": [
+    "BLAS・フレームワーク・GPU なしで、Kimi K3 の推論を CPU で行う",
+    "1.56TB の checkpoint を読みながら、8GB 級のメモリで生成する（遅い。README の計測では 1 token あたり 26.5 秒）",
+    "--chat で K3 の chat 形式の対話ができる",
+    "AVX2 / NEON のカーネルを使う（x86-64、arm64 対応）",
+    "make test で、checkpoint なしでも PyTorch の参照実装との一致を検査できる"
+  ],
+  "install": [
+    "`git clone https://github.com/FareedKhan-dev/kimi-k3-in-c.git`",
+    "`make -j`",
+    "`make test`"
+  ],
+  "how_to_use": "まず make test でエンジンの正しさを確認する。実際に生成するには、HF_TOKEN を設定して ./scripts/download-model.sh ~/k3model で checkpoint（1.56TB、約1.7TB の空きが必要）を取得し、--tok にそのディレクトリを渡して実行する。詳細は README の Quick start と docs/QUICKSTART.md を参照。",
+  "use_cases": [
+    "巨大 MoE モデルの推論の仕組み（linear attention、MXFP4 量子化、メモリ管理）を C のコードで読んで学ぶのに使えそう",
+    "GPU のない環境で大きなモデルがどこまで動くかを試す実験に使えそう",
+    "実用の推論基盤というより、研究・学習向けと思われる"
+  ],
+  "for_whom": "LLM 推論の内部実装を低レイヤーから読みたい人、CPU 推論の実験をしたい人",
+  "similar": [
+    "llama.cpp：C/C++ 製の LLM 推論エンジンで用途は近い。こちらは Kimi K3 専用で依存ゼロを売りにしている"
+  ],
+  "tech": "C99（GCC 9 以上か Clang 10 以上、OpenMP、make または CMake）。AVX2 + FMA か NEON が要る。Linux、macOS、Windows（MSYS2）。Python（numpy、torch）は検査・変換ツール用で、エンジン本体には不要。",
+  "caveats": "checkpoint が 1.56TB で、取得に HuggingFace の token と数時間以上かかる。約 1.7TB のディスクが要る。RAM が小さいとディスクから読み直すため、1 token に 20 秒前後かかる。対話用途には向かない。2026年8月に作られた新しいプロジェクト。速度や 8.24GB などの数値は作者の README による計測値で、こちらでは確認していない。README の冒頭に作者の就職活動の告知がある。Apache-2.0。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "言語・ランタイム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:CMakeLists.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

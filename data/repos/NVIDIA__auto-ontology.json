@@ -1,0 +1,45 @@
+{
+  "repo": "NVIDIA/auto-ontology",
+  "summarized_at": "2026-11-05",
+  "short": "auto-ontology は、DB のメタデータから ontology（業務用語・関係の定義）を作り、AI エージェントの text-to-SQL を正確にするための context layer。MCP / CLI / API で既存のエージェントから使える。",
+  "what": "DB の意味を ontology 化して NL-to-SQL を支える基盤",
+  "can_do": [
+    "企業のメタデータから ontology / knowledge graph を生成する",
+    "自然言語の質問を SQL に変換して接続先 DB で実行し、SQL と手順を添えて返す",
+    "指標・エンティティ・関係の定義を使い、システム間で食い違う定義を突き合わせる",
+    "生成したクエリを certified な定義と lineage に照らして検査する",
+    "MCP / CLI / API で任意のエージェントに context を提供する",
+    "Web UI（チャット、データカタログ、設定）と認証・RBAC を備える"
+  ],
+  "install": [
+    "`git clone https://github.com/NVIDIA/auto-ontology.git && cd auto-ontology`",
+    "`cp .env.example .env`",
+    "`docker compose up -d --build`"
+  ],
+  "how_to_use": ".env に NVIDIA API キー（DEFAULT_MODELS_API_KEY）、AUTH_SECRET、Postgres のパスワード等を設定。先にサンプル DB（Wide World Importers）を seed してから compose で全体を起動し、http://localhost:3000 にログイン。Settings で Semantic Compilation を有効にして、Chat で質問する。",
+  "use_cases": [
+    "社内 DWH に対する自然言語クエリの精度を上げたいときに使えそう",
+    "指標の定義が部署ごとに違う環境で、基準となる定義を一箇所に持たせる用途に使えそう",
+    "既存のエージェント基盤に MCP 経由でデータの意味情報を足す用途に使えそう"
+  ],
+  "for_whom": "データ基盤の上で LLM エージェントや text-to-SQL を運用していて、回答の根拠（SQL・lineage）を確認したい人",
+  "similar": [
+    "dbt Semantic Layer / Cube：指標定義を一元化する点は近い。こちらは ontology の自動生成と LLM エージェント連携が中心"
+  ],
+  "tech": "Python 3.12 以上（FastAPI、LangChain、LangGraph）。フロントは Next.js 16。Postgres + pgvector、任意で HashiCorp Vault。Snowflake、Databricks、MySQL 等のコネクタあり。Docker Compose か Helm（Kubernetes）で動かす。",
+  "caveats": "NVIDIA NIM（build.nvidia.com の API キーか自前の NIM）が前提。2026年4月に作られた新しいプロジェクト。README に外部からのコントリビューションは受け付けないとある。Quickstart はサンプル DB の seed に別リポジトリ（auto-ontology-eval）が必要。Apache-2.0。",
+  "tags": [
+    "AI エージェント",
+    "データベース",
+    "LLM",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README とプロジェクト定義は読んだが、README の後半（質問に答えられない場合の挙動以降）と実装は読んでいない。MCP / CLI の具体的な使い方は不明。"
+}

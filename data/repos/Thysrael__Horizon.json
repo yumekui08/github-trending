@@ -1,0 +1,45 @@
+{
+  "repo": "Thysrael/Horizon",
+  "summarized_at": "2026-11-05",
+  "short": "Horizon は、RSS・Hacker News・Reddit・GitHub などの情報源から記事を集め、LLM で採点・重複排除・要約して、毎日のニュース digest（英語と中国語）にする Python 製ツール。出力は Markdown、GitHub Pages、メール、webhook など。",
+  "what": "複数の情報源から LLM で日次ニュース digest を作る Python ツール",
+  "can_do": [
+    "RSS、Hacker News、Reddit、Telegram、X、GitHub、金融ニュースなどから記事を集める",
+    "profile（採点基準と出力形式のセット）ごとに記事を LLM で採点し、しきい値で絞る",
+    "同じ話題の記事を profile 内でまとめて重複排除する",
+    "Web 検索による背景情報やコミュニティの議論を足す",
+    "英語と中国語の briefing を Markdown で生成し、Pages・メール・webhook（Feishu など）に配信する",
+    "MCP 経由で、AI アシスタントから各段階を呼び出せる"
+  ],
+  "install": [
+    "`git clone https://github.com/Thysrael/Horizon.git && cd Horizon`",
+    "`uv sync`"
+  ],
+  "how_to_use": "`uv run horizon-wizard` で興味のある分野を答えると data/config.json が作られる。手動なら .env.example と data/config.example.json をコピーして API キーと情報源を設定する。LLM は OpenAI、Anthropic などを選べる。Docker Compose でも動かせる。",
+  "use_cases": [
+    "自分の関心分野（インフラ、セキュリティなど）の英語ニュースを日本語で読む仕組みの参考に使えそう（出力は英語と中国語なので、日本語にするには profile やプロンプトの調整が要ると思われる）",
+    "GitHub Actions で毎日 digest を生成し、Pages で公開する用途に使えそう",
+    "profile の作り方は、このリポジトリのような自動要約ツールの設計の参考になりそう"
+  ],
+  "for_whom": "多数の RSS・コミュニティを追っていて、LLM に取捨選択と要約を任せたい人",
+  "similar": [
+    "RSS リーダー + 要約プラグイン：集めて読む点は近い。こちらは採点・重複排除・配信まで一式を CLI で回す"
+  ],
+  "tech": "Python 3.11 以上（httpx、feedparser、anthropic、openai など）。uv で管理。Docker / Docker Compose に対応。LLM の API キーが要る。",
+  "caveats": "出力言語は英語と中国語で、日本語は README に出てこない。LLM の API 利用料がかかる（ChatGPT の購読で使う方法もあると README にある）。pyproject のバージョンは 0.1.0。2026年2月に作られた新しいプロジェクト。X（Twitter）の取得には Playwright とシステムパッケージが別に要り、Dockerfile には入っていない。MIT ライセンス。",
+  "tags": [
+    "自動化・ワークフロー",
+    "LLM",
+    "データ処理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

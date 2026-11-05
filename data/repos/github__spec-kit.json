@@ -1,0 +1,44 @@
+{
+  "repo": "github/spec-kit",
+  "summarized_at": "2026-11-05",
+  "short": "spec-kit は、AI コーディングエージェントに仕様駆動開発（SDD）などの決まった手順とテンプレートを持たせる toolkit。specify CLI でプロジェクトを初期化し、エージェントのチャットから /speckit-* の skill を順に実行する。",
+  "what": "コーディングエージェント向け仕様駆動開発の toolkit",
+  "can_do": [
+    "specify init で、使うエージェント用の skill・テンプレート入りのプロジェクトを作る",
+    "constitution → specify → plan → tasks → implement → converge の順で、仕様から実装まで進める",
+    "extension でバグ修正（bug）やアイデア評価（assess）などの別の手順を追加する",
+    "preset でテンプレートや用語を差し替え、組織の標準に合わせる",
+    "workflow でプロンプトやシェル作業を自動化する",
+    "カタログから community 製の extension / preset を検索する"
+  ],
+  "install": [
+    "`uv tool install specify-cli`",
+    "`specify init my-project --integration copilot`"
+  ],
+  "how_to_use": "Python 3.11 以上と uv、対応するコーディングエージェントが要る。init したプロジェクトでエージェントを起動し、チャットで /speckit-constitution、/speckit-specify、/speckit-plan、/speckit-tasks、/speckit-implement を1つずつ結果を確認しながら実行する。",
+  "use_cases": [
+    "エージェントに任せる開発で、仕様・計画・タスクを文書として残したいときに使えそう",
+    "チームで AI 開発の進め方を揃えるために、preset で標準を配る用途に使えそう",
+    "再現手順つきでバグ修正の根拠を残したいときに使えそう"
+  ],
+  "for_whom": "Copilot や Claude Code などのコーディングエージェントで、場当たりでなく手順立てて開発したい人",
+  "similar": [
+    "Cursor rules / AGENTS.md：エージェントへの指示を置く点は近い。こちらは手順・テンプレート・拡張の仕組みまで含む"
+  ],
+  "tech": "Python 3.11 以上（typer、click、rich、pyyaml など）。Linux、macOS、Windows で動く。ビルドは hatchling。",
+  "caveats": "実際の作業はエージェントが行うため、結果の質は使うエージェントとモデルに依存する。community catalog の内容は監査されていないと README にある。使う前にソースの確認が必要。2025年8月に作られ、バージョンの更新が速い。1.3.0 で taskstoissues コマンドが削除されるなど、破壊的な変更がある。MIT ライセンス。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
