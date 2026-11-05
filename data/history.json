@@ -44,7 +44,8 @@
     "first_seen": "2026-11-03",
     "seen": [
       "2026-11-03",
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-05"
     ]
   },
   "DietrichGebert/ponytail": {
@@ -90,6 +91,12 @@
     "seen": [
       "2026-10-08",
       "2026-10-09"
+    ]
+  },
+  "FareedKhan-dev/kimi-k3-in-c": {
+    "first_seen": "2026-11-05",
+    "seen": [
+      "2026-11-05"
     ]
   },
   "FlashML-org/FreeToken": {
@@ -150,6 +157,12 @@
       "2026-10-31"
     ]
   },
+  "JiaFeiMiao-K-Cat/DiscImageStudio": {
+    "first_seen": "2026-11-05",
+    "seen": [
+      "2026-11-05"
+    ]
+  },
   "JuliusBrussee/caveman": {
     "first_seen": "2026-10-03",
     "seen": [
@@ -203,6 +216,12 @@
       "2026-10-23"
     ]
   },
+  "MichaelCade/90DaysOfDevOps": {
+    "first_seen": "2026-11-05",
+    "seen": [
+      "2026-11-05"
+    ]
+  },
   "NVIDIA/OpenShell": {
     "first_seen": "2026-09-30",
     "seen": [
@@ -218,6 +237,12 @@
     "first_seen": "2026-10-27",
     "seen": [
       "2026-10-27"
+    ]
+  },
+  "NVIDIA/auto-ontology": {
+    "first_seen": "2026-11-05",
+    "seen": [
+      "2026-11-05"
     ]
   },
   "NationalSecurityAgency/ghidra": {
@@ -311,6 +336,18 @@
     "seen": [
       "2026-10-26",
       "2026-10-27"
+    ]
+  },
+  "The-PR-Agent/pr-agent": {
+    "first_seen": "2026-11-05",
+    "seen": [
+      "2026-11-05"
+    ]
+  },
+  "Thysrael/Horizon": {
+    "first_seen": "2026-11-05",
+    "seen": [
+      "2026-11-05"
     ]
   },
   "Usagi-org/ai-goofish-monitor": {
@@ -654,7 +691,8 @@
   "floci-io/floci": {
     "first_seen": "2026-11-04",
     "seen": [
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-05"
     ]
   },
   "flutter/flutter": {
@@ -666,7 +704,8 @@
   "garrytan/gstack": {
     "first_seen": "2026-10-05",
     "seen": [
-      "2026-10-05"
+      "2026-10-05",
+      "2026-11-05"
     ]
   },
   "getsentry/sentry": {
@@ -675,6 +714,12 @@
       "2026-10-03",
       "2026-10-04",
       "2026-10-05"
+    ]
+  },
+  "github/spec-kit": {
+    "first_seen": "2026-11-05",
+    "seen": [
+      "2026-11-05"
     ]
   },
   "gitroomhq/postiz-app": {
@@ -699,7 +744,8 @@
   "harry0703/MoneyPrinterTurbo": {
     "first_seen": "2026-10-01",
     "seen": [
-      "2026-10-01"
+      "2026-10-01",
+      "2026-11-05"
     ]
   },
   "headroomlabs-ai/headroom": {
@@ -848,14 +894,16 @@
       "2026-10-31",
       "2026-11-01",
       "2026-11-03",
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-05"
     ]
   },
   "max-sixty/worktrunk": {
     "first_seen": "2026-11-03",
     "seen": [
       "2026-11-03",
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-05"
     ]
   },
   "meituan-longcat/LongCat-Video": {
@@ -1125,6 +1173,12 @@
       "2026-10-21"
     ]
   },
+  "scenario-labs/skills": {
+    "first_seen": "2026-11-05",
+    "seen": [
+      "2026-11-05"
+    ]
+  },
   "shiyu-coder/Kronos": {
     "first_seen": "2026-10-20",
     "seen": [
@@ -1206,7 +1260,8 @@
       "2026-11-01",
       "2026-11-02",
       "2026-11-03",
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-05"
     ]
   },
   "tile-ai/tilelang": {
@@ -1253,7 +1308,8 @@
     "first_seen": "2026-11-03",
     "seen": [
       "2026-11-03",
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-05"
     ]
   },
   "vercel-labs/skills": {

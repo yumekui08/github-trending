@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-05",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "stars": 430907,
+      "stars_period": 430285
+    },
+    {
+      "rank": 2,
+      "repo": "boykopovar/AnyPS5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "language": "C++",
+      "stars": 51187,
+      "stars_period": 47878
+    },
+    {
+      "rank": 3,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 59409,
+      "stars_period": 34859
+    },
+    {
+      "rank": 4,
+      "repo": "Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars": 47943,
+      "stars_period": 18210
+    },
+    {
+      "rank": 5,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 78955,
+      "stars_period": 22621
+    },
+    {
+      "rank": 6,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 101008,
+      "stars_period": 48420
+    },
+    {
+      "rank": 7,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 97846,
+      "stars_period": 17528
+    },
+    {
+      "rank": 8,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 34736,
+      "stars_period": 8764
+    },
+    {
+      "rank": 9,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 112862,
+      "stars_period": 17262
+    },
+    {
+      "rank": 10,
+      "repo": "pingdotgg/t3code",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 46634,
+      "stars_period": 20763
+    },
+    {
+      "rank": 11,
+      "repo": "pbakaus/impeccable",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "language": "Rust",
+      "stars": 102830,
+      "stars_period": 26803
+    },
+    {
+      "rank": 12,
+      "repo": "earthtojake/text-to-cad",
+      "description": "Design physical products with AI",
+      "language": "Python",
+      "stars": 25430,
+      "stars_period": 8831
+    },
+    {
+      "rank": 13,
+      "repo": "anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "language": "Python",
+      "stars": 46125,
+      "stars_period": 8948
+    },
+    {
+      "rank": 14,
+      "repo": "tester-army/e2e",
+      "description": "Next generation e2e testing framework for web and mobile apps.",
+      "language": "TypeScript",
+      "stars": 13177,
+      "stars_period": 10748
+    }
+  ]
+}
