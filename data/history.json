@@ -32,6 +32,12 @@
       "2026-10-01"
     ]
   },
+  "ConardLi/garden-skills": {
+    "first_seen": "2026-11-06",
+    "seen": [
+      "2026-11-06"
+    ]
+  },
   "CopilotKit/OpenBot": {
     "first_seen": "2026-10-30",
     "seen": [
@@ -45,7 +51,8 @@
     "seen": [
       "2026-11-03",
       "2026-11-04",
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "DietrichGebert/ponytail": {
@@ -160,7 +167,8 @@
   "JiaFeiMiao-K-Cat/DiscImageStudio": {
     "first_seen": "2026-11-05",
     "seen": [
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "JuliusBrussee/caveman": {
@@ -242,7 +250,8 @@
   "NVIDIA/auto-ontology": {
     "first_seen": "2026-11-05",
     "seen": [
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "NationalSecurityAgency/ghidra": {
@@ -353,7 +362,8 @@
   "Usagi-org/ai-goofish-monitor": {
     "first_seen": "2026-11-04",
     "seen": [
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-06"
     ]
   },
   "VectifyAI/PageIndex": {
@@ -692,7 +702,8 @@
     "first_seen": "2026-11-04",
     "seen": [
       "2026-11-04",
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "flutter/flutter": {
@@ -705,7 +716,8 @@
     "first_seen": "2026-10-05",
     "seen": [
       "2026-10-05",
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "getsentry/sentry": {
@@ -738,7 +750,8 @@
   "google/skills": {
     "first_seen": "2026-10-03",
     "seen": [
-      "2026-10-03"
+      "2026-10-03",
+      "2026-11-06"
     ]
   },
   "harry0703/MoneyPrinterTurbo": {
@@ -856,6 +869,12 @@
       "2026-10-14"
     ]
   },
+  "lz4/lz4": {
+    "first_seen": "2026-11-06",
+    "seen": [
+      "2026-11-06"
+    ]
+  },
   "macro-inc/macro": {
     "first_seen": "2026-10-29",
     "seen": [
@@ -895,7 +914,8 @@
       "2026-11-01",
       "2026-11-03",
       "2026-11-04",
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "max-sixty/worktrunk": {
@@ -903,7 +923,8 @@
     "seen": [
       "2026-11-03",
       "2026-11-04",
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "meituan-longcat/LongCat-Video": {
@@ -916,6 +937,12 @@
     "first_seen": "2026-10-13",
     "seen": [
       "2026-10-13"
+    ]
+  },
+  "microsoft/VibeVoice": {
+    "first_seen": "2026-11-06",
+    "seen": [
+      "2026-11-06"
     ]
   },
   "milind-soni/OpenMausBot": {
@@ -1176,7 +1203,8 @@
   "scenario-labs/skills": {
     "first_seen": "2026-11-05",
     "seen": [
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "shiyu-coder/Kronos": {
@@ -1304,12 +1332,19 @@
       "2026-09-30"
     ]
   },
+  "vercel-labs/agent-browser": {
+    "first_seen": "2026-11-06",
+    "seen": [
+      "2026-11-06"
+    ]
+  },
   "vercel-labs/agent-desktop": {
     "first_seen": "2026-11-03",
     "seen": [
       "2026-11-03",
       "2026-11-04",
-      "2026-11-05"
+      "2026-11-05",
+      "2026-11-06"
     ]
   },
   "vercel-labs/skills": {
