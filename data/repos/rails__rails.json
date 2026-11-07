@@ -1,0 +1,42 @@
+{
+  "repo": "rails/rails",
+  "short": "rails は、Ruby 製の Web アプリケーションフレームワーク。MVC 構成で、DB を使う Web アプリに必要な部品（ORM、メール、ジョブ、WebSocket など）を一式そろえる。",
+  "what": "DB を使う Web アプリ向けの Ruby フルスタックフレームワーク",
+  "can_do": [
+    "Active Record で DB の行をオブジェクトとして扱う（ORM）",
+    "Action Pack でルーティングとコントローラを書く",
+    "Action Mailer / Action Mailbox でメールの送受信",
+    "Active Job でバックグラウンドジョブを複数のキュー実装の上で動かす",
+    "Action Cable で WebSocket、Active Storage でファイル添付、Action Text でリッチテキスト"
+  ],
+  "install": [
+    "`gem install rails`",
+    "`rails new myapp`"
+  ],
+  "how_to_use": "`rails new myapp` で雛形を作り、作ったディレクトリに入って開発サーバーを起動する（README の続きの手順）。詳しくは Getting Started ガイドを読む。",
+  "use_cases": [
+    "社内の管理画面や小さな業務 Web アプリを短期間で作るのに使えそう",
+    "Active Record などを単体で、Rails 以外の Ruby 製ツールに組み込むのに使えそう"
+  ],
+  "for_whom": "Ruby で Web アプリを作りたい人。既存の Rails アプリの保守をする人",
+  "similar": [
+    "Django：Python 製の同種のフルスタックフレームワーク",
+    "Laravel：PHP 製で思想が近い"
+  ],
+  "tech": "Ruby（gemspec と Gemfile で管理）。テストは minitest。フロントは Turbo・Stimulus などと組み合わせられる。",
+  "caveats": "2008年からある成熟したプロジェクトで、最新リリースは 8.1.4.1（セキュリティ修正を含む）。モノレポで、各部品が独立した gem。MIT ライセンス。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Gemfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

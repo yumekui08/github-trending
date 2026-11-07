@@ -1,0 +1,43 @@
+{
+  "repo": "zed-industries/zed",
+  "short": "zed は、Rust 製の高速なコードエディタ。複数人での同時編集と AI エージェントの統合を備える。Atom と Tree-sitter の作者が作っている。",
+  "what": "Rust 製の高性能・マルチプレイヤー対応コードエディタ",
+  "can_do": [
+    "GPU を使った描画で動く、軽快なコードエディタとして使える",
+    "複数人で同じファイルを同時に編集する（マルチプレイヤー）",
+    "Agent Panel で AI エージェントにコード編集をさせ、コミットメッセージも AI で生成できる",
+    "Tree-sitter による構文ハイライト、言語拡張",
+    "macOS・Linux・Windows に対応"
+  ],
+  "install": [
+    "zed.dev/download からダウンロード、または各 OS のパッケージマネージャで入れる（コマンドは README になく、docs へのリンクのみ）"
+  ],
+  "how_to_use": "インストールして起動し、プロジェクトのディレクトリを開く。AI 機能は Agent Panel から使う。",
+  "use_cases": [
+    "VS Code の代わりに、起動と動作の軽いエディタを試すのに使えそう",
+    "チームでのペア作業・リモートレビューに使えそう"
+  ],
+  "for_whom": "動作の軽いエディタを探していて、AI 連携や共同編集も使いたい開発者",
+  "similar": [
+    "VS Code：用途は同じ。こちらは Rust 製ネイティブで軽さを売りにする",
+    "Neovim：キーボード中心の編集は近い。こちらは GUI で AI・共同編集が標準"
+  ],
+  "tech": "Rust（Cargo workspace、crates が大量に分かれる）。独自 UI フレームワーク GPUI。macOS・Linux・Windows 向け。",
+  "caveats": "ライセンスは主に GPL-3.0-or-later で、Apache-2.0 の部品が混在（GitHub 上は NOASSERTION）。Web 版は未提供。AI 機能は外部のモデルを使うと思われる。リポジトリが非常に大きく（約 550MB）、ビルドは重いと思われる。",
+  "tags": [
+    "エディタ・IDE",
+    "開発ツール",
+    "デスクトップアプリ",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README が短くインストールや機能の詳細は docs 側にあり、docs は読んでいない。機能は release と description から判断",
+  "summarized_at": "2026-11-07"
+}

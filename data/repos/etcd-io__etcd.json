@@ -1,0 +1,43 @@
+{
+  "repo": "etcd-io/etcd",
+  "short": "etcd は、分散システムの重要なデータを保存する、分散型の key-value store。Raft で複製し、gRPC の API を持つ。Kubernetes の保存先として使われる。",
+  "what": "Raft で複製する分散 key-value store",
+  "can_do": [
+    "key-value を保存・取得する（`etcdctl put` / `etcdctl get`）",
+    "Raft により複数ノードで複製し、高可用にする",
+    "gRPC の API と TLS（クライアント証明書認証は任意）",
+    "クラスタの設定情報の保存や coordination に使える",
+    "etcdctl で操作する CLI クライアント"
+  ],
+  "install": [
+    "リリースページのバイナリ（OSX、Linux、Windows、Docker）を入手し、`etcd` を実行する"
+  ],
+  "how_to_use": "`etcd` を起動すると 2379 番（クライアント）と 2380 番（サーバー間）で待ち受ける。別端末で `etcdctl put mykey \"this is awesome\"` と `etcdctl get mykey` を試す。",
+  "use_cases": [
+    "Kubernetes のコントロールプレーンの運用・障害調査で中身を理解するのに使えそう",
+    "分散ロックや設定の共有基盤として使えそう"
+  ],
+  "for_whom": "Kubernetes や分散システムを運用し、etcd のバックアップや復旧に関わるインフラ担当者",
+  "similar": [
+    "Consul：key-value と service discovery。こちらは key-value に特化",
+    "ZooKeeper：用途は近い。こちらは Go 製で gRPC"
+  ],
+  "tech": "Go。Raft。Docker イメージあり。Apache-2.0。",
+  "caveats": "README に「main ブランチは不安定なことがある。安定版はリリースを使う」とある。最新は v3.7.3。",
+  "tags": [
+    "データベース",
+    "インフラ・運用",
+    "コンテナ・Kubernetes"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:go.mod",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

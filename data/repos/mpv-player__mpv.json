@@ -1,0 +1,44 @@
+{
+  "repo": "mpv-player/mpv",
+  "short": "mpv は、コマンドラインから使うメディアプレーヤー。多くの動画・音声形式、codec、字幕に対応し、Linux・Windows・macOS で動く。ユーザースクリプトで拡張できる。",
+  "what": "コマンドラインで使う軽量なメディアプレーヤー",
+  "can_do": [
+    "多様な動画・音声形式、codec、字幕を再生する",
+    "`--hwdec` でハードウェアデコードを有効にする",
+    "GPU の shader で映像の描画・拡大縮小をする",
+    "C の client API で他のアプリに組み込める",
+    "ユーザースクリプトで機能を拡張できる（wiki に一覧）"
+  ],
+  "install": [
+    "`meson setup build`",
+    "`meson compile -C build`",
+    "`meson install -C build`",
+    "配布版は mpv.io/installation を参照（ビルドには meson と複数の外部ライブラリの開発ファイルが要る）"
+  ],
+  "how_to_use": "ビルドまたはパッケージで入れたあと、`mpv ファイル名` で再生する（このコマンドは README にはなく、一般的な使い方）。設定は Manual を見る。",
+  "use_cases": [
+    "サーバーや SSH 先の端末から動画・音声の中身を確認するのに使えそう",
+    "スクリプトで再生を制御する自動化に使えそう"
+  ],
+  "for_whom": "軽い動画プレーヤーを、設定ファイルやスクリプトで自分好みにしたい人",
+  "similar": [
+    "VLC：用途は同じ。こちらは CLI 中心で設定ファイルとスクリプトで調整する",
+    "ffplay：CLI で再生する点は近い。こちらは機能と拡張性が多い"
+  ],
+  "tech": "C（meson でビルド）。libplacebo などの外部ライブラリを使う。Linux（新しめのディストリ）、Windows 10 1607 以降、macOS 10.15 以降。",
+  "caveats": "古い OS や非力な GPU の互換性は保証されない。ライセンスは GitHub 上で NOASSERTION で、LGPL/GPL が混在すると思われるが README では未確認。完全な changelog はない。",
+  "tags": [
+    "音声・画像・動画",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

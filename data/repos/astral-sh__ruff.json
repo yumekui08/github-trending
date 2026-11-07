@@ -1,0 +1,46 @@
+{
+  "repo": "astral-sh/ruff",
+  "short": "ruff は、Rust 製の Python 用 linter 兼 formatter。Flake8、Black、isort などを1つで置き換えられるとされ、README では 10〜100 倍速いとされる（作者の主張）。",
+  "what": "Rust 製の高速な Python linter と formatter",
+  "can_do": [
+    "`ruff check` で Python のコードを lint する",
+    "`ruff format` でコードを整形する",
+    "900 以上の組み込みルールを使う（flake8-bugbear などを再実装）",
+    "自動修正（未使用 import の削除など）",
+    "`pyproject.toml` で設定する。editor 連携もある"
+  ],
+  "install": [
+    "`uvx ruff@0.17.4 check`",
+    "`pip install ruff`",
+    "`pipx install ruff`",
+    "`curl -LsSf https://astral.sh/ruff/install.sh | sh`"
+  ],
+  "how_to_use": "プロジェクトのディレクトリで `ruff check` と `ruff format` を実行する。設定は `pyproject.toml` に書く。",
+  "use_cases": [
+    "CI の lint と format を1つに統合して速くするのに使えそう",
+    "このリポジトリのような Python プロジェクトに入れやすそう"
+  ],
+  "for_whom": "Python の lint と整形を速く、設定を少なくしたい開発者",
+  "similar": [
+    "Flake8：lint の置き換え対象。こちらは Rust 製で速いとされる",
+    "Black：formatter の置き換え対象",
+    "isort：import 整列の置き換え対象"
+  ],
+  "tech": "Rust。Python 3.15 まで対応とある。pip、uv、pipx、Homebrew などで入る。MIT。",
+  "caveats": "速度の数値は README の主張で、こちらでは測っていない。バージョンが 0.x で、ルールや挙動が変わることがある。Dockerfile もリポジトリにある。",
+  "tags": [
+    "開発ツール",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

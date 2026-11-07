@@ -1,0 +1,40 @@
+{
+  "repo": "microsoft/vscode",
+  "short": "vscode は、Microsoft が Visual Studio Code の元になる Code - OSS を開発しているリポジトリ。編集、デバッグ、拡張機能に対応する TypeScript 製のコードエディタ。",
+  "what": "Visual Studio Code の元になるオープンソースのコードエディタ",
+  "can_do": [
+    "コード編集、ナビゲーション、補完などのエディタ機能",
+    "軽量なデバッガ",
+    "拡張機能で機能を追加する",
+    "既存ツールとの軽量な連携",
+    "Windows・macOS・Linux に対応"
+  ],
+  "install": [],
+  "how_to_use": "README にコマンドはない。一般的には公式サイトから配布版をダウンロードして使う。ソースからビルドする手順は wiki の How to Contribute にある。",
+  "use_cases": [
+    "普段のエディタ・開発環境として使えそう",
+    "Code - OSS を元に、独自のエディタを作る土台になりそう"
+  ],
+  "for_whom": "汎用のコードエディタを使う開発者。エディタを自分でビルドして改造したい人",
+  "similar": [
+    "Zed：用途は同じ。こちらは Rust 製ネイティブ",
+    "JetBrains IDE：統合開発環境。こちらは拡張機能で機能を足す"
+  ],
+  "tech": "TypeScript（Electron ベースと思われる）。npm の package.json で管理。Windows・macOS・Linux。",
+  "caveats": "このリポジトリ（Code - OSS）は MIT だが、配布される Visual Studio Code は Microsoft 独自の製品ライセンスで、カスタマイズが加わる。月次で更新される。最新は 1.145.2。",
+  "tags": [
+    "エディタ・IDE",
+    "開発ツール",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

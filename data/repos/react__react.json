@@ -1,0 +1,39 @@
+{
+  "repo": "react/react",
+  "short": "react は、UI を作るための JavaScript ライブラリ。画面を状態ごとの宣言的なコンポーネントとして組み立て、データが変わると必要な部分だけ更新する。server や React Native でも使える。",
+  "what": "宣言的な UI を作る JavaScript ライブラリ",
+  "can_do": [
+    "状態に応じた画面を宣言的に書く",
+    "コンポーネントに状態を持たせて組み合わせる",
+    "Node 上の server rendering",
+    "React Native でモバイルアプリを作る",
+    "React Server Components（リリースノートに記載）"
+  ],
+  "install": [],
+  "how_to_use": "README には npm のコマンドがない。公式の Quick Start（react.dev/learn）を読み、新規なら toolchain 付きの作成手順（Create a New React App）に進む。",
+  "use_cases": [
+    "社内ツールの管理画面や dashboard の UI を作るのに使えそう",
+    "フレームワーク（Next.js など）の土台として間接的に使うことになりそう"
+  ],
+  "for_whom": "Web の画面を、コンポーネント単位で作りたいフロントエンド開発者",
+  "similar": [
+    "Vue：同種の UI ライブラリ。テンプレート中心",
+    "Svelte：コンパイル時に処理する方式"
+  ],
+  "tech": "JavaScript（monorepo）。npm パッケージ `react` として配布。MIT ライセンス。",
+  "caveats": "UI 部分だけで、ルーティングやデータ取得は別に選ぶ必要がある。リポジトリの URL は facebook/react 由来の記述がある（react/react に移った可能性。未確認）。最新は 19.3.1。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

@@ -1,0 +1,42 @@
+{
+  "repo": "nushell/nushell",
+  "short": "nushell は、出力を文字列でなく構造化データ（table）として扱う Rust 製の shell。pipeline で filter や変換をつなげられる。作者は MVP レベルとしていて、一部のコマンドは不安定かもしれない。",
+  "what": "構造化データを pipeline で扱う Rust 製の shell",
+  "can_do": [
+    "`ls` などの出力を table として扱い、`where` で絞り込む",
+    "pipeline で生成・フィルタ・消費のコマンドをつなぐ",
+    "ファイルを開いて構造化データとして読む（Opening files）",
+    "plugin で機能を拡張する",
+    "GitHub Action 用の setup-nu がある"
+  ],
+  "install": [
+    "`brew install nushell`",
+    "`winget install nushell`"
+  ],
+  "how_to_use": "インストール後 `nu` で起動し、`ls | where type == \"dir\" | table` のように pipeline を試す。設定は `$nu.config-path` で場所を確認する。",
+  "use_cases": [
+    "ログや JSON、CSV などをテキスト処理でなく table として絞り込む作業に使えそう",
+    "運用スクリプトを bash より読みやすく書くのに使えそう"
+  ],
+  "for_whom": "bash や jq を組み合わせた処理が増えて、構造化データの扱いをシンプルにしたいインフラ寄りのエンジニア",
+  "similar": [
+    "PowerShell：オブジェクトを pipeline に流す発想が近い",
+    "bash + jq：テキストと JSON を組み合わせる従来の方法"
+  ],
+  "tech": "Rust（Cargo workspace）。Linux・macOS・Windows。MIT。",
+  "caveats": "README に「MVP レベル。デザインが変わることがある」とある。bash などとの互換性はなく、既存のシェルスクリプトはそのまま動かない。",
+  "tags": [
+    "CLI",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

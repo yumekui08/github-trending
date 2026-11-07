@@ -1,0 +1,46 @@
+{
+  "repo": "prometheus/prometheus",
+  "short": "prometheus は、メトリクスを定期的に集めて保存し、ルールを評価してアラートを出す監視システム兼 time series database。PromQL で次元付きのデータを問い合わせる。",
+  "what": "メトリクス監視とアラートのための time series database",
+  "can_do": [
+    "設定した対象から HTTP pull でメトリクスを定期収集する",
+    "ラベル付きの多次元データとして time series を保存する",
+    "PromQL でメトリクスを集計・問い合わせる",
+    "ルールを評価し、条件を満たすとアラートを出す",
+    "service discovery または静的設定で監視対象を見つける",
+    "batch job 向けに gateway 経由の push、federation にも対応"
+  ],
+  "install": [
+    "`docker run --name prometheus -d -p 127.0.0.1:9090:9090 prom/prometheus`",
+    "`go install github.com/prometheus/prometheus/cmd/...`",
+    "コンパイル済みバイナリは prometheus.io/download から入手"
+  ],
+  "how_to_use": "設定ファイルに監視対象（scrape 対象）を書いて起動し、ブラウザで 9090 番ポートの UI から PromQL を試す。",
+  "use_cases": [
+    "サーバーや Kubernetes のメトリクスを集め、アラートを出す基盤に使えそう",
+    "Grafana と組み合わせて dashboard を作るのに使えそう"
+  ],
+  "for_whom": "サーバーやサービスの監視基盤を運用するインフラ・SRE の人",
+  "similar": [
+    "Zabbix：監視の用途は近い。こちらは pull 型でラベル付きの時系列が中心",
+    "InfluxDB：time series DB。こちらは監視とアラート機能まで含む"
+  ],
+  "tech": "Go。Docker イメージあり。ビルドには Go と Node.js（npm 10 以上、UI 用）が要る。Apache-2.0。CNCF のプロジェクト。",
+  "caveats": "長期保存や高可用性は単体では持たず、各サーバーが独立して動く設計。最新は 3.16.0 で、experimental な API 変更が release に含まれる。",
+  "tags": [
+    "監視・可観測性",
+    "インフラ・運用",
+    "データベース"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:go.mod",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

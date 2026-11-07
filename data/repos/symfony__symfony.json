@@ -1,0 +1,39 @@
+{
+  "repo": "symfony/symfony",
+  "short": "symfony は、PHP 製の Web・コンソールアプリ用フレームワーク。再利用できる PHP コンポーネント群でもあり、多くの PHP プロジェクトの部品として使われる。",
+  "what": "PHP の Web アプリ用フレームワークとコンポーネント群",
+  "can_do": [
+    "Web アプリとコンソール（CLI）アプリを作る",
+    "個別の PHP コンポーネントだけを単体で使う",
+    "Composer で導入する",
+    "LTS（長期サポート）版を使い、semantic versioning に沿ってアップグレードする",
+    "Symfony Demo やガイドで学ぶ"
+  ],
+  "install": [],
+  "how_to_use": "README にコマンドはない。公式の Install Symfony と Getting Started を読み、Composer で導入する。",
+  "use_cases": [
+    "PHP 製の業務システムの土台や API サーバーを作るのに使えそう",
+    "Yaml など個別コンポーネントを他の PHP ツールで使うのに使えそう"
+  ],
+  "for_whom": "PHP で Web アプリや CLI を作る開発者",
+  "similar": [
+    "Laravel：PHP の同種のフレームワーク。内部で Symfony のコンポーネントを使っていると思われる",
+    "Rails：思想が近い Ruby 製"
+  ],
+  "tech": "PHP 8.4.1 以上（composer.json）。Composer で配布。MIT ライセンス。",
+  "caveats": "最新のリリースは 8.2.0-BETA1 でプレリリース。PHP 8.4 以上が要る。README は案内が中心で、機能の説明は公式サイトにある。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:composer.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}

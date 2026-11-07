@@ -1,0 +1,44 @@
+{
+  "repo": "angular/angular",
+  "short": "angular は、TypeScript で Web アプリを作るための開発プラットフォーム。フレームワーク本体に加え、CLI、フォーム、SSR、アニメーションなどを一式で提供する。",
+  "what": "TypeScript 製のフルスタックな Web フロントエンドフレームワーク",
+  "can_do": [
+    "コンポーネントとテンプレートで画面を作る",
+    "フォーム、ルーティング、アニメーションなど周辺機能が公式で付属する",
+    "Server Side Rendering に対応",
+    "Angular CLI でプロジェクトの作成、開発サーバー起動、schematics によるコード生成",
+    "Angular Elements で Web Components として出力"
+  ],
+  "install": [
+    "`npm install -g @angular/cli`",
+    "`ng new [PROJECT NAME]`",
+    "`ng serve`"
+  ],
+  "how_to_use": "`ng new` で作った workspace に入り、`ng serve` で開発サーバーを起動する。詳細は angular.dev の Getting Started。",
+  "use_cases": [
+    "規約の決まった構成で、複数人の大規模フロントエンドを作るのに使えそう",
+    "社内向けの業務アプリの UI に使えそう"
+  ],
+  "for_whom": "TypeScript で、機能がそろったフレームワークを使って Web アプリを作りたい人",
+  "similar": [
+    "React：UI ライブラリで、周辺は自分で選ぶ。こちらは公式で一式そろう",
+    "Vue：中間的な位置づけ"
+  ],
+  "tech": "TypeScript。Node.js と npm が必要。MIT ライセンス。",
+  "caveats": "README の内容は開発セットアップが中心で、機能の細かい説明は angular.dev 側にある。manifest に Cargo.toml があり、一部に Rust を使うと思われるが未調査。最新は 22.2.5。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": "",
+  "summarized_at": "2026-11-07"
+}
