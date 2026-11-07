@@ -1,0 +1,48 @@
+{
+  "repo": "mbillow/localthings",
+  "summarized_at": "2026-11-08",
+  "short": "localthings は、Samsung の家電（洗濯機、冷蔵庫、エアコン、オーブンなど）を、クラウドのアカウントなしで Home Assistant から操作・監視する custom integration。家庭内 LAN で各家電と直接通信する。",
+  "what": "Samsung 家電を操作する Home Assistant 用 integration",
+  "can_do": [
+    "家電の IP アドレスを入れるだけで、種類と型番を判別して Home Assistant のデバイス、操作、センサーを作る",
+    "洗濯機、乾燥機、食洗機、冷蔵庫、エアコン、オーブン、空気清浄機、ロボット掃除機（初期対応）などを扱える",
+    "電源、モード選択、開始・一時停止・停止、温度、残り時間、ドアの状態、消費電力、フィルター状態を扱える",
+    "push に対応する家電は変化をすぐ反映し、それ以外は 30 秒ごとに polling する",
+    "初回の設定後は Samsung のサーバーに接続しない（README の説明）",
+    "表示名は 10 言語に翻訳されている。診断データのダウンロードで、未対応の機能を報告できる"
+  ],
+  "install": [
+    "HACS の Integrations で `LocalThings` を検索して Download（HACS の標準一覧にあるので custom repository の追加は不要）",
+    "HACS を使わない場合は `custom_components/localthings/` を Home Assistant の `custom_components/` に置く",
+    "Home Assistant を再起動する"
+  ],
+  "how_to_use": "Home Assistant の Settings > Devices & Services > Add Integration > LocalThings を開き、家電の IP アドレスを入れる。一部の家電は pre-shared key の取り込みや、古い機種向けの device token が要る。",
+  "use_cases": [
+    "家電の状態（洗濯の終了時刻など）を Home Assistant の自動化に使えそう",
+    "SmartThings のクラウドに依存せず、インターネットが切れても家電を操作できる構成にするのに使えそう",
+    "CoAP over DTLS と OCF を使う IoT 機器の通信の参考になりそう"
+  ],
+  "for_whom": "Samsung の SmartThings 対応家電を Home Assistant で、ローカルだけで動かしたい人",
+  "similar": [
+    "Home Assistant 公式の SmartThings integration：同じ家電を扱えるが、Samsung のクラウド経由。こちらは LAN で直接通信する",
+    "smartthings-local：プロトコル層のライブラリで、この integration が内部で使う"
+  ],
+  "tech": "Python 製の Home Assistant custom component（HACS 対応）。OCF、CoAP over DTLS（X.509 クライアント証明書）、CoAP Observe を使う。Docker 用のファイル（Dockerfile、docker-compose.yml）もあるが、開発・テスト用と思われる。LAN 内で家電と通信できることが前提。",
+  "caveats": "作られて約 4 か月で、リリースは v0.36.0。1.0 前で変更が多い。家電の機種ごとの対応差があり、確認できていない操作もある（例：DONGLE_0281 冷蔵庫の操作は実機で未確認）。一部の家電は自動の証明書を受け付けず、pre-shared key が要る。その入手は integration では行えない。初回の設定時に一度だけ Samsung のサーバーへ接続する。家電自体は Samsung との接続を保ったまま。非公式のプロジェクト。",
+  "tags": [
+    "自動化・ワークフロー",
+    "セルフホスト",
+    "ネットワーク"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

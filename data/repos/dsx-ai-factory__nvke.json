@@ -1,0 +1,45 @@
+{
+  "repo": "dsx-ai-factory/nvke",
+  "summarized_at": "2026-11-08",
+  "short": "nvke は、自前の NVIDIA GPU 機（bare metal）の上で、顧客向けの Kubernetes クラスタを作って運用する management plane。クラスタごとに独立した control plane、etcd、node pool を持つ。preview 版で、本番利用は勧められていない。",
+  "what": "GPU 機の Kubernetes クラスタ管理基盤",
+  "can_do": [
+    "NVKE の API か `nvkectl` で依頼すると、NICo 経由でマシンを用意し、独立した Kubernetes クラスタを作る",
+    "workload cluster の node pool の作成・スケール・削除、Kubernetes のアップグレード、node の交換を行う（交換とアップグレードは preview では手動の手順が残る）",
+    "node は TPM を使った SPIFFE/SPIRE の attestation を通ってから join の認証情報を受け取る",
+    "etcd データの暗号化をクラスタ単位で使える",
+    "GPU なしで試せる、シミュレーションのマシンを使うローカル quickstart がある"
+  ],
+  "install": [
+    "Go 1.27.3 と GNU Make 4 以上が必要（ソースからのビルド）",
+    "`git clone https://github.com/dsx-ai-factory/nvke.git`",
+    "`cd nvke`",
+    "`make build`",
+    "実機への導入は docs/operate/plan-installation.md の手順に従う（README に書かれた案内）"
+  ],
+  "how_to_use": "まず docs/get-started/quickstart-local.md のローカル quickstart で試す（Linux の host か VM、6 CPU、空きメモリ 12GiB、空きディスク 100GiB、Docker、仮想 TPM が必要）。実環境へ導入するときは、マシン、ネットワーク、node image、registry を自分で用意し、NICo へのアクセスを設定する。",
+  "use_cases": [
+    "社内の GPU 基盤を、チームごとに独立した Kubernetes クラスタとして貸し出す仕組みの検討に使えそう",
+    "bare metal の GPU 環境で、Cluster API 系の運用を検討するときの参考になりそう",
+    "TPM と SPIRE による node の認証の設計の参考になりそう"
+  ],
+  "for_whom": "NVIDIA GPU の bare metal 基盤を運用し、顧客やチームに Kubernetes を提供するプラットフォームチーム",
+  "similar": [
+    "Cluster API：クラスタのライフサイクル管理は近い。README では、NVKE は Cluster API の flavour ではないと説明している",
+    "Rancher：複数クラスタを管理する点は近い。こちらは NVIDIA の NICo を前提にした GPU 基盤向け"
+  ],
+  "tech": "Go（1.27.3、go.work の monorepo）。ビルドで agent、nvkectl、controller、tenant-api、operator-api などの 9 つの binary ができる。node agent は Linux で動く。インフラ側は NVIDIA Infra Controller（NICo）が前提。Apache-2.0。",
+  "caveats": "README に、preview で API、設定、動作が変わりうるため本番は勧めないとある。認証は初期状態で無効で、API は HTTP の平文なので、導入後に認証設定が要る。management cluster 自体のアップグレード、スケール、交換、バックアップ・復元の手順がない。FDE の node image は評価用で、保存データの機密性は得られない。対応するインフラ provider は NICo だけ。作られて約 3 か月。",
+  "tags": [
+    "コンテナ・Kubernetes",
+    "インフラ・運用"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,47 @@
+{
+  "repo": "meta/astryx",
+  "summarized_at": "2026-11-08",
+  "short": "astryx は、Meta 社内で使われてきた React 向けのデザインシステム。150 以上のコンポーネント、テーマ、テンプレート、CLI を備え、人と AI アシスタントが同じ資料と CLI で UI を作れるようにしている。",
+  "what": "React 向けのデザインシステム（UI コンポーネント集）",
+  "can_do": [
+    "アクセシビリティに配慮した 150 以上の React コンポーネントを使える",
+    "テーマは CSS カスタムプロパティの上書きで変えられ、ダークモードにも対応する",
+    "ビルド済み CSS を import するだけで使え、ビルド用 plugin は要らない。className で Tailwind や CSS modules による上書きもできる",
+    "`swizzle` でコンポーネントのソースをプロジェクトに取り出して改造できる",
+    "CLI でコンポーネントのドキュメント、テンプレート、scaffold、テーマ、codemod を扱える",
+    "既製のテーマ 7 種（neutral、butter、chocolate など）が付く"
+  ],
+  "install": [
+    "React 19 以上が必要（peer dependency）",
+    "`npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex`",
+    "`npm install -D @astryxdesign/cli`",
+    "`npm i -g @astryxdesign/cli`（CLI を全体に入れる場合）"
+  ],
+  "how_to_use": "CSS の import と theme provider を足すだけで始められる。詳細は packages/core の README の quick start（Next.js、Tailwind、Vite、CDN）を参照。`npm run astryx -- component --list` でコンポーネント一覧を見られる。",
+  "use_cases": [
+    "社内向けの管理画面や運用ダッシュボードの UI を、一から作らずに組むのに使えそう",
+    "AI コーディングエージェントに UI を書かせるとき、同じ CLI と資料を参照させる使い方ができそう",
+    "デザインシステムの構成（テーマ、swizzle、changeset 運用）の参考になりそう"
+  ],
+  "for_whom": "React で UI を作り、見た目を自社向けに変えられるコンポーネント集がほしい人",
+  "similar": [
+    "MUI：コンポーネント集として近い。こちらはスタイルを StyleX で書き、利用側に styling ライブラリの採用を求めない",
+    "shadcn/ui：ソースを手元に取り出して改造する点が近い。こちらは npm パッケージとして使うのが基本で、必要なときだけ swizzle で取り出す"
+  ],
+  "tech": "TypeScript。React 19 以上と StyleX。monorepo で、@astryxdesign/core、cli、build、theme-* などのパッケージに分かれる。ブラウザ向けで、特別な環境は要らない。",
+  "caveats": "README に Beta と明記されている。最新リリースは v0.7.11 で、1.0 前のため API が変わる可能性がある。@astryxdesign/vega と @astryxdesign/charts は canary タグのみで、安定版がない。「Meta 社内で 8 年使われ 13,000 以上のアプリを支える」は README の自己申告で、確認していない。リポジトリは約 1.2GB と大きい。",
+  "tags": [
+    "ライブラリ・SDK",
+    "Web",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

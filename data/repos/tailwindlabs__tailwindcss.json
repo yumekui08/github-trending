@@ -1,0 +1,41 @@
+{
+  "repo": "tailwindlabs/tailwindcss",
+  "summarized_at": "2026-11-08",
+  "short": "tailwindcss は、HTML に utility class（`flex`、`pt-4` など）を直接書いて UI を組む CSS framework のソースリポジトリ。vite、PostCSS、CLI、webpack などの連携パッケージも同じ monorepo にある。",
+  "what": "utility class で UI を組む CSS framework",
+  "can_do": [
+    "HTML やテンプレートに utility class を書いて、CSS を別に書かずにスタイルを付ける",
+    "使われている class だけを走査して CSS を生成する（走査部分は Rust 製の oxide と思われる）",
+    "vite、PostCSS、webpack、turbopack、CLI 向けの連携パッケージを使える",
+    "ブラウザ向けのビルド（@tailwindcss/browser）や、単体で動く standalone 版もある",
+    "@tailwindcss/upgrade で旧バージョンからの移行を支援する"
+  ],
+  "install": [],
+  "how_to_use": "このリポジトリの README には導入手順がなく、tailwindcss.com のドキュメントを案内するだけ。利用するときは公式ドキュメントのインストール手順に従う。リポジトリ自体を開発するなら pnpm を使う（packageManager に pnpm の指定がある）。",
+  "use_cases": [
+    "社内ツールや管理画面の UI を、CSS ファイルをあまり書かずに作るのに使えそう",
+    "vite 系のフロントエンドに組み込んで、開発中のスタイル生成を自動化するのに使えそう",
+    "monorepo（pnpm、Rust と TypeScript の混在）の構成を知る参考になりそう"
+  ],
+  "for_whom": "フロントエンドで CSS を class 単位で組み立てたい人。公式ドキュメントを読む前提の人",
+  "similar": [
+    "Bootstrap：CSS framework として有名。こちらは部品（ボタンなど）ではなく、小さな utility class を組み合わせる",
+    "UnoCSS：utility class ベースで近い。違いの細部は調べていない"
+  ],
+  "tech": "TypeScript が主で、Rust（Cargo.toml あり）も使う。pnpm の monorepo。MIT ライセンス。ブラウザ向けの出力で、特別な動作環境の指定は読んでいない。",
+  "caveats": "README が薄く、このリポジトリはフレームワーク本体の開発用。使い方は公式サイトの文書が前提。2017 年からの長い歴史があり、メジャーバージョン間で書き方が変わるため、バージョンの確認が要る。最新リリースは v4.3.5 で、バグ修正が中心。Rust 部分の役割は構成から推測で、コードは読んでいない。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README が公式サイトへの案内だけで、導入手順や仕組みは読んでいない。tree と manifests、release から機能を補った。Rust 部分の中身は未確認"
+}

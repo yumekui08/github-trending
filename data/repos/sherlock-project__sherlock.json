@@ -1,0 +1,46 @@
+{
+  "repo": "sherlock-project/sherlock",
+  "summarized_at": "2026-11-08",
+  "short": "sherlock は、ユーザー名を渡すと 400 以上の SNS・サイトにそのアカウントがあるかを調べる Python 製の CLI。OSINT（公開情報の調査）で、同じ人のアカウントを探す用途に使う。",
+  "what": "ユーザー名から SNS のアカウントを探す OSINT 用 CLI",
+  "can_do": [
+    "`sherlock user123` で、ユーザー名が各サイトに存在するかを一括で調べる",
+    "複数のユーザー名をまとめて指定できる",
+    "結果を txt、CSV、xlsx に保存できる",
+    "`--site` で対象サイトを絞り、`--proxy` でプロキシ経由（Tor など）にできる",
+    "`--json` で、サイト定義の JSON を差し替えられる",
+    "`--browse` で見つかったページをブラウザで開く"
+  ],
+  "install": [
+    "`pipx install sherlock-project`（`pip` や `uv` でも可）",
+    "`docker run -it --rm sherlock/sherlock`",
+    "`dnf install sherlock-project`"
+  ],
+  "how_to_use": "`sherlock ユーザー名` を実行すると、見つかったアカウントの URL が表示され、ユーザー名の txt ファイルにも保存される。オプションは `sherlock --help` で見られる。",
+  "use_cases": [
+    "ペネトレーションテストや調査で、対象者の公開アカウントを洗い出す下調べに使えそう",
+    "自社名やサービス名のユーザー名が、各サイトで取られているかの確認に使えそう",
+    "自分のユーザー名がどこで公開されているかの棚卸しに使えそう"
+  ],
+  "for_whom": "OSINT やセキュリティ調査で、ユーザー名からアカウントを探したい人",
+  "similar": [
+    "Maigret：同じ username 検索のツール。対応サイト数や出力の細部は調べていない",
+    "WhatsMyName：同種のサイト定義を集めたプロジェクト"
+  ],
+  "tech": "Python 製。pyproject.toml で配布され、PyPI（sherlock-project）、Docker、各 Linux ディストリのパッケージで入る。各サイトへ HTTP リクエストを送るため、ネットワーク接続が要る。",
+  "caveats": "サイトの仕様変更や、ログイン・bot 対策で、誤検出や見落としが起こりうる（README に `--ignore-exclusions` で誤検出が増えるとの記載あり）。同名の別人が見つかることもある。第三者が配布する ParrotOS と Ubuntu 24.04 のパッケージは壊れているようだと README にある。README にスポンサーの広告バナーがある。他人のアカウント調査に使うため、法令や利用規約に配慮が必要。MIT ライセンス。",
+  "tags": [
+    "セキュリティ",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

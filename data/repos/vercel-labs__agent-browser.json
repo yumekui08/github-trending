@@ -1,0 +1,48 @@
+{
+  "repo": "vercel-labs/agent-browser",
+  "summarized_at": "2026-11-08",
+  "short": "agent-browser は、AI エージェントがシェルのコマンドでブラウザを操作するための Rust 製 CLI。`snapshot` でページを accessibility tree のテキストにし、各要素の ref（`@e1` など）を指定して click や入力をする。",
+  "what": "AI エージェント向けのブラウザ操作 CLI",
+  "can_do": [
+    "`open`、`snapshot`、`click`、`fill`、`get` などのコマンドで、ページを開いて読み、操作し、結果を確かめる",
+    "ref のほか、CSS selector、テキスト、XPath、role による指定もできる",
+    "screenshot や pdf の取得ができる",
+    "実行中の Chrome へ `--cdp` で接続できる。Lightpanda や Obscura の engine、iOS Simulator、Browserbase などの cloud browser も選べる",
+    "`--session` ごとに別の daemon とブラウザを持つ。設定すればセッションの状態を保存できる",
+    "`agent-browser mcp` で MCP server（stdio）として動く。`agent-browser skills get core` で、版に合った agent 向けの手順を出せる"
+  ],
+  "install": [
+    "`npm install -g agent-browser`",
+    "`agent-browser install`（Chrome for Testing を最初に1回ダウンロードする）",
+    "`brew install agent-browser`（Homebrew の場合）",
+    "`agent-browser install --with-deps`（Linux でシステムライブラリも入れる場合）",
+    "`npx agent-browser open example.com`（インストールせずに試す場合）"
+  ],
+  "how_to_use": "`agent-browser open example.com` でページを開き、`agent-browser snapshot -i` で操作できる要素と ref を見る。`agent-browser click @e1` のように ref を指定して操作し、`agent-browser get url` などで確かめる。終わったら `agent-browser close`。ページが変わったら ref は古くなるので、新しく snapshot を取る。",
+  "use_cases": [
+    "Claude Code などのエージェントに、Web 画面の操作や確認をシェルから任せるのに使えそう",
+    "管理画面のスモークテストや、画面の手順の自動化に使えそう",
+    "MCP クライアントに、ブラウザ操作の tool を足すのに使えそう"
+  ],
+  "for_whom": "AI コーディングエージェントにブラウザを操作させたい人",
+  "similar": [
+    "Playwright：ブラウザ自動化の定番。こちらは人が書くテストコードではなく、エージェントが1コマンドずつ叩く CLI",
+    "Playwright MCP：エージェントにブラウザを使わせる点は近い。こちらはシェルのコマンドを中心にしている"
+  ],
+  "tech": "Rust 製のネイティブ CLI（npm、Homebrew で配布）。background の daemon が Chrome DevTools Protocol でブラウザを制御する。既定は Chrome for Testing。Linux ではブラウザ用のシステムライブラリが要る。Apache-2.0。",
+  "caveats": "Vercel Labs の製品で、作られて約 10 か月、v0.41.2 と 1.0 前。コマンドや挙動が変わる可能性がある。daemon は 1 時間コマンドがないと終了する。隠れた要素や、同意バナーなどに覆われた要素への click は失敗する。cloud browser の provider の一部は外部サービスの契約が要ると思われる。Chrome の脆弱性が見つかると警告を出す仕組みがある。",
+  "tags": [
+    "AI エージェント",
+    "CLI",
+    "自動化・ワークフロー"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
