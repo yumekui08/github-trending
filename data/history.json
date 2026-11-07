@@ -251,7 +251,8 @@
     "first_seen": "2026-11-05",
     "seen": [
       "2026-11-05",
-      "2026-11-06"
+      "2026-11-06",
+      "2026-11-07"
     ]
   },
   "NationalSecurityAgency/ghidra": {
@@ -422,6 +423,12 @@
       "2026-10-19"
     ]
   },
+  "angular/angular": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
+    ]
+  },
   "anomalyco/hex": {
     "first_seen": "2026-11-02",
     "seen": [
@@ -476,6 +483,12 @@
     "first_seen": "2026-10-05",
     "seen": [
       "2026-10-05"
+    ]
+  },
+  "astral-sh/ruff": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
     ]
   },
   "averygan/reclip": {
@@ -590,7 +603,8 @@
       "2026-10-23",
       "2026-10-24",
       "2026-10-25",
-      "2026-10-26"
+      "2026-10-26",
+      "2026-11-07"
     ]
   },
   "colbymchenry/codegraph": {
@@ -678,6 +692,12 @@
       "2026-10-30"
     ]
   },
+  "etcd-io/etcd": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
+    ]
+  },
   "expo/skills": {
     "first_seen": "2026-10-29",
     "seen": [
@@ -751,7 +771,8 @@
     "first_seen": "2026-10-03",
     "seen": [
       "2026-10-03",
-      "2026-11-06"
+      "2026-11-06",
+      "2026-11-07"
     ]
   },
   "harry0703/MoneyPrinterTurbo": {
@@ -915,7 +936,8 @@
       "2026-11-03",
       "2026-11-04",
       "2026-11-05",
-      "2026-11-06"
+      "2026-11-06",
+      "2026-11-07"
     ]
   },
   "max-sixty/worktrunk": {
@@ -943,6 +965,12 @@
     "first_seen": "2026-11-06",
     "seen": [
       "2026-11-06"
+    ]
+  },
+  "microsoft/vscode": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
     ]
   },
   "milind-soni/OpenMausBot": {
@@ -996,6 +1024,12 @@
       "2026-10-16"
     ]
   },
+  "mpv-player/mpv": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
+    ]
+  },
   "msitarzewski/agency-agents": {
     "first_seen": "2026-10-06",
     "seen": [
@@ -1041,6 +1075,12 @@
       "2026-10-15"
     ]
   },
+  "nushell/nushell": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
+    ]
+  },
   "nvm-sh/nvm": {
     "first_seen": "2026-10-15",
     "seen": [
@@ -1078,6 +1118,12 @@
     "first_seen": "2026-10-01",
     "seen": [
       "2026-10-01"
+    ]
+  },
+  "openssl/openssl": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
     ]
   },
   "p-e-w/heretic": {
@@ -1152,6 +1198,12 @@
       "2026-10-27"
     ]
   },
+  "prometheus/prometheus": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
+    ]
+  },
   "public-apis/public-apis": {
     "first_seen": "2026-11-02",
     "seen": [
@@ -1165,10 +1217,22 @@
       "2026-10-12"
     ]
   },
+  "rails/rails": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
+    ]
+  },
   "rakyll/hey": {
     "first_seen": "2026-09-30",
     "seen": [
       "2026-09-30"
+    ]
+  },
+  "react/react": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
     ]
   },
   "rohitg00/ai-engineering-from-scratch": {
@@ -1180,7 +1244,8 @@
   "rust-lang/rust": {
     "first_seen": "2026-10-15",
     "seen": [
-      "2026-10-15"
+      "2026-10-15",
+      "2026-11-07"
     ]
   },
   "ruvnet/RuView": {
@@ -1250,6 +1315,12 @@
     "seen": [
       "2026-10-22",
       "2026-10-23"
+    ]
+  },
+  "symfony/symfony": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
     ]
   },
   "t8y2/dbx": {
@@ -1403,6 +1474,12 @@
     "seen": [
       "2026-10-14",
       "2026-10-15"
+    ]
+  },
+  "zed-industries/zed": {
+    "first_seen": "2026-11-07",
+    "seen": [
+      "2026-11-07"
     ]
   }
 }

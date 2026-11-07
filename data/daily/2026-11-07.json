@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-07",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "zed-industries/zed",
+      "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "language": "Rust",
+      "stars": 93614,
+      "stars_today": 306,
+      "status": "new"
+    },
+    {
+      "rank": 2,
+      "repo": "NVIDIA/auto-ontology",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "language": "Python",
+      "stars": 9001,
+      "stars_today": 2015,
+      "status": "continuing"
+    },
+    {
+      "rank": 3,
+      "repo": "rails/rails",
+      "description": "Ruby on Rails",
+      "language": "Ruby",
+      "stars": 59023,
+      "stars_today": 142,
+      "status": "new"
+    },
+    {
+      "rank": 4,
+      "repo": "mpv-player/mpv",
+      "description": "🎥 Command line media player",
+      "language": "C",
+      "stars": 37872,
+      "stars_today": 37,
+      "status": "new"
+    },
+    {
+      "rank": 5,
+      "repo": "rust-lang/rust",
+      "description": "Empowering everyone to build reliable and efficient software.",
+      "language": "Rust",
+      "stars": 121440,
+      "stars_today": 192,
+      "status": "returning"
+    },
+    {
+      "rank": 6,
+      "repo": "react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252252,
+      "stars_today": 248,
+      "status": "new"
+    },
+    {
+      "rank": 7,
+      "repo": "angular/angular",
+      "description": "Deliver web apps with confidence 🚀",
+      "language": "TypeScript",
+      "stars": 101355,
+      "stars_today": 135,
+      "status": "new"
+    },
+    {
+      "rank": 8,
+      "repo": "symfony/symfony",
+      "description": "The Symfony PHP framework",
+      "language": "PHP",
+      "stars": 31426,
+      "stars_today": 128,
+      "status": "new"
+    },
+    {
+      "rank": 9,
+      "repo": "prometheus/prometheus",
+      "description": "The Prometheus monitoring system and time series database.",
+      "language": "Go",
+      "stars": 67178,
+      "stars_today": 148,
+      "status": "new"
+    },
+    {
+      "rank": 10,
+      "repo": "google/skills",
+      "description": "Agent Skills for Google products and technologies",
+      "language": "Python",
+      "stars": 22829,
+      "stars_today": 534,
+      "status": "continuing"
+    },
+    {
+      "rank": 11,
+      "repo": "microsoft/vscode",
+      "description": "Visual Studio Code",
+      "language": "TypeScript",
+      "stars": 195022,
+      "stars_today": 301,
+      "status": "new"
+    },
+    {
+      "rank": 12,
+      "repo": "nushell/nushell",
+      "description": "A new type of shell",
+      "language": "Rust",
+      "stars": 40979,
+      "stars_today": 131,
+      "status": "new"
+    },
+    {
+      "rank": 13,
+      "repo": "etcd-io/etcd",
+      "description": "Distributed reliable key-value store for the most critical data of a distributed system",
+      "language": "Go",
+      "stars": 52613,
+      "stars_today": 128,
+      "status": "new"
+    },
+    {
+      "rank": 14,
+      "repo": "openssl/openssl",
+      "description": "General purpose TLS and crypto library",
+      "language": "C",
+      "stars": 31286,
+      "stars_today": 26,
+      "status": "new"
+    },
+    {
+      "rank": 15,
+      "repo": "mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 316699,
+      "stars_today": 2070,
+      "status": "continuing"
+    },
+    {
+      "rank": 16,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 63964,
+      "stars_today": 2548,
+      "status": "returning"
+    },
+    {
+      "rank": 17,
+      "repo": "astral-sh/ruff",
+      "description": "An extremely fast Python linter and code formatter, written in Rust.",
+      "language": "Rust",
+      "stars": 50688,
+      "stars_today": 169,
+      "status": "new"
+    }
+  ],
+  "errors": []
+}
