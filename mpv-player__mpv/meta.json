@@ -1,0 +1,24 @@
+{
+  "full_name": "mpv-player/mpv",
+  "description": "🎥 Command line media player",
+  "homepage": "https://mpv.io",
+  "topics": [
+    "audio",
+    "c",
+    "ffmpeg",
+    "mplayer",
+    "mpv",
+    "multimedia",
+    "video"
+  ],
+  "language": "C",
+  "stargazers_count": 37872,
+  "forks_count": 3632,
+  "size": 123509,
+  "created_at": "2012-10-13T08:08:44Z",
+  "pushed_at": "2026-11-05T15:31:49Z",
+  "default_branch": "master",
+  "archived": false,
+  "fork": false,
+  "license": "NOASSERTION"
+}

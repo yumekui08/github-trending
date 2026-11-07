@@ -1,0 +1,203 @@
+{
+  "date": "2026-11-07",
+  "items": [
+    {
+      "repo": "zed-industries/zed",
+      "rank": 1,
+      "status": "new",
+      "work_dir": ".work/zed-industries__zed",
+      "output": "data/repos/zed-industries__zed.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:Cargo.toml",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "rails/rails",
+      "rank": 3,
+      "status": "new",
+      "work_dir": ".work/rails__rails",
+      "output": "data/repos/rails__rails.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "manifest:Gemfile",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "mpv-player/mpv",
+      "rank": 4,
+      "status": "new",
+      "work_dir": ".work/mpv-player__mpv",
+      "output": "data/repos/mpv-player__mpv.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:pyproject.toml",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "react/react",
+      "rank": 6,
+      "status": "new",
+      "work_dir": ".work/react__react",
+      "output": "data/repos/react__react.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "angular/angular",
+      "rank": 7,
+      "status": "new",
+      "work_dir": ".work/angular__angular",
+      "output": "data/repos/angular__angular.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "manifest:Cargo.toml",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "symfony/symfony",
+      "rank": 8,
+      "status": "new",
+      "work_dir": ".work/symfony__symfony",
+      "output": "data/repos/symfony__symfony.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:composer.json",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "prometheus/prometheus",
+      "rank": 9,
+      "status": "new",
+      "work_dir": ".work/prometheus__prometheus",
+      "output": "data/repos/prometheus__prometheus.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:go.mod",
+        "manifest:Dockerfile",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "microsoft/vscode",
+      "rank": 11,
+      "status": "new",
+      "work_dir": ".work/microsoft__vscode",
+      "output": "data/repos/microsoft__vscode.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "nushell/nushell",
+      "rank": 12,
+      "status": "new",
+      "work_dir": ".work/nushell__nushell",
+      "output": "data/repos/nushell__nushell.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:Cargo.toml",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "etcd-io/etcd",
+      "rank": 13,
+      "status": "new",
+      "work_dir": ".work/etcd-io__etcd",
+      "output": "data/repos/etcd-io__etcd.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:go.mod",
+        "manifest:Dockerfile",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "openssl/openssl",
+      "rank": 14,
+      "status": "new",
+      "work_dir": ".work/openssl__openssl",
+      "output": "data/repos/openssl__openssl.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "astral-sh/ruff",
+      "rank": 17,
+      "status": "new",
+      "work_dir": ".work/astral-sh__ruff",
+      "output": "data/repos/astral-sh__ruff.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:pyproject.toml",
+        "manifest:Cargo.toml",
+        "manifest:Dockerfile",
+        "release"
+      ],
+      "errors": []
+    }
+  ],
+  "deferred": []
+}

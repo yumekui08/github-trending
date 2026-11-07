@@ -1,0 +1,23 @@
+{
+  "full_name": "openssl/openssl",
+  "description": "General purpose TLS and crypto library",
+  "homepage": "https://openssl-library.org/",
+  "topics": [
+    "cryptography",
+    "decryption",
+    "encryption",
+    "openssl",
+    "ssl",
+    "tls"
+  ],
+  "language": "C",
+  "stargazers_count": 31286,
+  "forks_count": 11580,
+  "size": 376981,
+  "created_at": "2013-01-15T22:34:48Z",
+  "pushed_at": "2026-11-06T21:22:27Z",
+  "default_branch": "master",
+  "archived": false,
+  "fork": false,
+  "license": "Apache-2.0"
+}

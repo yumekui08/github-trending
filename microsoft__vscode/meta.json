@@ -1,0 +1,22 @@
+{
+  "full_name": "microsoft/vscode",
+  "description": "Visual Studio Code",
+  "homepage": "https://code.visualstudio.com",
+  "topics": [
+    "editor",
+    "electron",
+    "microsoft",
+    "typescript",
+    "visual-studio-code"
+  ],
+  "language": "TypeScript",
+  "stargazers_count": 195022,
+  "forks_count": 44425,
+  "size": 1711340,
+  "created_at": "2015-09-03T20:23:38Z",
+  "pushed_at": "2026-11-07T00:18:46Z",
+  "default_branch": "main",
+  "archived": false,
+  "fork": false,
+  "license": "MIT"
+}

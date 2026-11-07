@@ -1,0 +1,21 @@
+{
+  "full_name": "zed-industries/zed",
+  "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+  "homepage": "https://zed.dev",
+  "topics": [
+    "gpui",
+    "rust-lang",
+    "text-editor",
+    "zed"
+  ],
+  "language": "Rust",
+  "stargazers_count": 93614,
+  "forks_count": 11499,
+  "size": 551873,
+  "created_at": "2021-02-20T03:01:06Z",
+  "pushed_at": "2026-11-06T20:00:38Z",
+  "default_branch": "main",
+  "archived": false,
+  "fork": false,
+  "license": "NOASSERTION"
+}
