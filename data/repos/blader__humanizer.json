@@ -1,0 +1,40 @@
+{
+  "repo": "blader/humanizer",
+  "summarized_at": "2026-11-09",
+  "short": "humanizer は、AI が書いたような文章の癖を取り除いて書き直す agent skill。Wikipedia の「Signs of AI writing」を元にした26のパターンで直す。Claude Code や Codex で使える。",
+  "what": "AI 臭い文章を書き直す agent skill",
+  "can_do": [
+    "貼り付けた文章から AI 特有の癖(「Not X but Y」、決め台詞の締め、三点並べなど)を検出して書き直す",
+    "初稿、残る不自然さの指摘、最終稿の順で途中経過も示す",
+    "ファイルのパスを渡すと、コードや frontmatter、リンク先は触らず本文だけ直す",
+    "自分の文章サンプルを渡して、文体を寄せる",
+    "名前・数字・日付などの事実は元の文章から出たものだけを使い、足りなければ聞き返す"
+  ],
+  "install": [
+    "`/plugin marketplace add blader/humanizer`",
+    "`/plugin install humanizer@humanizer`",
+    "`npx skills add blader/humanizer --global --agent codex`"
+  ],
+  "how_to_use": "インストール後に `/humanizer` を呼び、直したい文章を貼る。「この文章を humanize して」のような普通の依頼でも動く。",
+  "use_cases": [
+    "LLM で下書きした技術ブログや README の文章を整える用途に使えそう",
+    "英語の文章の不自然さを機械的に点検する用途に使えそう",
+    "社内ドキュメントの LLM 下書きの仕上げに使えそう"
+  ],
+  "for_whom": "LLM で文章を下書きし、人が書いたような自然な文章に仕上げたい人。",
+  "similar": [],
+  "tech": "中身は SKILL.md(プロンプト)が中心で、検証用の Python スクリプトが1つある。Claude Code(2.1.142 以降)、Codex、Cursor など skills 対応の agent で動く。MIT。",
+  "caveats": "AI 検出器を回避することは目的ではないと README に明記されており、検出器にはほぼ引っかかるとある。パターンは英語の文章が前提と思われる(日本語での効果は材料からは分からない)。スポンサー(cfo.ai)の表記がある。",
+  "tags": [
+    "AI エージェント",
+    "ドキュメント・知識管理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release のみ読んだ。SKILL.md の中身は読んでおらず、日本語文章への効果は不明。"
+}

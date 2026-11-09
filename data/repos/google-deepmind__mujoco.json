@@ -1,0 +1,44 @@
+{
+  "repo": "google-deepmind/mujoco",
+  "summarized_at": "2026-11-09",
+  "short": "mujoco は、関節構造と接触を高速・正確に扱う汎用の物理シミュレータ。ロボティクスや機械学習の研究向けで、C API と Python バインディングがある。11/6 に 4.0.0 が出た。",
+  "what": "ロボット研究向けの物理シミュレータ(C 製ライブラリ)",
+  "can_do": [
+    "関節で繋がった物体(ロボット、人体モデルなど)と接触の物理シミュレーション",
+    "XML でモデルを記述し、組み込みのコンパイラで読み込む",
+    "デスクトップのビューア(MuJoCo Studio、simulate)での可視化",
+    "Python から使うバインディング(pip install mujoco)、JAX 版の MJX での並列実行",
+    "4.0.0 で speculative contacts(薄い障害物のすり抜け防止)や elasto-plasticity(塑性変形)を追加"
+  ],
+  "install": [
+    "`pip install mujoco`",
+    "ビルド済みバイナリは GitHub の releases ページから取得(Linux / Windows / macOS)"
+  ],
+  "how_to_use": "mujoco.org か live.mujoco.org でブラウザ上で試せる。手元では Python のチュートリアル notebook(Colab)から入るのが README の勧め。",
+  "use_cases": [
+    "強化学習やロボット制御の研究・検証用のシミュレーション環境として使えそう",
+    "MJX を使えば GPU/TPU で大量の並列 rollout ができそう",
+    "ロボットの動作を実機の前にシミュレータで確認する用途に使えそう"
+  ],
+  "for_whom": "ロボティクスや強化学習の研究者・開発者。物理シミュレーションを自作コードに組み込みたい人。",
+  "similar": [
+    "PyBullet：Python から使える物理エンジンで用途は近い。こちらは接触の精度と研究での実績が売り",
+    "Isaac Sim：NVIDIA 製で GPU 前提。こちらはより軽量な汎用ライブラリ"
+  ],
+  "tech": "C/C++(CMake、Bazel でビルド)。Python 3.11 以上のバインディング。Linux(x86-64、AArch64)、Windows(x86-64)、macOS 対応。GPU は必須ではない(MJX は JAX)。Apache-2.0。",
+  "caveats": "低レベルのデータ構造を直接扱う設計で、研究者・開発者向け。main の先頭は不安定なことがあるとされており、リリース版の利用が推奨されている。4.0.0 が出たばかりで、3.x からの変更点は多い。",
+  "tags": [
+    "機械学習",
+    "ライブラリ・SDK",
+    "言語・ランタイム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:CMakeLists.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

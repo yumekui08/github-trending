@@ -1,0 +1,39 @@
+{
+  "repo": "anthropics/claude-quickstarts",
+  "summarized_at": "2026-11-09",
+  "short": "claude-quickstarts は、Claude API を使ったアプリのサンプル集。カスタマーサポート、computer use、ブラウザ操作、Managed Agents など用途別のプロジェクトが1つのリポジトリに入っている。",
+  "what": "Claude API を使うアプリのサンプル集",
+  "can_do": [
+    "カスタマーサポート agent や財務データ分析チャットのサンプル(Next.js)を動かして構成を見る",
+    "computer use / browser use のデモ環境(Docker)で、Claude にデスクトップやブラウザを操作させる例を試す",
+    "browser-toolset / computer-toolset で、ツールの最小実装(Python と TypeScript)を読む",
+    "autonomous-coding で、initializer と coding agent の2段構成の長時間コーディング agent を見る",
+    "managed-agents 以下で、Slack bot、Linear、Sentry 連携、cron 実行の brief など Managed Agents の使い方を見る"
+  ],
+  "install": [],
+  "how_to_use": "リポジトリを clone し、使いたいサンプルのディレクトリに入って、そこの README に従って依存を入れる。Claude API key を環境変数に設定して起動する。",
+  "use_cases": [
+    "社内向けの LLM / agent ツールを作るときの出発点として、構成を真似できそう",
+    "Slack や Sentry と agent を組み合わせた運用自動化の設計の参考になりそう",
+    "computer use をコンテナで隔離して動かす構成の参考になりそう"
+  ],
+  "for_whom": "Claude API で agent やアプリを作りたい開発者。動くサンプルから入りたい人。",
+  "similar": [
+    "anthropics/claude-cookbooks：コード片とガイド中心。こちらは動くアプリ単位のサンプル"
+  ],
+  "tech": "Python、TypeScript(Next.js)。サンプルごとに依存が別。computer-use-demo などは Docker 前提。Claude API key が必要。",
+  "caveats": "サンプル集であり、本番用コードではない(README にも一部で明記)。Claude API(有料)の key が要る。サンプルごとに環境・手順が別で、ルートの README は案内のみ。",
+  "tags": [
+    "AI エージェント",
+    "ライブラリ・SDK",
+    "学習資料"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
