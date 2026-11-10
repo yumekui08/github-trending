@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-10",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "stars": 447267,
+      "stars_period": 413718
+    },
+    {
+      "rank": 2,
+      "repo": "Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars": 51853,
+      "stars_period": 21862
+    },
+    {
+      "rank": 3,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 68164,
+      "stars_period": 40994
+    },
+    {
+      "rank": 4,
+      "repo": "pingdotgg/t3code",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 54290,
+      "stars_period": 26993
+    },
+    {
+      "rank": 5,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 81750,
+      "stars_period": 22344
+    },
+    {
+      "rank": 6,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 115429,
+      "stars_period": 17008
+    },
+    {
+      "rank": 7,
+      "repo": "debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 106269,
+      "stars_period": 50585
+    },
+    {
+      "rank": 8,
+      "repo": "HKUDS/DeepTutor",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/ .",
+      "language": "Python",
+      "stars": 57663,
+      "stars_period": 16710
+    },
+    {
+      "rank": 9,
+      "repo": "pbakaus/impeccable",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "language": "Rust",
+      "stars": 106949,
+      "stars_period": 28285
+    },
+    {
+      "rank": 10,
+      "repo": "storytold/artcraft",
+      "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+      "language": "Rust",
+      "stars": 40285,
+      "stars_period": 30753
+    },
+    {
+      "rank": 11,
+      "repo": "NationalSecurityAgency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "language": "Java",
+      "stars": 99125,
+      "stars_period": 17387
+    },
+    {
+      "rank": 12,
+      "repo": "boykopovar/AnyPS5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "language": "C++",
+      "stars": 52672,
+      "stars_period": 34260
+    },
+    {
+      "rank": 13,
+      "repo": "anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "language": "Python",
+      "stars": 46648,
+      "stars_period": 9215
+    }
+  ]
+}

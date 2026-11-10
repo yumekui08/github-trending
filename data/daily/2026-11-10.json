@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-10",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 191122,
+      "stars_today": 1038,
+      "status": "continuing"
+    },
+    {
+      "rank": 2,
+      "repo": "meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "language": "TypeScript",
+      "stars": 20356,
+      "stars_today": 3278,
+      "status": "continuing"
+    },
+    {
+      "rank": 3,
+      "repo": "sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username across social networks",
+      "language": "Python",
+      "stars": 107288,
+      "stars_today": 4267,
+      "status": "continuing"
+    },
+    {
+      "rank": 4,
+      "repo": "google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "language": "C++",
+      "stars": 16959,
+      "stars_today": 574,
+      "status": "continuing"
+    },
+    {
+      "rank": 5,
+      "repo": "anthropics/claude-quickstarts",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "language": "Python",
+      "stars": 20064,
+      "stars_today": 551,
+      "status": "continuing"
+    },
+    {
+      "rank": 6,
+      "repo": "garrytan/gbrain",
+      "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
+      "language": "TypeScript",
+      "stars": 32208,
+      "stars_today": 216,
+      "status": "new"
+    },
+    {
+      "rank": 7,
+      "repo": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 48565,
+      "stars_today": 916,
+      "status": "continuing"
+    },
+    {
+      "rank": 8,
+      "repo": "ruvnet/RuView",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars": 103532,
+      "stars_today": 172,
+      "status": "returning"
+    },
+    {
+      "rank": 9,
+      "repo": "ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "language": "Python",
+      "stars": 68986,
+      "stars_today": 506,
+      "status": "new"
+    },
+    {
+      "rank": 10,
+      "repo": "homeassistant-ai/ha-mcp",
+      "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+      "language": "Python",
+      "stars": 6052,
+      "stars_today": 31,
+      "status": "new"
+    },
+    {
+      "rank": 11,
+      "repo": "milind-soni/OpenMausBot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "language": "TypeScript",
+      "stars": 19830,
+      "stars_today": 1587,
+      "status": "continuing"
+    }
+  ],
+  "errors": []
+}
