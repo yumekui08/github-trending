@@ -1,0 +1,44 @@
+{
+  "repo": "homeassistant-ai/ha-mcp",
+  "summarized_at": "2026-11-10",
+  "short": "ha-mcp は、Claude や ChatGPT などの AI から Home Assistant を操作・設定できるようにする MCP サーバー。87 個の tool で、デバイスの操作に加えて automation などの設定も AI に任せられる。",
+  "what": "AI から Home Assistant を操作する MCP サーバー",
+  "can_do": [
+    "AI クライアントから Home Assistant のデバイスやエンティティを検索・操作する",
+    "automation、script、scene などの設定を AI に作成・変更させる（87 個の tool）",
+    "Home Assistant 内で動く integration として組み込め、HAOS / Supervised / Container / Core のどれでも使える",
+    "Home Assistant の webhook 経由のリモート接続と、同一ネットワークからの直接接続を選べる",
+    "Secret URL か Home Assistant のログインで、接続するクライアントを制限できる"
+  ],
+  "install": [
+    "Home Assistant 2026.8 以上が必要",
+    "HACS（2026.11 以上は Settings → Marketplace）で「HA-MCP」を検索して install し、Home Assistant を再起動する",
+    "Settings → Devices & Services → Add Integration で「HA-MCP Server」を追加する"
+  ],
+  "how_to_use": "管理者権限のトークン（専用アカウントの利用を勧めている）を入力して integration を追加し、Configure 画面に出る接続 URL を AI クライアントに貼る。",
+  "use_cases": [
+    "Home Assistant の automation を自然言語で作らせ、YAML を手で書く手間を減らせそう",
+    "自宅の機器の状態の確認や障害調べを、AI への質問で済ませられそう",
+    "MCP サーバーを既存のアプリに in-process で組み込む構成の参考になりそう"
+  ],
+  "for_whom": "Home Assistant を使っていて、AI に設定や操作を任せたい人",
+  "similar": [
+    "Home Assistant 標準の MCP Server integration：標準機能で用途は近い。こちらは設定変更まで含む多数の tool が特徴と思われる"
+  ],
+  "tech": "Python 3.13 以上。FastMCP 製。Home Assistant の integration として in-process で動く。以前の Docker / uvx / add-on の方法は置き換えられた。",
+  "caveats": "管理者権限のトークンで動くため、AI が設定を書き換えられる。リモート接続の URL が漏れると危険なので、Secret URL の扱いに注意が必要。v7.3.0 などで破壊的変更があり、一部の tool は beta 扱い。README は Home Assistant 2026.8 以上を要求する。",
+  "tags": [
+    "AI エージェント",
+    "自動化・ワークフロー",
+    "セルフホスト",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の冒頭（導入手順）と release を読んだが、tool の一覧や動作の確認はしておらず、tool の数や機能は README の記述に依る"
+}

@@ -1,0 +1,45 @@
+{
+  "repo": "ZhuLinsen/daily_stock_analysis",
+  "summarized_at": "2026-11-10",
+  "short": "daily_stock_analysis は、株の自選銘柄を LLM で毎日分析し、結果を各種チャットに送る Python 製のシステム。A株・香港・米国・日本などの相場とニュースを集め、「決策仪表盘」という判断レポートを作る。",
+  "what": "株の自選銘柄を LLM で毎日分析・通知するシステム",
+  "can_do": [
+    "A株・香港株・米国株・日本株・韓国株・台湾株と ETF の相場、K線、テクニカル指標、ニュースを集めて分析する",
+    "結論、スコア、トレンド、売買の価格帯、リスク、確認リストを含むレポートを生成する",
+    "企業微信・飛書・Telegram・Discord・Slack・メールへ定時に送る",
+    "Web / デスクトップのワークスペースで手動分析、履歴、バックテスト、保有銘柄の管理ができる",
+    "移動平均線や波動理論など 15 の内蔵戦略を使い、複数ターンで銘柄について質問できる",
+    "GitHub Actions、Docker、ローカルの定時実行、FastAPI のどれでも動かせる"
+  ],
+  "install": [
+    "`pip install -r requirements.txt`",
+    "`python main.py`"
+  ],
+  "how_to_use": "リポジトリを fork して Secrets に LLM の API Key を入れると GitHub Actions で毎日動く。手元では `.env` に設定し、`python main.py --stocks 600519,AAPL` で銘柄を指定して実行する。`--dry-run` や `--webui` もある。",
+  "use_cases": [
+    "自分の保有銘柄の日次レポートを、サーバーなしで GitHub Actions から Discord / Slack に送る用途に使えそう",
+    "複数の無料相場データ源のフォールバックや、LLM を定時実行する構成の参考になりそう",
+    "LLM 出力の通知先を多数持つ構成の作り方の参考になりそう"
+  ],
+  "for_whom": "中国語圏・多市場の株を自分で追い、LLM に要点をまとめさせたい個人投資家",
+  "similar": [
+    "TradingAgents：LLM の複数 agent で株を分析する点は近い。こちらは定時実行と通知まで含めた運用寄り"
+  ],
+  "tech": "Python 3.10 以上。SQLAlchemy、FastAPI、AkShare・yfinance・Tushare などの相場データ源。LLM は Gemini / OpenAI 互換 / Claude / DeepSeek / Ollama など。Docker 対応。",
+  "caveats": "README は中国語が中心（英語・繁体字版は docs/ にある）。LLM の API Key が要り、ニュース検索には別のサービスの key もあるとよい。無料の相場データ源は上流の制限や変更で不安定と README 自身が書いている。README は複数の有料 API の紹介や紹介コードの付いたリンクを含む。売買の価格帯などを出すが、投資判断の精度は確認できていない。作られて約10か月。",
+  "tags": [
+    "LLM",
+    "自動化・ワークフロー",
+    "データ処理",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:requirements.txt",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の前半と requirements、release は読んだが、コードや分析結果の質は調べておらず、機能は README の記述に依る"
+}

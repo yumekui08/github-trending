@@ -1,0 +1,48 @@
+{
+  "repo": "garrytan/gbrain",
+  "summarized_at": "2026-11-10",
+  "short": "gbrain は、AI エージェントに出典付きの長期記憶を持たせる TypeScript 製の CLI / MCP サーバー。メモや会議録を取り込み、キーワード・意味検索と知識グラフで調べ、出典つきの回答を返す。",
+  "what": "AI エージェント用の長期記憶（知識ベース）サーバー",
+  "can_do": [
+    "markdown のメモを取り込み、キーワード検索（keyless）と、任意でベクトルによる意味検索ができる",
+    "事実を出典つきで保存し、訂正や取り下げができる",
+    "MCP で公開し、Claude Code や Codex など複数のエージェントから同じ記憶を使える",
+    "人・会社などの参照関係を型付きの知識グラフとして持ち、「誰がどこで働くか」のような問いを辿れる",
+    "任意の synthesis 層で、該当ページの一覧ではなく出典つきの文章の回答と「まだ分かっていないこと」を返す",
+    "常駐の daemon で、取り込み・補強・記憶の整理を夜間に回す"
+  ],
+  "install": [
+    "`curl -fsSL https://bun.sh/install | bash`",
+    "`bun install -g github:garrytan/gbrain#stable`",
+    "`gbrain init --pglite --no-embedding`",
+    "`gbrain import ~/notes/ --no-embed`"
+  ],
+  "how_to_use": "`gbrain setup claude-code`（または `codex`）でエージェントに MCP と brain-first の指示を登録する。単体では `gbrain search \"検索語\" --json` で検索し、`gbrain doctor` で状態を確認する。",
+  "use_cases": [
+    "Claude Code や Codex にプロジェクトや運用メモの記憶を持たせ、セッションをまたいで使えそう",
+    "Runbook や障害対応メモを取り込み、出典つきで引ける社内ナレッジにできそう",
+    "MCP サーバー、Postgres / PGlite ベースの検索の作り方の参考になりそう"
+  ],
+  "for_whom": "複数の AI エージェントで共有できる、自分で管理する長期記憶がほしい人",
+  "similar": [
+    "mem0：エージェント用の記憶層で用途は近い。こちらは出典・訂正・知識グラフを前面に出している",
+    "Obsidian + 検索プラグイン：メモ検索は近いが、こちらは MCP 経由でエージェントが直接使う前提"
+  ],
+  "tech": "TypeScript（Bun 実行）。Postgres / PGlite に保存。MCP サーバー。意味検索や synthesis には外部の埋め込み・LLM API の設定が別途必要。",
+  "caveats": "作者は Y Combinator の CEO で、README の「15万ページ」などの数値は作者自身の運用実績の自己申告。有料のホスティング版（gbrain.io）への誘導が README に多い。作られて約7か月だがリリースは v0.60 台と頻繁で、仕様が変わりやすいと思われる。リポジトリは大きい（約450MB）。共有利用では、README 自身が、ローカルファイルや共有 DB の認証情報は別の信頼境界と注意している。",
+  "tags": [
+    "AI エージェント",
+    "ドキュメント・知識管理",
+    "データベース",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release を読んだが、コードや docs/ 配下は読んでおらず、検索や知識グラフの品質は README の記述に依る"
+}
