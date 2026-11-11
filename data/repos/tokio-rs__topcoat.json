@@ -1,0 +1,42 @@
+{
+  "repo": "tokio-rs/topcoat",
+  "summarized_at": "2026-11-11",
+  "short": "topcoat は、Rust でフルスタックの Web アプリを作る framework。サーバー側で HTML を描画し、`$(...)` で書いた Rust を JavaScript に変換してブラウザで動かす。README は初期段階で破壊的変更がありうると明記している。",
+  "what": "Rust 製のフルスタック Web framework",
+  "can_do": [
+    "`view!` マクロで HTML と Rust の制御構文を混ぜてテンプレートを書く",
+    "async の component から DB を直接引き、別の API 層を作らずに済ませる",
+    "`$(...)` の式を JavaScript に変換して、サーバーを呼ばずにブラウザで再実行する",
+    "モジュール構成から route を決める（module-based routing）",
+    "`topcoat ui` でコンポーネントを自分のプロジェクトにコピーして編集する",
+    "asset の bundle、Tailwind、フォント、アイコン、OpenAPI などの機能を使う"
+  ],
+  "install": [
+    "`topcoat new` でアプリを作る（README の記載。CLI の入手方法は README では確認できなかった）"
+  ],
+  "how_to_use": "`topcoat new` でアプリを作り、dev server で動かす。手順は docs/getting_started.md にある。手動で組むときは、依存を足して `topcoat::start(module_router!().build())` を呼ぶ。",
+  "use_cases": [
+    "Rust だけで管理画面や社内ツールの Web UI を作るのに使えそう",
+    "wasm を使わずに Rust から client 側の動きを書く方式の参考になりそう"
+  ],
+  "for_whom": "Rust で Web アプリを書きたく、JavaScript の build 環境を持ち込みたくない人",
+  "similar": [
+    "Leptos：Rust のフルスタック framework。こちらは wasm でなく JavaScript への変換で client 側を動かす",
+    "Axum：Rust の Web framework。こちらは template、routing、asset などを一式含む"
+  ],
+  "tech": "Rust（edition 2024、rust-version 1.99）の workspace。多数の crate（router、view、asset、session、tailwind、ui、openapi など）に分かれる。MIT ライセンス。",
+  "caveats": "README に「Early-stage and experimental. Expect breaking changes.」とある。作られて約7か月。benchmarks ディレクトリ（他の framework との比較）があるが、中身は読んでいない。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README、tree、Cargo.toml を読んだ。docs/ や examples の中身、CLI のインストール方法は調べておらず、機能は README の記述に依る"
+}

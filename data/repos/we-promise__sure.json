@@ -1,0 +1,43 @@
+{
+  "repo": "we-promise/sure",
+  "summarized_at": "2026-11-11",
+  "short": "Sure は、家計と資産を管理する個人向け finance アプリ。閉鎖された Maybe Finance のコミュニティ fork で、Docker でセルフホストできる Ruby on Rails 製。",
+  "what": "セルフホストできる個人向けの家計・資産管理アプリ",
+  "can_do": [
+    "収支（cashflow）、純資産、支出の推移をダッシュボードで見る",
+    "ローンの残高や、返済額の元本・利息・保険の内訳を確認する",
+    "取引のカテゴリ分けのルールを設定する",
+    "過去の自分の支出と比べて、増減したカテゴリを見る（preview 機能）",
+    "AI アシスタントに貯蓄などについて質問する",
+    "バックアップと復元、API クライアントや LLM agent からの利用"
+  ],
+  "install": [
+    "セルフホストは Docker で行う。手順は docs/hosting/docker.md（README にコマンドの記載はなし）"
+  ],
+  "how_to_use": "README にコマンドはないが、Docker のホスティングガイドに従って起動し、ブラウザでアクセスする。開発用は `cp .env.local.example .env.local`、`bin/setup`、`bin/dev` で起動して http://localhost:3000 を開く。",
+  "use_cases": [
+    "自宅サーバーで家計管理を完結させ、金融データを外部サービスに預けない運用に使えそう",
+    "Rails 8 + PostgreSQL + Redis + Sidekiq 構成の、実運用されているアプリの参考になりそう"
+  ],
+  "for_whom": "家計・資産管理を自分のサーバーで運用したい人",
+  "similar": [
+    "Firefly III：セルフホストの家計管理で用途は近い。こちらは資産全体の可視化と AI アシスタントを備える",
+    "Actual Budget：セルフホストの家計簿。こちらは Rails 製で、純資産やローンの見える化が中心"
+  ],
+  "tech": "Ruby on Rails 8.1、PostgreSQL、Redis、Sidekiq。Docker でセルフホスト。macOS デスクトップアプリとモバイルアプリもある。",
+  "caveats": "閉鎖された Maybe Finance の fork で、コミュニティが保守している。ライセンスは AGPL-3.0。AI 機能は OpenAI などの外部 API の設定が要ると思われる。作られて約4か月。",
+  "tags": [
+    "セルフホスト",
+    "Web",
+    "その他"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Gemfile",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release、Gemfile を読んだ。Docker の手順書（docs/hosting/docker.md）や AI 機能の詳細は読んでおらず、機能は README と release の記述に依る"
+}
