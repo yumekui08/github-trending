@@ -1,0 +1,47 @@
+{
+  "repo": "openai/codex-security",
+  "summarized_at": "2026-11-12",
+  "short": "codex-security は、OpenAI の Codex を使ってコードの脆弱性を見つけ、検証し、修正案まで作る CLI と TypeScript SDK。`cs scan .` でリポジトリを調べ、Markdown のレポートを出す。",
+  "what": "脆弱性を探して検証・修正する CLI と TypeScript SDK",
+  "can_do": [
+    "`cs scan` でリポジトリ、指定パス、git の差分を走査し、レポートと findings を保存する",
+    "Deep スキャンで Standard 走査を繰り返し、重複を除いて結果をまとめる",
+    "見つかった候補の検証、パッチの生成、既存の修正の確認",
+    "`SECURITY.md` の下書きや threat model の作成・書き出し",
+    "他のスキャナの結果の取り込み、SARIF / JSON / CSV への出力、Linear・Jira・GitHub との連携",
+    "GitHub Action や Docker（compose）で CI から自動実行"
+  ],
+  "install": [
+    "Node.js 22.13.0 以上の 22.x、または 24.x・26.x と、Python 3.10 以上が必要",
+    "`npm install --global @openai/codex-security`",
+    "`cs login`"
+  ],
+  "how_to_use": "リポジトリのディレクトリで `cs scan .` を実行し、終了時に表示される REPORT のパスの Markdown を開く。CI では `OPENAI_API_KEY` か `CODEX_API_KEY` を環境変数に設定する。",
+  "use_cases": [
+    "自分のリポジトリや社内コードの脆弱性の一次点検に使えそう",
+    "`--diff origin/main` で PR の変更分だけを CI で走査するのに使えそう",
+    "他の SAST の結果を取り込んで一か所にまとめる用途に使えそう"
+  ],
+  "for_whom": "自分のコードのセキュリティ点検を、OpenAI の agent で自動化したい人",
+  "similar": [
+    "CodeQL、Semgrep：ルールベースの静的解析。こちらは LLM が調べて検証する"
+  ],
+  "tech": "TypeScript（Node.js、pnpm）、Python 3.10 以上も必要。Dockerfile と compose あり（Linux 向けに seccomp プロファイルあり）。",
+  "caveats": "OpenAI のアカウントか API キーが前提で、利用に費用がかかると思われる（料金は未確認）。一部の機能は Trusted Access for Cyber や Cloud 契約が必要。バージョンは 0.9.x でまだ 1.0 前。スキャン対象のコードが OpenAI のサービスに送られるかは README では確認していない。",
+  "tags": [
+    "セキュリティ",
+    "CLI",
+    "AI エージェント",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

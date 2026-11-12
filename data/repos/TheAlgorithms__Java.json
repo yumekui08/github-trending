@@ -1,0 +1,35 @@
+{
+  "repo": "TheAlgorithms/Java",
+  "summarized_at": "2026-11-12",
+  "short": "Java は、アルゴリズムとデータ構造を Java で実装した学習用のリポジトリ。標準ライブラリより効率が落ちる実装もあると README に明記されている。",
+  "what": "アルゴリズムを Java で実装した学習用コード集",
+  "can_do": [
+    "ソート、探索、データ構造など多数のアルゴリズムの Java 実装を読める（一覧は DIRECTORY.md）",
+    "JUnit のテストつきで、実装を動かして挙動を確かめられる",
+    "Gitpod でブラウザ上から実行・編集できる"
+  ],
+  "install": [],
+  "how_to_use": "DIRECTORY.md から読みたいアルゴリズムを探してソースを読む。手元で動かすなら clone して Maven でテストを実行すると思われる。",
+  "use_cases": [
+    "アルゴリズムの Java での書き方を確認する参考に使えそう",
+    "面接や学習のために、実装とテストを読み比べるのに使えそう"
+  ],
+  "for_whom": "アルゴリズムを Java で学びたい人",
+  "similar": [
+    "TheAlgorithms の他言語版（Python など）：同じ趣旨で言語が違う"
+  ],
+  "tech": "Java、Maven（pom.xml）。テストに JUnit 6、AssertJ、Mockito、依存に commons-lang3、commons-collections4。",
+  "caveats": "ソフトウェア部品ではなく教材。実運用向けの最適化はされていない。2016年から続く古いリポジトリ。",
+  "tags": [
+    "学習資料",
+    "言語・ランタイム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pom.xml"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,44 @@
+{
+  "repo": "herdrdev/herdr",
+  "summarized_at": "2026-11-12",
+  "short": "herdr は、複数の AI coding agent を動かす端末のワークスペースを管理する Rust 製の TUI。画面を閉じたり SSH が切れても裏で端末を保ち、agent ごとの working / blocked / idle を表示する。",
+  "what": "AI coding agent の端末を束ねる tmux 風の TUI",
+  "can_do": [
+    "クライアントを閉じても裏のサーバーが端末を動かし続け、再接続できる",
+    "ローカルと SSH 先の複数マシンを1つの画面にまとめ、agent の一覧を出す",
+    "各 pane を working / blocked / idle で表示し、agent が回答待ちになると知らせる",
+    "CLI と socket API で、agent 自身が pane を作ったり別の agent に指示したりできる",
+    "Claude Code、Codex、Cursor、opencode など既存の agent をそのまま動かす",
+    "キーボード（tmux 風 prefix）とマウスの両方で操作、plugin で拡張"
+  ],
+  "install": [
+    "`curl -fsSL https://herdr.dev/install.sh | sh`",
+    "`brew install herdr`"
+  ],
+  "how_to_use": "端末で `herdr` を実行する。`ctrl+b q` で detach し、もう一度 `herdr` で再接続する。",
+  "use_cases": [
+    "サーバーに SSH して複数の agent を並行して走らせ、切断後も続けるのに使えそう",
+    "複数マシンの agent を1画面で見て、止まっているものを探すのに使えそう",
+    "tmux で agent を並べている運用の置き換え候補になりそう"
+  ],
+  "for_whom": "複数の coding agent を端末で並行して使い、リモートでの運用もしたい人",
+  "similar": [
+    "tmux、Zellij：端末多重化では近い。こちらは agent の状態検知と agent 向け API が特徴"
+  ],
+  "tech": "Rust（ratatui、crossterm、portable-pty、ghostty-vt crate など）。macOS・Linux・Windows（beta）で動くと思われる。",
+  "caveats": "サーバー再起動後に復元されるのはレイアウトと対応 agent のセッションで、元のプロセスは残らない。バージョンは 0.9.x。Windows 対応は beta 扱いと思われる。agent の状態検知の精度は未確認。",
+  "tags": [
+    "AI エージェント",
+    "CLI",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,40 @@
+{
+  "repo": "shadcn/improve",
+  "summarized_at": "2026-11-12",
+  "short": "improve は、コードベースを監査して他の agent が実行できる実装計画を書く agent skill。高性能なモデルは調査と計画づくりに使い、実装は安いモデルに任せる使い方を想定する。",
+  "what": "コードを監査して実装計画を書く agent skill",
+  "can_do": [
+    "`/improve` でリポジトリを調べ、問題点を優先度付きの表にまとめる（正確性、セキュリティ、性能、テスト、技術的負債、依存、DX、docs など9分野）",
+    "選んだ指摘ごとに `plans/` に自己完結した計画の Markdown を書く（検証コマンドと中断条件つき）",
+    "`quick`、`deep`、`security`、`branch` などで調査の範囲を変える",
+    "`execute` で安いモデルの subagent を隔離した worktree で動かし、差分を計画と照らして確認する",
+    "`--issues` で計画を GitHub issue にする"
+  ],
+  "install": [
+    "`npx skills add shadcn/improve`"
+  ],
+  "how_to_use": "agent でリポジトリを開いて `/improve`（軽くなら `/improve quick`）を実行する。出た指摘から計画にしたい番号を返すと `plans/` に書かれる。",
+  "use_cases": [
+    "大きめの既存コードの棚卸しを agent にさせ、レビューできる計画の形で残すのに使えそう",
+    "高価なモデルの利用を調査と計画に絞り、実装を安いモデルに回す運用に使えそう",
+    "PR の前に `/improve branch` で変更範囲だけ点検するのに使えそう"
+  ],
+  "for_whom": "Claude Code など Agent Skills 対応の agent を使い、コスト配分を意識して開発している人",
+  "similar": [
+    "Claude Code の plan mode：1セッション内の計画。こちらは計画を `plans/` にファイルとして残し、実行と照合まで扱う"
+  ],
+  "tech": "Agent Skills 形式（Markdown の skill）。Claude Code の plugin 定義（.claude-plugin）あり。コードは含まない。",
+  "caveats": "skill の本体（skills/improve/）は読んでおらず、挙動は README の記述に基づく。出力の質は使うモデルしだい。作者の主張（subagent の指摘を再確認して誤りを減らす等）は検証していない。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "自動化・ワークフロー"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と examples の存在は確認したが、skills/improve/ の中身は読んでいない。機能は README の記述による"
+}

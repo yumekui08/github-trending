@@ -1,0 +1,40 @@
+{
+  "repo": "GoogleChrome/modern-web-guidance-src",
+  "summarized_at": "2026-11-12",
+  "short": "modern-web-guidance-src は、コーディング agent に最新の Web 標準の書き方を教える skill「Modern Web Guidance」の元リポジトリ。ガイドの執筆・調整・評価(eval)用のコードと文書が入っている。",
+  "what": "agent に新しい Web 標準を使わせる skill の元リポジトリ",
+  "can_do": [
+    "agent が古いパターンで書きがちな処理について、モダンな Web 標準での書き方のガイドを返す skill を作る（CSS、Popover、Anchor Positioning、View Transitions など約250機能）",
+    "`search` / `retrieve` / `legacy-scan` の CLI で、ガイド検索・取得・コードベース内の古いパターンの検出ができる",
+    "ガイドが agent の出力を良くするかを測る eval ハーネスと、結果の dashboard を持つ",
+    "ブラウザ互換性データ（MDN、caniuse、web-features）をガイドに埋め込むビルド処理"
+  ],
+  "install": [
+    "`npx modern-web-guidance@latest install`"
+  ],
+  "how_to_use": "install で対話式のウィザードが起動し、agent に skill を入れる。試すだけなら `npx modern-web-guidance@latest search \"animate a dialog modal backdrop\"` のように検索する。",
+  "use_cases": [
+    "フロントエンドを agent に書かせるとき、古い JS ライブラリに頼らず標準 API を使わせるのに使えそう",
+    "既存の Web コードに古いパターンが残っていないか、`legacy-scan` で洗い出すのに使えそう",
+    "自分の分野向けに、agent にガイドを与えて効果を eval で測る仕組みの参考になりそう"
+  ],
+  "for_whom": "Web フロントエンドの開発を agent に任せていて、出力の古さを減らしたい人",
+  "similar": [
+    "MDN、web.dev：人が読む資料。こちらは agent の context に入れるための短いガイド"
+  ],
+  "tech": "TypeScript（Node.js 22.18 以上、pnpm）。依存は @mdn/browser-compat-data、web-features、@huggingface/transformers（検索用と思われる）など。eval に Playwright を使う。",
+  "caveats": "このリポジトリは作成・評価用の元で、利用者向けは別の GoogleChrome/modern-web-guidance。description が空。Chrome・Edge・Firefox・MDN のチームが管理していると README にある。サイズが大きい（約170MB）。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json"
+  ],
+  "confidence": "medium",
+  "confidence_note": "利用者向けの README は読んだが、ガイドの中身や検索の仕組み（RAG 部分）、eval の実際の効果は調べていない"
+}
