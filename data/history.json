@@ -119,6 +119,12 @@
       "2026-10-02"
     ]
   },
+  "GoogleChrome/modern-web-guidance-src": {
+    "first_seen": "2026-11-12",
+    "seen": [
+      "2026-11-12"
+    ]
+  },
   "Graphify-Labs/graphify": {
     "first_seen": "2026-10-21",
     "seen": [
@@ -354,6 +360,12 @@
       "2026-11-05"
     ]
   },
+  "TheAlgorithms/Java": {
+    "first_seen": "2026-11-12",
+    "seen": [
+      "2026-11-12"
+    ]
+  },
   "Thysrael/Horizon": {
     "first_seen": "2026-11-05",
     "seen": [
@@ -377,7 +389,8 @@
   "ZhuLinsen/daily_stock_analysis": {
     "first_seen": "2026-11-10",
     "seen": [
-      "2026-11-10"
+      "2026-11-10",
+      "2026-11-12"
     ]
   },
   "addyosmani/agent-skills": {
@@ -387,7 +400,8 @@
       "2026-10-05",
       "2026-10-08",
       "2026-10-10",
-      "2026-11-11"
+      "2026-11-11",
+      "2026-11-12"
     ]
   },
   "affaan-m/ECC": {
@@ -852,7 +866,8 @@
     "first_seen": "2026-11-10",
     "seen": [
       "2026-11-10",
-      "2026-11-11"
+      "2026-11-11",
+      "2026-11-12"
     ]
   },
   "huggingface/transformers": {
@@ -1019,7 +1034,8 @@
       "2026-11-08",
       "2026-11-09",
       "2026-11-10",
-      "2026-11-11"
+      "2026-11-11",
+      "2026-11-12"
     ]
   },
   "microsoft/BitNet": {
@@ -1182,6 +1198,12 @@
     "first_seen": "2026-10-13",
     "seen": [
       "2026-10-13"
+    ]
+  },
+  "openai/codex-security": {
+    "first_seen": "2026-11-12",
+    "seen": [
+      "2026-11-12"
     ]
   },
   "openclaw/openclaw": {
@@ -1352,6 +1374,12 @@
       "2026-11-06"
     ]
   },
+  "shadcn/improve": {
+    "first_seen": "2026-11-12",
+    "seen": [
+      "2026-11-12"
+    ]
+  },
   "sherlock-project/sherlock": {
     "first_seen": "2026-11-08",
     "seen": [
@@ -1511,7 +1539,8 @@
       "2026-11-08",
       "2026-11-09",
       "2026-11-10",
-      "2026-11-11"
+      "2026-11-11",
+      "2026-11-12"
     ]
   },
   "vercel-labs/agent-desktop": {
@@ -1551,7 +1580,8 @@
   "we-promise/sure": {
     "first_seen": "2026-11-11",
     "seen": [
-      "2026-11-11"
+      "2026-11-11",
+      "2026-11-12"
     ]
   },
   "willfaust/Madeira": {
