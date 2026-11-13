@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-13",
+  "period": "weekly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 193705,
+      "stars_period": 6055
+    },
+    {
+      "rank": 2,
+      "repo": "milind-soni/OpenMausBot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "language": "TypeScript",
+      "stars": 21725,
+      "stars_period": 9104
+    },
+    {
+      "rank": 3,
+      "repo": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 50337,
+      "stars_period": 4601
+    },
+    {
+      "rank": 4,
+      "repo": "NVIDIA/auto-ontology",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "language": "Python",
+      "stars": 12252,
+      "stars_period": 5802
+    },
+    {
+      "rank": 5,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 71227,
+      "stars_period": 10700
+    },
+    {
+      "rank": 6,
+      "repo": "vercel-labs/agent-desktop",
+      "description": "Computer use CLI for AI agents",
+      "language": "Rust",
+      "stars": 22735,
+      "stars_period": 6414
+    },
+    {
+      "rank": 7,
+      "repo": "mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 323029,
+      "stars_period": 8731
+    },
+    {
+      "rank": 8,
+      "repo": "zed-industries/zed",
+      "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "language": "Rust",
+      "stars": 94850,
+      "stars_period": 2339
+    },
+    {
+      "rank": 9,
+      "repo": "google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "language": "C++",
+      "stars": 17769,
+      "stars_period": 1671
+    },
+    {
+      "rank": 10,
+      "repo": "google/skills",
+      "description": "Agent Skills for Google products and technologies",
+      "language": "Python",
+      "stars": 24072,
+      "stars_period": 1933
+    },
+    {
+      "rank": 11,
+      "repo": "D4Vinci/Scrapling",
+      "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "language": "Python",
+      "stars": 102151,
+      "stars_period": 4743
+    }
+  ]
+}
