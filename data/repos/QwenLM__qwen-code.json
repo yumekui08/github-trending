@@ -1,0 +1,47 @@
+{
+  "repo": "QwenLM/qwen-code",
+  "summarized_at": "2026-11-13",
+  "short": "qwen-code は、ターミナルで動く TypeScript 製のオープンソース AI コーディング agent。OpenAI・Anthropic・Gemini 互換の API やローカルモデルを切り替えて使え、IDE、Web UI、SDK、チャット連携からも呼べる。",
+  "what": "ターミナルで動く AI コーディング agent の CLI",
+  "can_do": [
+    "プロジェクトのディレクトリで `qwen` を起動し、コードの説明・編集を agent に頼む",
+    "`qwen -p \"...\"` で、スクリプトや CI から headless 実行",
+    "VS Code、Zed、JetBrains への統合",
+    "`qwen serve` で daemon を起動し、Web UI や HTTP + SSE の API 経由で使う",
+    "Telegram、DingTalk、WeChat、Feishu などのチャットから操作",
+    "TypeScript / Python / Java の SDK、MCP、SubAgents に対応"
+  ],
+  "install": [
+    "`curl -fsSL https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen-standalone.sh | bash`（Linux / macOS）",
+    "`npm install -g @qwen-code/qwen-code@latest`（Node.js 22 以上が必要）",
+    "`brew install qwen-code`"
+  ],
+  "how_to_use": "プロジェクトのディレクトリで `qwen` を起動し、セッション内で `/auth` を実行して Qwen アカウントでサインインするか、API キーでプロバイダを設定する。そのあと自然言語で依頼する。",
+  "use_cases": [
+    "Claude Code に近い操作感の agent を、OpenAI 互換のモデルやローカルの vLLM / Ollama で動かすのに使えそう",
+    "CI やスクリプトに headless で組み込み、コードレビューや調査の自動化に使えそう",
+    "daemon モードで、チームの共有 agent 基盤を試すのに使えそう"
+  ],
+  "for_whom": "ターミナル中心で、モデルの提供元を選ばず使える AI コーディング agent がほしい人",
+  "similar": [
+    "Claude Code：操作感や機能は近い（README が互換を目指すと述べる）。こちらはオープンソースで複数の API に対応",
+    "Gemini CLI：ターミナルの agent という点で近い"
+  ],
+  "tech": "TypeScript、Node.js 22 以上、pnpm のモノレポ。Docker イメージ（sandbox）あり。macOS / Linux / Windows。",
+  "caveats": "デフォルトの daemon は loopback で認証なしのため、ローカルのプロセスからコード実行を含む API が使える。共有ホストでは `QWEN_SERVER_TOKEN` と `--require-auth` が要る。Web UI（`qwen serve --open`）は experimental。「Claude Code と同等」は作者側の主張。Qwen アカウントのサブスクリプション利用が前提の経路もある。",
+  "tags": [
+    "AI エージェント",
+    "CLI",
+    "開発ツール",
+    "LLM"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

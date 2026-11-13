@@ -1,0 +1,45 @@
+{
+  "repo": "ashhart/TensorFold",
+  "summarized_at": "2026-11-13",
+  "short": "TensorFold は、Zig 製の単一バイナリで LLM を動かす推論エンジン。Apple Silicon（Metal）と NVIDIA GPU（CUDA）で、Python や MLX なしに OpenAI 互換などの API でモデルを serve できる。",
+  "what": "Metal / CUDA で LLM を動かす Zig 製の推論エンジン",
+  "can_do": [
+    "`tensorfold pull` で Hugging Face のモデルを取得し、`tensorfold serve` で API サーバーとして起動",
+    "OpenAI 互換の chat completions のほか、completions、Responses、Anthropic Messages の API を提供",
+    "`--parallel` による同時リクエスト数の制御",
+    "`tensorfold web` でモデルの選択・実行・チャットができるローカル Web アプリを開く",
+    "Mac 向けのデスクトップアプリ（beta）"
+  ],
+  "install": [
+    "`brew install ashhart/tensorfold/tensorfold`（Mac）",
+    "Linux + NVIDIA GPU は、Releases のアーカイブをダウンロードして展開し、`bin` を PATH に通す（glibc 2.28 以上、NVIDIA driver R580 以上）"
+  ],
+  "how_to_use": "`tensorfold pull <Hugging Face のモデル>` で取得し、`tensorfold serve <モデル> --name local-model --context 8192` で起動する。別端末から `http://127.0.0.1:8080/v1/chat/completions` に curl で POST して確かめる。",
+  "use_cases": [
+    "Mac や GPU サーバー上に、OpenAI / Anthropic 互換のローカル LLM エンドポイントを立てるのに使えそう",
+    "llama.cpp や vLLM と性能・対応モデルを比べる検証に使えそう",
+    "社内向けには Starlight（企業向けの別製品）で複数ノードを束ねる構成がある"
+  ],
+  "for_whom": "ローカルや自前の GPU で LLM を serve したい人。特に Apple Silicon や CUDA 環境の人",
+  "similar": [
+    "llama.cpp：ローカル推論の用途は近い。こちらは Zig 製で Metal / CUDA の kernel を自前で持つ",
+    "vLLM、MLX：serve する用途は近い。こちらは Python や MLX が不要"
+  ],
+  "tech": "Zig。Metal、CUDA（CUDA 13、driver R580 以上）、Vulkan / HIP 向けの記述もある。macOS（Apple Silicon）、Linux、Windows（NVIDIA）。Dockerfile あり。",
+  "caveats": "作られてから約5か月。バージョンアップが速く（1.2.x）、挙動は変わりやすいと思われる。モデルの重みには別のライセンスがある。README は AI agent 向けの貢献ルール（ATC）に多くを割いており、匿名の check-in が有効。Mac アプリは beta、モバイルは preview。Python 版は 0.6.6 で止まっている。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "セルフホスト",
+    "インフラ・運用"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:setup.py",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release を読んだが、性能の数値や kernel の実装は確認していない。他エンジンとの比較は一般的な知識による"
+}

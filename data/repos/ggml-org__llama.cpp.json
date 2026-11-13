@@ -1,0 +1,48 @@
+{
+  "repo": "ggml-org/llama.cpp",
+  "summarized_at": "2026-11-13",
+  "short": "llama.cpp は、C/C++ で書かれた LLM / VLM の推論エンジン。依存なしの実装で、Apple Silicon、CPU、CUDA、Vulkan など幅広いハードで動く。`llama serve` で OpenAI 互換の API サーバーも立てられる。",
+  "what": "C/C++ 製の LLM 推論エンジン",
+  "can_do": [
+    "`llama cli` で GGUF 形式のモデルをローカルで対話実行（Hugging Face から直接取得も可）",
+    "`llama serve` で OpenAI 互換の API サーバーと内蔵 Web UI を起動",
+    "CPU、Apple Metal、CUDA、Vulkan、SYCL などのバックエンドでの推論",
+    "量子化モデルの実行（v0.9.0 で FP8 E4M3 を追加）",
+    "画像入力（VLM）や、音声認識・TTS の一部に対応"
+  ],
+  "install": [
+    "`curl -LsSf https://llama.app/install.sh | sh`",
+    "Windows は `irm https://llama.app/install.ps1 | iex`",
+    "Docker、Releases の prebuilt binary、ソースからのビルドも可（docs/build.md）"
+  ],
+  "how_to_use": "`llama cli -hf ggml-org/Qwen3.5-0.8B-GGUF` でモデルを取得して対話する。API サーバーは `llama serve -hf ggml-org/Qwen3.5-0.8B-GGUF`。",
+  "use_cases": [
+    "GPU のないサーバーや開発機で、小さいモデルをローカルで動かすのに使えそう",
+    "社内で OpenAI 互換のエンドポイントを自前で立てるのに使えそう",
+    "量子化の違いによるメモリ量や速度の比較検証に使えそう"
+  ],
+  "for_whom": "LLM をローカルや自前環境で動かしたい人。ハードを選ばず軽く試したい人",
+  "similar": [
+    "Ollama：ローカル実行の用途は近い。Ollama は llama.cpp 系を使ったラッパーと理解している",
+    "vLLM：serve の用途は近い。こちらは CPU や Apple Silicon でも動く"
+  ],
+  "tech": "C/C++（CMake）。モデル変換用に Python スクリプトあり。ggml ライブラリを使う。Metal、CUDA、Vulkan、SYCL、OpenCL、Hexagon などのバックエンド。Linux / macOS / Windows。",
+  "caveats": "2023年からあるプロジェクトで、リリースが頻繁なため、コマンドや仕様は変わりやすいと思われる（README の例も `llama cli` / `llama serve` の形に新しくなっている）。モデルごとに別のライセンスがある。",
+  "tags": [
+    "LLM",
+    "機械学習",
+    "CLI",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:requirements.txt",
+    "manifest:CMakeLists.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,36 @@
+{
+  "repo": "pookjw/HermesEnabler",
+  "summarized_at": "2026-11-13",
+  "short": "HermesEnabler は、Apple Watch で Hermès の文字盤を使えるようにする watchOS 向けアプリ。MobileGestalt の設定を書き換える仕組みと思われ、watchOS 27.0〜27.3 beta 1 でのみ動く。",
+  "what": "Apple Watch で Hermès 文字盤を有効にするアプリ",
+  "can_do": [
+    "Hermès の文字盤を、対象外の Apple Watch でも有効にする",
+    "MobileGestalt の設定のバックアップと復元（アプリ内の操作）",
+    "表示・操作、センサー・ワークアウト、地域コードなどの項目の切り替え（ソースの View 名から）"
+  ],
+  "install": [
+    "README にある手順：Releases から IPA を取得し、Sideloadly で iPhone にインストールし、Watch アプリの My Watch → Apps から HermesEnabler2 を入れる",
+    "または Xcode で `HermesEnabler2.xcodeproj` を開き、Apple Watch を実行先にして Run"
+  ],
+  "how_to_use": "Apple Watch 上で HermesEnabler2 を開き、アプリ内の手順に従う。更新時は同じ Bundle Identifier と Apple ID を使い、アプリを消す前に MobileGestalt のバックアップを復元する。",
+  "use_cases": [
+    "Apple の機能制限を回避する sideload / MobileGestalt 改変の実装例として読めそう",
+    "Swift と Objective-C で watchOS アプリを組む際の参考になりそう"
+  ],
+  "for_whom": "watchOS 27.0〜27.3 beta 1 の Apple Watch を持ち、自己責任で端末設定をいじってよい人",
+  "similar": [],
+  "tech": "Swift と Objective-C。Xcode プロジェクト（iPhone 用コンパニオンと watchOS アプリ）。Gester のコードを取り込んでいる。",
+  "caveats": "対応は watchOS 27.0〜27.3 beta 1 のみ。端末の内部設定を書き換えるため、README も「自己責任」と明記。削除前にバックアップ復元をしないと問題が起きうる。ライセンスは MIT。",
+  "tags": [
+    "モバイル",
+    "その他"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README が短く、具体的な内部の仕組みは書かれていない。ソースのコードは読んでおらず、機能の一部はファイル名からの推測"
+}
