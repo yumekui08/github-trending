@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-14",
+  "period": "weekly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username across social networks",
+      "language": "Python",
+      "stars": 111139,
+      "stars_period": 13364
+    },
+    {
+      "rank": 2,
+      "repo": "anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 194145,
+      "stars_period": 6169
+    },
+    {
+      "rank": 3,
+      "repo": "milind-soni/OpenMausBot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "language": "TypeScript",
+      "stars": 22186,
+      "stars_period": 7763
+    },
+    {
+      "rank": 4,
+      "repo": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 50730,
+      "stars_period": 4360
+    },
+    {
+      "rank": 5,
+      "repo": "google/elephant-goldfish-model",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "language": "Python",
+      "stars": 18626,
+      "stars_period": 5560
+    },
+    {
+      "rank": 6,
+      "repo": "ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "language": "Python",
+      "stars": 71600,
+      "stars_period": 3778
+    },
+    {
+      "rank": 7,
+      "repo": "NVIDIA/auto-ontology",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "language": "Python",
+      "stars": 12561,
+      "stars_period": 4108
+    },
+    {
+      "rank": 8,
+      "repo": "google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "language": "C++",
+      "stars": 17874,
+      "stars_period": 1764
+    },
+    {
+      "rank": 9,
+      "repo": "mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 323834,
+      "stars_period": 7599
+    },
+    {
+      "rank": 10,
+      "repo": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 117148,
+      "stars_period": 3502
+    },
+    {
+      "rank": 11,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 71935,
+      "stars_period": 8829
+    },
+    {
+      "rank": 12,
+      "repo": "zed-industries/zed",
+      "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "language": "Rust",
+      "stars": 94961,
+      "stars_period": 2117
+    },
+    {
+      "rank": 13,
+      "repo": "anthropics/claude-quickstarts",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "language": "Python",
+      "stars": 20871,
+      "stars_period": 1731
+    },
+    {
+      "rank": 14,
+      "repo": "vercel-labs/agent-desktop",
+      "description": "Computer use CLI for AI agents",
+      "language": "Rust",
+      "stars": 23298,
+      "stars_period": 5408
+    },
+    {
+      "rank": 15,
+      "repo": "lobehub/lobehub",
+      "description": "🤯 LobeHub - Super-Agents on Your Team. Add super-agents to the chats your team already uses.They take on work by themselves and get better every week.",
+      "language": "TypeScript",
+      "stars": 85397,
+      "stars_period": 1126
+    }
+  ]
+}

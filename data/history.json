@@ -18,6 +18,12 @@
       "2026-10-10"
     ]
   },
+  "ChromeDevTools/chrome-devtools-mcp": {
+    "first_seen": "2026-11-14",
+    "seen": [
+      "2026-11-14"
+    ]
+  },
   "Comfy-Org/ComfyUI": {
     "first_seen": "2026-10-19",
     "seen": [
@@ -125,7 +131,8 @@
     "first_seen": "2026-11-12",
     "seen": [
       "2026-11-12",
-      "2026-11-13"
+      "2026-11-13",
+      "2026-11-14"
     ]
   },
   "Graphify-Labs/graphify": {
@@ -209,6 +216,12 @@
     "seen": [
       "2026-10-19",
       "2026-10-20"
+    ]
+  },
+  "Likely7/Veyra-NRVideo": {
+    "first_seen": "2026-11-14",
+    "seen": [
+      "2026-11-14"
     ]
   },
   "M-Abozaid/esp32-c3-adblock": {
@@ -399,7 +412,8 @@
     "first_seen": "2026-11-10",
     "seen": [
       "2026-11-10",
-      "2026-11-12"
+      "2026-11-12",
+      "2026-11-14"
     ]
   },
   "addyosmani/agent-skills": {
@@ -443,7 +457,8 @@
   "alibaba/open-code-review": {
     "first_seen": "2026-10-10",
     "seen": [
-      "2026-10-10"
+      "2026-10-10",
+      "2026-11-14"
     ]
   },
   "android/skills": {
@@ -560,6 +575,12 @@
       "2026-10-08"
     ]
   },
+  "backnotprop/plannotator": {
+    "first_seen": "2026-11-14",
+    "seen": [
+      "2026-11-14"
+    ]
+  },
   "beenuar/AiSOC": {
     "first_seen": "2026-11-02",
     "seen": [
@@ -572,6 +593,12 @@
       "2026-10-12",
       "2026-10-13",
       "2026-10-14"
+    ]
+  },
+  "block/buzz": {
+    "first_seen": "2026-11-14",
+    "seen": [
+      "2026-11-14"
     ]
   },
   "boykopovar/AnyPS5": {
@@ -962,6 +989,12 @@
       "2026-10-09"
     ]
   },
+  "louislam/uptime-kuma": {
+    "first_seen": "2026-11-14",
+    "seen": [
+      "2026-11-14"
+    ]
+  },
   "luongnv89/claude-howto": {
     "first_seen": "2026-10-23",
     "seen": [
@@ -1229,7 +1262,8 @@
     "first_seen": "2026-11-12",
     "seen": [
       "2026-11-12",
-      "2026-11-13"
+      "2026-11-13",
+      "2026-11-14"
     ]
   },
   "openclaw/openclaw": {
@@ -1479,6 +1513,12 @@
       "2026-10-01"
     ]
   },
+  "tailscale/tailcat": {
+    "first_seen": "2026-11-14",
+    "seen": [
+      "2026-11-14"
+    ]
+  },
   "tailwindlabs/tailwindcss": {
     "first_seen": "2026-11-08",
     "seen": [
@@ -1538,6 +1578,12 @@
     "first_seen": "2026-11-11",
     "seen": [
       "2026-11-11"
+    ]
+  },
+  "tradermonty/claude-trading-skills": {
+    "first_seen": "2026-11-14",
+    "seen": [
+      "2026-11-14"
     ]
   },
   "trycua/cua": {
@@ -1614,7 +1660,8 @@
     "seen": [
       "2026-11-11",
       "2026-11-12",
-      "2026-11-13"
+      "2026-11-13",
+      "2026-11-14"
     ]
   },
   "willfaust/Madeira": {
