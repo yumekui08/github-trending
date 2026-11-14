@@ -1,0 +1,44 @@
+{
+  "repo": "ChromeDevTools/chrome-devtools-mcp",
+  "summarized_at": "2026-11-14",
+  "short": "chrome-devtools-mcp は、コーディング agent から実際の Chrome を操作・調査できるようにする MCP サーバー（CLI もある）。Chrome DevTools の機能で、performance trace、network 解析、console の確認、ページ操作ができる。",
+  "what": "agent に Chrome と DevTools を操作させる MCP サーバー",
+  "can_do": [
+    "performance trace を記録し、改善につながる insight を取り出す",
+    "network リクエストの解析、スクリーンショット、source map 付きスタックトレースの console メッセージ確認",
+    "puppeteer 経由で Chrome のページ操作を自動化し、結果を待つ",
+    "MCP サーバーとしても、CLI としても使える",
+    "performance 解析では、trace の URL を Google の CrUX API に送り、実ユーザーのデータを併せて見られる"
+  ],
+  "install": [
+    "MCP クライアントの設定に `\"command\": \"npx\"`、`\"args\": [\"-y\", \"chrome-devtools-mcp@latest\"]` を書く",
+    "Node.js の LTS、現行の Chrome stable、npm が要る"
+  ],
+  "how_to_use": "MCP クライアント（Claude Code、Cursor、VS Code など）に上の設定を足し、「Check the performance of https://developers.chrome.com」と頼む。ブラウザが開き、performance trace が記録される。",
+  "use_cases": [
+    "Web サイトの表示が遅い原因を、agent に trace と network から調べさせるのに使えそう",
+    "フロントエンドの修正後、agent に画面を開かせて console のエラーや見た目を確認させる用途に使えそう",
+    "E2E テストを書く前の、ページ構造の調査に使えそう"
+  ],
+  "for_whom": "Web フロントエンドの開発や調査を、コーディング agent に任せたい人",
+  "similar": [
+    "Playwright MCP：ブラウザ操作の MCP として近い。こちらは DevTools の trace と性能解析が強み",
+    "puppeteer を直接使う：自動化は同じ。こちらは agent 向けのツールとして包んである"
+  ],
+  "tech": "TypeScript（Node.js ^20.19 / ^22.12 / 23 以上、puppeteer、devtools-frontend）。Chrome と Chrome for Testing が公式対応。ライセンスは Apache-2.0。",
+  "caveats": "ブラウザの内容を MCP クライアントにすべて見せる設計なので、機密情報を開いたままにしない。利用統計を Google が既定で収集する（`--no-usage-statistics` で無効化）。更新確認のために npm registry にも定期的にアクセスする。Chrome 以外の Chromium 系は動作保証がない。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

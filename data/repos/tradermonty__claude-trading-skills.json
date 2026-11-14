@@ -1,0 +1,42 @@
+{
+  "repo": "tradermonty/claude-trading-skills",
+  "summarized_at": "2026-11-14",
+  "short": "claude-trading-skills は、個人投資家向けの Claude の skill 集。市場の地合い確認、スクリーニング、ポジションサイズ計算、売買記録の振り返りまでを手順化する。売買の判断を AI に任せるものではないと明記されている。",
+  "what": "個人投資家向けの市場分析・トレード記録の Claude skill 集",
+  "can_do": [
+    "毎日15分の市場チェック、週次のポートフォリオ見直し、スイングトレード候補探しなど、決まった流れ（workflows/ の YAML）に沿って skill を順に使う",
+    "market-breadth-analyzer、vcp-screener、technical-analyst、position-sizer など多数の分析・スクリーニング・計算 skill を使える",
+    "先物のポジションサイズ計算（`futures-position-sizer`）や COT データによる偏りの検出など、手法別の skill がある",
+    "売買の記録と事後検証（`trader-memory-core`、`signal-postmortem`）、バックテスト（`backtest-expert`）",
+    "データ API 不要の手動の道筋が用意されている。FMP、FINVIZ Elite、Alpaca は任意または一部で必須"
+  ],
+  "install": [
+    "Claude Code：リポジトリを clone し、使いたい skill のフォルダ（例：`backtest-expert`）を `~/.claude/skills/` かプロジェクトの `.claude/skills/` にコピーする",
+    "Claude の Web アプリ：Releases から `.skill` ファイルを取り、Customize > Skills でアップロードする"
+  ],
+  "how_to_use": "まず `workflows/market-regime-daily.yaml` のような手順書を選び、そこに書かれた skill を順に Claude に使わせる。入口は docs/en/your-first-week.md と Trading Skills Navigator（目的から始め方を提案する skill）。",
+  "use_cases": [
+    "Claude の skill を多数束ねたリポジトリの構成（workflows、skillsets、manifest）の参考になりそう",
+    "投資に関心があれば、日々の相場確認を Claude に手順化させる用途に使えそう",
+    "skill のテストやパッケージ化（`scripts/package_skills.py`）のやり方を見る材料になりそう"
+  ],
+  "for_whom": "時間の限られた個人投資家で、Claude Code を使って相場確認や記録を型にはめたい人",
+  "similar": [
+    "TradingView のスクリーナー：スクリーニングは近い。こちらは Claude が手順を回し、記録と振り返りまで扱う"
+  ],
+  "tech": "Python 3.11〜3.13（scipy、yfinance、pyyaml、requests など）。skill は Markdown と Python スクリプトで、Claude Code または Claude の Web アプリで動く。ライセンスは MIT。",
+  "caveats": "投資助言ではなく、教育・研究用で損失の責任は利用者にある、と README が明記している。分析結果の正しさは確認していない。一部の skill は有料のデータ API（FMP、Alpaca など）が必要。Python は 3.14 以上に非対応。個人プロジェクトで、README に作者自身の運用方針が前面に出る。",
+  "tags": [
+    "AI エージェント",
+    "自動化・ワークフロー",
+    "その他"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の構成と skill 一覧を読んだが、個々の skill の中身や分析の質は調べておらず、機能は README の記述に依る"
+}

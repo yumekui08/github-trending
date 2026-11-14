@@ -1,0 +1,43 @@
+{
+  "repo": "Likely7/Veyra-NRVideo",
+  "summarized_at": "2026-11-14",
+  "short": "Veyra-NRVideo（アプリ名は Veyra）は、動画ファイルやキャプチャカード、PS5・Xbox・PC のストリーミング映像を GPU でリアルタイムに高画質化する Windows アプリ。Super Resolution、ノイズ除去（NR）、HDR、フレーム補間を重ねて使える。",
+  "what": "映像を GPU でリアルタイムに高画質化する Windows アプリ",
+  "can_do": [
+    "動画・画像ファイル、キャプチャカード、PS5 Remote Play、Sunshine 経由の PC、Xbox（非公式・実験的）、画面キャプチャを入力にして再生する",
+    "Super Resolution（RTX Video SR、DLSS、FSR など）による拡大",
+    "最大4層の NR（ノイズ除去）、HDR 化、フレーム補間（Frame Generation）",
+    "加工後の映像の録画（音声付き）、スクリーンショット、書き出し",
+    "NVIDIA 用と AMD 用の2種類の portable zip がある"
+  ],
+  "install": [
+    "Releases から `Veyra-2.1.5-NVIDIA-win64-portable.zip` か `Veyra-2.1.5-AMD-win64-portable.zip` を取り、書き込める新しいフォルダに展開して `veyra_qml_ui.exe` を実行する",
+    "PC のストリーミングには Sunshine を自分で入れる必要がある（同梱されない）"
+  ],
+  "how_to_use": "まず効果をすべて切った状態で映像と音を確認し、そのあと SR、NR、フレーム補間を1つずつ有効にする。高解像度、NR の多層化、フレーム補間は GPU と VRAM をかなり使う。",
+  "use_cases": [
+    "ゲーム機の映像をキャプチャカード経由で、遅延を抑えて拡大・補間して見る用途に使えそう",
+    "古い動画の再生時にノイズ除去と拡大を試すのに使えそう",
+    "DirectX 12 と複数の GPU ベンダー SDK を束ねた C++ 製アプリの構成の参考になりそう"
+  ],
+  "for_whom": "Windows で NVIDIA か AMD の GPU を持ち、ゲーム映像や動画を高画質で見たい人",
+  "similar": [
+    "mpv + シェーダー（Anime4K、FSRCNNX など）：再生時の拡大は近い。こちらはキャプチャやストリーミング入力と GUI がある",
+    "Lossless Scaling：画面の拡大とフレーム補間は近い。こちらは OSS（GPL-3.0）"
+  ],
+  "tech": "C++（CMake、DirectX 12、Qt の QML UI）。Windows 11、NVIDIA（RTX20〜50 を想定）か AMD の GPU。Moonlight / Sunshine 互換のストリーミング、RTX Video SR などの外部 SDK を使う。ライセンスは GPL-3.0。",
+  "caveats": "GitHub の説明にある「PS5 の GTA6 を 120FPS に」「DLSS 5」は宣伝調で、実際の効果は未確認。2026年9月に作られた新しいプロジェクトで更新が非常に速く、リリースノートは中国語が中心。Xbox 対応は実験的で、AMD の NR も実験的。RTX30/40 の一部機能や FSR4 は検証が足りないと README に書かれている。ダウンロード数を大きく掲げているが、品質の根拠ではない。Windows 専用。",
+  "tags": [
+    "音声・画像・動画",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:CMakeLists.txt",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release を読んだが、画質の効果や遅延は実機で確かめておらず、中国語のリリースノートと Wiki は詳しく読んでいない"
+}

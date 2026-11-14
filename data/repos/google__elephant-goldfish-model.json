@@ -1,0 +1,47 @@
+{
+  "repo": "google/elephant-goldfish-model",
+  "summarized_at": "2026-11-14",
+  "short": "elephant-goldfish-model（EGM）は、コーディング agent でソフトウェアの設計書を作り、レビューするための plugin。プロジェクトの文脈を持つ agent が設計書を書き、会話を知らない新しい agent に読ませて見落としを探させる。",
+  "what": "agent で設計書を書き、別の agent にレビューさせる plugin",
+  "can_do": [
+    "`egm-brainstorm` でアイデアを議論し、合意した方向を `concepts_brief.md` に保存する",
+    "`egm-draft` で brief から `design_draft.md` を、1節ごとにフィードバックを受けながら書く",
+    "`egm-review` で、会話の文脈を持たない新しい agent（goldfish）が、設計・明確さ・コードとの整合・実装計画を5段階で確認する",
+    "`egm-drift-report` で、リポジトリ内の設計書と現在のソースの食い違いを洗い出す",
+    "`egm-bootstrap` で既存コードベースの文書を作成・更新し、`egm-review-loop` で設定したレビュアー群を回す"
+  ],
+  "install": [
+    "Claude Code：`claude plugin marketplace add google/elephant-goldfish-model`",
+    "`claude plugin install egm@egm`",
+    "Codex CLI：`codex plugin marketplace add google/elephant-goldfish-model`、`codex plugin add egm@egm`",
+    "Antigravity CLI：`agy plugin install https://github.com/google/elephant-goldfish-model`",
+    "インストール後は新しいセッションを始める"
+  ],
+  "how_to_use": "既存の設計書があれば `/egm:egm-review docs/designs/webhooks.md` のようにパスを渡してレビューさせる。新規なら `/egm:egm-brainstorm 機能の説明` → `/egm:egm-draft` → `/egm:egm-review design_draft.md` の順に進み、指摘のどれを直すかは自分で決めて承認する。",
+  "use_cases": [
+    "実装前に設計書を agent にレビューさせ、書いた本人が気づかない前提の抜けを探すのに使えそう",
+    "README や設計書が現在のコードとずれていないかの定期点検に使えそう",
+    "agent に別 context のレビュアーを持たせるという運用パターンの参考になりそう"
+  ],
+  "for_whom": "コーディング agent を使って設計から実装まで進めたい開発者や、設計書の品質を上げたいチーム",
+  "similar": [
+    "各 agent 標準の plan mode：実装前に計画を作る点は近い。こちらは別 context のレビュアーによる検証が中心",
+    "spec-kit などの spec-driven 開発ツール：仕様を先に書く流れは近い。こちらはレビューの分離に重点がある"
+  ],
+  "tech": "Markdown の skill 定義と plugin 設定（Claude Code、Codex、Cursor、Antigravity 用）が中心。Python は pytest によるテスト用。fresh な subagent を作れる環境が要る。ライセンスは Apache-2.0。",
+  "caveats": "README に「Google の公式サポート製品ではない」とある。新しい subagent を作れない agent ではレビューが止まる。レビューはテストや人の判断の代わりにならない、と README が明記している。2026年9月に作られ、最新リリースは v0.1.1 の初期段階。対象は主にソフトウェアの設計書。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "ドキュメント・知識管理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

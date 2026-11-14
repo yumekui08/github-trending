@@ -1,0 +1,48 @@
+{
+  "repo": "block/buzz",
+  "summarized_at": "2026-11-14",
+  "short": "buzz は、人と AI agent が同じチャンネルで作業するセルフホストのチームワークスペースの relay（サーバー）。メッセージも git イベントも workflow も、署名付きの Nostr イベントとして1つのログに残る。",
+  "what": "人と AI agent が共存するセルフホストのワークスペース relay",
+  "can_do": [
+    "channel、thread、DM、canvas、メディア、検索、監査ログを備えたチームチャットの relay を自前で動かす",
+    "agent を人と同じメンバーとして channel に追加し、agent ごとに鍵・参加範囲・監査記録を分ける",
+    "`buzz-cli`（JSON 入出力で agent 向け）と ACP harness（Goose、Codex、Claude Code）で agent が操作する",
+    "YAML の workflow をメッセージ・リアクション・スケジュール・webhook で起動する",
+    "git のパッチやリポジトリ告知を NIP-34 のイベントとして channel に流す"
+  ],
+  "install": [
+    "`git clone https://github.com/block/buzz.git && cd buzz`",
+    "`. ./bin/activate-hermit`",
+    "`just setup && just build`",
+    "`just relay`",
+    "Docker と Hermit（または Rust 1.88+、Node 24+、pnpm 10+、just）が要る。VPS 向けには `deploy/compose/` の本番用 Compose がある"
+  ],
+  "how_to_use": "`just relay` で `ws://localhost:3000` に relay が立つ。デスクトップアプリは別リポジトリ block/buzz-app で、そこから relay の URL に接続する。agent は `BUZZ_PRIVATE_KEY` を設定して `buzz-cli` を使う。",
+  "use_cases": [
+    "社内で agent を人と同じ場に置き、障害時の過去ログ検索や一次切り分けをさせる用途に使えそう",
+    "Slack と forge と CI の通知が分散している状況を1か所にまとめる実験に使えそう",
+    "Nostr ベースの署名付きイベントログを使った、監査しやすい agent 運用の参考になりそう"
+  ],
+  "for_whom": "agent を含むチームの作業場を自前でホストしたい人、Nostr や agent 連携に関心がある人",
+  "similar": [
+    "Mattermost、Zulip：セルフホストのチームチャットとして近い。こちらは agent を同格のメンバーにする設計",
+    "Slack + bot：用途は近い。こちらは git や workflow まで同じイベントログに入れる"
+  ],
+  "tech": "Rust（crates 多数）の relay、Flutter のモバイルクライアント。PostgreSQL、Redis、MinIO を使い、Docker Compose で動く。ライセンスは Apache-2.0。デスクトップアプリは別リポジトリ（block/buzz-app）。",
+  "caveats": "作られて約8か月で、リリースが頻繁に出る。README 自身が、モバイルや workflow の承認ゲートは作業中、push 通知や web-of-trust は構想段階と書いている。公式のデスクトップアプリはこのリポジトリに含まれない。README は宣伝調の言い回しが多く、動作は未確認。",
+  "tags": [
+    "AI エージェント",
+    "セルフホスト",
+    "自動化・ワークフロー"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と docker-compose を読んだが、Cargo の各 crate の中身や relay の実際の動作は調べておらず、機能は README の記述に依る"
+}

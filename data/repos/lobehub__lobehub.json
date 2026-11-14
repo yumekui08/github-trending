@@ -1,0 +1,47 @@
+{
+  "repo": "lobehub/lobehub",
+  "summarized_at": "2026-11-14",
+  "short": "lobehub は、チームが使っているチャット（Discord などの IM）に AI agent を参加させ、依頼されたタスクを自分で拾って進めさせる Web アプリ。クラウド版と、Docker Compose で動かすセルフホスト版がある。",
+  "what": "チームのチャットに agent を参加させる、セルフホスト可能な AI 基盤",
+  "can_do": [
+    "IM アプリ、agent、モデルを1か所につなぐ（Discord などの IM bot 設定がある）",
+    "複数のタスクを並列に進める。誰にも割り当てられていない依頼を拾って実行し、結果を元のスレッドに返す",
+    "利用するほど agent が知識を蓄え、人が出した訂正が「教訓」として残るとされる",
+    "plugin や agent の Marketplace がある。`@lobehub/market-cli` で plugin を投稿できる",
+    "PostgreSQL、Redis、RustFS、SearXNG と agent gateway を含めて Docker Compose で動かせる"
+  ],
+  "install": [
+    "`mkdir lobehub && cd lobehub`",
+    "`bash <(curl -fsSL https://lobe.li/setup.sh) -l en`",
+    "`docker compose up -d`",
+    "Linux と macOS、Windows は WSL 2 で動く。Vercel などへの one-click deploy は、PostgreSQL と S3 互換ストレージが別途必要"
+  ],
+  "how_to_use": "起動後、ブラウザで `http://localhost:3210` を開く。モデルの provider や認証（Better Auth、Auth0 などの SSO）は環境変数で設定する。IM に bot を追加してチームのチャットにつなぐ。",
+  "use_cases": [
+    "社内の Discord などのチャットに、問い合わせへの回答や機能依頼の下書きを返す agent を置く用途に使えそう",
+    "モデルの provider を切り替えながら、自前の環境で AI チャットを提供するのに使えそう",
+    "agent 基盤を Docker Compose で自前運用するときの構成（Postgres、Redis、S3 互換ストレージ、検索）の参考になりそう"
+  ],
+  "for_whom": "チームで複数のモデルや agent を使い、データを自分たちの環境に置いて運用したい人",
+  "similar": [
+    "Open WebUI、LibreChat：セルフホストの AI チャット UI として近い。こちらは IM に参加する agent と Marketplace を前面に出す",
+    "Dify：agent や workflow の基盤として近い"
+  ],
+  "tech": "TypeScript（Node.js、package.json は v2.3.3）。PostgreSQL、Redis、S3 互換ストレージが必要。Docker で動く。クラウド版の利用もできる。",
+  "caveats": "ライセンスは LobeHub Community License で、GitHub は NOASSERTION と表示し、README のバッジは Apache 2.0 とあって食い違う。商用利用や再配布の前に LICENSE を確認すること。README は「新人から一人前に」などの宣伝調で、agent の自律性や学習の効果は未確認。セルフホストには複数のサービスが要り、構成は大きい。",
+  "tags": [
+    "AI エージェント",
+    "LLM",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の機能紹介と self-host 手順を読んだが、実際の agent の挙動やコードの構成は調べておらず、機能は README の記述に依る"
+}

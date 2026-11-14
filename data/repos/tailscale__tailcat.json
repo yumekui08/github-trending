@@ -1,0 +1,43 @@
+{
+  "repo": "tailscale/tailcat",
+  "summarized_at": "2026-11-14",
+  "short": "tailcat は、Tailscale の通信部分（data plane）だけを使う netcat 風の CLI と Go ライブラリ。アカウントも root も要らず、短いアドレスを相手に渡すだけで、WireGuard で暗号化された2台間の接続ができる。",
+  "what": "Tailscale の data plane を使う netcat 風の CLI",
+  "can_do": [
+    "片方が `tailcat` でアドレスを発行して待ち、もう片方がそのアドレスを指定して接続し、stdin/stdout をつなぐ",
+    "`tailcat serve` でローカルの TCP ポートを相手に公開し、相手は `tailcat forward` で手元のポートに引き込む",
+    "SSH サーバー、接続ごとのコマンド実行、ファイルの送受信（`tailcat recv`）、スループットと遅延の計測",
+    "NAT を越える直接の UDP 接続に昇格し、できないときは DERP リレー経由になる",
+    "Go ライブラリとして組み込める。ブラウザ（WebAssembly）の実験的なデモもある"
+  ],
+  "install": [
+    "Homebrew、Scoop、Snap、.deb / .rpm、静的バイナリ、コンテナイメージ、Nix、AUR、conda-forge、ソースからのビルドで入れられる。README には個別のコマンドがなく、INSTALL.md に書かれている"
+  ],
+  "how_to_use": "一方で `tailcat` を実行すると `tc...` から始まる一時的なアドレスが出る。他方で `echo hello | tailcat tc...` と実行すると、文字列が相手に届く。ポート公開は `tailcat serve 8080` と、相手側の `tailcat tc... 8080`。",
+  "use_cases": [
+    "NAT の内側にあるホスト同士で、VPN を設定せずに一時的にファイルやポートをやり取りするのに使えそう",
+    "調査用に、手元のマシンの SSH やデバッグ用ポートを相手に一時的に見せる用途に使えそう",
+    "接続情報の交換方法を自分で決められるので、DNS などを使った独自の認証と組み合わせる用途に使えそう"
+  ],
+  "for_whom": "NAT や firewall の内側のマシン同士を、アカウントや VPN の設定なしに一時的につなぎたいインフラ・開発者",
+  "similar": [
+    "netcat、socat：stdin/stdout や TCP の橋渡しは同じ。こちらは NAT 越えと暗号化が組み込み",
+    "Tailscale 本体：同じ通信方式だが、こちらは control plane（アカウントや常設のネットワーク）を使わない",
+    "croc、magic-wormhole：一時的なファイル転送は近い。こちらはポート転送や SSH にも使える"
+  ],
+  "tech": "Go（go.mod は go 1.27.2）。Tailscale の magicsock と DERP を利用し、WireGuard で暗号化する。ユーザー空間で動き、ルーティングや DNS は変更しない。Linux、macOS、Windows、一部の BSD、ブラウザ向け。ライセンスは BSD-3-Clause。",
+  "caveats": "README に、API、CLI のフラグ、通信形式が変わりうる、安定性の約束はない、とある。公開の DERP リレーは無料だが、レート制限があり、稼働保証はなく、予告なく使えなくなる可能性がある。リレーは自分で立てることもできる。ブラウザ版は DERP 経由のみで実験的。",
+  "tags": [
+    "ネットワーク",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:go.mod",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

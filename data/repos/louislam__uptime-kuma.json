@@ -1,0 +1,47 @@
+{
+  "repo": "louislam/uptime-kuma",
+  "summarized_at": "2026-11-14",
+  "short": "uptime-kuma は、HTTP や TCP、ping などの死活監視をして、落ちたら通知するセルフホストの Web アプリ。Docker で1コマンドで立ち上がり、ステータスページも作れる。",
+  "what": "死活監視と通知を行うセルフホストの Web アプリ",
+  "can_do": [
+    "HTTP(S)、TCP、キーワード・JSON クエリ付き HTTP、Websocket、Ping、DNS、Push、Docker コンテナ、Steam ゲームサーバーの監視",
+    "監視間隔は最短20秒",
+    "Telegram、Discord、Slack、Email（SMTP）など90以上の通知先に対応",
+    "複数のステータスページを作り、独自ドメインに割り当てられる",
+    "Ping のグラフ、証明書情報、プロキシ、2FA、多言語 UI"
+  ],
+  "install": [
+    "`mkdir uptime-kuma && cd uptime-kuma`",
+    "`curl -o compose.yaml https://raw.githubusercontent.com/louislam/uptime-kuma/master/compose.yaml`",
+    "`docker compose up -d`",
+    "docker run の場合は `docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:2`",
+    "NFS 上のデータ保存は非対応。ローカルのディレクトリか volume を使う"
+  ],
+  "how_to_use": "起動後、ブラウザで `http://localhost:3001` を開き、管理者アカウントを作る。監視対象を追加し、通知先を設定する。外に出さないなら `-p 127.0.0.1:3001:3001` で待ち受けを localhost に絞る。",
+  "use_cases": [
+    "社内サービスや自宅サーバーの簡易な死活監視と Discord / Slack 通知に使えそう",
+    "利用者向けのステータスページを手早く用意するのに使えそう",
+    "Prometheus や Zabbix を入れるほどではない小規模環境で使えそう"
+  ],
+  "for_whom": "小〜中規模のサービスの死活監視を、手軽にセルフホストで済ませたいインフラ担当の人",
+  "similar": [
+    "Zabbix、Prometheus + Alertmanager：監視全般なら向こうが強い。こちらは外形監視に絞り、設定が GUI で簡単",
+    "UptimeRobot、Better Stack：用途は近い。こちらは自分でホストする OSS"
+  ],
+  "tech": "JavaScript（Node.js、Vue の SPA、Socket.io）。Docker 推奨。Docker なしなら Node.js 20.4 以上と pm2。Linux と Windows に対応、BSD は非対応。ライセンスは MIT。",
+  "caveats": "最新のリリース 2.5.11 には管理者権限の RCE 修正が含まれる（詳細は後日公開）ので、更新は早めにしたほうがよい。manifests の package.json は 3.0.0-beta.0 で Node 26.2 以上を要求しており、master は次期版の開発中と思われる。インストールには `:2` タグの安定版を使う。README に、検索上位の uptimekuma.co は公式ではないという注意がある。",
+  "tags": [
+    "監視・可観測性",
+    "セルフホスト",
+    "インフラ・運用"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

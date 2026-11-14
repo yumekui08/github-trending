@@ -1,0 +1,45 @@
+{
+  "repo": "backnotprop/plannotator",
+  "summarized_at": "2026-11-14",
+  "short": "plannotator は、コーディング agent（Claude Code、Codex など）の計画や diff をブラウザ上でレビューし、コメントを agent に返すローカルのツール。複数 agent からの質問や確認を1か所にまとめる Inbox もある。",
+  "what": "コーディング agent の計画や diff にコメントを返すレビュー UI",
+  "can_do": [
+    "agent が出した計画・仕様・Markdown・HTML をブラウザで開き、範囲を選んでコメントし、まとめて agent に送り返す",
+    "ローカルの変更や GitHub / GitLab の PR の diff をレビューし、コメントや修正案を agent に渡す",
+    "Git のほか GitButler、Jujutsu、Perforce の差分にも対応するとされる",
+    "Inbox で複数 agent からの質問・確認・ファイルを1つの画面にまとめ、クリックで返答する",
+    "Claude Code、Codex、Copilot CLI、Gemini CLI、OpenCode、Kiro、Droid、Amp、Pi など多くの agent に対応する"
+  ],
+  "install": [
+    "`curl -fsSL https://plannotator.ai/install.sh | bash`",
+    "バイナリだけ入れるなら `curl -fsSL https://plannotator.ai/install.sh | bash -s -- --minimal`",
+    "Claude Code では `/plugin marketplace add backnotprop/plannotator` のあと `/plugin install plannotator@plannotator`"
+  ],
+  "how_to_use": "インストール後、agent のスラッシュコマンドで使う。例：`/plannotator-annotate README.md` でファイルに注釈、`/plannotator-last` で agent の直前の返答に注釈、`plannotator inbox` で Inbox を開く。agent が計画を出すとブラウザが開き、コメントを送ると agent の次のターンになる。",
+  "use_cases": [
+    "Claude Code などが出した作業計画を、実行前に一箇所ずつ直す場面に使えそう",
+    "agent が書いた変更を PR の前にローカルでレビューし、指摘をそのまま agent に直させるのに使えそう",
+    "複数 agent を並行で動かすとき、確認待ちを1画面で捌く用途に使えそう"
+  ],
+  "for_whom": "コーディング agent を日常的に使い、計画や変更の確認を GUI で効率よくやりたい人",
+  "similar": [
+    "GitHub の PR レビュー画面：diff コメントは近い。こちらはローカルで動き、コメントが agent に直接返る",
+    "各 agent 標準の plan mode：計画の承認は近い。こちらは範囲を選んで注釈でき、agent をまたいで使える"
+  ],
+  "tech": "TypeScript（bun の workspace）。ローカルにバイナリを入れ、ブラウザの UI で動く。Windows、macOS、Linux（WSL 含む）向けのインストーラがある。ライセンスは MIT OR Apache-2.0 系（meta は Apache-2.0）。",
+  "caveats": "作られて約1.5か月で、リリースがほぼ毎日出る速い更新。インストーラは各 agent の設定（hook、skill、コマンド）を書き換えるので、`--minimal` で試すほうが安全。機能が多く、README には新機能の宣伝調の記述が多い。Inbox 周りは README の説明だけで、動作は未確認。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
