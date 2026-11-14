@@ -1,0 +1,153 @@
+{
+  "date": "2026-11-14",
+  "items": [
+    {
+      "repo": "backnotprop/plannotator",
+      "rank": 6,
+      "status": "new",
+      "work_dir": ".work/backnotprop__plannotator",
+      "output": "data/repos/backnotprop__plannotator.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "louislam/uptime-kuma",
+      "rank": 7,
+      "status": "new",
+      "work_dir": ".work/louislam__uptime-kuma",
+      "output": "data/repos/louislam__uptime-kuma.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "block/buzz",
+      "rank": 8,
+      "status": "new",
+      "work_dir": ".work/block__buzz",
+      "output": "data/repos/block__buzz.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "manifest:Cargo.toml",
+        "manifest:Dockerfile",
+        "manifest:docker-compose.yml",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "tradermonty/claude-trading-skills",
+      "rank": 9,
+      "status": "new",
+      "work_dir": ".work/tradermonty__claude-trading-skills",
+      "output": "data/repos/tradermonty__claude-trading-skills.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:pyproject.toml"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "tailscale/tailcat",
+      "rank": 10,
+      "status": "new",
+      "work_dir": ".work/tailscale__tailcat",
+      "output": "data/repos/tailscale__tailcat.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:go.mod",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "Likely7/Veyra-NRVideo",
+      "rank": 11,
+      "status": "new",
+      "work_dir": ".work/Likely7__Veyra-NRVideo",
+      "output": "data/repos/Likely7__Veyra-NRVideo.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:CMakeLists.txt",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "rank": 12,
+      "status": "new",
+      "work_dir": ".work/ChromeDevTools__chrome-devtools-mcp",
+      "output": "data/repos/ChromeDevTools__chrome-devtools-mcp.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "google/elephant-goldfish-model",
+      "rank": 5,
+      "status": "weekly",
+      "work_dir": ".work/google__elephant-goldfish-model",
+      "output": "data/repos/google__elephant-goldfish-model.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:pyproject.toml",
+        "release"
+      ],
+      "errors": []
+    },
+    {
+      "repo": "lobehub/lobehub",
+      "rank": 15,
+      "status": "weekly",
+      "work_dir": ".work/lobehub__lobehub",
+      "output": "data/repos/lobehub__lobehub.json",
+      "refresh": false,
+      "materials": [
+        "meta",
+        "tree",
+        "readme",
+        "manifest:package.json",
+        "manifest:Dockerfile",
+        "release"
+      ],
+      "errors": []
+    }
+  ],
+  "deferred": []
+}

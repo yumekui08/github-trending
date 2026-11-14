@@ -1,0 +1,16 @@
+{
+  "full_name": "block/buzz",
+  "description": "A hive mind communication platform",
+  "homepage": "",
+  "topics": [],
+  "language": "Rust",
+  "stargazers_count": 37299,
+  "forks_count": 4941,
+  "size": 677975,
+  "created_at": "2026-03-06T21:00:56Z",
+  "pushed_at": "2026-11-14T00:50:58Z",
+  "default_branch": "main",
+  "archived": false,
+  "fork": false,
+  "license": "Apache-2.0"
+}
