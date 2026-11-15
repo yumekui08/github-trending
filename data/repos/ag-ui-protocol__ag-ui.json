@@ -1,0 +1,43 @@
+{
+  "repo": "ag-ui-protocol/ag-ui",
+  "summarized_at": "2026-11-15",
+  "short": "ag-ui は、AI agent のバックエンドとフロントエンドの間でやり取りするイベントを標準化した protocol と、その実装一式。LangChain、CrewAI、Google ADK など多数の agent framework の連携例がある。",
+  "what": "agent と UI をつなぐイベントベースの protocol",
+  "can_do": [
+    "agent の実行中に、約16種類の標準イベントをバックエンドからフロントエンドへ流す",
+    "SSE、WebSocket、webhook など、transport を問わず使える middleware 層",
+    "チャットのストリーミング、状態の双方向同期、generative UI、frontend tool の呼び出し、human-in-the-loop",
+    "LangGraph、CrewAI、Mastra、Pydantic AI、Google ADK、AWS Strands など多数の framework との連携",
+    "`npx create-ag-ui-app` による雛形の生成"
+  ],
+  "install": [
+    "`npx create-ag-ui-app my-agent-app`"
+  ],
+  "how_to_use": "雛形を作ったあと、docs の Quickstart に沿って agent バックエンドからイベントを出し、フロントエンドで受ける。連携の動作例は AG-UI Dojo（dojo.ag-ui.com）で見られる。",
+  "use_cases": [
+    "社内向けの agent に Web のチャット UI を付けるとき、イベントの形を自作せず標準に乗せるのに使えそう",
+    "LangGraph など既存の agent framework の出力を、共通の形でフロントエンドへ流すのに使えそう",
+    "MCP（agent に tool を渡す）、A2A（agent 同士）と合わせた agent 周りの protocol の構成を知る資料になりそう"
+  ],
+  "for_whom": "agent をフロントエンド付きのアプリとして組み込みたい Web 開発者",
+  "similar": [
+    "MCP：agent に tool を渡す protocol。こちらは agent とユーザー向けアプリの間を担当する",
+    "A2A：agent 同士の通信の protocol。用途が別で、README では補完関係とされている"
+  ],
+  "tech": "TypeScript 製の monorepo（pnpm）。SDK は npm パッケージ（@ag-ui/core、@ag-ui/client など）。Python 向けの連携もある。ライセンスは MIT。",
+  "caveats": "README は CopilotKit 社の docs やサービスへの案内が多く、同社が中心になって開発していると思われる。連携の一部は In Progress。リリースで @ag-ui/client などの peer dependency が 1.0.0 以上必須に変わった。作られて約半年。",
+  "tags": [
+    "AI エージェント",
+    "ライブラリ・SDK",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README・tree・release を読んだが、protocol の仕様本体（docs）やイベントの詳細は読んでおらず、機能は README の記述に依る"
+}

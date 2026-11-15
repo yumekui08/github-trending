@@ -1,0 +1,48 @@
+{
+  "repo": "Tencent/LoopForge",
+  "summarized_at": "2026-11-15",
+  "short": "LoopForge は、coding agent（Claude Code、Codex など）を使った開発をチームで回すためのセルフホストの Web アプリ。チャットで頼むと Docker sandbox で作業して PR を出し、手順を SOP として保存して、承認の関門つきで繰り返せる。",
+  "what": "coding agent での開発を回すセルフホストの Web アプリ",
+  "can_do": [
+    "チャットで要件を伝えると、Docker sandbox にリポジトリを checkout して役割ごとの agent に作業を任せ、PR を出す",
+    "agent、script、人の承認、サブ SOP をつないだ SOP（標準の作業手順）を作って繰り返し実行する",
+    "承認の関門で止めて、確認するか、指定した手順へ差し戻す。失敗した手順の再実行や、任意のノードからのやり直しもできる",
+    "CodeBuddy、Codex、Claude Code、OpenCode、Cursor CLI など約10種類の coding agent CLI を executor として選ぶ",
+    "ノードごとの状態、tool の実行記録、ログ、成果物の確認と、要件ごとの納品・コストの集計",
+    "API key なしで、script と承認だけの demo SOP を試せる"
+  ],
+  "install": [
+    "Git、Docker、Compose、Python 3、curl が前提（installer が不足分の導入を案内する）",
+    "`git clone https://github.com/Tencent/LoopForge.git`",
+    "`cd LoopForge`",
+    "`./start.sh`"
+  ],
+  "how_to_use": "installer が表示するアドレスを開いてアカウントを作る（最初のアカウントが管理者）。そのあと、モデルの API key と GitHub の認可を設定し、README の demo project にある「Platform check」の SOP を実行して流れを確認する。",
+  "use_cases": [
+    "チームの変更依頼を、計画・実装・レビュー・テストに分けた SOP で、毎回同じ手順で agent に回させるのに使えそう",
+    "Claude Code などを個人で使うのでなく、sandbox と承認の履歴つきで社内サーバーに置いて共有する用途に使えそう",
+    "agent の暴走を防ぐ人の承認の関門の設計の参考になりそう"
+  ],
+  "for_whom": "coding agent を複数人の開発フローに載せ、レビューと承認を組み込みたいチーム",
+  "similar": [
+    "Claude Code、Codex などの CLI 単体：こちらはそれらを executor にして、sandbox、役割、承認、履歴を上に足す",
+    "Dify、n8n：ワークフロー自動化の点では近いが、こちらは開発の納品（PR まで）に特化している"
+  ],
+  "tech": "Go 製（Gin、GORM、MySQL、SQLite）。フロントエンドは chatbot/ 以下の npm プロジェクト。Docker と Compose で動かし、イメージは GHCR で配布。macOS と Linux（x86_64 / arm64）。CLI として loopforge-cli（npm）もある。",
+  "caveats": "モデルの API key が別途要る（demo を除く）。サービスは既定で 0.0.0.0:8090 で待ち受けるので、公開前に IP 制限か HTTPS の reverse proxy が要る。GitHub の license 判定は NOASSERTION だが、README のバッジは MIT と書いている。作られて約3.5か月で v0.3.x。更新頻度は高い。",
+  "tags": [
+    "AI エージェント",
+    "自動化・ワークフロー",
+    "開発ツール",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:go.mod",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

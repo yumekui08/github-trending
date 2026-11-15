@@ -1,0 +1,42 @@
+{
+  "repo": "martin-olivier/airgorah",
+  "summarized_at": "2026-11-15",
+  "short": "Airgorah は、WiFi のセキュリティ監査をする Linux 向けの GUI アプリ。周辺の WiFi トラフィックの収集、接続中の client の検出、deauthentication 攻撃、handshake と PMKID の取得、パスワードの解析までを1つの画面で行う。",
+  "what": "WiFi のセキュリティ監査をする Linux の GUI アプリ",
+  "can_do": [
+    "周辺の access point の WiFi トラフィックを収集する",
+    "access point に接続している client を検出する",
+    "deauthentication 攻撃を行う（deauth 中のチャンネルに scan を留める機能もある）",
+    "handshake と PMKID を取得する",
+    "取得した handshake / PMKID からパスワードを解析する",
+    "いま待ち受けているチャンネルをステータスバーに表示する"
+  ],
+  "install": [],
+  "how_to_use": "インストールと使い方は README ではなく GitHub の wiki（Installation / Usage）に書かれている。monitor mode と packet injection に対応した無線 LAN カードを用意して起動すると、特権の操作が必要なときに polkit が認証を1回求める。",
+  "use_cases": [
+    "自分が管理する WiFi の暗号化方式やパスワードの強度を点検するのに使えそう",
+    "社内や自宅の access point に対し、deauth への耐性を検証する場面に使えそう",
+    "WiFi 攻撃の流れ（handshake / PMKID の取得と解析）を手元の検証環境で学ぶのに使えそう"
+  ],
+  "for_whom": "自分が管理する WiFi の安全性を点検したい、セキュリティ寄りのエンジニア",
+  "similar": [
+    "aircrack-ng：同じ種類の攻撃を行う CLI のツール群。こちらはそれを GUI にまとめたもの（0.9.0 から aircrack-ng への依存は外された）",
+    "Wifite：WiFi 監査を自動化する CLI。こちらは GUI で操作する"
+  ],
+  "tech": "Rust 製（GTK4 の GUI、polkit で起動する特権 agent の airgorah-agent、共通 crate の3構成）。Linux のみ。X11 と Wayland のどちらでも動く。monitor mode と packet injection 対応の無線 LAN カードが要る。crates.io と AUR で配布。ライセンスは MIT。",
+  "caveats": "他人の WiFi への攻撃は多くの国で違法で、README も自分が所有するネットワークだけに使うよう警告している。バージョンは 0.9.0 でまだ 1.0 前。インストール手順は wiki にあり、今回は読んでいない。作られて約4年。",
+  "tags": [
+    "セキュリティ",
+    "ネットワーク",
+    "デスクトップアプリ"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README が短く、詳細は wiki（Installation / Usage）にある。wiki は読んでおらず、機能は README と release の記述に依る"
+}

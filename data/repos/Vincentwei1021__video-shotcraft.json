@@ -1,0 +1,47 @@
+{
+  "repo": "Vincentwei1021/video-shotcraft",
+  "summarized_at": "2026-11-15",
+  "short": "video-shotcraft は、Claude Code や Codex に製品のプロモ動画を作らせる skill。実際のページのスクリーンショットから、Remotion のコードで動画を組み立て、MP4 を出す。映像はコードで描くので、あとから編集できる。",
+  "what": "プロモ動画を作らせる Claude Code / Codex の skill",
+  "can_do": [
+    "実際のページを capture し、ショットのレシピカードから絵コンテを作る",
+    "Remotion（React で動画を書くフレームワーク）で、スクリーンショットとコピーから動画を描画する",
+    "拍に合わせたカット割りと、効果音の追加",
+    "全フレームの確認をして MP4 を出力する",
+    "Motion Workbench（ブラウザ上の編集画面）で、出来上がった動画を編集し続ける",
+    "JianYing（CapCut 中国版）の編集可能な draft を書き出す",
+    "10分類・124枚のカード（150ショット）の中から、名前でショットを指定できる"
+  ],
+  "install": [
+    "`npx skills add Vincentwei1021/video-shotcraft`",
+    "`git clone https://github.com/Vincentwei1021/video-shotcraft.git`",
+    "`ln -s \"$(pwd)\" ~/.claude/skills/video-shotcraft`（Claude Code の場合。Codex は `~/.codex/skills/`）"
+  ],
+  "how_to_use": "コマンドはなく、agent に「Use video-shotcraft to make a promo for my product.」のように頼む。Ink Press というテンプレートを提案され、ページの capture から動画の生成まで進む。ショットは Gallery のカード名で指定できる。",
+  "use_cases": [
+    "自社の社内ツールやサービスの紹介動画を、スクリーンショットだけで作るのに使えそう",
+    "リリースノートや OSS の公開時のデモ動画を、コードで再現できる形で用意するのに使えそう",
+    "agent の skill に大きな素材ライブラリ（ショットのレシピ）を持たせる作り方の参考になりそう"
+  ],
+  "for_whom": "動画編集に慣れていなくても、自分の製品の紹介動画を agent に作らせたい人",
+  "similar": [
+    "Remotion：動画をコードで書く土台。こちらはその上で、ショットの型と作業の流れを agent に渡す skill",
+    "Sora など動画生成 AI：こちらは生成でなく、実際の画面の素材をコードで動かすので、画面の中身は実物になる"
+  ],
+  "tech": "TypeScript と Remotion。Claude Code と Codex の skill（SKILL.md、plugin 定義あり）。テストは vitest。Node.js が要ると思われる。ライセンスは Apache-2.0。",
+  "caveats": "README の sponsor 欄に APIMart と AWS の広告がある。Remotion は商用利用に条件があるライセンスのことがあり、今回は確認していない。作られて約4か月。動画の質は agent の出来に左右されると思われる。",
+  "tags": [
+    "音声・画像・動画",
+    "AI エージェント",
+    "自動化・ワークフロー"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と tree を読んだが、SKILL.md の手順や実際の出力動画の質は調べておらず、機能は README の記述に依る"
+}
