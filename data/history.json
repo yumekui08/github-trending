@@ -21,7 +21,8 @@
   "ChromeDevTools/chrome-devtools-mcp": {
     "first_seen": "2026-11-14",
     "seen": [
-      "2026-11-14"
+      "2026-11-14",
+      "2026-11-15"
     ]
   },
   "Comfy-Org/ComfyUI": {
@@ -132,7 +133,8 @@
     "seen": [
       "2026-11-12",
       "2026-11-13",
-      "2026-11-14"
+      "2026-11-14",
+      "2026-11-15"
     ]
   },
   "Graphify-Labs/graphify": {
@@ -192,7 +194,8 @@
     "seen": [
       "2026-10-03",
       "2026-10-04",
-      "2026-10-16"
+      "2026-10-16",
+      "2026-11-15"
     ]
   },
   "JustVugg/colibri": {
@@ -221,7 +224,8 @@
   "Likely7/Veyra-NRVideo": {
     "first_seen": "2026-11-14",
     "seen": [
-      "2026-11-14"
+      "2026-11-14",
+      "2026-11-15"
     ]
   },
   "M-Abozaid/esp32-c3-adblock": {
@@ -332,7 +336,8 @@
   "QwenLM/qwen-code": {
     "first_seen": "2026-11-13",
     "seen": [
-      "2026-11-13"
+      "2026-11-13",
+      "2026-11-15"
     ]
   },
   "Renhuai123/ziwei-doushu": {
@@ -374,6 +379,12 @@
     "seen": [
       "2026-10-26",
       "2026-10-27"
+    ]
+  },
+  "Tencent/LoopForge": {
+    "first_seen": "2026-11-15",
+    "seen": [
+      "2026-11-15"
     ]
   },
   "The-PR-Agent/pr-agent": {
@@ -439,6 +450,12 @@
       "2026-10-28"
     ]
   },
+  "ag-ui-protocol/ag-ui": {
+    "first_seen": "2026-11-15",
+    "seen": [
+      "2026-11-15"
+    ]
+  },
   "akitaonrails/ai-memory": {
     "first_seen": "2026-10-18",
     "seen": [
@@ -458,7 +475,8 @@
     "first_seen": "2026-10-10",
     "seen": [
       "2026-10-10",
-      "2026-11-14"
+      "2026-11-14",
+      "2026-11-15"
     ]
   },
   "android/skills": {
@@ -546,7 +564,8 @@
   "ashhart/TensorFold": {
     "first_seen": "2026-11-13",
     "seen": [
-      "2026-11-13"
+      "2026-11-13",
+      "2026-11-15"
     ]
   },
   "astral-sh/ruff": {
@@ -578,7 +597,8 @@
   "backnotprop/plannotator": {
     "first_seen": "2026-11-14",
     "seen": [
-      "2026-11-14"
+      "2026-11-14",
+      "2026-11-15"
     ]
   },
   "beenuar/AiSOC": {
@@ -744,7 +764,8 @@
   "dream-num/univer": {
     "first_seen": "2026-09-30",
     "seen": [
-      "2026-09-30"
+      "2026-09-30",
+      "2026-11-15"
     ]
   },
   "dsx-ai-factory/nvke": {
@@ -992,7 +1013,8 @@
   "louislam/uptime-kuma": {
     "first_seen": "2026-11-14",
     "seen": [
-      "2026-11-14"
+      "2026-11-14",
+      "2026-11-15"
     ]
   },
   "luongnv89/claude-howto": {
@@ -1037,6 +1059,12 @@
     "first_seen": "2026-10-08",
     "seen": [
       "2026-10-08"
+    ]
+  },
+  "martin-olivier/airgorah": {
+    "first_seen": "2026-11-15",
+    "seen": [
+      "2026-11-15"
     ]
   },
   "mattpocock/skills": {
@@ -1583,7 +1611,8 @@
   "tradermonty/claude-trading-skills": {
     "first_seen": "2026-11-14",
     "seen": [
-      "2026-11-14"
+      "2026-11-14",
+      "2026-11-15"
     ]
   },
   "trycua/cua": {
@@ -1661,7 +1690,8 @@
       "2026-11-11",
       "2026-11-12",
       "2026-11-13",
-      "2026-11-14"
+      "2026-11-14",
+      "2026-11-15"
     ]
   },
   "willfaust/Madeira": {

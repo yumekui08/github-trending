@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-15",
+  "period": "weekly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "language": "TypeScript",
+      "stars": 28141,
+      "stars_period": 13660
+    },
+    {
+      "rank": 2,
+      "repo": "sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username across social networks",
+      "language": "Python",
+      "stars": 111773,
+      "stars_period": 12401
+    },
+    {
+      "rank": 3,
+      "repo": "anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 194626,
+      "stars_period": 6220
+    },
+    {
+      "rank": 4,
+      "repo": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 51204,
+      "stars_period": 4601
+    },
+    {
+      "rank": 5,
+      "repo": "google/elephant-goldfish-model",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "language": "Python",
+      "stars": 19187,
+      "stars_period": 5539
+    },
+    {
+      "rank": 6,
+      "repo": "milind-soni/OpenMausBot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "language": "TypeScript",
+      "stars": 22764,
+      "stars_period": 6413
+    },
+    {
+      "rank": 7,
+      "repo": "ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "language": "Python",
+      "stars": 72256,
+      "stars_period": 4526
+    },
+    {
+      "rank": 8,
+      "repo": "google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "language": "C++",
+      "stars": 17979,
+      "stars_period": 1859
+    },
+    {
+      "rank": 9,
+      "repo": "backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "language": "TypeScript",
+      "stars": 11109,
+      "stars_period": 818
+    },
+    {
+      "rank": 10,
+      "repo": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 117565,
+      "stars_period": 3670
+    },
+    {
+      "rank": 11,
+      "repo": "anthropics/claude-quickstarts",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "language": "Python",
+      "stars": 20979,
+      "stars_period": 1794
+    }
+  ]
+}
