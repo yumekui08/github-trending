@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-16",
+  "period": "monthly",
+  "items": [
+    {
+      "rank": 1,
+      "repo": "Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars": 55490,
+      "stars_period": 25448
+    },
+    {
+      "rank": 2,
+      "repo": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 73225,
+      "stars_period": 43540
+    },
+    {
+      "rank": 3,
+      "repo": "pingdotgg/t3code",
+      "description": "The best way to control Claude Code, Codex and more from any computer or phone",
+      "language": "TypeScript",
+      "stars": 61524,
+      "stars_period": 33583
+    },
+    {
+      "rank": 4,
+      "repo": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 117375,
+      "stars_period": 17038
+    },
+    {
+      "rank": 5,
+      "repo": "pbakaus/impeccable",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "language": "Rust",
+      "stars": 110748,
+      "stars_period": 29631
+    },
+    {
+      "rank": 6,
+      "repo": "anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 195355,
+      "stars_period": 14332
+    },
+    {
+      "rank": 7,
+      "repo": "HKUDS/DeepTutor",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/ .",
+      "language": "Python",
+      "stars": 59480,
+      "stars_period": 18278
+    },
+    {
+      "rank": 8,
+      "repo": "heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 84743,
+      "stars_period": 20878
+    },
+    {
+      "rank": 9,
+      "repo": "sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username across social networks",
+      "language": "Python",
+      "stars": 112475,
+      "stars_period": 18371
+    },
+    {
+      "rank": 10,
+      "repo": "AgriciDaniel/claude-seo",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+      "language": "Python",
+      "stars": 29715,
+      "stars_period": 10672
+    },
+    {
+      "rank": 11,
+      "repo": "Leonxlnx/taste-skill",
+      "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+      "language": "JavaScript",
+      "stars": 116233,
+      "stars_period": 19546
+    },
+    {
+      "rank": 12,
+      "repo": "anthropics/knowledge-work-plugins",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "language": "Python",
+      "stars": 36181,
+      "stars_period": 6417
+    },
+    {
+      "rank": 13,
+      "repo": "Vincentwei1021/video-shotcraft",
+      "description": "AI video skill for Claude Code & Codex — cinematic, editable product promos with Remotion: 124 shot recipe cards, 150 motion previews, beat sync, sound design, Motion Workbench & JianYing (CapCut CN) export.",
+      "language": "TypeScript",
+      "stars": 20056,
+      "stars_period": 7937
+    },
+    {
+      "rank": 14,
+      "repo": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 51614,
+      "stars_period": 7545
+    }
+  ]
+}
