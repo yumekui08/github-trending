@@ -1,0 +1,45 @@
+{
+  "repo": "google-labs-code/stitch-skills",
+  "summarized_at": "2026-11-16",
+  "short": "stitch-skills は、Google の UI デザインサービス Stitch を coding agent から操るための Agent Skills 集。デザイン生成、React などへのコード化、DESIGN.md の作成を skill として提供する。",
+  "what": "Stitch MCP 向けの Agent Skills 集",
+  "can_do": [
+    "テキストや画像から Stitch の画面を生成・編集し、バリエーションを作る（generate-design）",
+    "既存のフロントエンドのコードや静的 HTML を Stitch にアップロードする（code-to-design、extract-static-html、upload-to-stitch）",
+    "Stitch の画面を React / React Native / shadcn-ui / Vite のダッシュボードのコードに変換する",
+    "DESIGN.md をコードや Stitch のプロジェクトから抽出・生成し、デザインシステムに適用する",
+    "Stitch 向けのプロンプト改善や、1つのプロンプトから複数ページのサイトを作る（stitch-loop）",
+    "Remotion でプロジェクトの紹介動画を作る"
+  ],
+  "install": [
+    "`npx plugins add google-labs-code/stitch-skills --scope project --target claude-code`",
+    "`npx skills add google-labs-code/stitch-skills`",
+    "Codex は `codex plugin marketplace add google-labs-code/stitch-skills --ref main`",
+    "事前に Stitch MCP server の設定が必要"
+  ],
+  "how_to_use": "先に Stitch MCP の設定手順（stitch.withgoogle.com/docs/mcp/setup）で server と認証を用意する。そのあと agent に「Stitch のプロジェクト projects/123 の画面を React components に変換して」のように頼むと、対応する skill が使われる。",
+  "use_cases": [
+    "Stitch で作った画面案を、フロントエンドの実装のたたき台に変換するのに使えそう",
+    "既存の社内ツールの画面を DESIGN.md に整理して、見た目を揃えるのに使えそう",
+    "Agent Skills の構成（SKILL.md、scripts、resources、examples）の実例として参考になりそう"
+  ],
+  "for_whom": "Google Stitch を使って UI を作り、coding agent でコード化まで進めたい人",
+  "similar": [
+    "Figma の MCP や Dev Mode：デザインからコードへの橋渡しは近いが、こちらは Stitch 専用"
+  ],
+  "tech": "TypeScript。中身は主に Markdown の skill 定義とスクリプト。Claude Code、Codex、Gemini CLI、Cursor などの agent 上で動く。Stitch MCP server が必須。",
+  "caveats": "Stitch という Google のサービスと MCP server が前提で、単体では使えない。skill 同士に依存関係があり、選んで入れるときは依存先も入れる必要がある。OpenCode は手動インストールで、skill 名の書き換えが要る。作られて約10か月。Apache-2.0。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release を読んだ。各 skill の中身（SKILL.md やスクリプト）は読んでおらず、機能は README の表の記述に依る"
+}

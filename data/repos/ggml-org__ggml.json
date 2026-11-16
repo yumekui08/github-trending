@@ -1,0 +1,49 @@
+{
+  "repo": "ggml-org/ggml",
+  "summarized_at": "2026-11-16",
+  "short": "ggml は、機械学習向けの tensor ライブラリ。依存のない C/C++ で書かれ、CPU から GPU までの複数の backend と整数 quantization に対応する。llama.cpp の土台になっているライブラリ。",
+  "what": "依存なしの C/C++ 製 tensor ライブラリ",
+  "can_do": [
+    "tensor の演算と計算グラフを C/C++ で組んで実行する",
+    "x86、ARM、RISC-V、WebAssembly などで動かす（SIMD 最適化の kernel つき）",
+    "CPU、GPU（CUDA、Metal、Vulkan、SYCL、OpenCL、WebGPU など）、NPU の backend を切り替える",
+    "2〜8 bit の整数 quantization と、MXFP4、NVFP4 などの形式を扱う",
+    "GGUF というモデルのファイル形式を扱う",
+    "実行中にメモリの追加確保をしない"
+  ],
+  "install": [
+    "`git clone https://github.com/ggml-org/ggml`",
+    "`cd ggml`",
+    "`mkdir build && cd build`",
+    "`cmake ..`",
+    "`cmake --build . --config Release -j 8`"
+  ],
+  "how_to_use": "ソースからビルドしたあと、`examples/simple`（行列の積の最小例、コメントつき）を読むのが入口。gpt-2、gpt-j、sam、yolo、mnist などの例も `examples/` にある。",
+  "use_cases": [
+    "自前のアプリに、GPU なしでも動く推論エンジンを組み込むのに使えそう",
+    "llama.cpp などが内部でどう動くかを理解する足がかりになりそう",
+    "ARM や RISC-V の機器で小さなモデルを動かす検証に使えそう"
+  ],
+  "for_whom": "C/C++ でモデルの推論を組み込みたい人、llama.cpp などの内部を理解したい人",
+  "similar": [
+    "PyTorch、TensorFlow：用途は近いが、こちらは学習よりも軽量な推論と移植性に寄せた C/C++ ライブラリ",
+    "ONNX Runtime：推論用の runtime という点は近い。こちらは依存なしで quantization に強い"
+  ],
+  "tech": "C/C++。CMake でビルドする。依存なし。examples の変換用スクリプトは Python（requirements.txt に torch 系、transformers、tensorflow、keras など）。",
+  "caveats": "README によると、core の変更は llama.cpp 側に PR を出す運用。v1.0.0（2026-11-13）で非推奨の API を削除しており、旧 API を使うコードは影響を受ける。ライセンスは MIT。作られて約4年。",
+  "tags": [
+    "機械学習",
+    "ライブラリ・SDK",
+    "言語・ランタイム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:CMakeLists.txt",
+    "manifest:requirements.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

@@ -1,0 +1,44 @@
+{
+  "repo": "NVIDIA/SkillEvaluator",
+  "summarized_at": "2026-11-16",
+  "short": "SkillEvaluator は、AI agent の skill の品質と効果を測る CLI の評価フレームワーク。静的な品質検査、重複の検出、skill あり・なしで agent の結果を比べる live 評価を段階的に行う。",
+  "what": "agent skill の品質と効果を測る評価 CLI",
+  "can_do": [
+    "Tier 1：skill の形式、セキュリティ、harness との互換性を検査し、品質スコアを出す（LLM なしでも動く）",
+    "Tier 2：skill 内や skill 同士で、指示が重複していないかを embedding で調べる",
+    "Tier 3：評価用データを合成し、agent に skill あり・なしで課題を解かせて効果を比べる（sandbox は既定で Docker）",
+    "`skillevaluator ci init` で、PR ごとに変更された skill を検査する CI を設定する（GitHub、GitLab）",
+    "結果を terminal、HTML、JSON、Markdown のレポートで出す",
+    "skill として agent に入れ、「この skill は良いか」と聞ける"
+  ],
+  "install": [
+    "`pip install skillevaluator`",
+    "`skillevaluator validate ./my-skill --tiers 1`",
+    "clone して使う場合は `uv run --python 3.13 skillevaluator quality-check <skill のパス>`"
+  ],
+  "how_to_use": "まず `skillevaluator validate ./my-skill --tiers 1` で、API key なしの Tier 1 検査を試す。LLM を使う rubric-eval などは、`SKILL_EVAL_LLM_PROVIDER` と API key（NVIDIA Build など）を環境変数で渡す。",
+  "use_cases": [
+    "自分で書いた Claude Code の skill を、公開や社内配布の前に検査するのに使えそう",
+    "skill を置く repo の CI に組み込み、PR ごとに品質を確認するのに使えそう",
+    "skill を入れたときに agent の結果が本当に良くなるかの比較に使えそう"
+  ],
+  "for_whom": "Agent Skills を作る・配る人、skill の品質をチェックしたい人",
+  "similar": [],
+  "tech": "Python 3.12〜3.14。uv 対応。Tier 2 と Tier 3 は extra（embedding、LLM client、Harbor）を追加で入れる。Tier 1 は SkillSpector と Gitleaks を自動で取得する。Tier 3 は Docker と対応する agent が要る。",
+  "caveats": "Tier 2 と Tier 3、LLM を使う検査は、LLM の provider と API key（NVIDIA Build など）が要る。`--no-llm` でも scanner が動かなければ `INCOMPLETE` で exit が非ゼロになる。version 0.9.0 でまだ 1.0 前。0.8.0 は GitHub のみの公開で、PyPI は 0.7.2 から一度に上がる。NVIDIA 製で Apache-2.0。作られて約5か月。",
+  "tags": [
+    "AI エージェント",
+    "開発ツール",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release を読んだ。Tier 2、Tier 3 の実際の動きや評価の質は docs を含めて調べておらず、機能は README の記述に依る"
+}

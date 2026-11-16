@@ -1,0 +1,46 @@
+{
+  "repo": "elementalsouls/Claude-BugHunter",
+  "summarized_at": "2026-11-16",
+  "short": "Claude-BugHunter は、Claude Code に bug bounty や外部 red-team の作業を手伝わせる skill 集。脆弱性の種類ごとの調べ方、報告書の書き方、15 個の slash command をまとめている。",
+  "what": "脆弱性調査向けの Claude Code skill 集",
+  "can_do": [
+    "Web アプリの脆弱性の種類ごとに、検出の観点、payload、bypass、組み合わせ方を skill として呼び出す（hunt-* の skill 群）",
+    "M365 / Entra、Okta、vCenter、SSL-VPN などの基盤製品向けの攻撃の手順を参照する",
+    "recon、triage、報告書づくりを支援する。severity の付け方や PII の伏せ方も含む",
+    "`cbh` CLI で recon、classify、triage、report を端末から実行する",
+    "engagement 用のフォルダを `hunt` で作る（clone した場合のみ）",
+    "Burp MCP と連携する"
+  ],
+  "install": [
+    "`/plugin marketplace add elementalsouls/Claude-BugHunter`",
+    "`/plugin install claude-bughunter@elementalsouls`",
+    "コピーで入れる場合は `git clone https://github.com/elementalsouls/Claude-BugHunter.git` のあと `bash scripts/install.sh`",
+    "`cbh` CLI だけなら `pipx install git+https://github.com/elementalsouls/Claude-BugHunter`"
+  ],
+  "how_to_use": "Claude Code に「acme.com を調べている。recon をして攻撃面を並べて」のように自然な文で頼むと、topic に合った skill が自動で読み込まれる。詳しくは INSTALL.md と USAGE.md。",
+  "use_cases": [
+    "自分の管理する Web サービスや社内システムの脆弱性診断（許可を得たもの）で、観点の抜けを確認するのに使えそう",
+    "脆弱性の種類ごとの知識を、レビューや教育の資料として参照するのに使えそう",
+    "大量の skill を束ねた Claude Code plugin の構成の参考になりそう"
+  ],
+  "for_whom": "許可を得た対象で bug bounty や red-team、脆弱性診断をする、セキュリティ寄りのエンジニア",
+  "similar": [
+    "Burp Suite や Nuclei などの診断ツール：こちらは自動で診断するツールではなく、Claude に調べ方と手順を与える知識の束"
+  ],
+  "tech": "Markdown の skill 定義が中心。`cbh` CLI は Python 3.9 以上で、依存なし（requests は任意）。Claude Code のほか、OpenCode、Codex CLI などにも入れられる。",
+  "caveats": "攻撃手法を扱うので、許可を得た範囲でだけ使う前提。README の「681 件の disclosed-report」「実戦で検証済み」といった数字や主張は作者自身のもの。スポンサー表記がある。作られて約6か月で、skill の数が頻繁に変わっている（README 内でも 82 と 83 が混在）。MIT。",
+  "tags": [
+    "セキュリティ",
+    "AI エージェント",
+    "開発ツール"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README、pyproject、release を読んだ。個々の skill の中身や、それが実際に役立つかは調べておらず、機能は README の記述に依る"
+}
