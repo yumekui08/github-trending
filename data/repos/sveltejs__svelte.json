@@ -1,0 +1,30 @@
+{
+  "repo": "sveltejs/svelte",
+  "summarized_at": "2026-11-17",
+  "short": "svelte は、宣言的なコンポーネントを効率的な JavaScript に変換する Web アプリ用の compiler。実行時に DOM を差分更新する仕組みを持ち込まず、変換後のコードが直接 DOM を更新する。",
+  "what": "コンポーネントを JavaScript に変換する Web UI の compiler",
+  "can_do": [
+    "宣言的なコンポーネント（.svelte ファイル）を、DOM を直接更新する JavaScript に変換する",
+    "Web アプリの UI を、React や Vue と同じ位置づけのフレームワークとして組み立てる",
+    "a11y（アクセシビリティ）の警告を compile 時に出す（release notes より）",
+    "SvelteKit と組み合わせて、ルーティングやサーバー側の処理まで含めたアプリを作れる（SvelteKit は別リポジトリ）"
+  ],
+  "install": [],
+  "how_to_use": "README に使い方はなく、公式サイト（svelte.dev）への案内のみ。リポジトリの packages/svelte が本体で、貢献の手順は CONTRIBUTING.md にある。",
+  "use_cases": [
+    "社内ツールの管理画面など、小さめの Web UI を軽量に作る選択肢として使えそう",
+    "compiler 方式のフロントエンドの仕組みを学ぶ題材として読めそう"
+  ],
+  "for_whom": "Web のフロントエンドを書く人。React や Vue 以外の選択肢を知りたい人",
+  "similar": [
+    "React：用途は同じ。こちらは compiler で変換する方式で、仮想 DOM を使わない",
+    "Vue：単一ファイルのコンポーネントという形は近い",
+    "Solid：仮想 DOM を使わない点が近い"
+  ],
+  "tech": "JavaScript（pnpm の monorepo と思われる）、MIT ライセンス。本体は npm パッケージ svelte。ブラウザ向けの UI を出力する。",
+  "caveats": "2016年からある長く続いたプロジェクトで、新しいリポジトリではない（Trending に上がったのは、更新の活発さによると思われる）。現行は Svelte 5 系。README 自体には使い方がなく、詳細は外部サイト頼み。",
+  "tags": ["Web", "ライブラリ・SDK", "言語・ランタイム"],
+  "sources": ["meta", "readme", "tree", "manifest:package.json", "release"],
+  "confidence": "medium",
+  "confidence_note": "README が短く、機能は description と release notes から読んだ範囲。docs や packages/svelte の中身は読んでいない"
+}

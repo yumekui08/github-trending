@@ -1,0 +1,35 @@
+{
+  "repo": "kajisho5/ffmpeg-skill",
+  "summarized_at": "2026-11-17",
+  "short": "ffmpeg-skill は、Claude Code、Cursor、Codex などの coding agent にローカルの動画編集をさせる Agent Skill。42 個の FFmpeg ツールと MCP server を持ち、クラウドも API キーも要らない。",
+  "what": "coding agent に動画編集をさせる FFmpeg の Agent Skill",
+  "can_do": [
+    "動画の cut、結合、無音の除去、縦横比の変更（reframe）、音量の正規化（loudness）をする",
+    "音声認識（faster-whisper などを別途入れる）で字幕を作り、アニメーション付きで焼き込む",
+    "TikTok、Reels、YouTube などの配信先ごとのテンプレートで、長さ・比率・音量・書き出しをまとめて行う",
+    "書き出したファイルを probe し、配信先の条件に合うかを check する",
+    "ツールの仕様が machine-readable な contract と MCP server として公開されている"
+  ],
+  "install": [
+    "`sudo apt install ffmpeg`",
+    "`npx ffmpeg-skill`",
+    "`npx ffmpeg-skill doctor`"
+  ],
+  "how_to_use": "Claude Code 用の skill を入れたあと、agent に「interview.mp4 の 0:45–3:10 を残して60秒の Reels 用にして」のように頼む。agent が probe → cut → fit → export → check の順に実行する。単体のスクリプト（`python3 scripts/probe.py` など）としても使える。",
+  "use_cases": [
+    "録画した会議や障害対応の勉強会の動画を、agent に無音カットや字幕付けさせる用途に使えそう",
+    "agent に外部コマンドを安全に使わせる skill と contract の設計の参考になりそう",
+    "動画の一括変換を、dry-run で計画を確認しながら進める用途に使えそう"
+  ],
+  "for_whom": "動画編集を coding agent に任せたい人。FFmpeg のオプションを毎回調べたくない人",
+  "similar": [
+    "FFmpeg を直接使う：自由度は高い。こちらは agent 向けに手順と検査を固定している",
+    "MoviePy：Python から動画を編集するライブラリ。こちらは agent に使わせる前提のツール群"
+  ],
+  "tech": "Python 標準ライブラリのみ（依存なし）。FFmpeg 6.1〜9 を CI でテストしているとされる。配布は npm パッケージ。Node.js と FFmpeg が要る。字幕の自動生成には faster-whisper などの音声認識が別途要る。",
+  "caveats": "作られて約2.5か月で、更新が非常に活発（v3.10.1）。README の star 数や統計は作者側の記載。FFmpeg の build によっては使えないフィルタがあり、`doctor` で確認する前提。デモ動画の一部は AI 生成の人物。MIT。",
+  "tags": ["音声・画像・動画", "AI エージェント", "CLI"],
+  "sources": ["meta", "readme", "tree", "manifest:package.json", "release"],
+  "confidence": "high",
+  "confidence_note": ""
+}

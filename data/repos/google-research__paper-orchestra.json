@@ -1,0 +1,34 @@
+{
+  "repo": "google-research/paper-orchestra",
+  "summarized_at": "2026-11-17",
+  "short": "paper-orchestra は、アイデアと実験ログから AI 研究論文の LaTeX 原稿を書く multi-agent フレームワーク。outline、文献調査、本文執筆、推敲、作図を別々の agent が担当する。Google Cloud AI Research の研究実装。",
+  "what": "研究メモから論文の LaTeX 原稿を作る multi-agent の Python 実装",
+  "can_do": [
+    "アイデアや実験ログのディレクトリを入力に、学会テンプレートに沿った LaTeX 原稿を出力する",
+    "outline の生成、文献の検索と整理、セクションごとの執筆、reflection による推敲をする",
+    "`--use_plotting true` で、コードから図（plot）を生成する",
+    "LLM は Gemini（Vertex AI / API キー）や OpenAI のモデルを選べる",
+    "Streamlit のデモと、自動評価用の autoraters が付いている"
+  ],
+  "install": [
+    "`conda create -n paper_orchestra python=3.11`",
+    "`conda activate paper_orchestra`",
+    "`pip install -r requirements.txt`"
+  ],
+  "how_to_use": "`.env` に使うモデルの API キーと Semantic Scholar のキーを書き、`python paper_writing_cli.py --raw_materials_dir ... --latex_template_dir ... --output_dir ...` を実行する。",
+  "use_cases": [
+    "multi-agent で長い文書を段階的に作るパイプラインの設計の参考になりそう",
+    "論文の草稿作りの自動化を試す研究用途に使えそう",
+    "LaTeX の組版まで含めた agent 出力の自動評価の参考になりそう"
+  ],
+  "for_whom": "LLM agent による論文執筆の研究を追う人や、自分の研究メモから原稿の下書きを作りたい研究者",
+  "similar": [
+    "AI Scientist（Sakana AI）：実験から論文執筆まで自動化する点は近い。こちらは執筆側（原稿化）に絞っている"
+  ],
+  "tech": "Python 3.11。google-genai、openai、matplotlib、PyMuPDF、Streamlit など。LaTeX の環境が別に要ると思われる。Gemini か OpenAI の API が要る。",
+  "caveats": "README によると、評価用のデータセットはこのリポジトリに含まれず、後日公開予定。LLM の API 利用料と Semantic Scholar のキーが要る。生成物の内容の正しさは保証されず、人が確認する前提と思われる。リリースはなく、研究コードの位置づけ。Apache-2.0。作られて約6か月。",
+  "tags": ["AI エージェント", "LLM", "ドキュメント・知識管理"],
+  "sources": ["meta", "readme", "tree", "manifest:requirements.txt"],
+  "confidence": "high",
+  "confidence_note": ""
+}

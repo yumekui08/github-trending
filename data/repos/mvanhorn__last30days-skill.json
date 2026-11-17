@@ -1,0 +1,36 @@
+{
+  "repo": "mvanhorn/last30days-skill",
+  "summarized_at": "2026-11-17",
+  "short": "last30days-skill は、あるトピックの直近30日の話題を Reddit、X、YouTube、Hacker News、Polymarket などから集め、エンゲージメントで順位付けして1本のまとめにする AI agent の skill。Claude Code の plugin としても入れられる。",
+  "what": "直近30日の話題を複数の SNS から集めてまとめる agent skill",
+  "can_do": [
+    "トピックを指定して、Reddit・HN・Polymarket・GitHub などを並列に検索する（キー不要のものが多い）",
+    "upvote や再生数などのエンゲージメントと新しさで結果をスコア付けし、同じ話題を1つにまとめる",
+    "YouTube の transcript や Reddit の上位コメントまで読んで、出典付きの brief にする",
+    "人物や会社を調べるとき、特許出願や採用ページなどから動向を拾う",
+    "X、TikTok、Bluesky、Perplexity、Brave Search などは、自分の API キーやログインを足すと使える",
+    "Claude Code のほか、Codex、Cursor、Gemini CLI など Agent Skills に対応するツールで使える"
+  ],
+  "install": [
+    "`/plugin marketplace add mvanhorn/last30days-skill`",
+    "`/plugin install last30days`",
+    "`npx skills add mvanhorn/last30days-skill -g`"
+  ],
+  "how_to_use": "Claude Code で `/last30days <トピック>` を実行する。初回は setup wizard が出て、X や YouTube などの追加ソースを設定できる。",
+  "use_cases": [
+    "新しい OSS やツールを採用する前に、直近の評判や不具合の報告を Reddit や HN から一度に拾うのに使えそう",
+    "AI 周りの変化の速い話題を、コミュニティの反応ベースで追うのに使えそう",
+    "取引先の会社の最近の動き（採用、特許、報道）を会議前に調べる用途に使えそう"
+  ],
+  "for_whom": "Claude Code などの agent で、検索エンジンでは拾いにくい SNS 上の最新の反応を調べたい人",
+  "similar": [
+    "Perplexity や ChatGPT の Deep Research：Web 全体の調査で近い。こちらは SNS の反応を点数化して主軸にする点が違う",
+    "Gemini CLI などの web search 機能：記事中心。こちらは Reddit や X などのコミュニティが中心"
+  ],
+  "tech": "Python 3.12 以上（pyproject.toml の dependencies は空で標準ライブラリ中心と思われる）。Claude Code plugin と Agent Skills の形式。X / YouTube などは yt-dlp や各種 API キーが要る。結果の保存は任意でローカルの SQLite。",
+  "caveats": "README の \"#1 Repository of the Day\" や反響の引用は作者側の宣伝。ソースによっては ScrapeCreators、Brave Search、Perplexity などの外部サービスのキーや有料利用が要る。reranking 用に reasoning provider のキーを設定すると、トピックと取得した本文の一部がそのサービスに送られる。X や TikTok の取得は各サービスの規約や仕様変更の影響を受けると思われる。作られて約10か月で、更新が非常に活発（v4.3.0）。",
+  "tags": ["AI エージェント", "自動化・ワークフロー", "開発ツール"],
+  "sources": ["meta", "readme", "tree", "manifest:pyproject.toml", "release"],
+  "confidence": "high",
+  "confidence_note": ""
+}

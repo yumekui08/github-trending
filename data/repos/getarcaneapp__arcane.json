@@ -1,0 +1,37 @@
+{
+  "repo": "getarcaneapp/arcane",
+  "summarized_at": "2026-11-17",
+  "short": "arcane は、Docker を Web UI から管理するセルフホストのツール。コンテナ、Compose の stack、Swarm などを画面で扱え、manager と agent を分けて複数ホストも管理できると思われる。",
+  "what": "Docker を Web UI で管理するセルフホストのツール",
+  "can_do": [
+    "Docker のコンテナ・イメージなどを Web UI から管理する",
+    "Compose の stack を扱い、git との同期や `.env` の保持ができる（release notes より）",
+    "Docker Swarm の操作とバックアップに対応している（release notes より）",
+    "agent モードがあり、manager から別ホストを管理する構成が取れると思われる",
+    "コンテナのイメージ更新の検知と、更新の検証をする（release notes より）",
+    "RBAC と OIDC に対応している（release notes より）"
+  ],
+  "install": [],
+  "how_to_use": "README にはセットアップ手順がなく、公式ドキュメント（getarcane.app）への案内のみ。リポジトリの docker/ に compose の例があるので、それを起点にするのが近道と思われる。",
+  "use_cases": [
+    "Portainer の代わりに、自宅や検証環境の Docker ホストを画面で管理するのに使えそう",
+    "Compose の stack を git で管理している環境で、状態確認と更新の入口として使えそう",
+    "複数ホストに agent を置き、1か所から見る用途に使えそう"
+  ],
+  "for_whom": "Docker / Compose のホストを複数持ち、Web UI で管理したいインフラ寄りのエンジニア",
+  "similar": [
+    "Portainer：用途はほぼ同じ。こちらは Go と SvelteKit 製の新しめのプロジェクト",
+    "Dockge：Compose stack の管理に絞った軽量ツール。こちらは Swarm や agent も扱う範囲が広い"
+  ],
+  "tech": "バックエンドは Go、フロントエンドは SvelteKit / TypeScript。DB は SQLite を使うと思われる（release notes より）。Docker 上で動かす。",
+  "caveats": "main は v3 系で、v2 は release/2.x.x ブランチ。v3.0.1 が出たばかりで、v3 は新しい。作られて約7か月。機能要望は Discussions、issue は bug のみ。README に使い方がなく、詳細は外部のドキュメント頼み。",
+  "tags": [
+    "コンテナ・Kubernetes",
+    "インフラ・運用",
+    "セルフホスト",
+    "Web"
+  ],
+  "sources": ["meta", "readme", "tree", "manifest:package.json", "release"],
+  "confidence": "medium",
+  "confidence_note": "README が宣伝と案内だけで、機能は release notes と description からの推測を含む。ドキュメントサイトの中身までは読んでいない"
+}

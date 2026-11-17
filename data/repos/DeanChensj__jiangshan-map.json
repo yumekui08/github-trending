@@ -1,0 +1,31 @@
+{
+  "repo": "DeanChensj/jiangshan-map",
+  "summarized_at": "2026-11-17",
+  "short": "jiangshan-map は、中国の歴史を地図と時間軸で見る Web アプリ。紀元前403年から現代まで、18の時代の領土の変化や古地名、漢詩ゆかりの地を、時間軸を動かして見られる。",
+  "what": "中国史の領土の移り変わりを見る対話型の歴史地図",
+  "can_do": [
+    "時間軸を動かして、各時代の勢力の領土と、前の時期との境界の差分を見る",
+    "古い地名と今の地名の対応（place genealogy）をたどる",
+    "漢詩や人物にゆかりの地、関所、運河などを地図上で見る",
+    "古海岸線の変化や山体の陰影（hillshade）を表示する",
+    "音声の講義やクイズなどの機能がある（release notes より）",
+    "ベクタ層を GeoJSON に書き出し、Leaflet や QGIS で使える"
+  ],
+  "install": [
+    "`docker compose up -d --build`"
+  ],
+  "how_to_use": "起動後に `http://localhost:8008` を開く。公開デモ（deanchen.me/jiangshan-map）でも同じものを見られる。UI は英語・中国語（簡体・繁体）などに対応し、README には日本語版もある。",
+  "use_cases": [
+    "中国史の本を読むときに、地名や領土の位置を確認するのに使えそう",
+    "GeoJSON の書き出しで、歴史的な境界を自分の地図アプリに載せる用途に使えそう",
+    "nginx で配る静的サイトの例として、Dockerfile を参考にできそう"
+  ],
+  "for_whom": "中国史や漢詩に関心があり、地図で位置関係を確認したい人。仕事の道具ではなく趣味・教養向け",
+  "similar": [],
+  "tech": "JavaScript 製のフロントエンド。静的ファイルを nginx:alpine で配る Docker 構成。データ書き出しのスクリプトは Node.js、地形画像の生成は Python。",
+  "caveats": "GPL-3.0。ただし県・府レベルの境界は CHGIS 由来で、再配布不可・非商用の条件がある。歴史上の境界は概略で、実測ではないと README に書かれている。作られて約4か月。",
+  "tags": ["学習資料", "Web", "その他"],
+  "sources": ["meta", "readme", "tree", "manifest:Dockerfile", "manifest:docker-compose.yml", "release"],
+  "confidence": "high",
+  "confidence_note": ""
+}
