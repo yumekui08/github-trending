@@ -1,0 +1,48 @@
+{
+  "repo": "appwrite/appwrite",
+  "summarized_at": "2026-11-19",
+  "short": "Appwrite は、アプリのバックエンドに要る機能（認証、DB、ストレージ、Functions、メッセージ送信など）をまとめて提供するオープンソースのプラットフォーム。Cloud 版と、Docker でのセルフホストの両方がある。",
+  "what": "認証や DB などを一式で持つ BaaS（セルフホスト可）",
+  "can_do": [
+    "Auth：email、SMS、OAuth、匿名セッション、magic URL でのユーザー認証",
+    "Databases：Appwrite の DB、または managed の PostgreSQL / MySQL を使ったデータ管理",
+    "Storage：ファイルの保存（圧縮、暗号化、画像変換、アクセス制御）",
+    "Functions：隔離された runtime でのサーバーレス関数の実行。Sites で静的・SSR・CSR のフロントエンドも Git から配備できる",
+    "Messaging：email、SMS、push 通知を1つのサービスで送る",
+    "Realtime、Firewall（トラフィックルールなど）、REST / GraphQL / WebSocket の API、MCP サーバー"
+  ],
+  "install": [
+    "Docker が必要",
+    "`docker run -it --rm --publish 127.0.0.1:20080:20080 --volume /var/run/docker.sock:/var/run/docker.sock --volume \"$(pwd)\"/appwrite:/usr/src/code/appwrite:rw --entrypoint=\"install\" appwrite/appwrite:2.7.2`（Unix。README の例は固定バージョンの 2.7.2）",
+    "Cloud 版は https://cloud.appwrite.io に登録して使う（Free plan あり）"
+  ],
+  "how_to_use": "installer が表示する URL（1回限りの secret 付き）を開いて setup wizard を終え、`http://localhost` で console にアクセスする。そのあと console でプロジェクトを作り、client / server 用の SDK をアプリに組み込む。",
+  "use_cases": [
+    "小規模なチーム向けの社内アプリで、認証とデータ保存を自前で作らずに済ませるのに使えそう",
+    "検証環境に Docker 1台でバックエンドを立て、モバイルや Web のプロトタイプを作るのに使えそう",
+    "Firebase のようなサービスのセルフホスト代替を検討するときの候補になりそう"
+  ],
+  "for_whom": "認証、DB、ファイル保存などのバックエンドを自前で組まずに用意したい、アプリ開発者",
+  "similar": [
+    "Firebase：用途は近い。こちらはオープンソースで、セルフホストできる",
+    "Supabase：BaaS として近い。こちらは独自の API 群と Functions / Sites / Messaging までを一体で持つ"
+  ],
+  "tech": "PHP（composer.json）が中心で、Dockerfile、docker-compose 構成を含む。Docker 上で動く。一部に Rust（Cargo.toml）と Node（package.json）もある。API は REST、GraphQL、WebSocket。構成はハイブリッドの monolith / microservice で、Executor と Open Runtimes で関数を動かす。",
+  "caveats": "README は AI エージェント向け・MCP 前提の打ち出しが強いが、中身はバックエンドの BaaS。Cloud 版は有料プランがある。composer.json や Dockerfile の詳細、各サービスの実装までは読んでおらず、機能は README の記述による。非 Linux のネイティブ環境では、起動に数分かかることがある。ライセンスは BSD-3-Clause。",
+  "tags": [
+    "セルフホスト",
+    "Web",
+    "データベース",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:Dockerfile",
+    "manifest:docker-compose.yml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release、manifests を読んだ。composer.json と各サービスのコードまでは調べておらず、機能は README の記述に依る"
+}

@@ -1,0 +1,46 @@
+{
+  "repo": "solidjs/solid",
+  "summarized_at": "2026-11-19",
+  "short": "solid は、Virtual DOM を使わず、JSX を本物の DOM 操作にコンパイルして fine-grained reactivity で更新する JavaScript の UI ライブラリ。README は 2.0 系の内容で、1.x からは API が変わっている。",
+  "what": "Virtual DOM を使わない JavaScript の UI ライブラリ",
+  "can_do": [
+    "`createSignal`、`createMemo`、`createStore` などの reactive primitive で状態を宣言する",
+    "コンポーネント関数は1回だけ実行され、状態が変わると、依存する式の DOM だけが更新される",
+    "非同期（Promise / AsyncIterable）や、Optimistic UI 用の primitive、`action(...)` による mutation を扱う",
+    "streaming SSR と progressive hydration",
+    "`@solidjs/universal` で、DOM 以外を対象にするカスタム renderer を作る",
+    "Web Components、hyperscript、build 不要の tagged template 用の別パッケージ"
+  ],
+  "install": [
+    "`npx degit solidjs/templates/solid-v2/basic my-app`",
+    "`npm install`、`npm run dev`（テンプレートから始める場合）",
+    "`npm i solid-js @solidjs/web`",
+    "`npm i -D vite @solidjs/vite-plugin`（既存の Vite プロジェクトに足す場合）"
+  ],
+  "how_to_use": "テンプレートを `degit` で取得して `npm run dev` を実行する。既存の Vite プロジェクトでは、`vite.config.ts` に `@solidjs/vite-plugin` を足し、tsconfig の `jsxImportSource` を `@solidjs/web` にする。",
+  "use_cases": [
+    "社内ダッシュボードなどの、更新の多い小さな Web UI を軽く作るのに使えそう",
+    "React との違い（再レンダリングしない設計）を理解する題材として使えそう",
+    "1.x の既存コードがあるなら、MIGRATION.md を読んで 2.0 への移行を判断するのに使えそう"
+  ],
+  "for_whom": "Web の UI を JSX で書きたく、React 以外の選択肢を探している人",
+  "similar": [
+    "React：JSX で書く点は同じ。こちらは Virtual DOM を使わず、コンポーネントが再実行されない",
+    "Svelte：コンパイルして DOM を直接更新する点が近い。こちらは JSX と signal が中心"
+  ],
+  "tech": "TypeScript、JSX。PNPM workspaces の monorepo（turbo でビルド）。主なパッケージは solid-js、@solidjs/signals、@solidjs/web など。Native の Oxc JSX compiler も含まれる。ブラウザと Node（SSR）で動く。",
+  "caveats": "README は 2.0 向けで、2.0 の公開状態（正式版か prerelease か）は、読んだ材料からは判断できなかった。1.x とは API が違い、1.x は `1.x` ブランチで別に保守されている（`npm i solid-js@v1-latest`）。リリースノートに依存更新が中心の patch の記載があるだけで、ライブラリ本体の変更点は確認していない。ライセンスは MIT。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と package.json、release を読んだ。2.0 が正式版か prerelease かは、材料からは分からなかった。実装は読んでおらず、機能は README の記述による"
+}

@@ -1,0 +1,50 @@
+{
+  "repo": "astral-sh/uv",
+  "summarized_at": "2026-11-19",
+  "short": "uv は、Python のパッケージ管理とプロジェクト管理を1つにまとめた Rust 製の CLI。pip、pip-tools、pipx、virtualenv、pyenv などの役割を置き換えるもので、pip 互換のインターフェースも持つ。",
+  "what": "pip や venv の代わりになる Python 管理 CLI",
+  "can_do": [
+    "`uv init` / `uv add` / `uv lock` / `uv sync` で、lockfile 付きのプロジェクトと依存を管理する",
+    "`uv run` で、スクリプト先頭のインラインメタデータに書いた依存を自動で用意して実行する",
+    "`uvx`（`uv tool run`）で、Python 製のツールを一時環境で実行、`uv tool install` で導入する",
+    "`uv python install` で複数の Python バージョンを入れ、`uv python pin` でディレクトリごとに固定する",
+    "`uv pip` で pip、pip-tools、virtualenv の主なコマンドと同じ操作ができる",
+    "グローバルキャッシュで依存を共有し、workspace（複数パッケージ）にも対応する"
+  ],
+  "install": [
+    "`curl -LsSf https://astral.sh/uv/install.sh | sh`（macOS / Linux）",
+    "`pip install uv`",
+    "`pipx install uv`",
+    "standalone installer で入れた場合は `uv self update` で更新できる"
+  ],
+  "how_to_use": "`uv init example` でプロジェクトを作り、`uv add ruff` で依存を足し、`uv run ruff check` で実行する。既存の pip 運用なら `uv pip install` / `uv venv` から置き換えられる。",
+  "use_cases": [
+    "CI や Docker イメージでの Python 依存の install を速くするのに使えそう",
+    "運用スクリプトを1ファイルに依存を書いて配る用途（`uv run script.py`）に使えそう",
+    "サーバーごとに異なる Python バージョンの管理を `uv python` にまとめるのに使えそう"
+  ],
+  "for_whom": "Python のツールや自動化スクリプトを日常的に使い、環境構築を速く・再現可能にしたい人",
+  "similar": [
+    "pip + venv：基本機能は近い。こちらは lockfile、Python 本体の管理、script 実行まで1つで扱う",
+    "Poetry：プロジェクト管理と lockfile は近い。こちらは Rust 製で、pip 互換の操作も持つ",
+    "pipx：ツールの導入は同じ役割。`uv tool` / `uvx` が相当する"
+  ],
+  "tech": "Rust 製。依存解決に PubGrub を使う。macOS、Linux、Windows で動く。Rust も Python も入っていなくても、installer で入れられる。",
+  "caveats": "「10-100x faster」は README の主張で、ベンチマークは作者側のもの。一部の機能は preview 扱い（release notes に preview features の項目がある）。README は stable で本番利用に使われているとしている。ライセンスは Apache-2.0。",
+  "tags": [
+    "開発ツール",
+    "CLI",
+    "言語・ランタイム"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Cargo.toml",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

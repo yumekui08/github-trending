@@ -1,0 +1,45 @@
+{
+  "repo": "openvinotoolkit/openvino",
+  "summarized_at": "2026-11-19",
+  "short": "openvino は、学習済みの deep learning モデルを最適化し、CPU、Intel GPU、Intel NPU 上で推論（inference）させる Intel 主導のオープンソースの toolkit。PyTorch、TensorFlow、ONNX などのモデルを変換して動かせる。",
+  "what": "学習済みモデルを最適化して推論させる toolkit",
+  "can_do": [
+    "PyTorch、TensorFlow、ONNX、Keras、PaddlePaddle、JAX/Flax のモデルを読み込んで推論する",
+    "CPU（x86、ARM）、Intel の内蔵・外付け GPU、Intel NPU で推論を実行する",
+    "画像認識、音声認識、LLM、画像生成など、さまざまなモデルを動かす",
+    "Optimum Intel 経由で Hugging Face の transformers / diffusers のモデルを使う",
+    "Python と C++ の API、Node.js 用のパッケージ（openvino-node）で組み込む"
+  ],
+  "install": [
+    "`pip install -U openvino`"
+  ],
+  "how_to_use": "`import openvino as ov` して `ov.__version__` で導入を確認する。そのあと公式の Quickstart や OpenVINO Notebooks（LLM チャットボット、YOLOv11、Whisper など）の例を、自分のモデルに置き換えて試す。",
+  "use_cases": [
+    "GPU のない社内サーバーや Intel CPU のマシンで、小さめのモデルの推論を動かすのに使えそう",
+    "エッジの機器（Intel の NPU や内蔵 GPU）にモデルを載せる検証に使えそう",
+    "推論の性能を、CPU のままどこまで上げられるか比べるのに使えそう"
+  ],
+  "for_whom": "学習済みモデルを、Intel のハードウェアで効率よく動かしたい人",
+  "similar": [
+    "ONNX Runtime：推論 runtime として近い。こちらは Intel のハードウェア向けの最適化が中心",
+    "TensorRT：用途は近いが、NVIDIA の GPU 向け"
+  ],
+  "tech": "C++ のコアに、Python と Node.js のバインディング。CMake でビルドする。CPU（x86、ARM）、Intel GPU、Intel NPU に対応する。pip、conda-forge、Homebrew、npm で配布される。",
+  "caveats": "性能の数字や対応デバイスは README と公式サイトの記述による。Intel のハードウェア向けの最適化が中心で、他社の GPU では効果が限られると思われる。ライセンスは Apache-2.0。2018年から続くプロジェクトで、最新リリースは 2026.4.1（10月）。",
+  "tags": [
+    "機械学習",
+    "ライブラリ・SDK",
+    "LLM"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:setup.py",
+    "manifest:CMakeLists.txt",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

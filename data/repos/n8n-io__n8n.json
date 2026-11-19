@@ -1,0 +1,46 @@
+{
+  "repo": "n8n-io/n8n",
+  "summarized_at": "2026-11-19",
+  "short": "n8n は、ビジュアルなキャンバスで業務の workflow や AI エージェントを組み立てて動かす自動化プラットフォーム。コードも書け、セルフホストでも Cloud でも使える。ライセンスは fair-code で、OSS ライセンスではない。",
+  "what": "ノードをつないで自動化を組むセルフホスト可能な workflow ツール",
+  "can_do": [
+    "キャンバス上でノードをつなぎ、トリガーから処理までの workflow を作る",
+    "1500以上の外部サービスの integration と、9000以上のテンプレートを使う",
+    "JavaScript、Python、npm パッケージで処理を書き足す",
+    "OpenAI、Anthropic、Google、オープンソースのモデルをつないだ AI workflow と multi-step のエージェントを作る",
+    "human approval、権限管理（role-based access）、監査ログなどの運用機能（一部は Enterprise 向けと思われる）"
+  ],
+  "install": [
+    "Docker が必要",
+    "`curl -fsSL https://get.n8n.io | sh`",
+    "`docker volume create n8n_data`",
+    "`docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n`"
+  ],
+  "how_to_use": "Docker で起動したら http://localhost:5678 のエディタを開き、アカウントを作って workflow を組む。まずはテンプレートを取り込んで、自分のサービスに置き換えるのが早いと思われる。",
+  "use_cases": [
+    "アラートや問い合わせの通知を Slack や Discord に流す、といった運用の小さな自動化に使えそう",
+    "社内の API や SaaS の連携を、コードをあまり書かずに試作するのに使えそう",
+    "LLM を挟んだ要約、分類の処理を workflow として組むのに使えそう"
+  ],
+  "for_whom": "SaaS や API の連携を自動化したい、コードを書く手間を減らしたいエンジニア",
+  "similar": [
+    "Zapier：用途は近い。こちらはセルフホストでき、コードも書ける",
+    "Node-RED：ノードをつなぐ点は近い。こちらは SaaS 連携のテンプレートが多い"
+  ],
+  "tech": "Node.js（TypeScript）製と思われる（package.json は monorepo のルート）。Docker で動かす。editor は Web。外部のモデルは OpenAI などの API を使う。",
+  "caveats": "ライセンスは Sustainable Use License と Enterprise License の fair-code で、OSS ではない（GitHub 上の表示は NOASSERTION）。使い方の制限は LICENSE.md の確認が要る。一部機能は Enterprise ライセンスの対象。README は AI を前面に出しているが、中心は workflow 自動化。2019年から続くプロジェクトで、更新は頻繁。",
+  "tags": [
+    "自動化・ワークフロー",
+    "セルフホスト",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release、ルートの package.json を読んだ。実装や各 integration の中身は調べておらず、機能と技術構成は README の記述と推測による"
+}

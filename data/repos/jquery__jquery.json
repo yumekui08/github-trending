@@ -1,0 +1,39 @@
+{
+  "repo": "jquery/jquery",
+  "summarized_at": "2026-11-19",
+  "short": "jQuery は、ブラウザ上の DOM 操作、イベント処理、Ajax を扱う JavaScript ライブラリ。4.x が現行で、3.x は重大な修正のみ、2.x 以前はサポート終了。",
+  "what": "DOM 操作や Ajax を扱う JavaScript ライブラリ",
+  "can_do": [
+    "DOM 要素の選択と、内容・属性・CSS の操作",
+    "イベント処理",
+    "Ajax（HTTP リクエスト）の送信。jqXHR オブジェクトで結果を扱う",
+    "ビルドスクリプトで、使わないモジュールを除いたカスタム版を作る（`core` は除外できない）",
+    "ES module 版（`jquery.module.js`）と slim 版（`jquery.slim.js`）の配布物を作る"
+  ],
+  "install": [],
+  "how_to_use": "配布物は jquery.com/download から取得する。ソースからは clone して `npm install`、`npm run build` で `dist/` に出力し、全バリアントは `npm run build:all` で作る。",
+  "use_cases": [
+    "古い社内 Web ツールが jQuery 3.x 以前に依存している場合の、バージョン方針（4.x へ上げるか）の確認に使えそう",
+    "管理画面などの小さな Web UI に DOM 操作を足す用途に使えそう",
+    "必要なモジュールだけのカスタムビルドで、配布サイズを抑える用途に使えそう"
+  ],
+  "for_whom": "既存の jQuery 資産を保守する人や、フレームワークなしで DOM を扱いたい人",
+  "similar": [
+    "標準の DOM API（querySelectorAll、fetch）：近年のブラウザなら多くは足りる。jQuery はそれを短く書ける形にしたもの"
+  ],
+  "tech": "JavaScript。ビルドに Node.js と npm、git が要る。ブラウザのほか Node やブラウザ拡張でも使える。",
+  "caveats": "README にインストールのコマンドは書かれておらず、配布は公式サイトの download ページ経由。3.x は重大な修正のみ、2.x と 1.x はサポートなし（有償サポートは HeroDevs、TuxCare）。MIT ライセンス。2009年から続く長い歴史のあるプロジェクト。",
+  "tags": [
+    "Web",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

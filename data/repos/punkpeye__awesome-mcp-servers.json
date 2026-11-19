@@ -1,0 +1,38 @@
+{
+  "repo": "punkpeye/awesome-mcp-servers",
+  "summarized_at": "2026-11-19",
+  "short": "awesome-mcp-servers は、Model Context Protocol（MCP）のサーバー実装を集めた awesome リスト。ソフトウェアではなく、リンク集。分野別に整理され、言語、動く場所、OS を絵文字で示している。",
+  "what": "MCP サーバーの実装を集めたリンク集（awesome リスト）",
+  "can_do": [
+    "分野別（Aggregators、Aerospace & Astrodynamics など）に MCP サーバーを探す",
+    "各項目の言語（Python、TypeScript、Go、Rust など）と、local / cloud、対応 OS を、絵文字の凡例で見分ける",
+    "公式実装（🎖️）かどうかを見分ける",
+    "MCP の client 一覧、tutorial、framework、Tips & Tricks へのリンクをたどる",
+    "同じ内容の web 版ディレクトリ（glama.ai/mcp/servers）で探す"
+  ],
+  "install": [],
+  "how_to_use": "README を開き、分野の見出しから目的に近い MCP サーバーを探して、リンク先のリポジトリの手順で導入する。リスト自体を動かすことはない。",
+  "use_cases": [
+    "Claude Code などに接続する MCP サーバーの候補を、分野ごとに探すのに使えそう",
+    "自分で作る MCP サーバーに、似た実装がすでにあるかを確かめるのに使えそう",
+    "インフラ寄りの分野（クラウド、DB、監視など）の MCP サーバーを拾うのに使えそう"
+  ],
+  "for_whom": "AI エージェントに外部ツールをつなぐ MCP サーバーを探している人",
+  "similar": [
+    "awesome-remote-mcp-servers：同じ作者の別のリスト。こちらは自分で動かす、GitHub 上のサーバーが対象で、URL で接続する hosted サーバーは別のリスト"
+  ],
+  "tech": "ソフトウェアではなく Markdown のリンク集。多言語版の README（日本語を含む）と、GitHub Actions の workflow がある。",
+  "caveats": "リストの個々のサーバーの品質や安全性は、このリポジトリでは保証されていないと思われる。README の先頭に広告（Ad）がある。README 全体は読んでおらず、先頭部分と見出しだけを確認した。2024年11月に作られた。ライセンスは MIT。",
+  "tags": [
+    "学習資料",
+    "AI エージェント",
+    "ドキュメント・知識管理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の先頭と見出しを読んだ。個々の項目は読んでおらず、掲載されているサーバーの数や質は分からない"
+}
