@@ -1,0 +1,44 @@
+{
+  "repo": "toeverything/AFFiNE",
+  "summarized_at": "2026-11-20",
+  "short": "AFFiNE は、文書、ホワイトボード、表を1つの canvas にまとめた、Notion と Miro の代替をうたう知識管理アプリ。local-first で、リアルタイム共同編集と Docker でのセルフホストができる。TypeScript と Rust の monorepo。",
+  "what": "文書とホワイトボードを統合した local-first の知識管理アプリ",
+  "can_do": [
+    "リッチテキスト、付箋、埋め込みページ、データベース表示、図形、スライドを、edgeless の canvas に置く",
+    "文書、ホワイトボード、表を同じ workspace で扱う",
+    "AI 機能（アウトラインからスライド、記事から mind map など）。モデルは自前の API key で使う設定もあるようだ（リリースノートの byok）",
+    "local-first でデータを手元に持ち、web とクライアント間でリアルタイム同期・共同編集する",
+    "Docker でセルフホストする。Web、macOS、Windows、Linux、Android のクライアントがある"
+  ],
+  "install": [],
+  "how_to_use": "README にコマンドでのインストール手順はない。https://affine.pro/download からクライアントを入れるか、https://app.affine.pro のデモを使う。セルフホストは公式 docs（https://docs.affine.pro/self-host-affine）にある。ソースからのビルドは `docs/BUILDING.md`。",
+  "use_cases": [
+    "Notion の代わりに、チームの wiki や設計メモを自前の環境に置くのに使えそう",
+    "構成図やフローをホワイトボードで描きながら、同じ画面に文書を書くのに使えそう",
+    "セルフホストで、社内の知識ベースとして使えるか試す価値がありそう"
+  ],
+  "for_whom": "Notion や Miro を使っていて、データを自分で持ちたい人",
+  "similar": [
+    "Notion：文書とデータベースが中心。こちらは canvas と統合しセルフホストできる",
+    "Miro、Excalidraw：ホワイトボード用途。こちらは文書も同じ場所に置く",
+    "Obsidian：local-first の知識管理。こちらは共同編集とホワイトボードが特徴"
+  ],
+  "tech": "TypeScript が中心（BlockSuite のエディタ）、Rust の Cargo.toml もある（native client 向けと思われる）。monorepo（yarn workspaces）。セルフホストは Docker image。",
+  "caveats": "GitHub のライセンス表示は NOASSERTION。README では Community Edition は MIT で無料、Enterprise Edition（rebrand、SSO、監査など）は未公開で有料の予定とある。AI 機能は外部のモデルを使う。最新のリリースは v0.27.4（2026-08）で、その後も開発は続いている。バージョン 1.0 前。",
+  "tags": [
+    "ドキュメント・知識管理",
+    "セルフホスト",
+    "デスクトップアプリ",
+    "Web"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "manifest:Cargo.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release、package.json を読んだ。セルフホストの手順や AI 機能の詳細は docs を読んでおらず、README の記述に依る"
+}

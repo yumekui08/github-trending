@@ -1,0 +1,46 @@
+{
+  "repo": "Tracer-Cloud/opensre",
+  "summarized_at": "2026-11-20",
+  "short": "opensre は、CI の失敗やアラートの原因を調べる Python 製の CLI agent。失敗した run のログ、直近の commit や deploy、観測基盤のデータをたどって原因を探し、PR 向けの修正を push する。public alpha。",
+  "what": "CI の失敗やアラートの原因を調べる SRE 向け CLI agent",
+  "can_do": [
+    "失敗した CI の run とログを読み、CI 起因かコード起因かを切り分ける",
+    "`opensre ask \"why is checkout-api slow?\"` のように、自然文で障害を問い合わせる（headless CLI と対話 shell）",
+    "Grafana、Datadog、CloudWatch、Sentry など 60 以上の外部サービスから、ログ・metrics・traces を集めて原因を推論する",
+    "原因への修正を PR のブランチに push し、要約を Slack、PagerDuty、Telegram に投稿する",
+    "外部の LLM に送る前に、機微な識別子を mask する（任意）",
+    "Docker image でのセルフホスト（Railway、ECS、Vercel など）と、Python からの組み込み"
+  ],
+  "install": [
+    "`curl -fsSL https://install.opensre.com | bash -s -- -gh`",
+    "`opensre`"
+  ],
+  "how_to_use": "インストール後に `opensre` を実行してサインインする。そのまま対話 shell が開く（TTY が必要）。1回だけ聞くなら `opensre ask \"…\"`。外部サービスとの連携は `opensre integrations setup`。",
+  "use_cases": [
+    "CI が赤くなったときの1次調査を任せる用途に使えそう",
+    "Datadog や Grafana と Slack の連携を持つ環境で、アラート対応の初動を補助するのに使えそう",
+    "障害調査 agent の構成（tool-calling loop、integration の持ち方）の参考になりそう"
+  ],
+  "for_whom": "CI/CD と障害対応を担当する SRE、インフラエンジニア",
+  "similar": [
+    "Holmes GPT（HolmesGPT）：障害の原因調査を LLM に任せる点で近いと思われる。細かい違いは未確認",
+    "Claude Code や Codex に CI のログを読ませる使い方：同じことは手でもできる。こちらは観測基盤との連携が組み込み"
+  ],
+  "tech": "Python 3.12 以上。anthropic、openai、litellm、mcp などに依存。LLM は Anthropic、OpenAI、Ollama、Gemini、Bedrock などを選べる。macOS、Linux、Windows（WSL か PowerShell）。Docker でのデプロイあり。",
+  "caveats": "README が「public alpha」と明記していて、API と連携は変わる可能性がある。README の手順は、最初の起動でサインインが要り「hosted model を有効にする」とある。自前のモデルだけで動かせるかは README から読み取れなかった。インストールは `curl | bash` 形式。作られてから約10か月。ライセンスは Apache-2.0。",
+  "tags": [
+    "AI エージェント",
+    "インフラ・運用",
+    "監視・可観測性",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と pyproject を読んだ。サインインが必須か、自前の LLM だけで動くかは、docs を読んでおらず確認できていない"
+}

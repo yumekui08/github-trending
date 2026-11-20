@@ -1,0 +1,45 @@
+{
+  "repo": "firecrawl/firecrawl",
+  "summarized_at": "2026-11-20",
+  "short": "firecrawl は、Web サイトを LLM 向けの markdown や JSON に変える scrape / crawl / search の API と、そのローカル版・セルフホスト版のコード。AI エージェントに Web の情報を渡す用途向け。本体は有料のクラウド版で、このリポジトリには SDK も入っている。",
+  "what": "Web を markdown 化して AI に渡す API と CLI",
+  "can_do": [
+    "ページを scrape して markdown、HTML、links などで取り出す",
+    "サイト全体を crawl してページごとのファイルに保存、URL 一覧の取得（map）、batch scrape",
+    "`firecrawl-local init` で Claude Code、Cursor、Codex などに MCP server として登録する",
+    "`firecrawl-local serve` で Firecrawl v2 API を localhost:3002 で動かす",
+    "PDF と Office 文書の解析。JS が要るページは手元の Chrome / Chromium で描画する",
+    "クラウド版では search、構造化 JSON、screenshot、ブラウザ操作（Interact）、Agent も使える"
+  ],
+  "install": [
+    "`cargo install firecrawl-local`",
+    "`npx -y firecrawl-cli@latest scrape https://firecrawl.dev`"
+  ],
+  "how_to_use": "`firecrawl-local scrape https://example.com --markdown` で1ページを markdown にする。AI ツールに繋ぐなら `firecrawl-local init` を実行して再起動する。コードから使うなら `firecrawl-local serve` を起動し、SDK の api_url を `http://localhost:3002` にする。",
+  "use_cases": [
+    "社内ドキュメントやベンダーの公式サイトを markdown 化して、LLM の調査・RAG の入力にするのに使えそう",
+    "Claude Code などに MCP server として Web 取得を足す用途に使えそう",
+    "セルフホスト版（`apps/api` に queue、worker、DB 付き）を立てて、社内用の取得基盤にする検討材料になりそう"
+  ],
+  "for_whom": "AI エージェントや RAG のために、Web ページを整った text で取りたい人",
+  "similar": [
+    "Crawl4AI、Jina Reader：用途は近い。こちらは SaaS が本体で、ローカル版・セルフホスト版もある",
+    "Playwright、Scrapy：自前で書く scraper。こちらは出力を LLM 向けに整えた API として使える"
+  ],
+  "tech": "TypeScript（`apps/api`）。Local 版は Rust 製の1バイナリ（要 Rust と C compiler）で、MCP server は Node.js 22 以上。セルフホスト版は Docker Compose、Redis、Postgres などを使う。SDK は JS、Python、Go、Java、Rust、Ruby、PHP、.NET、Elixir。",
+  "caveats": "ライセンスは AGPL-3.0（社内で改造して外部に提供する場合は注意）。search、Alexandria（550以上のデータ提供元）、Interact、Agent はクラウド版のみで、有料のプランがある。Local 版でも、読み込めないページは既定で Firecrawl Cloud に回される（`FIRECRAWL_CLOUD=off` で止められる）。README の「96% のサイトに対応」「P95 3.4秒」は作者の数値。",
+  "tags": [
+    "AI エージェント",
+    "データ処理",
+    "ライブラリ・SDK",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と tree を読んだ。`apps/local` や `apps/api` の中身は読んでおらず、セルフホスト版の手順（SELF_HOST.md）も未確認"
+}

@@ -1,0 +1,49 @@
+{
+  "repo": "zhouxiaoka/autoclip",
+  "summarized_at": "2026-11-20",
+  "short": "autoclip は、長い動画（ポッドキャスト、インタビュー、講義）から、抖音、小红书、TikTok、Shorts などの縦型の短い動画を自動で切り出すツール。字幕、カバー、投稿文も作る。デスクトップ版（Tauri）、Docker の Web 版、CLI / MCP がある。",
+  "what": "長い動画を短い動画に自動で切り出す動画編集ツール",
+  "can_do": [
+    "動画のリンクかファイルを渡して、プラットフォームごとの画面比率と長さの短い動画を作る（最大10本、残りは候補）",
+    "字幕の作成（作者字幕、手元の Whisper / SenseVoice、クラウドの音声認識）",
+    "話者に追従するフレーミングと、インタビュー式やポッドキャスト式のレイアウト",
+    "カバー、タイトル、説明文、hashtag、ZIP の投稿パッケージの作成",
+    "CLI（`autoclip produce`）と MCP server として、agent から呼ぶ",
+    "分析モデルは、クラウドの API、Ollama、LM Studio から選べる"
+  ],
+  "install": [
+    "`uvx autoclip-mcp`",
+    "`npx skills add zhouxiaoka/autoclip`",
+    "`git clone https://github.com/zhouxiaoka/autoclip.git`",
+    "`docker compose up -d --build`"
+  ],
+  "how_to_use": "デスクトップ版は Releases の `.dmg`（Apple Silicon）か `-setup.exe`（Windows x64）を入れ、設定でモデルの API key を入れる。API key なしで見られる「示例项目」がある。CLI は `autoclip produce talk.mp4 --srt talk.srt --platform douyin --portrait-style podcast --json`。Docker 版は clone して `cp env.example .env` のあと `docker compose up -d --build`、Web は localhost:3000。",
+  "use_cases": [
+    "社内勉強会や講演の録画から、要点の短い clip を作って共有するのに使えそう",
+    "録画の長い会議や講義の、要点の洗い出しに使えそう（ただし README は SNS 向けの用途が中心）",
+    "MCP / CLI の仕組みを、動画処理の agent 連携の参考にできそう"
+  ],
+  "for_whom": "長い動画を SNS 用に切り出したい配信者や制作者（README は中国のプラットフォーム向けの説明が中心）",
+  "similar": [
+    "OpusClip：長尺から短尺を自動生成する SaaS。こちらは OSS で、手元で処理する",
+    "Descript、CapCut：手動寄りの編集。こちらは自動化が中心"
+  ],
+  "tech": "Python（backend、CLI）と Tauri のデスクトップアプリ。Celery を使う Web 版（Docker）。FFmpeg が必要（デスクトップ版は同梱）。Python 3.10 以上（CLI は 3.11 推奨）。文字モデルは OpenAI 互換 API、Ollama、LM Studio。",
+  "caveats": "README が中国語中心で、抖音、小红书、B 站の向けの機能が多い。ソフトは無料だが、クラウドのモデルや文字起こしは従量課金で、使うと字幕などのデータが送られる。自動の brand 付き末尾が既定で有効（設定で無効化できる）。macOS は Apple Silicon のみ、Windows は未署名で警告が出る。Intel Mac と Linux は Docker か CLI。匿名の統計と error report の送信がある（設定で切り替え）。README の費用と時間は作者の測定。",
+  "tags": [
+    "音声・画像・動画",
+    "自動化・ワークフロー",
+    "デスクトップアプリ",
+    "LLM"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README（中国語）と release を読んだ。出力の品質や、各 platform 向けの機能の細部は確認しておらず、README の記述に依る"
+}

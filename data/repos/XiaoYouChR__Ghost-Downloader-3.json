@@ -1,0 +1,43 @@
+{
+  "repo": "XiaoYouChR/Ghost-Downloader-3",
+  "summarized_at": "2026-11-20",
+  "short": "Ghost-Downloader-3 は、HTTP、Magnet/BT、FTP、M3U8、MPEG-DASH、eD2k などをまとめて扱う多機能ダウンローダー。Python と Qt 製のデスクトップアプリで、Windows、macOS、Linux、Android に対応する。ブラウザ拡張と `ghd` コマンドもある。",
+  "what": "多プロトコル対応のデスクトップ向けダウンローダー",
+  "can_do": [
+    "HTTP、Magnet/BT、FTP、M3U8、MPEG-DASH、eD2k のダウンロード",
+    "YouTube と Bilibili の動画を、画質、字幕、clip を選んで取得する",
+    "GitHub と HuggingFace の mirror での高速化",
+    "ブラウザ拡張で、ページ上の動画や音声を検出して、アプリに渡す",
+    "`ghd add`、`ghd tasks`、`ghd wait` などの CLI で操作する（設定から導入）",
+    "aria2 互換の RPC API と、ダウンロード中の URL、headers、proxy の変更"
+  ],
+  "install": [],
+  "how_to_use": "README にインストールのコマンドはない。Releases から各 OS 用のパッケージを入れる（Arch Linux は AUR に community 製の `ghost-downloader-bin`）。CLI は Settings → Command Line Tool から導入し、`ghd add <url> -o ./downloads` で追加、`ghd wait <taskId>` で完了を待つ。",
+  "use_cases": [
+    "BT、HLS（M3U8）、通常の HTTP をまとめて1つの GUI で管理するのに使えそう",
+    "aria2 互換の RPC を使う既存のツールの、フロントエンドの代わりになりそう",
+    "`ghd` を script から呼んで、ダウンロードを自動化するのに使えそう"
+  ],
+  "for_whom": "さまざまな形式のダウンロードを GUI で一括管理したいデスクトップ利用者",
+  "similar": [
+    "aria2、AriaNg：HTTP、BT の定番。こちらは動画サイトや M3U8 も扱い、aria2 互換の RPC も出す",
+    "yt-dlp：動画サイトの取得が中心の CLI。こちらは GUI とブラウザ連携がある",
+    "Motrix、Free Download Manager：GUI のダウンローダーで近い"
+  ],
+  "tech": "Python 3.13 以上、PySide6（Qt）、libtorrent、wreq、m3u8、mpegdash など。Windows 10 以上、macOS 13 以上、Linux（glibc 2.35 以上）、Android 9 以上。Qt 6.6 以降は AVX のない CPU で動かない。",
+  "caveats": "ライセンスは GPL-3.0。README の先頭に、residential proxy サービスの広告がある。作者の学業のため、更新が減る旨の注記がある。YouTube などの取得は、各サービスの利用規約に注意が必要。README の「唯一のダウンローダー」は宣伝文句。",
+  "tags": [
+    "デスクトップアプリ",
+    "ネットワーク",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:pyproject.toml",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と pyproject を読んだ。実際の動作や各プロトコルの対応度は確認しておらず、README の記述に依る"
+}

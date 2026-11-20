@@ -1,0 +1,45 @@
+{
+  "repo": "Jakeschincariol/instagram-agent-skill",
+  "summarized_at": "2026-11-20",
+  "short": "instagram-agent-skill は、Instagram アカウントの運用を手伝う13個の Claude skill と、5個の Python script。Reel の hook の採点、caption の lint、文章の humanizer などがある。投稿はせず、文を書くところまで。",
+  "what": "Instagram の投稿づくりを助ける Claude skill 集",
+  "can_do": [
+    "`/ig-reel`：1つの案から、26の hook 型で3案を採点し、台本と秒数付きの構成を作る",
+    "`/ig-caption`：caption を lint し、feed に出る先頭125字を表示する",
+    "`/ig-viral`：ニッチで伸びている reel を調べ、アカウントの中央値に対する倍率で並べる",
+    "`/ig-profile`：プロフィールを12項目の基準で100点満点で採点し、直す順に書き直す",
+    "`/ig-human`：AI くさい文体、ゼロ幅文字などを取り除き、5項目で採点する",
+    "carousel、story、comment、DM、週間計画、再利用の各 skill"
+  ],
+  "install": [
+    "`/plugin marketplace add Jakeschincariol/instagram-agent-skill`",
+    "`/plugin install instagram-agent`",
+    "`git clone https://github.com/Jakeschincariol/instagram-agent-skill.git`",
+    "`cp -r instagram-agent-skill/skills/ig-* ~/.claude/skills/`"
+  ],
+  "how_to_use": "入れたら `templates/voice.md` を `~/.claude/instagram/voice.md` にコピーして自分の口調を書く（全 skill が読む）。そのあと `/ig-reel` などを呼ぶ。hook の採点は `python3 hookscore.py hooks.txt`、時間の確認は `python3 beats.py script.txt --target 30`。",
+  "use_cases": [
+    "Instagram を運用する知り合いや副業向けの、投稿づくりの下書きに使えそう",
+    "Claude の skill に Python の検査 script を組み合わせる作り方の参考になりそう",
+    "文章の lint や humanizer の考え方を、自分の skill に取り込むのに使えそう"
+  ],
+  "for_whom": "Instagram の発信を、Claude Code で効率化したい人。インフラの業務には直接関係しない",
+  "similar": [
+    "Claude の汎用の writing skill：文章生成は同じ。こちらは Instagram に特化し、採点 script が付く",
+    "Buffer、Later などの運用ツール：予約投稿が中心。こちらは書くだけで、投稿しない"
+  ],
+  "tech": "Markdown の SKILL.md と Python 3（依存なし、ネットワークなし）。Claude Code の plugin としても入れられる。ライセンスは MIT。",
+  "caveats": "作者自身の測定では、hook の採点は悪い hook を見つけるのは得意（AUC 0.83）だが、当たりを選ぶ力は偶然に近い（AUC 0.56）。測定には YouTube Shorts を使っていて、Instagram のものではない。採点は heuristic で、AI 検出サービスの結果を保証しない。作成と最後の push が 2026-09-13 の同じ日で、その後の更新はない。スター数は多いが、中身は小さな（約75KB）文書と script。",
+  "tags": [
+    "自動化・ワークフロー",
+    "AI エージェント",
+    "その他"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と tree を読んだ。各 skill の SKILL.md と Python script の中身は読んでおらず、機能は README の記述に依る"
+}

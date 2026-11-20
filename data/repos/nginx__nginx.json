@@ -1,0 +1,45 @@
+{
+  "repo": "nginx/nginx",
+  "summarized_at": "2026-11-20",
+  "short": "nginx は、Web server、reverse proxy、load balancer、content cache を兼ねる C 製のソフトウェア。HTTP/2、HTTP/3、TLS のほか、TCP/UDP と mail の proxy もできる。このリポジトリは公式のソースで、最新版の 1.31.9 は複数の脆弱性修正を含む。",
+  "what": "Web server と reverse proxy をこなす定番ソフトウェア",
+  "can_do": [
+    "静的ファイルの配信と、reverse proxy（HTTP、FastCGI、uwsgi、scgi）",
+    "load balancing、rate limiting、content caching",
+    "TLS の終端、HTTP/2、HTTP/3（QUIC）",
+    "TCP / UDP（stream）と mail の proxy",
+    "dynamic module で機能を足す"
+  ],
+  "install": [
+    "Linux は公式の package repository を追加して package manager で入れる（手順は https://nginx.org/en/linux_packages.html）",
+    "ソースから：`auto/configure`、`make`、`sudo make install`",
+    "`sudo /usr/local/nginx/sbin/nginx`"
+  ],
+  "how_to_use": "起動後に `curl localhost` で応答を確認する。設定は `conf/nginx.conf` で、README に TLS、load balancing、rate limiting、content caching の設定例の節がある。詳しくは nginx.org の公式ドキュメント。",
+  "use_cases": [
+    "アプリの前段に置く reverse proxy と TLS 終端として使える",
+    "複数の backend への load balancing や、rate limiting の導入に使えそう",
+    "mainline の 1.31.9 は脆弱性修正（HTTP/2、HTTP/3、resolver、mail proxy など）を含むので、使っている版の確認に使えそう"
+  ],
+  "for_whom": "Web サーバーや proxy を運用するインフラ担当者",
+  "similar": [
+    "Apache HTTP Server：用途は近い。nginx は event 駆動で proxy 用途が得意",
+    "HAProxy、Envoy、Caddy：proxy / load balancer 用途で近い。Caddy は証明書の自動取得が特徴"
+  ],
+  "tech": "C。Linux、FreeBSD、Windows に対応。ソースのビルドには C compiler と make が要る。ライセンスは BSD-2-Clause。",
+  "caveats": "配布は stable と mainline の2系統。stable は重要な修正だけを取り込む。distribution 付属の版は古いことがあり、公式の package が推奨されている。最新の 1.31.9 は複数の CVE の修正を含む。企業向けの商用版と support は F5 が提供している。",
+  "tags": [
+    "Web",
+    "ネットワーク",
+    "インフラ・運用",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}

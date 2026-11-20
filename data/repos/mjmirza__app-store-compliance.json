@@ -1,0 +1,44 @@
+{
+  "repo": "mjmirza/app-store-compliance",
+  "summarized_at": "2026-11-20",
+  "short": "app-store-compliance は、App Store と Google Play の審査で落ちる原因を、提出前に調べる playbook と shell 製の guard。117 の rejection パターンと対処、規制の期限の一覧を持ち、AI coding agent の hook と skill としても入れられる。",
+  "what": "アプリ審査の rejection を提出前に検査する playbook と guard",
+  "can_do": [
+    "iOS / Android のプロジェクトを `app-store-compliance-guard.sh` で走査し、`[CRITICAL]` などの指摘をファイルと行付きで出す",
+    "117 の rejection パターンを、ガイドラインの番号と修正方法に対応づけた文書",
+    "privacy manifest や Data safety の確認、95 件の規制の期限（EU AI Act、DSA、COPPA など）の追跡",
+    "Claude Code、Codex、Gemini CLI、Cursor などに hook を入れ、提出コマンドの前に guard を走らせて危険があれば止める",
+    "開発者でない人向けの提出前チェックリスト"
+  ],
+  "install": [
+    "`git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance`",
+    "`bash ~/repositories/app-store-compliance/scripts/install.sh --tool all`"
+  ],
+  "how_to_use": "clone したあと、`bash ~/repositories/app-store-compliance/agent-os/hooks/app-store-compliance-guard.sh \"/path/to/your/app\"` を実行する。最後の行が `BLOCKED.`（critical あり）、`CLEAR.`、`NOT CHECKED.` のどれかになる。AI tool に入れた場合は提出前に自動で動く。",
+  "use_cases": [
+    "モバイルアプリの CI や、提出前の確認に組み込めそう",
+    "AI coding agent が勝手に提出コマンドを実行するのを止める guardrail の作り方の参考になりそう",
+    "社内のモバイルアプリの審査対応の知識を整理する資料に使えそう"
+  ],
+  "for_whom": "iOS / Android アプリを提出する開発者。審査に落ちた経験がある人",
+  "similar": [
+    "Apple の App Review Guidelines や Google Play のポリシー本文：一次情報。こちらは落ちる例と修正を実務向けに整理したもの",
+    "Fastlane の precheck：提出前の自動チェックで近い。こちらは Android も含み、規制の期限と AI agent の hook もある"
+  ],
+  "tech": "Shell が中心で、一部 Python 3（hook の導入と monitor）。データは JSON。必要なのは git と bash（Claude Code 以外の tool は python3 も）。",
+  "caveats": "ライセンスは OpenRoots Agent License 2.3 という独自の licence で、一般的な OSS ライセンスではない（GitHub 上は NOASSERTION）。2026-06 に作られて約5か月で、引用の正しさは作者が検証する仕組みだが、README には、キーワードによる裏付けなので一次情報を読むようにという注意がある。「審査に通る」ことの保証ではない。",
+  "tags": [
+    "開発ツール",
+    "モバイル",
+    "セキュリティ",
+    "AI エージェント"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README と release を読んだが、guard の検査の実装（agent-os/ 以下）は読んでおらず、検出の精度は分からない"
+}
