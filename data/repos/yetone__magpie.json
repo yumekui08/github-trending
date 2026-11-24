@@ -1,0 +1,48 @@
+{
+  "repo": "yetone/magpie",
+  "summarized_at": "2026-11-24",
+  "short": "magpie は、Claude Code や Codex などの AI コーディングエージェントが使うモデルを、1つのローカル gateway 経由で切り替える Go 製アプリ。API key・契約中のプラン・ローカルモデルを混ぜて使え、quota 切れ時は次のアカウントに自動で移る。",
+  "what": "AI エージェントのモデルを一括で切り替える gateway アプリ",
+  "can_do": [
+    "Claude Code、Codex、Gemini CLI、OpenCode など多数のエージェントが使うモデルを、1つの一覧（provider/model 形式）から選んで設定ファイルを書き換える",
+    "127.0.0.1:3425 のローカル gateway が OpenAI Chat / Responses、Anthropic Messages、Gemini の形式を相互に変換する",
+    "quota が切れたら同じ provider の次のアカウント、または routing group 内の別モデルに切り替える",
+    "プロファイルで全エージェントの設定を名前付きで保存して一括で戻す",
+    "プロンプト中の API key・メールなどを送信前にマスクし、返答で元に戻す（設定でオンにしたとき。既定はオフ）",
+    "メニューバーアプリ、ウィンドウ、TUI、Web UI、CLI から操作できる"
+  ],
+  "install": [
+    "`curl -fsSL https://usemagpie.ai/install.sh | sh`",
+    "`go install github.com/yetone/magpie@latest`",
+    "Docker イメージもある（README は公式サイトのドキュメントへ誘導）"
+  ],
+  "how_to_use": "アプリを開き Providers → Add provider で preset を選んで key を貼り、Agents ページで各エージェントのモデルを選ぶ。CLI なら `magpie provider add deepseek <key>` のあと `magpie claude deepseek/deepseek-v4-pro` のように指定する。",
+  "use_cases": [
+    "複数の AI エージェントを使い分けていて、モデルや key の設定ファイルを個別に直すのが面倒なときに使えそう",
+    "契約中の複数アカウントを quota 切れで自動的に回したいときに使えそう",
+    "社内や手元で key を含むファイルをエージェントに読ませる場面で、マスク機能が役立ちそう",
+    "Docker で常駐させて NAS やサーバー上の共通 gateway にする使い方もできそう"
+  ],
+  "for_whom": "複数の AI コーディングエージェントや複数の provider・アカウントを併用している人",
+  "similar": [
+    "LiteLLM：複数 provider を OpenAI 互換で束ねる proxy。こちらはエージェントの設定ファイル書き換えと GUI までを含む"
+  ],
+  "tech": "Go 1.26 製（Wails v3 の GUI、SQLite（modernc）など）。macOS・Windows・Linux（GTK 3 と WebKitGTK 4.1 が要る）、Docker（Debian ベース）、Termux で動く。ライセンスは MIT。",
+  "caveats": "2026年9月に作られたばかりで、リリースが非常に頻繁（v0.1.x）。仕様が変わりやすいと思われる。対応エージェントが100近くあり機能も多く、全体は把握しきれていない。マスク機能は既定でオフで、ローカルモデル版は 1.6 GB のダウンロードが要る。ほかのツールの sign-in ファイルや Keychain を読んでサブスクリプションを見つける（設定で無効化できる）。実際に使うには各 provider の key か契約が別途要る。",
+  "tags": [
+    "AI エージェント",
+    "LLM",
+    "デスクトップアプリ",
+    "CLI"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:go.mod",
+    "manifest:Dockerfile",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
