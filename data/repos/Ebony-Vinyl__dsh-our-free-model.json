@@ -1,0 +1,44 @@
+{
+  "repo": "Ebony-Vinyl/dsh-our-free-model",
+  "summarized_at": "2026-11-25",
+  "short": "dsh-our-free-model は、DeepSeek Harness（dsh）に入れる JavaScript 製プラグイン。第三者の無料 LLM ゲートウェイ（OpenCode Zen、Kilo など）を、登録も API Key もなしにモデル選択肢へ足す。ローカルの OpenAI 互換ゲートウェイも持つ。",
+  "what": "dsh 用の無料 LLM モデル接続プラグイン",
+  "can_do": [
+    "dsh のモデル選択に、無料の上流ゲートウェイ（OpenCode Zen、Kilo の無料プール）のモデルを追加する",
+    "登録済みの複数サービスのアカウントを一括で扱う（ログイン、アカウントプール、ポイント受け取り）",
+    "自分の API Key を使う 77 社の提供元を同じモデル一覧にまとめる",
+    "ローカルで OpenAI 互換 / Anthropic 互換のゲートウェイ（/v1/chat/completions、/v1/messages など）を立て、他のツールから呼ぶ",
+    "出口 IP の切り替え、モデルの降級チェーン、tool 出力の圧縮による token 節約、使用量ダッシュボード"
+  ],
+  "install": [
+    "`dsh plugin --profile web add @ebony-vinyl/dsh-our-free-model@2.9.0`",
+    "`dsh plugin --profile web add /絶対パス/dsh-our-free-model`"
+  ],
+  "how_to_use": "インストール後にアプリを1回再起動し、モデル選択で Our Free Model のグループからモデルを選ぶ。他のツールから使うときは、設定 → ローカル転送でゲートウェイを有効にし、base URL と Key を発行する。",
+  "use_cases": [
+    "dsh を試すとき、API 契約なしで複数のモデルの出力を比べるのに使えそう",
+    "ローカルの OpenAI 互換エンドポイントとして、社内ツールや検証用スクリプトのモデル切り替え口にできそう",
+    "複数の LLM 提供元の Key を1つのゲートウェイにまとめる用途に使えそう"
+  ],
+  "for_whom": "dsh（DeepSeek Harness）を使っていて、無料の枠でさまざまなモデルを試したい人",
+  "similar": [
+    "OpenRouter：複数モデルを1つの API で使える。こちらは dsh 専用プラグインで、無料の第三者ゲートウェイの利用が中心",
+    "LiteLLM：複数提供元を OpenAI 互換で束ねるプロキシ。用途は一部重なる"
+  ],
+  "tech": "JavaScript（ESM、Node 22.19 以上または 24 以上）。dsh の peerDependencies（@deepseek-ai/cordis、dsh-llm など）が要る。ビルド手順なし。Windows 向けデスクトップ版もあり",
+  "caveats": "README は MIT と書くが、GitHub のライセンス判定は NOASSERTION で不明確。無料枠は第三者ゲートウェイ（OpenCode Zen、Kilo）に依存し、README にも上流がプロンプトを記録しうるとあるので、機密は送らない。出口 IP ごとに数える無料枠に対し、出口を切り替える機能があるため、上流の利用規約との関係は自分で確認する必要がある。EAC チャンネルはリポジトリへの Star が解錠条件。LAN 転送を有効にすると、同じネットワークの他の端末がこの無料枠を使える。npm の裸名 dsh-our-free-model はこのリポジトリが発行したものではないと README が警告している（scope 付きの名前を使う）。README は beta と書き、機能が多く、本文の大半は中国語。",
+  "tags": [
+    "LLM",
+    "開発ツール",
+    "ライブラリ・SDK"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README の冒頭・機能一覧・インストール・使い方、package.json、リリースノートは読んだ。ソースコード、免責声明と EAC の節、上流側の規約は読んでおらず、無料枠の実際の使い勝手と規約上の扱いは確認できていない。"
+}
