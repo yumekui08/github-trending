@@ -1,0 +1,50 @@
+{
+  "repo": "n8n-io/nod",
+  "summarized_at": "2026-11-26",
+  "short": "nod は、Gmail・Calendar・Slack・Notion や実際の Web サイトを操作して、請求書の催促や通話前の資料作りなどをこなす個人用 agent。自分のマシンで動き、使う LLM も選べる。副作用のある操作は、確認を取ってから実行する。",
+  "what": "自分のマシンで動かす個人用 AI agent",
+  "can_do": [
+    "専用の Linux sandbox と Chromium の browser container を使い、Web サイトにログインしてフォームを埋めるなどの操作をする",
+    "Gmail、Calendar、Slack、Notion などの app と MCP 経由で連携し、予定や messages から通話前の1ページの brief を作る",
+    "返信の下書きを作り、承認（approval）を得てから送る。保存した rule に合う操作は再確認しない",
+    "schedule を設定して、ページを定期的に確認し、変化があったときだけ知らせる",
+    "利用者の発言から memory を作り、一つずつ表示・編集・削除できる。パスワードやカードは Vault が Web サイトに直接入力し、model には渡さない",
+    "App、Telegram、WhatsApp から指示できる。OpenAI、Anthropic、Gemini、OpenRouter、Bedrock など多数の provider か自前のサーバーを使える"
+  ],
+  "install": [
+    "macOS 14 以上は README のリンクから dmg（Apple silicon と Intel）、Windows 11 は exe（preview）、Linux x64（preview）はドキュメントの手順で入れる",
+    "ソースから: `git clone https://github.com/n8n-io/nod.git`",
+    "`cd nod`",
+    "`corepack enable`",
+    "`pnpm start`",
+    "ソースから動かすには Node.js 24.21 以上、pnpm、Docker が要る"
+  ],
+  "how_to_use": "App を入れたら、model provider（API key か ChatGPT Plus/Pro のサインイン）と使いたい app を接続し、チャットで依頼する。README では setup に10分ほどかかるとしている。",
+  "use_cases": [
+    "メールとカレンダーを元にした会議前の brief 作りを自動化するのに使えそう",
+    "サービスの解約や請求書の確認のような Web 上の定型作業を任せるのに使えそう",
+    "社内ツールの価格や status ページの変化の監視に使えそう。ただし PC または server を常時起動しておく必要がある"
+  ],
+  "for_whom": "自分用の agent を自分のマシンかサーバーで動かし、実行前の承認や操作の記録を重視したい人。Docker が使える人",
+  "similar": [
+    "OpenAI Operator のような hosted の browser agent：用途は近い。こちらは自分のマシンで動き、model も選べる",
+    "n8n：同じ会社だが別物。workflow を組む自動化ツールで、nod は対話型の agent（README も n8n は不要と書いている）"
+  ],
+  "tech": "TypeScript、Node.js 24。Fastify、React、PostgreSQL（pg-boss）、Pi agent runtime、agent-browser、Composio、MCP、Electron。sandbox と browser は Docker container。macOS、Windows、Linux。ライセンスは Apache-2.0。",
+  "caveats": "README に research preview と書かれていて、作られて約2か月（2026-09-25 作成）、最新は v0.9.7。Windows と Linux は preview。承認の判断は LLM が行うため誤りがありうると README が述べており、README の評価では小さい model（Haiku 5.5）は安全でない操作を8件通した。model の選択が重要。model provider の API 利用料は別途かかる。app 接続は既定で n8n がホストする connection service を通り、利用状況データの送信も新規ユーザーでは既定でオン（設定で止められる）。laptop を閉じると schedule は動かない。",
+  "tags": [
+    "AI エージェント",
+    "自動化・ワークフロー",
+    "デスクトップアプリ",
+    "セルフホスト"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "manifest:package.json",
+    "release"
+  ],
+  "confidence": "high",
+  "confidence_note": ""
+}
