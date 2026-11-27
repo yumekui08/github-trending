@@ -1,0 +1,42 @@
+{
+  "repo": "obsidianmd/obsidian-skills",
+  "summarized_at": "2026-11-27",
+  "short": "obsidian-skills は、AI エージェントに Obsidian 向けの Markdown・Bases・JSON Canvas の書き方や Obsidian CLI の使い方を教える Agent Skills 集。Obsidian 公式の organization が公開していて、Claude Code、ChatGPT、Cursor などに入れられる。",
+  "what": "Obsidian 用の Agent Skills 集",
+  "can_do": [
+    "Obsidian 独自記法の Markdown（wikilink、embed、callout、properties）を AI エージェントに書かせる（obsidian-markdown）",
+    "Bases（.base）の view、filter、formula、summary の作成・編集（obsidian-bases）",
+    "JSON Canvas（.canvas）の node、edge、group の作成・編集（json-canvas）",
+    "Obsidian CLI 経由の vault 操作、plugin・theme 開発の補助（obsidian-cli）",
+    "Obsidian Headless による、デスクトップアプリなしでの vault の sync と publish（obsidian-headless）",
+    "Defuddle で Web ページから余計な部分を除いた Markdown を取り出す（defuddle）",
+    "Knap で JSON や CSV から Markdown テンプレートを描画し、まとめてファイル生成する（knap）"
+  ],
+  "install": [
+    "`claude plugin marketplace add obsidianmd/obsidian-skills`",
+    "`claude plugin install obsidian@obsidian-skills`",
+    "`npx skills add https://github.com/obsidianmd/obsidian-skills`"
+  ],
+  "how_to_use": "インストール後は、Agent Skills に対応したエージェントが、Obsidian の記法やファイル形式を扱う場面で該当の skill を読み込む。手動で入れる場合は plugins/obsidian/skills/ のフォルダをエージェントの skills フォルダにコピーする。",
+  "use_cases": [
+    "Obsidian の vault に、AI エージェントで記法を崩さずにメモや runbook を書かせるのに使えそう",
+    "Bases や Canvas で構成図・手順の一覧を AI に作らせるのに使えそう",
+    "Obsidian CLI や Headless と組み合わせ、vault の同期や公開を自動化するのに使えそう"
+  ],
+  "for_whom": "Obsidian を使っていて、Claude Code や Cursor などの AI エージェントにメモの作成・整理をさせたい人",
+  "similar": [],
+  "tech": "Shell（リポジトリ上の主な言語）。中身は Markdown の skill 定義と manifest、バージョン更新・Gemini 用 archive 作成の shell script。Agent Skills specification に準拠。特定の OS や GPU の要件は材料からは不明。",
+  "caveats": "skill の中身（plugins/obsidian/skills/ 以下）は読んでおらず、README の一覧に基づく説明。obsidian-cli と obsidian-headless は Obsidian 本体側の CLI・Headless が別に要ると思われる。Muse はクラウドで動くため obsidian-cli の skill が使えないと README にある。",
+  "tags": [
+    "AI エージェント",
+    "ドキュメント・知識管理"
+  ],
+  "sources": [
+    "meta",
+    "readme",
+    "tree",
+    "release"
+  ],
+  "confidence": "medium",
+  "confidence_note": "README・tree・release は読んだが、各 skill の中身（SKILL.md）は読んでおらず、README の説明表に基づく。"
+}
